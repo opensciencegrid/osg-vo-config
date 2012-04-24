@@ -31,7 +31,7 @@
 "mis" "voms.grid.iu.edu" "15001" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.grid.iu.edu" "mis"
 "osgedu" "voms.grid.iu.edu" "15003" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.grid.iu.edu" "osgedu"
 "icecube" "grid-voms.desy.de" "15109" "/C=DE/O=GermanGrid/OU=DESY/CN=host/grid-voms.desy.de" "icecube"
-"alice" "voms114.cern.ch" "15000" "/DC=ch/DC=cern/OU=computers/CN=voms.cern.ch" "alice" 
+"alice" "voms.cern.ch" "15000" "/DC=ch/DC=cern/OU=computers/CN=voms.cern.ch" "alice"
 "NEBioGrid" "hpc.sbgrid.org" "15005" "/DC=org/DC=doegrids/OU=Services/CN=hpc.sbgrid.org" "NEBioGrid"
 "Gluex" "gryphn.phys.uconn.edu" "15014" "/DC=org/DC=doegrids/OU=Services/CN=http/gryphn.phys.uconn.edu" "Gluex"
 "GridUNESP" "voms.grid.unesp.br" "15000" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.grid.unesp.br" "GridUNESP" 
@@ -46,5 +46,4 @@
 "superbvo.org" "voms2.cnaf.infn.it" "15009" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms2.cnaf.infn.it" "superbvo.org"
 "dream" "voms.hpcc.ttu.edu" "15004" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.hpcc.ttu.edu" "dream"
 "lbne" "voms.fnal.gov" "15029" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.fnal.gov" "lbne"
-
-
+"lsst" "voms.fnal.gov" "15003" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.fnal.gov" "lsst"
