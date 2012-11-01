@@ -323,20 +323,20 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='mis'
+			name='lsst'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://voms.grid.iu.edu:8443/voms/mis'
+			baseUrl='https://voms.fnal.gov:8443/voms/lsst'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='lsst'
+			name='mis'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://voms.fnal.gov:8443/voms/lsst'
+			baseUrl='https://voms.grid.iu.edu:8443/voms/mis'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -510,15 +510,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/alice'/>
-
-		<vomsUserGroup
-			name='coupp'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/coupp'/>
 
 		<vomsUserGroup
 			name='argoneut'
@@ -842,6 +833,15 @@
 			voGroup='/CompBioGrid'/>
 
 		<vomsUserGroup
+			name='coupp'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/coupp'/>
+
+		<vomsUserGroup
 			name='csiu'
 			access='read self'
 			description=''
@@ -942,16 +942,6 @@
 			voGroup='/Engage/UCSDgrid'/>
 
 		<vomsUserGroup
-			name='fermi-lbne-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lbne'
-			role='Production'/>
-
-		<vomsUserGroup
 			name='fermilab'
 			access='read self'
 			description=''
@@ -978,35 +968,6 @@
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/fermilab/test'/>
-
-		<vomsUserGroup
-			name='fermilbne'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lbne'/>
-
-		<vomsUserGroup
-			name='fermilbneana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lbne'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='fermilbnegli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lbne'
-			role='pilot'/>
 
 		<vomsUserGroup
 			name='fgadmin'
@@ -1224,6 +1185,15 @@
 			role='pilot'/>
 
 		<vomsUserGroup
+			name='lsst'
+			access='read self'
+			description=''
+			vomsServer='lsst'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/lsst'/>
+
+		<vomsUserGroup
 			name='map'
 			access='read self'
 			description=''
@@ -1404,15 +1374,6 @@
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/fermilab/mu2e'/>
-
-		<vomsUserGroup
-			name='lsst'
-			access='read self'
-			description=''
-			vomsServer='lsst'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/lsst'/>
 
 		<vomsUserGroup
 			name='nanohub'
@@ -1624,9 +1585,29 @@
 			access='read self'
 			description=''
 			vomsServer='superbvo.org'
-			matchFQAN='vo'
+			matchFQAN='exact'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/superbvo.org'/>
+
+                <vomsUserGroup
+                        name='superbvo.orgprod'
+                        access='read self'
+                        description=''
+                        vomsServer='superbvo.org'
+                        matchFQAN='exact'
+                        acceptProxyWithoutFQAN='true'
+                        voGroup='/superbvo.org'
+                        role='ProductionManager'/>
+
+                <vomsUserGroup
+                        name='superbvo.orgsoft'
+                        access='read self'
+                        description=''
+                        vomsServer='superbvo.org'
+                        matchFQAN='exact'
+                        acceptProxyWithoutFQAN='true'
+                        voGroup='/superbvo.org'
+                        role='SoftwareManager'/>
 
 		<vomsUserGroup
 			name='suragrid'
@@ -1728,11 +1709,6 @@
 			accountName='alice'/>
 
 		<groupAccountMapper
-			name='coupp'
-			description=''
-			accountName='coupp'/>
-
-		<groupAccountMapper
 			name='argoneut'
 			description=''
 			accountName='argoneut'/>
@@ -1821,6 +1797,11 @@
 			name='compbiogrid'
 			description=''
 			accountName='compbiogrid'/>
+
+		<groupAccountMapper
+			name='coupp'
+			description=''
+			accountName='coupp'/>
 
 		<groupAccountMapper
 			name='csiu'
@@ -1998,6 +1979,11 @@
 			accountName='ligo'/>
 
 		<groupAccountMapper
+			name='lsst'
+			description=''
+			accountName='lsst'/>
+
+		<groupAccountMapper
 			name='map'
 			description=''
 			accountName='map'/>
@@ -2086,11 +2072,6 @@
 			name='mu2e'
 			description=''
 			accountName='mu2e'/>
-
-		<groupAccountMapper
-			name='lsst'
-			description=''
-			accountName='lsst'/>
 
 		<groupAccountMapper
 			name='nanohub'
@@ -2197,6 +2178,16 @@
 			description=''
 			accountName='superbvo.org'/>
 
+                <groupAccountMapper
+                        name='superbvo.orgprod'
+                        description=''
+                        accountName='superbvo.orgprod'/>
+
+                <groupAccountMapper
+                        name='superbvo.orgsoft'
+                        description=''
+                        accountName='superbvo.orgsoft'/>
+
 		<groupAccountMapper
 			name='suragrid'
 			description=''
@@ -2227,6 +2218,12 @@
 			description=''
 			accountName='uboonepro'/>
 
+                <accountPoolMapper
+                        name='ucsdgrid'
+                        description=''
+                        persistenceFactory='mysql'
+                        accountPool='ucsdgrid'/>
+
 		<groupAccountMapper
 			name='usatlas1'
 			description=''
@@ -2246,6 +2243,12 @@
 			name='usatlas4'
 			description=''
 			accountName='usatlas4'/>
+
+                <accountPoolMapper
+                        name='uscmsPool'
+                        description=''
+                        persistenceFactory='mysql'
+                        accountPool='uscmsPool'/>
 
 	</accountMappers>
 
@@ -2292,14 +2295,6 @@
 			accountingVo='ALICE'
 			userGroups='alice'
 			accountMappers='alice'/>
-
-		<groupToAccountMapping
-			name='coupp'
-			description=''
-			accountingVoSubgroup='coupp'
-			accountingVo='FERMILAB'
-			userGroups='coupp'
-			accountMappers='coupp'/>
 
 		<groupToAccountMapping
 			name='argoneut'
@@ -2509,6 +2504,22 @@
 			userGroups='cmssoft2'
 			accountMappers='cmssoft'/>
 
+                <groupToAccountMapping
+                        name='cmsuser'
+                        description=''
+                        accountingVoSubgroup='cms'
+                        accountingVo='CMS'
+                        userGroups='cmsuser'
+                        accountMappers='uscmsPool'/>
+
+                <groupToAccountMapping
+                        name='cmsuser-null'
+                        description=''
+                        accountingVoSubgroup='cms'
+                        accountingVo='CMS'
+                        userGroups='cmsuser-null'
+                        accountMappers='uscmsPool'/>
+
 		<groupToAccountMapping
 			name='compbiogrid'
 			description=''
@@ -2516,6 +2527,14 @@
 			accountingVo='CompBioGrid'
 			userGroups='compbiogrid'
 			accountMappers='compbiogrid'/>
+
+		<groupToAccountMapping
+			name='coupp'
+			description=''
+			accountingVoSubgroup='coupp'
+			accountingVo='FERMILAB'
+			userGroups='coupp'
+			accountMappers='coupp'/>
 
 		<groupToAccountMapping
 			name='csiu'
@@ -2597,6 +2616,14 @@
 			userGroups='engage'
 			accountMappers='engage'/>
 
+                <groupToAccountMapping
+                        name='engage-ucsdgrid'
+                        description=''
+                        accountingVoSubgroup='engage'
+                        accountingVo='Engage'
+                        userGroups='engage-ucsdgrid'
+                        accountMappers='ucsdgrid'/>
+
 		<groupToAccountMapping
 			name='fermilab'
 			description=''
@@ -2620,38 +2647,6 @@
 			accountingVo='FERMILAB'
 			userGroups='fermilab-test'
 			accountMappers='fgtest'/>
-
-		<groupToAccountMapping
-			name='fermilbne'
-			description=''
-			accountingVoSubgroup='lbne'
-			accountingVo='LBNE'
-			userGroups='fermilbne'
-			accountMappers='lbne'/>
-
-		<groupToAccountMapping
-			name='fermilbne-production'
-			description=''
-			accountingVoSubgroup='lbne'
-			accountingVo='LBNE'
-			userGroups='fermi-lbne-production'
-			accountMappers='lbnepro'/>
-
-		<groupToAccountMapping
-			name='fermilbneana'
-			description=''
-			accountingVoSubgroup='lbne'
-			accountingVo='LBNE'
-			userGroups='fermilbneana'
-			accountMappers='lbneana'/>
-
-		<groupToAccountMapping
-			name='fermilbnegli'
-			description=''
-			accountingVoSubgroup='lbne'
-			accountingVo='LBNE'
-			userGroups='fermilbnegli'
-			accountMappers='lbnegli'/>
 
 		<groupToAccountMapping
 			name='fgadmin'
@@ -2838,6 +2833,14 @@
 			accountMappers='lbnegli'/>
 
 		<groupToAccountMapping
+			name='lsst'
+			description=''
+			accountingVoSubgroup='lsst'
+			accountingVo='LSST'
+			userGroups='lsst'
+			accountMappers='lsst'/>
+
+		<groupToAccountMapping
 			name='map'
 			description=''
 			accountingVoSubgroup='map'
@@ -2980,14 +2983,6 @@
 			accountingVo='FERMILAB'
 			userGroups='mu2e'
 			accountMappers='mu2e'/>
-
-		<groupToAccountMapping
-			name='lsst'
-			description=''
-			accountingVoSubgroup='lsst'
-			accountingVo='LSST'
-			userGroups='lsst'
-			accountMappers='lsst'/>
 
 		<groupToAccountMapping
 			name='nanohub'
@@ -3173,6 +3168,22 @@
 			userGroups='superbvo.org'
 			accountMappers='superbvo.org'/>
 
+                <groupToAccountMapping
+                        name='superbvo.orgprod'
+                        description=''
+                        accountingVoSubgroup='superbvo.org'
+                        accountingVo='SuperB'
+                        userGroups='superbvo.orgprod'
+                        accountMappers='superbvo.orgprod'/>
+
+                <groupToAccountMapping
+                        name='superbvo.orgsoft'
+                        description=''
+                        accountingVoSubgroup='superbvo.org'
+                        accountingVo='SuperB'
+                        userGroups='superbvo.orgsoft'
+                        accountMappers='superbvo.orgsoft'/>
+
 		<groupToAccountMapping
 			name='suragrid'
 			description=''
@@ -3269,6 +3280,14 @@
 			userGroups='uscmst2admin'
 			accountMappers='cmst2admin'/>
 
+                <groupToAccountMapping
+                        name='uscmsuser'
+                        description=''
+                        accountingVoSubgroup='cms'
+                        accountingVo='CMS'
+                        userGroups='uscmsuser'
+                        accountMappers='uscmsPool'/>
+
 	</groupToAccountMappings>
 
 	<hostToGroupMappings>
@@ -3281,7 +3300,7 @@
                 -->
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, accelerator, coupp, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, fermilab-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, mis, star, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, lsst, nanohub, geant4, geant4-lcgadmin, i2u2, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, nwicg, ops, des-production, gpn, compbiogrid, engage, ilc, nysgrid, sbgrid, cigi, icecube, alice, nebiogrid, gluex, gridunesp, dayabay, hcc, belle, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, dream, lbne, lbne-production, lbneana, lbnegli, fermilbne, fermilbne-production, fermilbneana, fermilbnegli, gums-test'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, accelerator, coupp, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, fermilab-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, nwicg, ops, des-production, gpn, compbiogrid, engage-ucsdgrid, engage, ilc, nysgrid, sbgrid, cigi, icecube, alice, nebiogrid, gluex, gridunesp, dayabay, hcc, belle, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, gums-test'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
