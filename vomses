@@ -33,7 +33,6 @@
 "osgedu" "voms.grid.iu.edu" "15003" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu" "osgedu"
 "icecube" "grid-voms.desy.de" "15109" "/C=DE/O=GermanGrid/OU=DESY/CN=host/grid-voms.desy.de" "icecube"
 "alice" "voms.cern.ch" "15000" "/DC=ch/DC=cern/OU=computers/CN=voms.cern.ch" "alice"
-"NEBioGrid" "hpc.sbgrid.org" "15005" "/DC=org/DC=doegrids/OU=Services/CN=hpc.sbgrid.org" "NEBioGrid"
 "Gluex" "gryphn.phys.uconn.edu" "15014" "/DC=org/DC=doegrids/OU=Services/CN=http/gryphn.phys.uconn.edu" "Gluex"
 "GridUNESP" "voms.grid.unesp.br" "15000" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.grid.unesp.br" "GridUNESP" 
 "dayabay" "voms.lbl.gov" "15000" "/DC=org/DC=doegrids/OU=Services/CN=voms.lbl.gov" "dayabay"
@@ -51,3 +50,5 @@
 "UC3" "voms.grid.iu.edu" "15009" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu" "UC3"
 "mcdrd" "voms.fnal.gov" "15004" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.fnal.gov" "mcdrd"
 "lqcd" "voms.fnal.gov" "15024" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.fnal.gov" "lqcd"
+"auger" "voms1.egee.cesnet.cz" "15004" "/DC=org/DC=terena/DC=tcs/C=CZ/O=CESNET/CN=voms1.egee.cesnet.cz" "auger"
+"glast.org" "voms2.cnaf.infn.it" "15018" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms2.cnaf.infn.it" "glast.org"

@@ -43,6 +43,16 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
+			name='auger'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms1.egee.cesnet.cz:8443/voms/auger'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
 			name='belle'
 			description=''
 			persistenceFactory='mysql'
@@ -233,6 +243,16 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
+			name='glast.org'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms2.cnaf.infn.it:8443/voms/glast.org'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
 			name='glow'
 			description=''
 			persistenceFactory='mysql'
@@ -377,16 +397,6 @@
 			description=''
 			persistenceFactory='mysql'
 			baseUrl='https://voms.fnal.gov:8443/voms/nanohub'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
-			name='nebiogrid'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://hpc.sbgrid.org:8443/voms/NEBioGrid'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -589,6 +599,15 @@
 			acceptProxyWithoutFQAN='false'
 			voGroup='/fermilab/argoneut'
 			role='pilot'/>
+
+		<vomsUserGroup
+			name='auger'
+			access='read self'
+			description=''
+			vomsServer='auger'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/auger'/>
 
 		<vomsUserGroup
 			name='belle'
@@ -1085,6 +1104,15 @@
 			role='lcgadmin'/>
 
 		<vomsUserGroup
+			name='glast.org'
+			access='read self'
+			description=''
+			vomsServer='glast.org'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/glast.org'/>
+
+		<vomsUserGroup
 			name='glow'
 			access='read self'
 			description=''
@@ -1461,15 +1489,6 @@
 			voGroup='/nanohub'/>
 
 		<vomsUserGroup
-			name='nebiogrid'
-			access='read self'
-			description=''
-			vomsServer='nebiogrid'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/NEBioGrid'/>
-
-		<vomsUserGroup
 			name='nees'
 			access='read self'
 			description=''
@@ -1807,6 +1826,11 @@
 			accountName='argoneutpro'/>
 
 		<groupAccountMapper
+			name='auger'
+			description=''
+			accountName='auger'/>
+
+		<groupAccountMapper
 			name='belle'
 			description=''
 			accountName='belle'/>
@@ -1965,6 +1989,11 @@
 			name='geant4'
 			description=''
 			accountName='geant4'/>
+
+		<groupAccountMapper
+			name='glast.org'
+			description=''
+			accountName='glast.org'/>
 
 		<groupAccountMapper
 			name='glow'
@@ -2165,11 +2194,6 @@
 			name='nanohub'
 			description=''
 			accountName='nanohub'/>
-
-		<groupAccountMapper
-			name='nebiogrid'
-			description=''
-			accountName='nebiogrid'/>
 
 		<groupAccountMapper
 			name='nees'
@@ -2410,6 +2434,14 @@
 			accountingVo='FERMILAB'
 			userGroups='argoneutgli'
 			accountMappers='argoneutgli'/>
+
+		<groupToAccountMapping
+			name='auger'
+			description=''
+			accountingVoSubgroup='auger'
+			accountingVo='Auger'
+			userGroups='auger'
+			accountMappers='auger'/>
 
 		<groupToAccountMapping
 			name='belle'
@@ -2796,6 +2828,14 @@
 			accountMappers='geant4'/>
 
 		<groupToAccountMapping
+			name='glast.org'
+			description=''
+			accountingVoSubgroup='glast.org'
+			accountingVo='glast.org'
+			userGroups='glast.org'
+			accountMappers='glast.org'/>
+
+		<groupToAccountMapping
 			name='glow'
 			description=''
 			accountingVoSubgroup='glow'
@@ -3108,14 +3148,6 @@
 			accountMappers='nanohub'/>
 
 		<groupToAccountMapping
-			name='nebiogrid'
-			description=''
-			accountingVoSubgroup='nebiogrid'
-			accountingVo='NEBioGrid'
-			userGroups='nebiogrid'
-			accountMappers='nebiogrid'/>
-
-		<groupToAccountMapping
 			name='nees'
 			description=''
 			accountingVoSubgroup='nees'
@@ -3416,7 +3448,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, nwicg, ops, des-production, gpn, compbiogrid, engage-ucsdgrid, engage, engage-ucsdgrid-iu, engage-iu, ilc, nysgrid, sbgrid, cigi, icecube, alice, nebiogrid, gluex, gridunesp, dayabay, hcc, belle, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, gums-test'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, nwicg, ops, des-production, gpn, compbiogrid, engage-ucsdgrid, engage, engage-ucsdgrid-iu, engage-iu, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, dayabay, hcc, belle, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, gums-test'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
