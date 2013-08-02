@@ -17,7 +17,6 @@
 "geant4" "voms.cern.ch" "15007" "/DC=ch/DC=cern/OU=computers/CN=voms.cern.ch" "geant4"
 "geant4" "lcg-voms.cern.ch" "15007" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch" "geant4"
 "i2u2" "voms.fnal.gov" "15026" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.fnal.gov" "i2u2"
-"NWICG" "vo.rcac.purdue.edu" "15009" "/DC=org/DC=doegrids/OU=Services/CN=vo.rcac.purdue.edu" "NWICG"
 "ops" "voms.cern.ch" "15009" "/DC=ch/DC=cern/OU=computers/CN=voms.cern.ch" "ops"
 "ops" "lcg-voms.cern.ch" "15009" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch" "ops"
 "gpn" "cluster.greatplains.net" "15001" "/DC=org/DC=doegrids/OU=Services/CN=http/cluster.greatplains.net" "gpn"
@@ -52,3 +51,4 @@
 "lqcd" "voms.fnal.gov" "15024" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.fnal.gov" "lqcd"
 "auger" "voms1.egee.cesnet.cz" "15004" "/DC=org/DC=terena/DC=tcs/C=CZ/O=CESNET/CN=voms1.egee.cesnet.cz" "auger"
 "glast.org" "voms2.cnaf.infn.it" "15018" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms2.cnaf.infn.it" "glast.org"
+"enmr.eu" "voms2.cnaf.infn.it" "15014" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms2.cnaf.infn.it" "enmr.eu"

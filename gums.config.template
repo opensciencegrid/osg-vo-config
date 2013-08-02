@@ -203,6 +203,16 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
+			name='enmr.eu'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms2.cnaf.infn.it:8443/voms/enmr.eu'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
 			name='fermilab'
 			description=''
 			persistenceFactory='mysql'
@@ -413,20 +423,10 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='nwicg'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://vo.rcac.purdue.edu:8443/voms/NWICG'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='nysgrid'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://dylan.ccr.buffalo.edu:8443/voms/NYSGRID'
+			baseUrl='https://dylan.ccr.buffalo.edu:8443/voms/nysgrid'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -617,6 +617,16 @@
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/belle'/>
+
+		<vomsUserGroup
+			name='bellepro'
+			access='read self'
+			description=''
+			vomsServer='belle'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/belle'
+			role='production'/>
 
 		<vomsUserGroup
 			name='cdf-cnaf'
@@ -910,6 +920,65 @@
 			voGroup='/CSIU'/>
 
 		<vomsUserGroup
+			name='darkside'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/darkside'/>
+
+		<vomsUserGroup
+			name='darksideana'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/darkside'
+			role='analysis'/>
+
+		<vomsUserGroup
+			name='darksidecal'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/darkside'
+			role='calibration'/>
+
+		<vomsUserGroup
+			name='darksidedat'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/darkside'
+			role='data'/>
+
+		<vomsUserGroup
+			name='darksidegli'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/grid'
+			role='pilot'/>
+
+		<vomsUserGroup
+			name='darksidepro'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/darkside'
+			role='production'/>
+
+		<vomsUserGroup
 			name='dayabay'
 			access='read self'
 			description=''
@@ -1017,6 +1086,15 @@
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/Engage/UCSDgrid'/>
+
+		<vomsUserGroup
+			name='enmr'
+			access='read self'
+			description=''
+			vomsServer='enmr.eu'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/enmr.eu'/>
 
 		<vomsUserGroup
 			name='fermilab'
@@ -1594,22 +1672,13 @@
 			role='Production'/>
 
 		<vomsUserGroup
-			name='nwicg'
-			access='read self'
-			description=''
-			vomsServer='nwicg'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/NWICG'/>
-
-		<vomsUserGroup
 			name='nysgrid'
 			access='read self'
 			description=''
 			vomsServer='nysgrid'
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
-			voGroup='/NYSGRID'/>
+			voGroup='/nysgrid'/>
 
 		<vomsUserGroup
 			name='ops'
@@ -1836,6 +1905,11 @@
 			accountName='belle'/>
 
 		<groupAccountMapper
+			name='bellepro'
+			description=''
+			accountName='bellepro'/>
+
+		<groupAccountMapper
 			name='cdf'
 			description=''
 			accountName='cdf'/>
@@ -1911,6 +1985,36 @@
 			accountName='csiu'/>
 
 		<groupAccountMapper
+			name='darkside'
+			description=''
+			accountName='darkside'/>
+
+		<groupAccountMapper
+			name='darksideana'
+			description=''
+			accountName='darksideana'/>
+
+		<groupAccountMapper
+			name='darksidecal'
+			description=''
+			accountName='darksidecal'/>
+
+		<groupAccountMapper
+			name='darksidedat'
+			description=''
+			accountName='darksidedat'/>
+
+		<groupAccountMapper
+			name='darksidegli'
+			description=''
+			accountName='darksidegli'/>
+
+		<groupAccountMapper
+			name='darksidepro'
+			description=''
+			accountName='darksidepro'/>
+
+		<groupAccountMapper
 			name='dayabay'
 			description=''
 			accountName='dayabay'/>
@@ -1939,6 +2043,11 @@
 			name='engage'
 			description=''
 			accountName='engage'/>
+
+		<groupAccountMapper
+			name='enmr'
+			description=''
+			accountName='enmr'/>
 
 		<groupAccountMapper
 			name='fermipro'
@@ -2231,11 +2340,6 @@
 			accountName='numipro'/>
 
 		<groupAccountMapper
-			name='nwicg'
-			description=''
-			accountName='nwicg'/>
-
-		<groupAccountMapper
 			name='nysgrid'
 			description=''
 			accountName='nysgrid'/>
@@ -2452,6 +2556,14 @@
 			accountMappers='belle'/>
 
 		<groupToAccountMapping
+			name='bellepro'
+			description=''
+			accountingVoSubgroup='belle'
+			accountingVo='belle'
+			userGroups='bellepro'
+			accountMappers='bellepro'/>
+
+		<groupToAccountMapping
 			name='cdf-cnaf'
 			description=''
 			accountingVoSubgroup='cdf'
@@ -2660,6 +2772,54 @@
 			accountMappers='csiu'/>
 
 		<groupToAccountMapping
+			name='darkside'
+			description=''
+			accountingVoSubgroup='darkside'
+			accountingVo='FERMILAB'
+			userGroups='darkside'
+			accountMappers='darkside'/>
+
+		<groupToAccountMapping
+			name='darksideana'
+			description=''
+			accountingVoSubgroup='darkside'
+			accountingVo='FERMILAB'
+			userGroups='darksideana'
+			accountMappers='darksideana'/>
+
+		<groupToAccountMapping
+			name='darksidecal'
+			description=''
+			accountingVoSubgroup='darkside'
+			accountingVo='FERMILAB'
+			userGroups='darksidecal'
+			accountMappers='darksidecal'/>
+
+		<groupToAccountMapping
+			name='darksidedat'
+			description=''
+			accountingVoSubgroup='darkside'
+			accountingVo='FERMILAB'
+			userGroups='darksidedat'
+			accountMappers='darksidedat'/>
+
+		<groupToAccountMapping
+			name='darksidegli'
+			description=''
+			accountingVoSubgroup='darkside'
+			accountingVo='FERMILAB'
+			userGroups='darksidegli'
+			accountMappers='darksidegli'/>
+
+		<groupToAccountMapping
+			name='darksidepro'
+			description=''
+			accountingVoSubgroup='darkside'
+			accountingVo='FERMILAB'
+			userGroups='darksidepro'
+			accountMappers='darksidepro'/>
+
+		<groupToAccountMapping
 			name='dayabay'
 			description=''
 			accountingVoSubgroup='dayabay'
@@ -2754,6 +2914,14 @@
 			accountingVo='Engage'
 			userGroups='engage-ucsdgrid-iu'
 			accountMappers='ucsdgrid'/>
+
+		<groupToAccountMapping
+			name='enmr'
+			description=''
+			accountingVoSubgroup='enmr'
+			accountingVo='ENMR'
+			userGroups='enmr'
+			accountMappers='enmr'/>
 
 		<groupToAccountMapping
 			name='fermilab'
@@ -3236,14 +3404,6 @@
 			accountMappers='numipro'/>
 
 		<groupToAccountMapping
-			name='nwicg'
-			description=''
-			accountingVoSubgroup='nwicg'
-			accountingVo='nwicg'
-			userGroups='nwicg'
-			accountMappers='nwicg'/>
-
-		<groupToAccountMapping
 			name='nysgrid'
 			description=''
 			accountingVoSubgroup='nysgrid'
@@ -3448,7 +3608,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, nwicg, ops, des-production, gpn, compbiogrid, engage-ucsdgrid, engage, engage-ucsdgrid-iu, engage-iu, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, dayabay, hcc, belle, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, gums-test'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, engage-ucsdgrid, engage, engage-ucsdgrid-iu, engage-iu, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, dayabay, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr, gums-test'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
