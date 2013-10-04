@@ -8,7 +8,7 @@
 "atlas" "vo.racf.bnl.gov" "15003" "/DC=org/DC=doegrids/OU=Services/CN=vo.racf.bnl.gov" "atlas"
 "cms" "voms.cern.ch" "15002" "/DC=ch/DC=cern/OU=computers/CN=voms.cern.ch" "cms"
 "cms" "lcg-voms.cern.ch" "15002" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch" "cms"
-"dosar" "voms.dosar.org" "15000" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.dosar.org" "dosar"
+"dosar" "voms.dosar.org" "15000" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.dosar.org" "dosar"
 "dzero" "voms.fnal.gov" "15002" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.fnal.gov" "dzero"
 "des" "voms.fnal.gov" "15017" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.fnal.gov" "des"
 "GLOW" "glow-voms.cs.wisc.edu" "15001" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=glow-voms.cs.wisc.edu" "GLOW"

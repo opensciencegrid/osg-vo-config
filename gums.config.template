@@ -1098,7 +1098,7 @@
 			voGroup='/Engage/UCSDgrid'/>
 
 		<vomsUserGroup
-			name='enmr'
+			name='enmr.eu'
 			access='read self'
 			description=''
 			vomsServer='enmr.eu'
@@ -1274,14 +1274,6 @@
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/GridUNESP'/>
-
-		<manualUserGroup
-			name='gums-test'
-			access='read self'
-			description='Testing GUMS-status with GIP Probe'
-			persistenceFactory='mysql'
-			membersUri=''
-			nonMembersUri=''/>
 
 		<vomsUserGroup
 			name='hcc'
@@ -1755,6 +1747,45 @@
 			voGroup='/SBGrid'/>
 
 		<vomsUserGroup
+			name='seaquest'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/seaquest'/>
+
+		<vomsUserGroup
+			name='seaquestana'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/seaquest'
+			role='analysis'/>
+
+		<vomsUserGroup
+			name='seaquestgli'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/seaquest'
+			role='pilot'/>
+
+		<vomsUserGroup
+			name='seaquestpro'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/seaquest'
+			role='production'/>
+
+		<vomsUserGroup
 			name='star'
 			access='read self'
 			description=''
@@ -2064,9 +2095,9 @@
 			accountName='engage'/>
 
 		<groupAccountMapper
-			name='enmr'
+			name='enmr.eu'
 			description=''
-			accountName='enmr'/>
+			accountName='enmr.eu'/>
 
 		<groupAccountMapper
 			name='fermipro'
@@ -2162,11 +2193,6 @@
 			name='gridunesp'
 			description=''
 			accountName='gridunesp'/>
-
-		<groupAccountMapper
-			name='gums-test'
-			description='Testing GUMS-status with GIP Probe'
-			accountName='GumsTestUserMappingSuccessful'/>
 
 		<groupAccountMapper
 			name='hcc'
@@ -2407,6 +2433,26 @@
 			name='sbgrid'
 			description=''
 			accountName='sbgrid'/>
+
+		<groupAccountMapper
+			name='seaquest'
+			description=''
+			accountName='seaquest'/>
+
+		<groupAccountMapper
+			name='seaquestana'
+			description=''
+			accountName='seaquestana'/>
+
+		<groupAccountMapper
+			name='seaquestgli'
+			description=''
+			accountName='seaquestgli'/>
+
+		<groupAccountMapper
+			name='seaquestpro'
+			description=''
+			accountName='seaquestpro'/>
 
 		<groupAccountMapper
 			name='star'
@@ -2940,12 +2986,12 @@
 			accountMappers='ucsdgrid'/>
 
 		<groupToAccountMapping
-			name='enmr'
+			name='enmr.eu'
 			description=''
-			accountingVoSubgroup='enmr'
+			accountingVoSubgroup='enmr.eu'
 			accountingVo='ENMR'
-			userGroups='enmr'
-			accountMappers='enmr'/>
+			userGroups='enmr.eu'
+			accountMappers='enmr.eu'/>
 
 		<groupToAccountMapping
 			name='fermilab'
@@ -3090,14 +3136,6 @@
 			accountingVo='GridUNESP'
 			userGroups='gridunesp'
 			accountMappers='gridunesp'/>
-
-		<groupToAccountMapping
-			name='gums-test'
-			description='Testing GUMS-status with GIP Probe'
-			accountingVoSubgroup=''
-			accountingVo=''
-			userGroups='gums-test'
-			accountMappers='gums-test'/>
 
 		<groupToAccountMapping
 			name='hcc'
@@ -3492,6 +3530,38 @@
 			accountMappers='sbgrid'/>
 
 		<groupToAccountMapping
+			name='seaquest'
+			description=''
+			accountingVoSubgroup='seaquest'
+			accountingVo='FERMILAB'
+			userGroups='seaquest'
+			accountMappers='seaquest'/>
+
+		<groupToAccountMapping
+			name='seaquestana'
+			description=''
+			accountingVoSubgroup='seaquest'
+			accountingVo='FERMILAB'
+			userGroups='seaquestana'
+			accountMappers='seaquestana'/>
+
+		<groupToAccountMapping
+			name='seaquestgli'
+			description=''
+			accountingVoSubgroup='seaquest'
+			accountingVo='FERMILAB'
+			userGroups='seaquestgli'
+			accountMappers='seaquestgli'/>
+
+		<groupToAccountMapping
+			name='seaquestpro'
+			description=''
+			accountingVoSubgroup='seaquest'
+			accountingVo='FERMILAB'
+			userGroups='seaquestpro'
+			accountMappers='seaquestpro'/>
+
+		<groupToAccountMapping
 			name='star'
 			description=''
 			accountingVoSubgroup='star'
@@ -3640,7 +3710,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, engage-ucsdgrid, engage, engage-ucsdgrid-iu, engage-iu, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, dayabay, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr, osgcrossce, gums-test'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, seaquest, seaquestpro, seaquestana, seaquestgli, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, engage-ucsdgrid, engage, engage-ucsdgrid-iu, engage-iu, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, dayabay, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
