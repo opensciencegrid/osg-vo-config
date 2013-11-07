@@ -24,6 +24,7 @@
 "Engage" "osg-engage.renci.org" "15001" "/DC=org/DC=doegrids/OU=Services/CN=osg-engage.renci.org" "Engage"
 "Engage" "voms.grid.iu.edu" "15010" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu" "Engage"
 "osg" "voms.opensciencegrid.org" "15027" "/DC=org/DC=doegrids/OU=Services/CN=host/voms.opensciencegrid.org" "osg"
+"osg" "voms.grid.iu.edu" "15027" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu" "osg"
 "ilc" "voms.fnal.gov" "15023" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.fnal.gov" "ilc"
 "NYSGRID" "dylan.ccr.buffalo.edu" "15001" "/DC=org/DC=doegrids/OU=Services/CN=http/dylan.ccr.buffalo.edu" "NYSGRID"
 "SBGrid" "hpc.sbgrid.org" "15002" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=hpc.sbgrid.org" "SBGrid"
