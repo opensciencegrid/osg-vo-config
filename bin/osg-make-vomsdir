@@ -1,0 +1,392 @@
+#!/usr/bin/env perl
+
+=head1 osg-make-vomsdir
+
+osg-make-vomsdir - Make the set of LSC files neede to verify VOMS servers
+
+=head2 Synopsis
+
+    make-voms-dir    --vo <VO>
+                     --host <host>
+                     --vomsdir <DIR>
+                     --vomses <FILE>
+                     --help
+
+=head2 Description
+
+=over 4
+
+=item B<--vo> <VO>
+
+Only generate LSC files for the specified VO.
+
+=item B<--host> <HOST>
+
+Only generate LSC files for VOs hosted on the specified HOST.
+
+=item B<--vomsdir <DIR>
+
+Put LSC files in DIR. Defaults to 'vomsdir' in current directory.
+
+=item B<--vomses <FILE>
+
+Find list of files in FILE. Default to 'vomses' in the current directory.
+
+=item B<--help>, B<--usage>
+
+Print a usage message.
+
+=back
+
+This program creates the set of LSC files needed to verify VOMS servers. It works by contacting
+a list of VOMS servers (read from the standard vomses file) and discerning what DN/CN each one
+uses, then writes that into an LSC file.
+
+If you run as root, this program will use your hostcert/key to authenticate to the VOMS servers.
+
+If you run as non-root, you must have a valid proxy to authenticate to the VOMS servers.
+
+=cut
+
+use FileHandle;
+use strict;
+use warnings;
+use Getopt::Long;
+use Cwd 'abs_path';
+use English;
+
+# Ideas for future enhancement
+# Add --check: Report if any LSC files are missing, or if there are extra LSC files,
+#              or if there appear to be any other problems. 
+
+#-----------------------------------------
+#
+# Global Variables
+#
+#-----------------------------------------
+my $version = "1.0.0";
+my $restrict_to_vo = "";
+my $restrict_to_host = "";
+my $voms_dir = "";
+my $vomses_file = "";
+my $cert_dir;
+my $cert_file;
+my $key_file;
+my $debug = 0;
+my @errors;
+
+#-----------------------------------------
+#
+# Main loop
+#
+#-----------------------------------------
+                          parse_command_line();
+$cert_dir               = find_cert_dir();
+($cert_file, $key_file) = find_cert_and_key();
+                          print_startup_info();
+                          make_vomsdir();
+                          print_errors();
+
+exit(0);
+
+#-----------------------------------------
+#
+# Function: parse_command_line
+# Purpose:  Parse all the command-line arguments. 
+#           Make sure voms_dir and vomses_file are full paths
+# 
+#-----------------------------------------
+sub parse_command_line
+{
+    my $parsed_ok;
+
+    $parsed_ok = GetOptions("vo=s"       => \$restrict_to_vo,
+                            "host=s"     => \$restrict_to_host,
+                            "vomsdir=s"  => \$voms_dir,
+                            "vomses=s"   => \$vomses_file,
+                            "debug"      => \$debug,
+                            "help|usage" => \&usage);
+
+    if (!$parsed_ok) {
+        usage();
+    }
+    if ($voms_dir eq "") {
+        $voms_dir = "vomsdir";
+    }
+    $voms_dir = abs_path($voms_dir);
+    if ($vomses_file eq "") {
+        $vomses_file = abs_path("vomses");
+    }
+    return;
+}
+
+#-----------------------------------------
+#
+# Function: usage
+# Purpose:  Print a very lovely usage statement.
+# 
+#-----------------------------------------
+sub usage
+{
+    print "Usage: osg-make-vomsdir [-vo VO] [-host HOST] [--vomsdir DIR] [--vomses FILE] [--help]\n";
+    print "\n";
+    print "Purpose: Generate the LSC files for a set of VOs. The files will be placed into the\n";
+    print "standard 'vomsdir' hierarchy.\n";
+    print "\n";
+    print "Arguments:\n";
+    print "     --vo <VO>:       Only generate LSC files for the specified VO.\n";
+    print "     --host <HOST>:   Only generate LSC files for VOs hosted on the specified HOST.\n";
+    print "     --vomsdir <DIR>: Put LSC files in DIR. Defaults to 'vomsdir' in current directory.\n";
+    print "     --vomses <FILE>: Find list of files in FILE. Default to 'vomses' in the current directory.\n";
+    print "     --help:          Print this message.\n";
+    print "\n";
+    print "If you run as root, this program will use your hostcert/key to authenticate to the VOMS servers.\n";
+    print "If you run as non-root, you must have a valid proxy to authenticate to the VOMS servers.\n";
+    print "\n";
+    exit(1);
+}
+
+#-----------------------------------------
+#
+# Function: find_cert_dir
+# Purpose:  Return the absolute path of the directory where all the CA certificates are stored.
+# 
+#-----------------------------------------
+sub find_cert_dir
+{
+    my $cert_dir = "";
+    if (defined($ENV{X509_CERT_DIR})) {
+        $cert_dir = $ENV{X509_CERT_DIR};
+    } elsif ( -d "/etc/grid-security/certificates") {
+        $cert_dir = "/etc/grid-security/certificates"
+    } else {
+        die "Can't find the CA certificate directory.\n";
+    }
+    $cert_dir = abs_path($cert_dir);
+    return $cert_dir;
+}
+
+#-----------------------------------------
+#
+# Function: find_cert_and_key
+# Purpose:  We need to authenticate to the VOMS servers in order to find out
+#           what DN they use. If we're root, we use the hostcert/key. If we're
+#           non-root, we use the proxy.
+# 
+#-----------------------------------------
+sub find_cert_and_key
+{
+    my $cert;
+    my $key;
+
+    if ($UID == 0) {
+        $cert = "/etc/grid-security/hostcert.pem";
+        $key  = "/etc/grid-security/hostkey.pem";
+
+        if (! -r $cert) {
+            die "Can't read $cert (needed to connect to VOMS servers).";
+        }
+        if (! -r $key) {
+            die "Can't read $key (needed to connect to VOMS servers).";
+        }
+    } else {
+
+        my $output;
+        my @outputs;
+        
+        $output = `which grid-proxy-info`;
+        if ($? != 0) {
+            die "Can't find grid-proxy-info";
+        }
+        
+        $output = `grid-proxy-info -exists`;
+        if ($? != 0) {
+            die "You don't have a proxy, please run grid-proxy-init";
+        }
+        
+        $output = `grid-proxy-info -exists -hours 1`;
+        if ($? != 0) {
+            die "Your proxy expires in less than an hour, please renew it with grid-proxy-init";
+        }
+
+        @outputs = `grid-proxy-info -path`;
+        if ($? != 0) {
+            die "Can't find the path to your proxy.";
+        }
+        $cert = $outputs[0];
+        chomp($cert);
+
+        $key  = "";
+    }
+    return ($cert, $key);
+}
+
+#-----------------------------------------
+#
+# Function: print_startup_info
+# Purpose:  Print some nice information before we start our work.
+# 
+#-----------------------------------------
+sub print_startup_info
+{
+    print "osg-make-vomsdir version $version\n";
+    print "Will make $voms_dir:\n";
+    print "     ...using CAs in $cert_dir\n";
+    print "     ...finding VOMS servers from $vomses_file\n";
+    print "     ...authenticating to VOMS server with $cert_file";
+    if ($key_file) {
+        print "/$key_file";
+    }
+    print "\n";
+    if ($restrict_to_vo) {
+        print "     ...only for VO $restrict_to_vo\n";
+    }
+    if ($restrict_to_host) {
+        print "     ...only fo VOs hosted on $restrict_to_host\n";
+    }
+    print "\n";
+    return;
+}
+
+#-----------------------------------------
+#
+# Function: make_vomsdir
+# Purpose:  The main work function that creates the vomsdir.
+# 
+#-----------------------------------------
+sub make_vomsdir
+{
+    my $fh = new FileHandle $vomses_file;
+    if (not defined $fh) {
+        die "ERROR: Can't read $vomses_file\n";
+    }
+    
+    while (my $line = <$fh>) {
+        if ($line =~ /^\"(\S*?)\"\s+\"(\S*?)\"\s+\"(\S*?)\"\s+\"(.*?)\"/) {
+            my ($vo, $server, $port, $dn) = ($1, $2, $3, $4);
+
+            if ($restrict_to_vo ne "" && $restrict_to_vo ne $vo) {
+                next;
+            }
+            if ($restrict_to_host ne "" && $restrict_to_host ne $server) {
+                next;
+            }
+
+            print "Making LSC file for $vo/$server... ";
+            # Note that we use the DN we get from openssl instead of the DN we
+            # could get out of the vomses file, to make sure it's right. (In one
+            # case, I found it was right from VOMS-Admin, but not VOMS.)
+            my ($success, $actual_dn, $ca) = find_dn_ca($server, $port, $vo);
+            if ($success) {
+                print "Done\n";
+                system("mkdir", "-p", "$voms_dir/$vo");
+                my $filename = "$voms_dir/$vo/$server.lsc";
+                my $lsc_fh = FileHandle->new($filename, "w+");
+                if (!defined($lsc_fh)) {
+                    die "Can't write $filename\n";
+                }
+                print $lsc_fh "$actual_dn\n";
+                print $lsc_fh "$ca\n";
+                $lsc_fh->close();
+            } else {
+                print "FAILED!\n";
+            }
+        }
+    }
+    return;
+}
+
+#-----------------------------------------
+#
+# Function: find_dn_ca
+# Purpose:  For a single VOMS server, find the DN of the VOMS server and the DN of the
+#           CA that provided the VOMS's server DN. 
+# 
+#-----------------------------------------
+sub find_dn_ca
+{
+    my $server = $_[0];
+    my $port   = $_[1];
+    my $vo     = $_[2];
+    my @outputs;
+    my $dn = "";
+    my $ca = "";
+    my $cant_contact_voms = 0;
+    my $success = 0;
+
+    my $certarg = "";
+    my $keyarg  = "";
+
+    if ($cert_file) {
+        $certarg = "-cert $cert_file";
+    }
+    if ($key_file) {
+        $keyarg = "-key $key_file";
+    }
+
+    eval {
+        local $SIG{ALRM} = sub { die "alarm\n" };
+        alarm 10;
+        @outputs = `openssl s_client -connect $server:$port -prexit -CApath $cert_dir $certarg $keyarg < /dev/null 2>&1`;
+        if ($? != 0) {
+            $cant_contact_voms = 1;
+        }
+        alarm 0;
+    };
+
+    if ($@ || $cant_contact_voms) {
+        push (@errors, "ERROR: Can't contact $vo/$server. LSC file not created.\n");
+        $dn = "Undefined";
+        $ca = "Undefined";
+    } else {
+        for my $line (@outputs) {
+            # print "$line";
+            if ($line =~ /issuer=(.*)/) {
+                $ca = $1; 
+            }
+            if ($line =~ /subject=(.*)/) {
+                $dn = $1;
+            }
+        }
+        if ($ca eq "") {
+            push (@errors, "ERROR: Can't find CA for $vo/$server. LSC file not created.\n");
+            if ($debug) {
+                print "******************* CA NOT FOUND\n";
+                for my $line (@outputs) {
+                    print $line;
+                }
+                print "*******************\n";
+            }
+        } else {
+            $success = 1;
+        }
+    }
+    return ($success, $dn, $ca);
+}
+
+#-----------------------------------------
+#
+# Function: print_errors
+# Purpose:  Print all errors that occurred. We do it all at once,
+#           for easy-to-read output.
+# 
+#-----------------------------------------
+sub print_errors
+{
+    my $num_errors = scalar(@errors);
+
+    print "\n";
+    if ($num_errors eq 0) {
+        print "Successful.\n";
+    } else {
+        if ($num_errors eq 1) {
+            print "1 Error:\n";
+        } else {
+            print "$num_errors Errors:\n";
+        }
+        foreach my $error (@errors) {
+            print "     $error";
+        }
+    }
+    return;
+}

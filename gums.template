@@ -1,0 +1,2050 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is a template file for VO group Mappings for OSG Version 0.4.x 
+      this information should be added to your gums.config file.  -->
+
+<gums>
+
+<persistenceFactories>
+<persistenceFactory
+     name='mysql'
+     className='gov.bnl.gums.hibernate.HibernatePersistenceFactory'
+     hibernate.connection.driver_class='com.mysql.jdbc.Driver'
+     hibernate.dialect='net.sf.hibernate.dialect.MySQLDialect'
+     hibernate.c3p0.min_size='3'
+     hibernate.c3p0.max_size='20'
+     hibernate.c3p0.timeout='180'
+     hibernate.connection.url='jdbc:mysql://@SERVER@/GUMS_1_1'
+     hibernate.connection.username='@USER@'
+     hibernate.connection.password='@PASSWORD@'
+     hibernate.connection.autoReconnect='true'/>
+</persistenceFactories>
+
+<adminUserGroup
+	name='admins'
+	persistenceFactory='mysql'/>
+
+<groupMappings>
+
+<!-- 1 CDF -->
+
+<!-- CDF VOMS at Fermi -->
+
+<groupMapping name="cdf-fnal" accountingVo="cdf" accountingDesc="CDF">
+    <userGroup className="gov.bnl.gums.VOMSGroup"
+    url="https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin"
+    persistenceFactory="mysql" 
+    name="cdf-fnal" 
+    voGroup="/cdf"
+    sslCertfile="/etc/grid-security/http/httpcert.pem"
+    sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper"
+    groupName="cdf"/>
+</groupMapping>
+
+<groupMapping name='cdfdev-fnal' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdfdev-fnal'
+    voGroup="/cdf/glidecaf"
+    voRole="development"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdfdev' />
+</groupMapping>
+
+<groupMapping name='cdffgrid-fnal' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdffgrid-fnal'
+    voGroup="/cdf/glidecaf"
+    voRole="fermigrid"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdffgrid' />
+</groupMapping>
+
+<groupMapping name='cdfnam-fnal' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdfnam-fnal'
+    voGroup="/cdf/glidecaf"
+    voRole="namcaf"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdfnam' />
+</groupMapping>
+
+<groupMapping name='cdftestcaf-fnal' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdftestcaf-fnal'
+    voGroup="/cdf/glidecaf"
+    voRole="testcaf"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdf' />
+</groupMapping>
+
+<!-- CDF VOMS at CNAF -->
+
+<groupMapping name='cdf-cnaf' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cnaf.infn.it:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdf-cnaf'
+    voGroup="/cdf"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdf' />
+</groupMapping>
+
+<groupMapping name='cdfdev-cnaf' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cnaf.infn.it:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdfdev-cnaf'
+    voGroup="/cdf/glidecaf"
+    voRole="development"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdfdev' />
+</groupMapping>
+
+<groupMapping name='cdffgrid-cnaf' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cnaf.infn.it:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdffgrid-cnaf'
+    voGroup="/cdf/glidecaf"
+    voRole="fermigrid"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdffgrid' />
+</groupMapping>
+
+<groupMapping name='cdfnam-cnaf' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cnaf.infn.it:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdfnam-cnaf'
+    voGroup="/cdf/glidecaf"
+    voRole="namcaf"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdfnam' />
+</groupMapping>
+
+<groupMapping name='cdftestcaf-cnaf' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cnaf.infn.it:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdftestcaf-cnaf'
+    voGroup="/cdf/glidecaf"
+    voRole="testcaf"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdf' />
+</groupMapping>
+
+<!-- CDF VOMS at Padova -->
+
+<groupMapping name='cdf-pd' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms-01.pd.infn.it:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdf-pd'
+    voGroup="/cdf"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdf' />
+</groupMapping>
+
+<groupMapping name='cdfdev-pd' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms-01.pd.infn.it:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdfdev-pd'
+    voGroup="/cdf/glidecaf"
+    voRole="development"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdfdev' />
+</groupMapping>
+
+<groupMapping name='cdffgrid-pd' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms-01.pd.infn.it:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdffgrid-pd'
+    voGroup="/cdf/glidecaf"
+    voRole="fermigrid"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdffgrid' />
+</groupMapping>
+
+<groupMapping name='cdfnam-pd' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms-01.pd.infn.it:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdfnam-pd'
+    voGroup="/cdf/glidecaf"
+    voRole="namcaf"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdfnam' />
+</groupMapping>
+
+<groupMapping name='cdftestcaf-pd' accountingVo='cdf' accountingDesc='CDF'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms-01.pd.infn.it:8443/voms/cdf/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cdftestcaf-pd'
+    voGroup="/cdf/glidecaf"
+    voRole="testcaf"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cdf' />
+</groupMapping>
+
+<!-- 2 Fermilab -->
+
+<groupMapping name="fermilab" accountingVo="fermilab" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="fermilab" 
+    voGroup="/fermilab/grid" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="fnalgrid"/>
+</groupMapping>
+
+<groupMapping name="accelerator" accountingVo="accelerator" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="accelerator" 
+    voGroup="/fermilab/accelerator" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="fnal_acc"/>
+</groupMapping>
+
+<groupMapping name="argoneut" accountingVo="argoneut" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="argoneut" 
+    voGroup="/fermilab/argoneut" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="argoneut"/>
+</groupMapping>
+
+<groupMapping name="cdms" accountingVo="cdms" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="cdms" 
+    voGroup="/fermilab/cdms" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="cdms"/>
+</groupMapping>
+
+<groupMapping name="minerva" accountingVo="minerva" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="minerva" 
+    voGroup="/fermilab/minerva" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="minerva"/>
+</groupMapping>
+
+<groupMapping name="miniboone" accountingVo="miniboone" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="miniboone" 
+    voGroup="/fermilab/miniboone" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="minboone"/>
+</groupMapping>
+
+<groupMapping name="minos" accountingVo="minos" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="minos" 
+    voGroup="/fermilab/minos" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="minos"/>
+</groupMapping>
+
+<groupMapping name="mipp" accountingVo="mipp" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="mipp" 
+    voGroup="/fermilab/mipp" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="mipp"/>
+</groupMapping>
+
+<groupMapping name="mu2e" accountingVo="mu2e" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="mu2e" 
+    voGroup="/fermilab/mu2e" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="mu2e"/>
+</groupMapping>
+
+<groupMapping name="nova" accountingVo="nova" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="nova" 
+    voGroup="/fermilab/nova" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="nova"/>
+</groupMapping>
+
+<groupMapping name="numi" accountingVo="numi" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="numi" 
+    voGroup="/fermilab/numi" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="numi"/>
+</groupMapping>
+
+<groupMapping name="patriot" accountingVo="patriot" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="patriot" 
+    voGroup="/fermilab/patriot"
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="patriot"/>
+</groupMapping>
+
+<groupMapping name="theory" accountingVo="theory" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="theory" 
+    voGroup="/fermilab/theory" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="fnal_thy"/>
+</groupMapping>
+
+<groupMapping name="fermilab-test" accountingVo="fermilab-test" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="fermilab-test" 
+    voGroup="/fermilab/test" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="fgtest"/>
+</groupMapping>
+
+<groupMapping name="uboone" accountingVo="microboone" accountingDesc="FERMILAB">
+	<userGroup className="gov.bnl.gums.VOMSGroup" 
+	url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+	persistenceFactory="mysql" 
+	name="microboone" 
+	voGroup="/fermilab/uboone" 
+	sslCertfile="/etc/grid-security/http/httpcert.pem" 
+	sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+	<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="uboone"/>
+</groupMapping>
+
+<groupMapping name="uboonepro" accountingVo="microboone" accountingDesc="FERMILAB">
+	<userGroup className="gov.bnl.gums.VOMSGroup" 
+	url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+	persistenceFactory="mysql" 
+	name="uboonepro" 
+	voGroup="/fermilab/uboone" 
+	voRole="Production" sslCertfile="/etc/grid-security/http/httpcert.pem" 
+	sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+	<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="uboonepro"/>
+</groupMapping>
+
+<groupMapping name="uboonegli" accountingVo="microboone" accountingDesc="FERMILAB">
+	<userGroup className="gov.bnl.gums.VOMSGroup" 
+	url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+	persistenceFactory="mysql" 
+	name="uboonegli" 
+	voGroup="/fermilab/uboone" 
+	voRole="pilot" 
+	sslCertfile="/etc/grid-security/http/httpcert.pem" 
+	sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+	<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="uboonegli"/>
+</groupMapping>
+
+<groupMapping name="ubooneana" accountingVo="microboone" accountingDesc="FERMILAB">
+	<userGroup className="gov.bnl.gums.VOMSGroup" 
+	url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+	persistenceFactory="mysql" 
+	name="ubooneana" 
+	voGroup="/fermilab/uboone" 
+	voRole="Analysis" 
+	sslCertfile="/etc/grid-security/http/httpcert.pem" 
+	sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+	<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="ubooneana"/>
+</groupMapping>
+
+<groupMapping name="map" accountingVo="map" accountingDesc="FERMILAB">
+        <userGroup className="gov.bnl.gums.VOMSGroup" 
+        url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+        persistenceFactory="mysql" 
+        name="map" 
+        voGroup="/fermilab/map" 
+        sslCertfile="/etc/grid-security/http/httpcert.pem" 
+        sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+        <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="map"/>
+</groupMapping>
+
+<groupMapping name="gm2" accountingVo="gm2" accountingDesc="FERMILAB">
+        <userGroup className="gov.bnl.gums.VOMSGroup" 
+        url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+        persistenceFactory="mysql" 
+        name="gm2" 
+        voGroup="/fermilab/gm2" 
+        sslCertfile="/etc/grid-security/http/httpcert.pem" 
+        sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+        <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="gm2"/>
+</groupMapping>
+
+<groupMapping name="coupp" accountingVo="coupp" accountingDesc="FERMILAB">
+   <userGroup className="gov.bnl.gums.VOMSGroup" 
+   url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+   persistenceFactory="mysql" 
+   name="coupp" 
+   voGroup="/fermilab/coupp" 
+   sslCertfile="/etc/grid-security/http/httpcert.pem" 
+   sslKey="/etc/grid-security/http/httpkey.pem" 
+   matchFQAN="exact" />
+   <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+   groupName="coupp" />
+</groupMapping>
+
+<!-- Fermilab subgroup Production roles below this -->
+
+<groupMapping name="fermilab-production" accountingVo="fermilab" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="fermilab-production" 
+    voGroup="/fermilab" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="fermipro"/>
+</groupMapping>
+
+<groupMapping name="accelerator-production" accountingVo="accelerator" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="accelerator-production" 
+    voGroup="/fermilab/accelerator" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="accelpro"/>
+</groupMapping>
+
+<groupMapping name="argoneut-production" accountingVo="argoneut" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="argoneut-production" 
+    voGroup="/fermilab/argoneut" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="argoneutpro"/>
+</groupMapping>
+
+<groupMapping name="cdms-production" accountingVo="cdms" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="cdms-production" 
+    voGroup="/fermilab/cdms" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="cdmspro"/>
+</groupMapping>
+
+<groupMapping name="minerva-production" accountingVo="minerva" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="minerva-production" 
+    voGroup="/fermilab/minerva" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="minervapro"/>
+</groupMapping>
+
+<groupMapping name="miniboone-production" accountingVo="miniboone" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="miniboone-production" 
+    voGroup="/fermilab/miniboone" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="minbnpro"/>
+</groupMapping>
+
+<groupMapping name="minos-production" accountingVo="minos" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="minos-production" 
+    voGroup="/fermilab/minos" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="minospro"/>
+</groupMapping>
+
+<groupMapping name="mipp-production" accountingVo="mipp" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="mipp-production" 
+    voGroup="/fermilab/mipp" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="mipppro"/>
+</groupMapping>
+
+<groupMapping name="nova-production" accountingVo="nova" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="nova-production" 
+    voGroup="/fermilab/nova" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="novapro"/>
+</groupMapping>
+
+<groupMapping name="numi-production" accountingVo="numi" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="numi-production" 
+    voGroup="/fermilab/numi" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="numipro"/>
+</groupMapping>
+
+<groupMapping name="patriot-production" accountingVo="patriot" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="patriot-production" 
+    voGroup="/fermilab/patriot" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="patripro"/>
+</groupMapping>
+
+<groupMapping name="theory-production" accountingVo="theory" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="theory-production" 
+    voGroup="/fermilab/theory" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="theopro"/>
+</groupMapping>
+
+<groupMapping name="map-production" accountingVo="map" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="map-production" voGroup="/fermilab/map" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="mappro"/>
+</groupMapping>
+
+<groupMapping name="gm2-production" accountingVo="gm2" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="gm2-production" 
+    voGroup="/fermilab/gm2" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="gm2pro"/>
+</groupMapping>
+
+<!-- Fermilab analysis roles below this-->
+<groupMapping name="argoneutana" accountingVo="argoneut" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="argoneutana" 
+    voGroup="/fermilab/argoneut" 
+    voRole="Analysis" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="argoneutana"/>
+</groupMapping>
+
+<groupMapping name="minervaana" accountingVo="minerva" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="minervaana" 
+    voGroup="/fermilab/minerva" 
+    voRole="Analysis" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="minervaana"/>
+</groupMapping>
+
+<groupMapping name="minosana" accountingVo="minos" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="minosana" 
+    voGroup="/fermilab/minos" 
+    voRole="Analysis" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="minosana"/>
+</groupMapping>
+
+<groupMapping name="novaana" accountingVo="nova" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="novaana" 
+    voGroup="/fermilab/nova" 
+    voRole="Analysis" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="novaana"/>
+</groupMapping>
+
+<groupMapping name="mapana" accountingVo="map" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="mapana" 
+    voGroup="/fermilab/map" 
+    voRole="Analysis" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="mapana"/>
+</groupMapping>
+
+<groupMapping name="gm2ana" accountingVo="gm2" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="gm2ana" 
+    voGroup="/fermilab/gm2" 
+    voRole="Analysis" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="gm2ana"/>
+</groupMapping>
+
+<!-- Fermilab glidein roles below this-->
+<groupMapping name="fggli" accountingVo="fermilab" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="fggli" 
+    voGroup="/fermilab/grid" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="fggli"/>
+</groupMapping>
+
+<groupMapping name="argoneutgli" accountingVo="argoneut" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="argoneutgli" 
+    voGroup="/fermilab/argoneut" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="argoneutgli"/>
+</groupMapping>
+
+<groupMapping name="minervagli" accountingVo="minerva" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="minervagli" 
+    voGroup="/fermilab/minerva" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="minervagli"/>
+</groupMapping>
+
+<groupMapping name="minosgli" accountingVo="minos" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="minosgli" 
+    voGroup="/fermilab/minos" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="minosgli"/>
+</groupMapping>
+
+<groupMapping name="novagli" accountingVo="nova" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="novagli" 
+    voGroup="/fermilab/nova" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="novagli"/>
+</groupMapping>
+
+<groupMapping name="mapgli" accountingVo="map" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="mapgli" 
+    voGroup="/fermilab/map" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="mapgli"/>
+</groupMapping>
+
+<groupMapping name="gm2gli" accountingVo="gm2" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="gm2gli" 
+    voGroup="/fermilab/gm2" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="gm2gli"/>
+</groupMapping>
+
+<!-- Fermilab admin roles -->
+
+<groupMapping name="fgadmin" accountingVo="fermilab" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="fgadmin" 
+    voGroup="/fermilab/grid" 
+    voRole="admin" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="fgadmin"/>
+</groupMapping>
+
+<!-- Fermilab darkside roles -->
+<groupMapping name="darkside" accountingVo="darkside" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="darkside" 
+    voGroup="/fermilab/darkside"  
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="darkside"/>
+</groupMapping>
+
+<groupMapping name="darksideana" accountingVo="darkside" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="darksideana" 
+    voGroup="/fermilab/darkside" 
+    voRole="analysis" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="darksideana"/>
+</groupMapping>
+
+<groupMapping name="darksidecal" accountingVo="darkside" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="darksidecal" 
+    voGroup="/fermilab/darkside" 
+    voRole="calibration" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="darksidecal"/>
+</groupMapping>
+
+<groupMapping name="darksidedat" accountingVo="darkside" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="darksidedat" 
+    voGroup="/fermilab/darkside" 
+    voRole="data" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="darksidedat"/>
+</groupMapping>
+
+<groupMapping name="darksidegli" accountingVo="darkside" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="darksidegli" 
+    voGroup="/fermilab/grid" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="darksidegli"/>
+</groupMapping>
+
+<groupMapping name="darksidepro" accountingVo="darkside" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="darksidepro" 
+    voGroup="/fermilab/darkside" 
+    voRole="production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="darksidepro"/>
+</groupMapping>
+
+<!-- Fermilab SeaQuest roles -->
+<groupMapping name="seaquest" accountingVo="seaquest" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="seaquest" 
+    voGroup="/fermilab/seaquest"  
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="seaquest"/>
+</groupMapping>
+
+<groupMapping name="seaquestpro" accountingVo="seaquest" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="seaquestpro" 
+    voGroup="/fermilab/seaquest" 
+    voRole="production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="seaquestpro"/>
+</groupMapping>
+
+<groupMapping name="seaquestana" accountingVo="seaquest" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="seaquestana" 
+    voGroup="/fermilab/seaquest" 
+    voRole="analysis" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="seaquestana"/>
+</groupMapping>
+
+<groupMapping name="seaquestgli" accountingVo="seaquest" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="seaquestgli" 
+    voGroup="/fermilab/seaquest" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="seaquestgli"/>
+</groupMapping>
+
+<!-- 6 GOC MIS -->
+<groupMapping name='mis' accountingVo='mis' accountingDesc='MIS'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.grid.iu.edu:8443/voms/mis/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='mis' 
+    voGroup="/mis"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem' 
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='mis' />
+</groupMapping>
+
+<!-- 9 STAR -->
+<groupMapping name='star' accountingVo='star' accountingDesc='STAR'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://vo.racf.bnl.gov:8443/voms/star/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='star' 
+    voGroup="/star"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem' 
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='star' />
+</groupMapping>
+
+<!-- 10  USAtlas -->
+<groupMapping name="newUsatlasProd" accountingVo="atlas" accountingDesc="ATLAS">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.cern.ch:8443/voms/atlas/services/VOMSAdmin"
+    persistenceFactory="mysql" 
+    name="newUsatlasProd" 
+    voGroup="/atlas/usatlas" 
+    voRole="production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem"
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="usatlas1"/>
+</groupMapping>
+
+<!-- LCG VOMS USATLAS software role - People coming in as /atlas/usatlas/Role=software will be mapped to usatlas2 -->
+<groupMapping name="newUsatlasSoft" accountingVo="atlas" accountingDesc="ATLAS">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.cern.ch:8443/voms/atlas/services/VOMSAdmin"
+    persistenceFactory="mysql" 
+    name="newUsatlasSoft" 
+    voGroup="/atlas/usatlas" 
+    voRole="software" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem"
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="usatlas2"/>
+</groupMapping>
+
+<!-- 10a CERN VOMS (new) USATLAS members mapped to usatlas3 group account -->
+<groupMapping name='newUsatlas' accountingVo='atlas' accountingDesc='ATLAS'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cern.ch:8443/voms/atlas/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='newusatlas'
+    voGroup="/atlas/usatlas"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='usatlas3' />
+</groupMapping>
+
+<!-- 10c  CERN VOMS (new) ATLAS members mapped to usatlas4 group account -->
+<groupMapping name='newAtlas' accountingVo='atlas' accountingDesc='ATLAS'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cern.ch:8443/voms/atlas/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='newatlas'
+    voGroup="/atlas"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='usatlas4' />
+</groupMapping>
+
+<!-- 11 USCMS-->
+<groupMapping name="uscmsuser" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="uscmsuser" voGroup="/cms/uscms"
+voRole="cmsuser"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.AccountPoolMapper"
+persistenceFactory="mysql"
+name="uscmsPool"/>
+</groupMapping>
+
+<groupMapping name="cmsuser" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="cmsuser" voGroup="/cms"
+voRole="cmsuser"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.AccountPoolMapper"
+persistenceFactory="mysql"
+name="uscmsPool"/>
+</groupMapping>
+
+<groupMapping name="uscmst2admin" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="uscmst2admin" voGroup="/cms/uscms"
+voRole="cmst2admin"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper"
+groupName="cmst2admin"/>
+</groupMapping>
+
+<groupMapping name="uscmssoft" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="cmssoft" voGroup="/cms/uscms"
+voRole="cmssoft"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper"
+groupName="cmssoft"/>
+</groupMapping>
+
+<groupMapping name="cmssoft" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="cmssoft2" voGroup="/cms"
+voRole="cmssoft"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper"
+groupName="cmssoft"/>
+</groupMapping>
+
+<groupMapping name="uscmsprod" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="cmsprod" voGroup="/cms/uscms"
+voRole="cmsprod"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper"
+groupName="cmsprod"/>
+</groupMapping>
+
+<groupMapping name="cmsphedex2" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="cmsphedex2" voGroup="/cms"
+voRole="cmsphedex"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper"
+groupName="cmsphedex"/>
+</groupMapping>
+
+<groupMapping name="uscmsphedex" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="cmsphedex" voGroup="/cms/uscms"
+voRole="cmsphedex"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper"
+groupName="cmsphedex"/>
+</groupMapping>
+
+<groupMapping name="uscmsfrontier" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="cmsfrontier"
+voGroup="/cms/uscms" voRole="cmsfrontier"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper"
+groupName="cmsfrontier"/>
+</groupMapping>
+
+<groupMapping name="cmsuser-null" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="cmsuser-null" voGroup="/cms"
+matchFQAN="vo"
+acceptProxyWithoutFQAN="true"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.AccountPoolMapper"
+persistenceFactory="mysql"
+name="uscmsPool"/>
+</groupMapping>
+
+<groupMapping name="cmsproduction" accountingVo="cms" accountingDesc="CMS">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="cmsproduction" voGroup="/cms" voRole="production"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper"
+groupName="cmsprod"/>
+</groupMapping>
+
+<!-- 12 LIGO -->
+<groupMapping name='LIGO' accountingVo='ligo' accountingDesc='LIGO'>
+<userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.ligo.org:8443/voms/LIGO/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='LIGO'
+    voGroup='/LIGO' 
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
+    groupName='ligo' /> 
+</groupMapping> 
+
+<!-- 13 DZERO -->        
+<groupMapping name='dzeroana' accountingVo='dzero' accountingDesc='DZERO'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/dzero/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='dzeroana'
+    voGroup="/dzero/users"
+    voRole="analysis"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'			
+    matchFQAN="exact" acceptProxyWithoutFQAN="true" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='dzeroana' />
+</groupMapping>
+
+<groupMapping name='dzerouser' accountingVo='dzero' accountingDesc='DZERO'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/dzero/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='dzerouser'
+    voGroup="/dzero/users"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" acceptProxyWithoutFQAN="true"/>
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='samgrid' />
+</groupMapping>
+
+<groupMapping name='dzeroservice' accountingVo='dzero' accountingDesc='DZERO'>
+<userGroup className='gov.bnl.gums.VOMSGroup'
+url='https://voms.fnal.gov:8443/voms/dzero/services/VOMSAdmin'
+persistenceFactory='mysql'
+name='dzeroservice'
+voGroup="/dzero/services"
+sslCertfile='/etc/grid-security/http/httpcert.pem'
+sslKey='/etc/grid-security/http/httpkey.pem'
+matchFQAN="exact" acceptProxyWithoutFQAN="true" />
+<accountMapping 
+className='gov.bnl.gums.GroupAccountMapper'
+groupName='sam' />
+</groupMapping>
+
+<!-- 14 DOSAR -->
+<groupMapping name='dosar' accountingVo='dosar' accountingDesc='DOSAR'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.dosar.org:8443/voms/dosar/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='dosar'
+    voGroup="/dosar"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper' groupName='dosar' />
+</groupMapping>
+
+<!-- 15 DES -->
+<groupMapping name='des' accountingVo='des' accountingDesc='DES'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/des/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='des' 
+    voGroup="/des/production"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem' 
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='des' />
+</groupMapping>
+
+<groupMapping name='des-production' accountingVo='des' accountingDesc='DES'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/des/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='des-production'
+    voGroup="/des/production"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" acceptProxyWithoutFQAN="true"/>
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='des' />
+</groupMapping>
+
+<!-- 16 GLOW -->
+<groupMapping name='glow' accountingVo='glow' accountingDesc='GLOW'>  
+	<userGroup className='gov.bnl.gums.VOMSGroup' 
+	
+url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin' 
+	persistenceFactory='mysql' 
+	name='glow' 
+	voGroup="/GLOW" 
+	sslCertfile='/etc/grid-security/http/httpcert.pem' 
+	sslKey='/etc/grid-security/http/httpkey.pem' 
+        matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+	<accountMapping className='gov.bnl.gums.GroupAccountMapper' 
+	groupName='glow' /> 
+</groupMapping>
+
+<!-- 19 Nanohub -->
+<groupMapping name='nanohub' accountingVo='nanohub' accountingDesc='NANOHUB'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/nanohub/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='nanohub' 
+    voGroup="/nanohub"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem' 
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='nanohub' />
+</groupMapping>
+
+<!-- 20 Geant4 -->
+<groupMapping name='geant4' accountingVo='geant4' accountingDesc='GEANT4'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cern.ch:8443/voms/geant4/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='geant4' 
+    voGroup="/geant4"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem' 
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='geant4' />
+</groupMapping>
+
+<groupMapping name='geant4-lcgadmin' accountingVo='geant4' accountingDesc='GEANT4'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cern.ch:8443/voms/geant4/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='geant4-lcgadmin'
+    voGroup="/geant4"
+    voRole="lcgadmin"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact"/>
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='geant4' />
+</groupMapping> 
+
+<!-- 21 I2U2 -->
+<groupMapping name='i2u2' accountingVo='i2u2' accountingDesc='I2U2'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/i2u2/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='i2u2' 
+    voGroup="/i2u2"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem' 
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='i2u2' />
+</groupMapping>
+
+<!-- 23 OSG -->
+<groupMapping name='osg' accountingVo='osg' accountingDesc='OSG'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://voms.opensciencegrid.org:8443/voms/osg/services/VOMSAdmin'
+     persistenceFactory='mysql' 
+     name='osg' 
+     voGroup="/osg"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem' 
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
+     groupName='osg' />
+</groupMapping>
+ 
+<groupMapping name='osg-goc' accountingVo='osg' accountingDesc='OSG'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://voms.grid.iu.edu.org:8443/voms/osg/services/VOMSAdmin'
+     persistenceFactory='mysql' 
+     name='osg-goc' 
+     voGroup="/osg"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem' 
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
+     groupName='osg' />
+</groupMapping>
+
+<!-- 24 GOC OSGEDU -->
+<groupMapping name='osgedu' accountingVo='osgedu' accountingDesc='OSGEDU'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://voms.grid.iu.edu:8443/voms/osgedu/services/VOMSAdmin'
+     persistenceFactory='mysql' 
+     name='osgedu' 
+     voGroup="/osgedu"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem' 
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
+     groupName='osgedu' />
+</groupMapping>
+
+<!-- 26 ops -->
+<groupMapping name='ops' accountingVo='ops' accountingDesc='OPS'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://voms.cern.ch:8443/voms/ops/services/VOMSAdmin'
+     persistenceFactory='mysql'
+     name='ops' 
+     voGroup="/ops"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem' 
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+     groupName='ops' />
+</groupMapping>
+					
+<!-- 28 GPN -->
+<groupMapping name='gpn' accountingVo='gpn' accountingDesc='gpn'>
+      <userGroup className='gov.bnl.gums.VOMSGroup'     
+      url='https://cluster.greatplains.net:8443/voms/gpn/services/VOMSAdmin'     
+      persistenceFactory='mysql'      
+      name='gpn'            
+      voGroup="/gpn"           
+      sslCertfile='/etc/grid-security/http/httpcert.pem'           
+      sslKey='/etc/grid-security/http/httpkey.pem'      
+      matchFQAN="vo" acceptProxyWithoutFQAN='true' />      
+      <accountMapping className='gov.bnl.gums.GroupAccountMapper'            
+      groupName='gpn' />
+</groupMapping>
+
+<!-- 29 CompBioGrid -->
+<groupMapping name='compbiogrid' accountingVo='compbiogrid' accountingDesc='CompBioGrid'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'     
+     url='https://vdvoms.vcell.uchc.edu:8443/voms/CompBioGrid/services/VOMSAdmin'     
+     persistenceFactory='mysql'      
+     name='compbiogrid'            
+     voGroup="/CompBioGrid"           
+     sslCertfile='/etc/grid-security/http/httpcert.pem'           
+     sslKey='/etc/grid-security/http/httpkey.pem'      
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper'            
+     groupName='compbiogrid' />
+</groupMapping>
+
+<!-- 30 Engage -->
+
+<!-- Engage VOMS at RENCI -->
+<groupMapping name='engage-ucsdgrid' accountingVo='engage' accountingDesc='Engage'>
+   <userGroup className='gov.bnl.gums.VOMSGroup'
+   url='https://osg-engage.renci.org:8443/voms/Engage/services/VOMSAdmin'
+   persistenceFactory='mysql'
+   name='engage-ucsdgrid'
+   voGroup="/Engage/UCSDgrid"
+   sslCertfile='/etc/grid-security/http/httpcert.pem'
+   sslKey='/etc/grid-security/http/httpkey.pem'
+   matchFQAN="exact" acceptProxyWithoutFQAN='false'/>
+ <accountMapping className="gov.bnl.gums.AccountPoolMapper"
+   persistenceFactory="mysql"
+   name="ucsdgrid"/>
+</groupMapping>
+
+<groupMapping name='engage' accountingVo='engage' accountingDesc='Engage'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'     
+     url='https://osg-engage.renci.org:8443/voms/Engage/services/VOMSAdmin'     
+     persistenceFactory='mysql'      
+     name='engage'            
+     voGroup="/Engage"           
+     sslCertfile='/etc/grid-security/http/httpcert.pem'           
+     sslKey='/etc/grid-security/http/httpkey.pem'      
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper'            
+     groupName='engage' />
+</groupMapping>
+
+<!-- Engage VOMS at IU -->
+<groupMapping name='engage-ucsdgrid-iu' accountingVo='engage' accountingDesc='Engage'>
+   <userGroup className='gov.bnl.gums.VOMSGroup'
+   url='https://voms.grid.iu.edu:8443/voms/Engage/services/VOMSAdmin'
+   persistenceFactory='mysql'
+   name='engage-ucsdgrid-iu'
+   voGroup="/Engage/UCSDgrid"
+   sslCertfile='/etc/grid-security/http/httpcert.pem'
+   sslKey='/etc/grid-security/http/httpkey.pem'
+   matchFQAN="exact" acceptProxyWithoutFQAN='false'/>
+ <accountMapping className="gov.bnl.gums.AccountPoolMapper"
+   persistenceFactory="mysql"
+   name="ucsdgrid"/>
+</groupMapping>
+
+<groupMapping name='engage-iu' accountingVo='engage' accountingDesc='Engage'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'     
+     url='https://voms.grid.iu.edu:8443/voms/Engage/services/VOMSAdmin'     
+     persistenceFactory='mysql'      
+     name='engage-iu'            
+     voGroup="/Engage"           
+     sslCertfile='/etc/grid-security/http/httpcert.pem'           
+     sslKey='/etc/grid-security/http/httpkey.pem'      
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper'            
+     groupName='engage' />
+</groupMapping>
+
+<!-- 31 ILC -->
+<groupMapping name='ilc' accountingVo='ilc' accountingDesc='ILC'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.fnal.gov:8443/voms/ilc/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='ilc' 
+    voGroup="/ilc"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem' 
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='ilc' />
+</groupMapping>
+
+<!-- 32 NYSGRID -->
+<groupMapping name='nysgrid' accountingVo='nysgrid' accountingDesc='NYSGRID'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://dylan.ccr.buffalo.edu:8443/voms/nysgrid/services/VOMSAdmin'
+     persistenceFactory='mysql' 
+     name='nysgrid' 
+     voGroup="/nysgrid"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem' 
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+     groupName='nysgrid' />
+</groupMapping>
+
+<!-- 33 SBGrid -->
+<groupMapping name='sbgrid' accountingVo='sbgrid' accountingDesc='SBGrid'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://hpc.sbgrid.org:8443/voms/SBGrid/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='sbgrid'
+    voGroup="/SBGrid"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='sbgrid' />
+</groupMapping>
+
+<!-- 34 CIGI -->
+<groupMapping name='cigi' accountingVo='cigi' accountingDesc='CIGI'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cigi.uiuc.edu:8443/voms/cigi/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='cigi'
+    voGroup="/cigi"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='cigi' />
+</groupMapping>
+
+<!-- 35 IceCube -->
+<groupMapping name='icecube' accountingVo='icecube' accountingDesc='IceCube'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://grid-voms.desy.de:8443/voms/icecube/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='icecube' 
+    voGroup="/icecube"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem' 
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='icecube' />
+</groupMapping>
+
+<!-- 37 ALICE --> 
+
+<groupMapping name='alice' accountingVo='alice' accountingDesc='ALICE'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.cern.ch:8443/voms/alice/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='alice'
+    voGroup="/alice"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='alice' />
+</groupMapping>
+		    
+<!-- 40 GlueX -->
+
+<groupMapping name='gluex' accountingVo='gluex' accountingDesc='Gluex'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://gryphn.phys.uconn.edu:8443/voms/Gluex/services/VOMSAdmin'        
+    persistenceFactory='mysql'        
+    name='gluex'    voGroup="/Gluex"    
+    sslCertfile='/etc/grid-security/http/httpcert.pem'    
+    sslKey='/etc/grid-security/http/httpkey.pem'    
+    matchFQAN="exact"/>    
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='gluex' />
+</groupMapping>
+
+<!-- 41 GridUNESP -->
+
+<groupMapping name='gridunesp' accountingVo='gridunesp' accountingDesc='GridUNESP'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.grid.unesp.br:8443/voms/GridUNESP/services/VOMSAdmin'        
+    persistenceFactory='mysql'        
+    name='gridunesp'    voGroup="/GridUNESP"    
+    sslCertfile='/etc/grid-security/http/httpcert.pem'    
+    sslKey='/etc/grid-security/http/httpkey.pem'    
+    matchFQAN="exact"/>
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='gridunesp' />
+</groupMapping>
+					
+<!-- 42 DayaBay -->
+
+<groupMapping name='dayabay' accountingVo='dayabay' accountingDesc='DayaBay'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms.lbl.gov:8443/voms/dayabay/services/VOMSAdmin'        
+    persistenceFactory='mysql'        
+    name='dayabay'    
+    voGroup="/dayabay"    
+    sslCertfile='/etc/grid-security/http/httpcert.pem'    
+    sslKey='/etc/grid-security/http/httpkey.pem'    
+    matchFQAN="exact"/>
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='dayabay' />
+</groupMapping>
+
+<!-- 43 HCC -->
+
+<groupMapping name='hcc' accountingVo='hcc' accountingDesc='HCC'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://hcc-voms.unl.edu:8443/voms/hcc/services/VOMSAdmin'        
+    persistenceFactory='mysql'        
+    name='hcc'    voGroup="/hcc"    
+    sslCertfile='/etc/grid-security/http/httpcert.pem'    
+    sslKey='/etc/grid-security/http/httpkey.pem'    
+    matchFQAN="exact"/>
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='hcc' />
+</groupMapping>
+
+<!-- 44 belle -->
+
+<groupMapping name="belle" accountingVo="belle" accountingDesc="belle">
+	<userGroup className="gov.bnl.gums.VOMSGroup" 
+	url="https://voms.cc.kek.jp:8443/voms/belle/services/VOMSAdmin" 
+	persistenceFactory="mysql" 
+	name="belle" 
+	voGroup="/belle" 
+	sslCertfile="/etc/grid-security/http/httpcert.pem" 
+	sslKey="/etc/grid-security/http/httpkey.pem" 
+	matchFQAN="exact"/>
+	<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="belle"/>
+</groupMapping>
+
+<groupMapping name="bellepro" accountingVo="belle" accountingDesc="belle">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.cc.kek.jp:8443/voms/belle/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="bellepro" 
+    voGroup="/belle" 
+    voRole="production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="bellepro"/>
+</groupMapping>
+
+<!-- 45 CSIU -->
+<groupMapping name='csiu' accountingVo='csiu' accountingDesc='CSIU'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://voms.grid.iu.edu:8443/voms/CSIU/services/VOMSAdmin'
+     persistenceFactory='mysql' 
+     name='csiu' 
+     voGroup="/CSIU"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem' 
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
+     groupName='csiu' />
+</groupMapping>
+
+<!-- 46 SURAGrid -->
+<groupMapping name='suragrid' accountingVo='suragrid' accountingDesc='SURAGrid'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://voms.hpcc.ttu.edu:8443/voms/suragrid/services/VOMSAdmin'
+     persistenceFactory='mysql' 
+     name='suragrid' 
+     voGroup="/suragrid"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem' 
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
+     groupName='suragrid' />
+</groupMapping>
+
+<!-- 47 NEES -->
+<groupMapping name='nees' accountingVo='nees' accountingDesc='NEES'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://voms.fnal.gov:8443/voms/nees/services/VOMSAdmin'
+     persistenceFactory='mysql'
+     name='nees'
+     voGroup="/nees"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem'
+      matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
+     groupName='nees' />
+</groupMapping>
+
+<!-- 48 GCVO -->
+<groupMapping name='gcvo' accountingVo='gcvo' accountingDesc='GCVO'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://gc-voms.javeriana.edu.co:8443/voms/gcvo/services/VOMSAdmin'
+     persistenceFactory='mysql'
+     name='gcvo'
+     voGroup="/gcvo"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem'
+      matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
+     groupName='gcvo' />
+</groupMapping>
+
+<!-- 49 GCEDU -->
+<groupMapping name='gcedu' accountingVo='gcedu' accountingDesc='GCEDU'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://gc-voms.javeriana.edu.co:8443/voms/gcedu/services/VOMSAdmin'
+     persistenceFactory='mysql'
+     name='gcedu'
+     voGroup="/gcedu"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem'
+      matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+      groupName='gcedu' />
+</groupMapping>
+
+<!-- 50 SuperB -->
+<groupMapping name='superbvo.org' accountingVo='superbvo.org' accountingDesc='SuperB'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://voms2.cnaf.infn.it:8443/voms/superbvo.org/services/VOMSAdmin'
+     persistenceFactory='mysql'
+     name='superbvo.org'
+     voGroup="/superbvo.org"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem'
+      matchFQAN="exact" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+      groupName='superbvo.org' />
+</groupMapping>
+
+<groupMapping name="superbvo.orgprod" accountingVo="superbvo.org" accountingDesc="SuperB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url='https://voms2.cnaf.infn.it:8443/voms/superbvo.org/services/VOMSAdmin'
+    persistenceFactory="mysql" 
+    name="superbvo.orgprod" 
+    voGroup="/superbvo.org" 
+    voRole="ProductionManager" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem"
+    matchFQAN="exact" acceptProxyWithoutFQAN='true'/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="superbvo.orgprod"/>
+</groupMapping>
+
+<groupMapping name="superbvo.orgsoft" accountingVo="superbvo.org" accountingDesc="SuperB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url='https://voms2.cnaf.infn.it:8443/voms/superbvo.org/services/VOMSAdmin'
+    persistenceFactory="mysql" 
+    name="superbvo.orgsoft" 
+    voGroup="/superbvo.org" 
+    voRole="SoftwareManager" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem"
+    matchFQAN="exact" acceptProxyWithoutFQAN='true'/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="superbvo.orgsoft"/>
+</groupMapping>
+
+<!-- 51 DREAM -->
+<groupMapping name='dream' accountingVo='dream' accountingDesc='DREAM'>
+     <userGroup className='gov.bnl.gums.VOMSGroup'
+     url='https://voms.hpcc.ttu.edu:8443/voms/dream/services/VOMSAdmin'
+     persistenceFactory='mysql'
+     name='dream'
+     voGroup="/dream"
+     sslCertfile='/etc/grid-security/http/httpcert.pem'
+     sslKey='/etc/grid-security/http/httpkey.pem'
+     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+     <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+      groupName='dream' />
+</groupMapping>
+
+<!-- 52 LBNE -->
+<groupMapping name="lbne" accountingVo="lbne" accountingDesc="LBNE">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/lbne/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="lbne" 
+    voGroup="/lbne" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="lbne"/>
+</groupMapping>
+
+<groupMapping name="lbne-production" accountingVo="lbne" accountingDesc="LBNE">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/lbne/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="lbne-production" 
+    voGroup="/lbne" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="lbnepro"/>
+</groupMapping>
+
+<groupMapping name="lbneana" accountingVo="lbne" accountingDesc="LBNE">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/lbne/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="lbneana" 
+    voGroup="/lbne" 
+    voRole="Analysis" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="lbneana"/>
+</groupMapping>
+
+<groupMapping name="lbnegli" accountingVo="lbne" accountingDesc="LBNE">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/lbne/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="lbnegli" 
+    voGroup="/lbne" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="lbnegli"/>
+</groupMapping>
+
+<!-- 53 LSST -->
+<groupMapping name="lsst" accountingVo="lsst" accountingDesc="LSST">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/lsst/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="lsst" 
+    voGroup="/lsst" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="vo" acceptProxyWithoutFQAN="true"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="lsst"/>
+</groupMapping>
+
+<!-- 54 UC3 -->
+<groupMapping name="uc3" accountingVo="uc3" accountingDesc="UC3">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.grid.iu.edu:8443/voms/UC3/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="uc3" voGroup="/UC3" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="vo" acceptProxyWithoutFQAN="true"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="uc3"/>
+</groupMapping>
+
+<!-- 55 MCDRD -->
+<groupMapping name="mcdrd" accountingVo="mcdrd" accountingDesc="MCDRD">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/mcdrd/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="mcdrd" voGroup="/mcdrd" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="mcdrd"/>
+</groupMapping>
+
+<!-- 56 LQCD -->
+<groupMapping name="lqcd" accountingVo="lqcd" accountingDesc="LQCD">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/lqcd/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="lqcd" voGroup="/lqcd" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="lqcd"/>
+</groupMapping>
+
+<!-- 57 Auger -->
+<groupMapping name="auger" accountingVo="auger" accountingDesc="Auger">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms1.egee.cesnet.cz:8443/voms/auger/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="auger" voGroup="/auger" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="auger"/>
+</groupMapping>
+
+<!-- 58 glast.org -->
+<groupMapping name="glast.org" accountingVo="glast.org" accountingDesc="glast.org">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms2.cnaf.infn.it:8443/voms/glast.org/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="glast.org" voGroup="/glast.org" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="glast.org"/>
+</groupMapping>
+
+<!-- 59 ENMR -->
+<groupMapping name='enmr.eu' accountingVo='enmr.eu' accountingDesc='ENMR'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url='https://voms2.cnaf.infn.it:8443/voms/enmr.eu/services/VOMSAdmin'
+    persistenceFactory='mysql'
+    name='enmr.eu'
+    voGroup="/enmr.eu"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="vo" acceptProxyWithoutFQAN='true' />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='enmr.eu' />
+</groupMapping>
+
+<!-- 60 OSG Cross CE -->
+<groupMapping name="osgcrossce" accountingVo="osgcrossce" accountingDesc="OSGCrossCE">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.grid.iu.edu:8443/voms/osgcrossce/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="osgcrossce" 
+    voGroup="/osgcrossce" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="vo" acceptProxyWithoutFQAN="true"/>
+    <accountMapping className="gov.bnl.gums.AccountPoolMapper" 
+    persistenceFactory="mysql"
+    name="osgcrossce"/>
+</groupMapping>
+
+<!-- 61 CTA -->
+<groupMapping name="vo.cta.in2p3.fr" accountingVo="vo.cta.in2p3.fr" accountingDesc="CTA">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https:///cclcgvomsli01.in2p3.fr:8443/voms/vo.cta.in2p3.fr/services/VOMSAdmin" 
+    persistenceFactory="mysql" name="vo.cta.in2p3.fr" 
+    voGroup="/vo.cta.in2p3.fr" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="vo" acceptProxyWithoutFQAN="true"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="vo.cta.in2p3.fr"/>
+</groupMapping>
+
+<!-- 62 XENON -->
+<groupMapping name="xenon.biggrid.nl" accountingVo="xenon.biggrid.nl" accountingDesc="XENON">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.grid.sara.nl:8443/voms/xenon.biggrid.nl/services/VOMSAdmin" 
+    persistenceFactory="mysql" name="xenon.biggrid.nl" 
+    voGroup="/xenon.biggrid.nl" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="vo" acceptProxyWithoutFQAN="true"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="xenon.biggrid.nl"/>
+</groupMapping> 
+</groupMappings>
+
+<hostGroups>
+<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdfdev-fnal,cdffgrid-fnal,cdfnam-fnal,cdftestcaf-fnal,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,accelerator,argoneut,cdms,minerva,miniboone,minos,mipp,mu2e,nova,numi,patriot,theory,fermilab-test,uboone,uboonepro,uboonegli,ubooneana,map,gm2,coupp,fermilab-production,accelerator-production,argoneut-production,cdms-production,minerva-production,miniboone-production,minos-production,mipp-production,nova-production,numi-production,patriot-production,theory-production,map-production,gm2-production,argoneutana,minervaana,minosana,novaana,mapana,gm2ana,fggli,argoneutgli,minervagli,minosgli,novagli,mapgli,gm2gli,fgadmin,darkside,darksideana,darksidecal,darksidedat,darksidegli,darksidepro,seaquest,seaquestpro,seaquestana,seaquestgli,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,i2u2,osg,osg-goc,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,gpn,compbiogrid,engage-ucsdgrid,engage,engage-ucsdgrid-iu,engage-iu,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,dayabay,hcc,belle,bellepro,csiu,suragrid,nees,gcvo,gcedu,superbvo.org,superbvo.orgprod,superbvo.orgsoft,dream,lbne,lbne-production,lbneana,lbnegli,lsst,uc3,mcdrd,lqcd,auger,glast.org,enmr.eu,osgcrossce,vo.cta.in2p3.fr,xenon.biggrid.nl"/>
+</hostGroups>
+</gums>
