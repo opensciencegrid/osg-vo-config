@@ -446,6 +446,16 @@
 			name='osg'
 			description=''
 			persistenceFactory='mysql'
+			baseUrl='https://voms.grid.iu.edu.org:8443/voms/osg'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='osg1'
+			description=''
+			persistenceFactory='mysql'
 			baseUrl='https://voms.opensciencegrid.org:8443/voms/osg'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
@@ -1715,7 +1725,7 @@
 			name='osg'
 			access='read self'
 			description=''
-			vomsServer='osg'
+			vomsServer='osg1'
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/osg'/>
