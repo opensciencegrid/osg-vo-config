@@ -255,6 +255,19 @@
     groupName="fnalgrid"/>
 </groupMapping>
 
+<groupMapping name="lariat" accountingVo="latiat" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="lariat" 
+    voGroup="/fermilab/lariat" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="lariat"/>
+</groupMapping>
+
 <groupMapping name="accelerator" accountingVo="accelerator" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
@@ -521,6 +534,21 @@
     groupName="fermipro"/>
 </groupMapping>
 
+
+<groupMapping name="lariat-production" accountingVo="lariat" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="lariat-production" 
+    voGroup="/fermilab/lariat" 
+    voRole="Production" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="lariatpro"/>
+</groupMapping>
+
 <groupMapping name="accelerator-production" accountingVo="accelerator" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
@@ -713,6 +741,20 @@
     groupName="argoneutana"/>
 </groupMapping>
 
+<groupMapping name="laraitana" accountingVo="lariat" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="lariatana" 
+    voGroup="/fermilab/lariat" 
+    voRole="Analysis" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="lariatana"/>
+</groupMapping>
+
 <groupMapping name="minervaana" accountingVo="minerva" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
@@ -806,6 +848,20 @@
     matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
     groupName="argoneutgli"/>
+</groupMapping>
+
+<groupMapping name="lariatgli" accountingVo="lariat" accountingDesc="FERMILAB">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
+    persistenceFactory="mysql" 
+    name="lariatgli" 
+    voGroup="/fermilab/larait" 
+    voRole="pilot" 
+    sslCertfile="/etc/grid-security/http/httpcert.pem" 
+    sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="lariatgli"/>
 </groupMapping>
 
 <groupMapping name="minervagli" accountingVo="minerva" accountingDesc="FERMILAB">
@@ -2045,6 +2101,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 </groupMappings>
 
 <hostGroups>
-<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdfdev-fnal,cdffgrid-fnal,cdfnam-fnal,cdftestcaf-fnal,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,accelerator,argoneut,cdms,minerva,miniboone,minos,mipp,mu2e,nova,numi,patriot,theory,fermilab-test,uboone,uboonepro,uboonegli,ubooneana,map,gm2,coupp,fermilab-production,accelerator-production,argoneut-production,cdms-production,minerva-production,miniboone-production,minos-production,mipp-production,nova-production,numi-production,patriot-production,theory-production,map-production,gm2-production,argoneutana,minervaana,minosana,novaana,mapana,gm2ana,fggli,argoneutgli,minervagli,minosgli,novagli,mapgli,gm2gli,fgadmin,darkside,darksideana,darksidecal,darksidedat,darksidegli,darksidepro,seaquest,seaquestpro,seaquestana,seaquestgli,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,i2u2,osg,osg-goc,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,gpn,compbiogrid,engage-ucsdgrid,engage,engage-ucsdgrid-iu,engage-iu,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,dayabay,hcc,belle,bellepro,csiu,suragrid,nees,gcvo,gcedu,superbvo.org,superbvo.orgprod,superbvo.orgsoft,dream,lbne,lbne-production,lbneana,lbnegli,lsst,uc3,mcdrd,lqcd,auger,glast.org,enmr.eu,osgcrossce,vo.cta.in2p3.fr,xenon.biggrid.nl"/>
+<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdfdev-fnal,cdffgrid-fnal,cdfnam-fnal,cdftestcaf-fnal,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,lariat,accelerator,argoneut,cdms,minerva,miniboone,minos,mipp,mu2e,nova,numi,patriot,theory,fermilab-test,uboone,uboonepro,uboonegli,ubooneana,map,gm2,coupp,fermilab-production,lariat-production,accelerator-production,argoneut-production,cdms-production,minerva-production,miniboone-production,minos-production,mipp-production,nova-production,numi-production,patriot-production,theory-production,map-production,gm2-production,argoneutana,lariatana,minervaana,minosana,novaana,mapana,gm2ana,fggli,argoneutgli,lariatgli,minervagli,minosgli,novagli,mapgli,gm2gli,fgadmin,darkside,darksideana,darksidecal,darksidedat,darksidegli,darksidepro,seaquest,seaquestpro,seaquestana,seaquestgli,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,i2u2,osg,osg-goc,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,gpn,compbiogrid,engage-ucsdgrid,engage,engage-ucsdgrid-iu,engage-iu,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,dayabay,hcc,belle,bellepro,csiu,suragrid,nees,gcvo,gcedu,superbvo.org,superbvo.orgprod,superbvo.orgsoft,dream,lbne,lbne-production,lbneana,lbnegli,lsst,uc3,mcdrd,lqcd,auger,glast.org,enmr.eu,osgcrossce,vo.cta.in2p3.fr,xenon.biggrid.nl"/>
 </hostGroups>
 </gums>
