@@ -31,7 +31,6 @@
 "alice" "voms.cern.ch" "15000" "/DC=ch/DC=cern/OU=computers/CN=voms.cern.ch" "alice"
 "Gluex" "gryphn.phys.uconn.edu" "15014" "/DC=org/DC=doegrids/OU=Services/CN=http/gryphn.phys.uconn.edu" "Gluex"
 "GridUNESP" "voms.grid.unesp.br" "15000" "/DC=org/DC=doegrids/OU=Services/CN=http/voms.grid.unesp.br" "GridUNESP" 
-"dayabay" "voms.lbl.gov" "15000" "/DC=org/DC=doegrids/OU=Services/CN=voms.lbl.gov" "dayabay"
 "hcc" "hcc-voms.unl.edu" "15000" "/DC=org/DC=doegrids/OU=Services/CN=http/hcc-voms.unl.edu" "hcc" 
 "belle" "voms.cc.kek.jp" "15020" "/C=JP/O=KEK/OU=CRC/CN=host/voms.cc.kek.jp" "belle" 
 "CSIU" "voms.grid.iu.edu" "15008" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu" "CSIU" 
