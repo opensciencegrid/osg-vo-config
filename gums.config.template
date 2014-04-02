@@ -133,16 +133,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='dayabay'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.lbl.gov:8443/voms/dayabay'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='des'
 			description=''
 			persistenceFactory='mysql'
@@ -1019,15 +1009,6 @@
 			role='production'/>
 
 		<vomsUserGroup
-			name='dayabay'
-			access='read self'
-			description=''
-			vomsServer='dayabay'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/dayabay'/>
-
-		<vomsUserGroup
 			name='des'
 			access='read self'
 			description=''
@@ -1222,6 +1203,45 @@
 			role='lcgadmin'/>
 
 		<vomsUserGroup
+			name='gendetrd'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/gendetrd'/>
+
+		<vomsUserGroup
+			name='gendetrd-production'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/gendetrd'
+			role='Production'/>
+
+		<vomsUserGroup
+			name='gendetrdana'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/gendetrd'
+			role='Analysis'/>
+
+		<vomsUserGroup
+			name='gendetrdgli'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/gendetrd'
+			role='pilot'/>
+
+		<vomsUserGroup
 			name='glast.org'
 			access='read self'
 			description=''
@@ -1340,6 +1360,84 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/ilc'/>
+
+		<vomsUserGroup
+			name='lar1'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/lar1'/>
+
+		<vomsUserGroup
+			name='lar1-production'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/lar1'
+			role='Production'/>
+
+		<vomsUserGroup
+			name='lar1ana'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/lar1'
+			role='Analysis'/>
+
+		<vomsUserGroup
+			name='lar1gli'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/lar1'
+			role='pilot'/>
+
+		<vomsUserGroup
+			name='lariat'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/lariat'/>
+
+		<vomsUserGroup
+			name='lariat-production'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/lariat'
+			role='Production'/>
+
+		<vomsUserGroup
+			name='lariatana'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/lariat'
+			role='Analysis'/>
+
+		<vomsUserGroup
+			name='lariatgli'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/lariat'
+			role='pilot'/>
 
 		<vomsUserGroup
 			name='lbne'
@@ -1711,6 +1809,45 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/nysgrid'/>
+
+		<vomsUserGroup
+			name='okra'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/okra'/>
+
+		<vomsUserGroup
+			name='okra-production'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/okra'
+			role='Production'/>
+
+		<vomsUserGroup
+			name='okraana'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/okra'
+			role='Analysis'/>
+
+		<vomsUserGroup
+			name='okragli'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab/okra'
+			role='pilot'/>
 
 		<vomsUserGroup
 			name='ops'
@@ -2122,11 +2259,6 @@
 			accountName='darksidepro'/>
 
 		<groupAccountMapper
-			name='dayabay'
-			description=''
-			accountName='dayabay'/>
-
-		<groupAccountMapper
 			name='des'
 			description=''
 			accountName='des'/>
@@ -2207,6 +2339,26 @@
 			accountName='geant4'/>
 
 		<groupAccountMapper
+			name='gendetrd'
+			description=''
+			accountName='gendetrd'/>
+
+		<groupAccountMapper
+			name='gendetrdana'
+			description=''
+			accountName='gendetrdana'/>
+
+		<groupAccountMapper
+			name='gendetrdgli'
+			description=''
+			accountName='gendetrdgli'/>
+
+		<groupAccountMapper
+			name='gendetrdpro'
+			description=''
+			accountName='gendetrdpro'/>
+
+		<groupAccountMapper
 			name='glast.org'
 			description=''
 			accountName='glast.org'/>
@@ -2270,6 +2422,46 @@
 			name='ilc'
 			description=''
 			accountName='ilc'/>
+
+		<groupAccountMapper
+			name='lar1'
+			description=''
+			accountName='lar1'/>
+
+		<groupAccountMapper
+			name='lar1ana'
+			description=''
+			accountName='lar1ana'/>
+
+		<groupAccountMapper
+			name='lar1gli'
+			description=''
+			accountName='lar1gli'/>
+
+		<groupAccountMapper
+			name='lar1pro'
+			description=''
+			accountName='lar1pro'/>
+
+		<groupAccountMapper
+			name='lariat'
+			description=''
+			accountName='lariat'/>
+
+		<groupAccountMapper
+			name='lariatana'
+			description=''
+			accountName='lariatana'/>
+
+		<groupAccountMapper
+			name='lariatgli'
+			description=''
+			accountName='lariatgli'/>
+
+		<groupAccountMapper
+			name='lariatpro'
+			description=''
+			accountName='lariatpro'/>
 
 		<groupAccountMapper
 			name='lbne'
@@ -2445,6 +2637,26 @@
 			name='nysgrid'
 			description=''
 			accountName='nysgrid'/>
+
+		<groupAccountMapper
+			name='okra'
+			description=''
+			accountName='okra'/>
+
+		<groupAccountMapper
+			name='okraana'
+			description=''
+			accountName='okraana'/>
+
+		<groupAccountMapper
+			name='okragli'
+			description=''
+			accountName='okragli'/>
+
+		<groupAccountMapper
+			name='okrapro'
+			description=''
+			accountName='okrapro'/>
 
 		<groupAccountMapper
 			name='ops'
@@ -2958,14 +3170,6 @@
 			accountMappers='darksidepro'/>
 
 		<groupToAccountMapping
-			name='dayabay'
-			description=''
-			accountingVoSubgroup='dayabay'
-			accountingVo='DayaBay'
-			userGroups='dayabay'
-			accountMappers='dayabay'/>
-
-		<groupToAccountMapping
 			name='des'
 			description=''
 			accountingVoSubgroup='des'
@@ -3134,6 +3338,38 @@
 			accountMappers='geant4'/>
 
 		<groupToAccountMapping
+			name='gendetrd'
+			description=''
+			accountingVoSubgroup='gendetrd'
+			accountingVo='FERMILAB'
+			userGroups='gendetrd'
+			accountMappers='gendetrd'/>
+
+		<groupToAccountMapping
+			name='gendetrd-production'
+			description=''
+			accountingVoSubgroup='gendetrd'
+			accountingVo='FERMILAB'
+			userGroups='gendetrd-production'
+			accountMappers='gendetrdpro'/>
+
+		<groupToAccountMapping
+			name='gendetrdana'
+			description=''
+			accountingVoSubgroup='gendetrd'
+			accountingVo='FERMILAB'
+			userGroups='gendetrdana'
+			accountMappers='gendetrdana'/>
+
+		<groupToAccountMapping
+			name='gendetrdgli'
+			description=''
+			accountingVoSubgroup='gendetrd'
+			accountingVo='FERMILAB'
+			userGroups='gendetrdgli'
+			accountMappers='gendetrdgli'/>
+
+		<groupToAccountMapping
 			name='glast.org'
 			description=''
 			accountingVoSubgroup='glast.org'
@@ -3236,6 +3472,70 @@
 			accountingVo='ILC'
 			userGroups='ilc'
 			accountMappers='ilc'/>
+
+		<groupToAccountMapping
+			name='lar1'
+			description=''
+			accountingVoSubgroup='lar1'
+			accountingVo='FERMILAB'
+			userGroups='lar1'
+			accountMappers='lar1'/>
+
+		<groupToAccountMapping
+			name='lar1-production'
+			description=''
+			accountingVoSubgroup='lar1'
+			accountingVo='FERMILAB'
+			userGroups='lar1-production'
+			accountMappers='lar1pro'/>
+
+		<groupToAccountMapping
+			name='lar1ana'
+			description=''
+			accountingVoSubgroup='lar1'
+			accountingVo='FERMILAB'
+			userGroups='lar1ana'
+			accountMappers='lar1ana'/>
+
+		<groupToAccountMapping
+			name='lar1gli'
+			description=''
+			accountingVoSubgroup='lar1'
+			accountingVo='FERMILAB'
+			userGroups='lar1gli'
+			accountMappers='lar1gli'/>
+
+		<groupToAccountMapping
+			name='lariat'
+			description=''
+			accountingVoSubgroup='latiat'
+			accountingVo='FERMILAB'
+			userGroups='lariat'
+			accountMappers='lariat'/>
+
+		<groupToAccountMapping
+			name='lariat-production'
+			description=''
+			accountingVoSubgroup='lariat'
+			accountingVo='FERMILAB'
+			userGroups='lariat-production'
+			accountMappers='lariatpro'/>
+
+		<groupToAccountMapping
+			name='lariatana'
+			description=''
+			accountingVoSubgroup='lariat'
+			accountingVo='FERMILAB'
+			userGroups='lariatana'
+			accountMappers='lariatana'/>
+
+		<groupToAccountMapping
+			name='lariatgli'
+			description=''
+			accountingVoSubgroup='lariat'
+			accountingVo='FERMILAB'
+			userGroups='lariatgli'
+			accountMappers='lariatgli'/>
 
 		<groupToAccountMapping
 			name='lbne'
@@ -3542,6 +3842,38 @@
 			accountMappers='nysgrid'/>
 
 		<groupToAccountMapping
+			name='okra'
+			description=''
+			accountingVoSubgroup='okra'
+			accountingVo='FERMILAB'
+			userGroups='okra'
+			accountMappers='okra'/>
+
+		<groupToAccountMapping
+			name='okra-production'
+			description=''
+			accountingVoSubgroup='okra'
+			accountingVo='FERMILAB'
+			userGroups='okra-production'
+			accountMappers='okrapro'/>
+
+		<groupToAccountMapping
+			name='okraana'
+			description=''
+			accountingVoSubgroup='okra'
+			accountingVo='FERMILAB'
+			userGroups='okraana'
+			accountMappers='okraana'/>
+
+		<groupToAccountMapping
+			name='okragli'
+			description=''
+			accountingVoSubgroup='okra'
+			accountingVo='FERMILAB'
+			userGroups='okragli'
+			accountMappers='okragli'/>
+
+		<groupToAccountMapping
 			name='ops'
 			description=''
 			accountingVoSubgroup='ops'
@@ -3802,7 +4134,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, seaquest, seaquestpro, seaquestana, seaquestgli, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, engage-ucsdgrid, engage, engage-ucsdgrid-iu, engage-iu, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, dayabay, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, lariat, gendetrd, lar1, okra, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, lariat-production, gendetrd-production, lar1-production, okra-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, lariatana, gendetrdana, lar1ana, okraana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, lariatgli, gendetrdgli, lar1gli, okragli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, seaquest, seaquestpro, seaquestana, seaquestgli, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, engage-ucsdgrid, engage, engage-ucsdgrid-iu, engage-iu, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
