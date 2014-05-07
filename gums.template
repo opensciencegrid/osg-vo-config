@@ -1793,7 +1793,7 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 <!-- 31 ILC -->
 <groupMapping name='ilc' accountingVo='ilc' accountingDesc='ILC'>
     <userGroup className='gov.bnl.gums.VOMSGroup'
-    url='https://voms.fnal.gov:8443/voms/ilc/services/VOMSAdmin'
+    url='https://grid-voms.desy.de:8443/voms/ilc/services/VOMSAdmin'
     persistenceFactory='mysql'
     name='ilc' 
     voGroup="/ilc"
