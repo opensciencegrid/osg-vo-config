@@ -1339,7 +1339,7 @@
 <!-- 11 USCMS-->
 <groupMapping name="uscmsuser" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="uscmsuser" voGroup="/cms/uscms"
 voRole="cmsuser"
@@ -1353,7 +1353,7 @@ name="uscmsPool"/>
 
 <groupMapping name="cmsuser" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsuser" voGroup="/cms"
 voRole="cmsuser"
@@ -1367,7 +1367,7 @@ name="uscmsPool"/>
 
 <groupMapping name="uscmst2admin" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="uscmst2admin" voGroup="/cms/uscms"
 voRole="cmst2admin"
@@ -1380,7 +1380,7 @@ groupName="cmst2admin"/>
 
 <groupMapping name="uscmssoft" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmssoft" voGroup="/cms/uscms"
 voRole="cmssoft"
@@ -1393,7 +1393,7 @@ groupName="cmssoft"/>
 
 <groupMapping name="cmssoft" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmssoft2" voGroup="/cms"
 voRole="cmssoft"
@@ -1406,7 +1406,7 @@ groupName="cmssoft"/>
 
 <groupMapping name="uscmsprod" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsprod" voGroup="/cms/uscms"
 voRole="cmsprod"
@@ -1419,7 +1419,7 @@ groupName="cmsprod"/>
 
 <groupMapping name="cmsphedex2" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsphedex2" voGroup="/cms"
 voRole="cmsphedex"
@@ -1432,7 +1432,7 @@ groupName="cmsphedex"/>
 
 <groupMapping name="uscmsphedex" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsphedex" voGroup="/cms/uscms"
 voRole="cmsphedex"
@@ -1445,7 +1445,7 @@ groupName="cmsphedex"/>
 
 <groupMapping name="uscmsfrontier" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsfrontier"
 voGroup="/cms/uscms" voRole="cmsfrontier"
@@ -1458,7 +1458,7 @@ groupName="cmsfrontier"/>
 
 <groupMapping name="cmsuser-null" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsuser-null" voGroup="/cms"
 matchFQAN="vo"
@@ -1472,7 +1472,7 @@ name="uscmsPool"/>
 
 <groupMapping name="cmsproduction" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.fnal.gov:8443/voms/cms/services/VOMSAdmin"
+url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsproduction" voGroup="/cms" voRole="production"
 matchFQAN="exact"
