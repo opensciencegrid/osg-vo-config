@@ -605,7 +605,7 @@
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
-    name="gendetrd-production" 
+    name="lar1-production" 
     voGroup="/fermilab/lar1" 
     voRole="Production" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
@@ -619,7 +619,7 @@
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
-    name="gendetrd-production" 
+    name="okra-production" 
     voGroup="/fermilab/okra" 
     voRole="Production" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
@@ -821,7 +821,7 @@
     groupName="argoneutana"/>
 </groupMapping>
 
-<groupMapping name="laraitana" accountingVo="lariat" accountingDesc="FERMILAB">
+<groupMapping name="lariatana" accountingVo="lariat" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
@@ -977,7 +977,7 @@
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
     name="lariatgli" 
-    voGroup="/fermilab/larait" 
+    voGroup="/fermilab/lariat" 
     voRole="pilot" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
     sslKey="/etc/grid-security/http/httpkey.pem" 
