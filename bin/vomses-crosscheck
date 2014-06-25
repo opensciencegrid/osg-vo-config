@@ -5,16 +5,22 @@ import os
 import glob
 import sys
 
-vomses_path = "/etc/vomses"
-vomsdir     = "/etc/grid-security/vomsdir"
+vomses_path = "vomses"
+vomsdir     = "vomsdir"
 
 def usage():
     print "usage: %s [vomses vomsdir]" % os.path.basename(__file__)
+    print "   or: %s --system" % os.path.basename(__file__)
+    print
+    print "Use --system for /etc/vomses and /etc/grid-security/vomsdir"
     sys.exit()
 
 if len(sys.argv) == 3:
     vomses_path = sys.argv[1]
     vomsdir     = sys.argv[2]
+elif len(sys.argv) == 2 and sys.argv[1] == '--system':
+    vomses_path = "/etc/vomses"
+    vomsdir     = "/etc/grid-security/vomsdir"
 elif len(sys.argv) != 1:
     usage()
 
