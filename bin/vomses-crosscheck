@@ -1,0 +1,82 @@
+#!/usr/bin/python
+
+import re
+import os
+import glob
+import sys
+
+vomses_path = "/etc/vomses"
+vomsdir     = "/etc/grid-security/vomsdir"
+
+def usage():
+    print "usage: %s [vomses vomsdir]" % os.path.basename(__file__)
+    sys.exit()
+
+if len(sys.argv) == 3:
+    vomses_path = sys.argv[1]
+    vomsdir     = sys.argv[2]
+elif len(sys.argv) != 1:
+    usage()
+
+for path in (vomses_path, vomsdir):
+    if not os.path.exists(path):
+        print "%s does not exist..." % path
+        usage()
+
+class vomses_entry():
+    def __init__(self,arr):
+        self.alias, self.host, self.port, self.dn, self.vo = arr
+        self.lsc = os.path.join(self.alias, self.host) + ".lsc"
+
+class lsc_entry():
+    def __init__(self,arr):
+        self.dn, self.ca = arr
+
+def get_vomses():
+    vomses = []
+    for line in open(vomses_path):
+        m = re.search(
+            r'^"([^"]+)"\s+"([^"]+)"\s+"([^"]+)"\s+"([^"]+)"\s+"([^"]+)"\s*$',
+            line
+        )
+        if m:
+            vomses.append(vomses_entry(m.groups()))
+    return vomses
+
+def get_lsc(entry):
+    path = os.path.join(vomsdir, entry.lsc)
+    if os.path.exists(path):
+        return lsc_entry(line.rstrip() for line in open(path))
+    else:
+        return None
+
+vomses_entries = get_vomses()
+
+missing_lsc_files      = []
+missing_vomses_entries = []
+dn_mismatches          = []
+
+for entry in vomses_entries:
+    lsc = get_lsc(entry)
+    if lsc is None:
+        missing_lsc_files += ["Missing lsc file: %s" % entry.lsc]
+    elif entry.dn != lsc.dn:
+        dn_mismatches += [
+            "DNs don't match for %s:" % entry.lsc,
+            "  vomses: %s" % entry.dn,
+            "     lsc: %s" % lsc.dn
+        ]
+
+vomses_lsc_files = set(entry.lsc for entry in vomses_entries)
+
+os.chdir(vomsdir)
+for lsc_path in glob.glob("*/*.lsc"):
+    if lsc_path not in vomses_lsc_files:
+        missing_vomses_entries += ["No vomses entry for %s" % lsc_path]
+
+for x in (missing_lsc_files, missing_vomses_entries, dn_mismatches):
+    if x:
+        for line in x:
+            print line
+        print
+
