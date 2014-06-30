@@ -19,8 +19,6 @@
 "ops" "lcg-voms.cern.ch" "15009" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch" "ops"
 "gpn" "cluster.greatplains.net" "15001" "/DC=org/DC=doegrids/OU=Services/CN=http/cluster.greatplains.net" "gpn"
 "CompBioGrid" "voms.cam.uchc.edu" "15001" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms/voms.cam.uchc.edu" "CompBioGrid"
-"Engage" "osg-engage.renci.org" "15001" "/DC=org/DC=doegrids/OU=Services/CN=osg-engage.renci.org" "Engage"
-"Engage" "voms.grid.iu.edu" "15010" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu" "Engage"
 "osg" "voms.grid.iu.edu" "15027" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu" "osg"
 "NYSGRID" "dylan.ccr.buffalo.edu" "15001" "/DC=org/DC=doegrids/OU=Services/CN=http/dylan.ccr.buffalo.edu" "NYSGRID"
 "SBGrid" "hpc.sbgrid.org" "15002" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=hpc.sbgrid.org" "SBGrid"
@@ -71,3 +69,4 @@
 "lqcd" "voms2.fnal.gov" "15024" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "lqcd"
 "osg" "voms1.opensciencegrid.org" "15027" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms1.opensciencegrid.org" "osg"
 "osg" "voms2.opensciencegrid.org" "15027" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms2.opensciencegrid.org" "osg"
+"snoplus.snolab.ca" "voms.gridpp.ac.uk" "15503" "/C=UK/O=eScience/OU=Manchester/L=HEP/CN=voms.gridpp.ac.uk" "snoplus.snolab.ca"
