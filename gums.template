@@ -1732,64 +1732,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
      groupName='compbiogrid' />
 </groupMapping>
 
-<!-- 30 Engage -->
-
-<!-- Engage VOMS at RENCI -->
-<groupMapping name='engage-ucsdgrid' accountingVo='engage' accountingDesc='Engage'>
-   <userGroup className='gov.bnl.gums.VOMSGroup'
-   url='https://osg-engage.renci.org:8443/voms/Engage/services/VOMSAdmin'
-   persistenceFactory='mysql'
-   name='engage-ucsdgrid'
-   voGroup="/Engage/UCSDgrid"
-   sslCertfile='/etc/grid-security/http/httpcert.pem'
-   sslKey='/etc/grid-security/http/httpkey.pem'
-   matchFQAN="exact" acceptProxyWithoutFQAN='false'/>
- <accountMapping className="gov.bnl.gums.AccountPoolMapper"
-   persistenceFactory="mysql"
-   name="ucsdgrid"/>
-</groupMapping>
-
-<groupMapping name='engage' accountingVo='engage' accountingDesc='Engage'>
-     <userGroup className='gov.bnl.gums.VOMSGroup'     
-     url='https://osg-engage.renci.org:8443/voms/Engage/services/VOMSAdmin'     
-     persistenceFactory='mysql'      
-     name='engage'            
-     voGroup="/Engage"           
-     sslCertfile='/etc/grid-security/http/httpcert.pem'           
-     sslKey='/etc/grid-security/http/httpkey.pem'      
-     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
-     <accountMapping className='gov.bnl.gums.GroupAccountMapper'            
-     groupName='engage' />
-</groupMapping>
-
-<!-- Engage VOMS at IU -->
-<groupMapping name='engage-ucsdgrid-iu' accountingVo='engage' accountingDesc='Engage'>
-   <userGroup className='gov.bnl.gums.VOMSGroup'
-   url='https://voms.grid.iu.edu:8443/voms/Engage/services/VOMSAdmin'
-   persistenceFactory='mysql'
-   name='engage-ucsdgrid-iu'
-   voGroup="/Engage/UCSDgrid"
-   sslCertfile='/etc/grid-security/http/httpcert.pem'
-   sslKey='/etc/grid-security/http/httpkey.pem'
-   matchFQAN="exact" acceptProxyWithoutFQAN='false'/>
- <accountMapping className="gov.bnl.gums.AccountPoolMapper"
-   persistenceFactory="mysql"
-   name="ucsdgrid"/>
-</groupMapping>
-
-<groupMapping name='engage-iu' accountingVo='engage' accountingDesc='Engage'>
-     <userGroup className='gov.bnl.gums.VOMSGroup'     
-     url='https://voms.grid.iu.edu:8443/voms/Engage/services/VOMSAdmin'     
-     persistenceFactory='mysql'      
-     name='engage-iu'            
-     voGroup="/Engage"           
-     sslCertfile='/etc/grid-security/http/httpcert.pem'           
-     sslKey='/etc/grid-security/http/httpkey.pem'      
-     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
-     <accountMapping className='gov.bnl.gums.GroupAccountMapper'            
-     groupName='engage' />
-</groupMapping>
-
 <!-- 31 ILC -->
 <groupMapping name='ilc' accountingVo='ilc' accountingDesc='ILC'>
     <userGroup className='gov.bnl.gums.VOMSGroup'
