@@ -173,26 +173,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='engage'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://osg-engage.renci.org:8443/voms/Engage'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
-			name='engage1'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.grid.iu.edu:8443/voms/Engage'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='enmr.eu'
 			description=''
 			persistenceFactory='mysql'
@@ -477,6 +457,16 @@
 			description=''
 			persistenceFactory='mysql'
 			baseUrl='https://hpc.sbgrid.org:8443/voms/SBGrid'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='snoplus.snolab.ca'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.gridpp.ac.uk:8443/voms/snoplus.snolab.ca'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -1071,42 +1061,6 @@
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/dzero/users'/>
-
-		<vomsUserGroup
-			name='engage'
-			access='read self'
-			description=''
-			vomsServer='engage'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/Engage'/>
-
-		<vomsUserGroup
-			name='engage-iu'
-			access='read self'
-			description=''
-			vomsServer='engage1'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/Engage'/>
-
-		<vomsUserGroup
-			name='engage-ucsdgrid'
-			access='read self'
-			description=''
-			vomsServer='engage'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/Engage/UCSDgrid'/>
-
-		<vomsUserGroup
-			name='engage-ucsdgrid-iu'
-			access='read self'
-			description=''
-			vomsServer='engage1'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/Engage/UCSDgrid'/>
 
 		<vomsUserGroup
 			name='enmr.eu'
@@ -1962,6 +1916,15 @@
 			role='production'/>
 
 		<vomsUserGroup
+			name='snoplus.snolab.ca'
+			access='read self'
+			description=''
+			vomsServer='snoplus.snolab.ca'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/snoplus.snolab.ca'/>
+
+		<vomsUserGroup
 			name='star'
 			access='read self'
 			description=''
@@ -2277,11 +2240,6 @@
 			name='dzeroana'
 			description=''
 			accountName='dzeroana'/>
-
-		<groupAccountMapper
-			name='engage'
-			description=''
-			accountName='engage'/>
 
 		<groupAccountMapper
 			name='enmr.eu'
@@ -2725,6 +2683,11 @@
 			accountName='seaquestpro'/>
 
 		<groupAccountMapper
+			name='snoplus.snolab.ca'
+			description=''
+			accountName='snoplus.snolab.ca'/>
+
+		<groupAccountMapper
 			name='star'
 			description=''
 			accountName='star'/>
@@ -2778,12 +2741,6 @@
 			name='uc3'
 			description=''
 			accountName='uc3'/>
-
-		<accountPoolMapper
-			name='ucsdgrid'
-			description=''
-			persistenceFactory='mysql'
-			accountPool='ucsdgrid'/>
 
 		<groupAccountMapper
 			name='usatlas1'
@@ -3224,38 +3181,6 @@
 			accountingVo='DZERO'
 			userGroups='dzerouser'
 			accountMappers='samgrid'/>
-
-		<groupToAccountMapping
-			name='engage'
-			description=''
-			accountingVoSubgroup='engage'
-			accountingVo='Engage'
-			userGroups='engage'
-			accountMappers='engage'/>
-
-		<groupToAccountMapping
-			name='engage-iu'
-			description=''
-			accountingVoSubgroup='engage'
-			accountingVo='Engage'
-			userGroups='engage-iu'
-			accountMappers='engage'/>
-
-		<groupToAccountMapping
-			name='engage-ucsdgrid'
-			description=''
-			accountingVoSubgroup='engage'
-			accountingVo='Engage'
-			userGroups='engage-ucsdgrid'
-			accountMappers='ucsdgrid'/>
-
-		<groupToAccountMapping
-			name='engage-ucsdgrid-iu'
-			description=''
-			accountingVoSubgroup='engage'
-			accountingVo='Engage'
-			userGroups='engage-ucsdgrid-iu'
-			accountMappers='ucsdgrid'/>
 
 		<groupToAccountMapping
 			name='enmr.eu'
@@ -3970,6 +3895,14 @@
 			accountMappers='seaquestpro'/>
 
 		<groupToAccountMapping
+			name='snoplus.snolab.ca'
+			description=''
+			accountingVoSubgroup='snoplus.snolab.ca'
+			accountingVo='snoplus.snolab.ca'
+			userGroups='snoplus.snolab.ca'
+			accountMappers='snoplus.snolab.ca'/>
+
+		<groupToAccountMapping
 			name='star'
 			description=''
 			accountingVoSubgroup='star'
@@ -4134,7 +4067,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, lariat, gendetrd, lar1, okra, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, lariat-production, gendetrd-production, lar1-production, okra-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, lariatana, gendetrdana, lar1ana, okraana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, lariatgli, gendetrdgli, lar1gli, okragli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, seaquest, seaquestpro, seaquestana, seaquestgli, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, engage-ucsdgrid, engage, engage-ucsdgrid-iu, engage-iu, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, lariat, gendetrd, lar1, okra, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, lariat-production, gendetrd-production, lar1-production, okra-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, lariatana, gendetrdana, lar1ana, okraana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, lariatgli, gendetrdgli, lar1gli, okragli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, seaquest, seaquestpro, seaquestana, seaquestgli, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
