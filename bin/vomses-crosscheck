@@ -76,7 +76,7 @@ for entry in vomses_entries:
 vomses_lsc_files = set(entry.lsc for entry in vomses_entries)
 
 os.chdir(vomsdir)
-for lsc_path in glob.glob("*/*.lsc"):
+for lsc_path in sorted(glob.glob("*/*.lsc")):
     if lsc_path not in vomses_lsc_files:
         missing_vomses_entries += ["No vomses entry for %s" % lsc_path]
 
