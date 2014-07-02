@@ -6,6 +6,9 @@ VOMS configuration files used to create vo-package / vo-client RPMS (https://twi
 
 ./bin/osg-make-vomsdir --vomses vomses
 
+### To do a consistency check between vomses and vomsdir lsc files, run
+
+./bin/vomses-crosscheck
 
 Release Notes
 > https://twiki.opensciencegrid.org/bin/view/Operations/VOPackageReleases
