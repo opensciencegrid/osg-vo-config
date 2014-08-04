@@ -29,12 +29,12 @@ for path in (vomses_path, vomsdir):
         print "%s does not exist..." % path
         usage()
 
-class vomses_entry():
+class vomses_entry:
     def __init__(self,arr):
         self.alias, self.host, self.port, self.dn, self.vo = arr
         self.lsc = os.path.join(self.alias, self.host) + ".lsc"
 
-class lsc_entry():
+class lsc_entry:
     def __init__(self,arr):
         self.dn, self.ca = arr
 
