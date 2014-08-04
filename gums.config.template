@@ -283,16 +283,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='i2u2'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.fnal.gov:8443/voms/i2u2'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='icecube'
 			description=''
 			persistenceFactory='mysql'
@@ -1287,15 +1277,6 @@
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/hcc'/>
-
-		<vomsUserGroup
-			name='i2u2'
-			access='read self'
-			description=''
-			vomsServer='i2u2'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/i2u2'/>
 
 		<vomsUserGroup
 			name='icecube'
@@ -2367,11 +2348,6 @@
 			accountName='hcc'/>
 
 		<groupAccountMapper
-			name='i2u2'
-			description=''
-			accountName='i2u2'/>
-
-		<groupAccountMapper
 			name='icecube'
 			description=''
 			accountName='icecube'/>
@@ -3375,14 +3351,6 @@
 			accountMappers='hcc'/>
 
 		<groupToAccountMapping
-			name='i2u2'
-			description=''
-			accountingVoSubgroup='i2u2'
-			accountingVo='I2U2'
-			userGroups='i2u2'
-			accountMappers='i2u2'/>
-
-		<groupToAccountMapping
 			name='icecube'
 			description=''
 			accountingVoSubgroup='icecube'
@@ -4067,7 +4035,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, lariat, gendetrd, lar1, okra, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, lariat-production, gendetrd-production, lar1-production, okra-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, lariatana, gendetrdana, lar1ana, okraana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, lariatgli, gendetrdgli, lar1gli, okragli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, seaquest, seaquestpro, seaquestana, seaquestgli, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, i2u2, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, lariat, gendetrd, lar1, okra, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, lariat-production, gendetrd-production, lar1-production, okra-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, lariatana, gendetrdana, lar1ana, okraana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, lariatgli, gendetrdgli, lar1gli, okragli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, seaquest, seaquestpro, seaquestana, seaquestgli, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
