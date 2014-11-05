@@ -1281,7 +1281,7 @@
 <!-- 10  USAtlas -->
 <groupMapping name="newUsatlasProd" accountingVo="atlas" accountingDesc="ATLAS">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url="https://voms.cern.ch:8443/voms/atlas/services/VOMSAdmin"
+    url="https://voms2.cern.ch:8443/voms/atlas/services/VOMSAdmin"
     persistenceFactory="mysql" 
     name="newUsatlasProd" 
     voGroup="/atlas/usatlas" 
@@ -1296,7 +1296,7 @@
 <!-- LCG VOMS USATLAS software role - People coming in as /atlas/usatlas/Role=software will be mapped to usatlas2 -->
 <groupMapping name="newUsatlasSoft" accountingVo="atlas" accountingDesc="ATLAS">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url="https://voms.cern.ch:8443/voms/atlas/services/VOMSAdmin"
+    url="https://voms2.cern.ch:8443/voms/atlas/services/VOMSAdmin"
     persistenceFactory="mysql" 
     name="newUsatlasSoft" 
     voGroup="/atlas/usatlas" 
@@ -1311,7 +1311,7 @@
 <!-- 10a CERN VOMS (new) USATLAS members mapped to usatlas3 group account -->
 <groupMapping name='newUsatlas' accountingVo='atlas' accountingDesc='ATLAS'>
     <userGroup className='gov.bnl.gums.VOMSGroup'
-    url='https://voms.cern.ch:8443/voms/atlas/services/VOMSAdmin'
+    url='https://voms2.cern.ch:8443/voms/atlas/services/VOMSAdmin'
     persistenceFactory='mysql'
     name='newusatlas'
     voGroup="/atlas/usatlas"
@@ -1325,7 +1325,7 @@
 <!-- 10c  CERN VOMS (new) ATLAS members mapped to usatlas4 group account -->
 <groupMapping name='newAtlas' accountingVo='atlas' accountingDesc='ATLAS'>
     <userGroup className='gov.bnl.gums.VOMSGroup'
-    url='https://voms.cern.ch:8443/voms/atlas/services/VOMSAdmin'
+    url='https://voms2.cern.ch:8443/voms/atlas/services/VOMSAdmin'
     persistenceFactory='mysql'
     name='newatlas'
     voGroup="/atlas"
@@ -1339,7 +1339,7 @@
 <!-- 11 USCMS-->
 <groupMapping name="uscmsuser" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="uscmsuser" voGroup="/cms/uscms"
 voRole="cmsuser"
@@ -1353,7 +1353,7 @@ name="uscmsPool"/>
 
 <groupMapping name="cmsuser" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsuser" voGroup="/cms"
 voRole="cmsuser"
@@ -1367,7 +1367,7 @@ name="uscmsPool"/>
 
 <groupMapping name="uscmst2admin" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="uscmst2admin" voGroup="/cms/uscms"
 voRole="cmst2admin"
@@ -1380,7 +1380,7 @@ groupName="cmst2admin"/>
 
 <groupMapping name="uscmssoft" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmssoft" voGroup="/cms/uscms"
 voRole="cmssoft"
@@ -1393,7 +1393,7 @@ groupName="cmssoft"/>
 
 <groupMapping name="cmssoft" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmssoft2" voGroup="/cms"
 voRole="cmssoft"
@@ -1406,7 +1406,7 @@ groupName="cmssoft"/>
 
 <groupMapping name="uscmsprod" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsprod" voGroup="/cms/uscms"
 voRole="cmsprod"
@@ -1419,7 +1419,7 @@ groupName="cmsprod"/>
 
 <groupMapping name="cmsphedex2" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsphedex2" voGroup="/cms"
 voRole="cmsphedex"
@@ -1432,7 +1432,7 @@ groupName="cmsphedex"/>
 
 <groupMapping name="uscmsphedex" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsphedex" voGroup="/cms/uscms"
 voRole="cmsphedex"
@@ -1445,7 +1445,7 @@ groupName="cmsphedex"/>
 
 <groupMapping name="uscmsfrontier" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsfrontier"
 voGroup="/cms/uscms" voRole="cmsfrontier"
@@ -1458,7 +1458,7 @@ groupName="cmsfrontier"/>
 
 <groupMapping name="cmsuser-null" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsuser-null" voGroup="/cms"
 matchFQAN="vo"
@@ -1472,7 +1472,7 @@ name="uscmsPool"/>
 
 <groupMapping name="cmsproduction" accountingVo="cms" accountingDesc="CMS">
 <userGroup className="gov.bnl.gums.VOMSGroup"
-url="https://voms.cern.ch:8443/voms/cms/services/VOMSAdmin"
+url="https://voms2.cern.ch:8443/voms/cms/services/VOMSAdmin"
 persistenceFactory="mysql"
 name="cmsproduction" voGroup="/cms" voRole="production"
 matchFQAN="exact"
@@ -1610,7 +1610,7 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 <!-- 20 Geant4 -->
 <groupMapping name='geant4' accountingVo='geant4' accountingDesc='GEANT4'>
     <userGroup className='gov.bnl.gums.VOMSGroup'
-    url='https://voms.cern.ch:8443/voms/geant4/services/VOMSAdmin'
+    url='https://voms2.cern.ch:8443/voms/geant4/services/VOMSAdmin'
     persistenceFactory='mysql'
     name='geant4' 
     voGroup="/geant4"
@@ -1623,7 +1623,7 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 
 <groupMapping name='geant4-lcgadmin' accountingVo='geant4' accountingDesc='GEANT4'>
     <userGroup className='gov.bnl.gums.VOMSGroup'
-    url='https://voms.cern.ch:8443/voms/geant4/services/VOMSAdmin'
+    url='https://voms2.cern.ch:8443/voms/geant4/services/VOMSAdmin'
     persistenceFactory='mysql'
     name='geant4-lcgadmin'
     voGroup="/geant4"
@@ -1679,7 +1679,7 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 <!-- 26 ops -->
 <groupMapping name='ops' accountingVo='ops' accountingDesc='OPS'>
      <userGroup className='gov.bnl.gums.VOMSGroup'
-     url='https://voms.cern.ch:8443/voms/ops/services/VOMSAdmin'
+     url='https://voms2.cern.ch:8443/voms/ops/services/VOMSAdmin'
      persistenceFactory='mysql'
      name='ops' 
      voGroup="/ops"
@@ -1792,7 +1792,7 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 
 <groupMapping name='alice' accountingVo='alice' accountingDesc='ALICE'>
     <userGroup className='gov.bnl.gums.VOMSGroup'
-    url='https://voms.cern.ch:8443/voms/alice/services/VOMSAdmin'
+    url='https://voms2.cern.ch:8443/voms/alice/services/VOMSAdmin'
     persistenceFactory='mysql'
     name='alice'
     voGroup="/alice"
