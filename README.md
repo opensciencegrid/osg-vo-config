@@ -10,5 +10,5 @@ VOMS configuration files used to create vo-package / vo-client RPMS (https://twi
 
 ./bin/vomses-crosscheck
 
-Release Notes
-> https://twiki.opensciencegrid.org/bin/view/Operations/VOPackageReleases
+For more detail on how to make vo-config release, see
+> https://twiki.grid.iu.edu/bin/view/Operations/GithubVOPackageUpdate
