@@ -10,7 +10,7 @@
      name='mysql'
      className='gov.bnl.gums.hibernate.HibernatePersistenceFactory'
      hibernate.connection.driver_class='com.mysql.jdbc.Driver'
-     hibernate.dialect='net.sf.hibernate.dialect.MySQLDialect'
+     hibernate.dialect='org.hibernate.dialect.MySQLDialect'
      hibernate.c3p0.min_size='3'
      hibernate.c3p0.max_size='20'
      hibernate.c3p0.timeout='180'
