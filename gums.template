@@ -943,6 +943,20 @@
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="gm2ana"/>
 </groupMapping>
 
+<groupMapping name='fnal-ana' accountingVo='fermilab' accountingDesc='FERMILAB'>
+    <userGroup className='gov.bnl.gums.VOMSGroup'
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin";
+    persistenceFactory='mysql'
+    name='fnal-ana'
+    voGroup="/fermilab"
+    voRole="Analysis"
+    sslCertfile='/etc/grid-security/http/httpcert.pem'
+    sslKey='/etc/grid-security/http/httpkey.pem'
+    matchFQAN="exact" />
+    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
+    groupName='fermiana' />
+</groupMapping>
+
 <!-- Fermilab glidein roles below this-->
 <groupMapping name="fggli" accountingVo="fermilab" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
