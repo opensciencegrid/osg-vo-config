@@ -945,7 +945,7 @@
 
 <groupMapping name='fnal-ana' accountingVo='fermilab' accountingDesc='FERMILAB'>
     <userGroup className='gov.bnl.gums.VOMSGroup'
-    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin";
+    url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin"
     persistenceFactory='mysql'
     name='fnal-ana'
     voGroup="/fermilab"
