@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
-<gums version='1.3' allowGridmapFiles='true' bannedUserGroups=''>
+<gums version='1.3' allowGridmapFiles='true' bannedUserGroups='gums-banned'>
 
 	<persistenceFactories>
 
@@ -11,9 +11,12 @@
 			hibernate.c3p0.timeout='180'
 			hibernate.connection.driver_class='com.mysql.jdbc.Driver'
 			hibernate.connection.autoReconnect='true'
+			hibernate.cache.use_query_cache='true'
 			hibernate.c3p0.max_size='20'
 			hibernate.dialect='org.hibernate.dialect.MySQLDialect'
+			hibernate.cache.use_second_level_cache='true'
 			hibernate.c3p0.min_size='3'
+			hibernate.cache.region.factory_class='org.hibernate.cache.EhCacheRegionFactory'
 			hibernate.connection.username='@USER@'
 			hibernate.connection.url='jdbc:mysql://@SERVER@/GUMS_1_3'
 			hibernate.connection.password='@PASSWORD@'/>
@@ -26,7 +29,7 @@
 			name='alice'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://voms.cern.ch:8443/voms/alice'
+			baseUrl='https://voms2.cern.ch:8443/voms/alice'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -36,7 +39,7 @@
 			name='atlas'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://voms.cern.ch:8443/voms/atlas'
+			baseUrl='https://voms2.cern.ch:8443/voms/atlas'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -106,7 +109,7 @@
 			name='cms'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://voms.cern.ch:8443/voms/cms'
+			baseUrl='https://voms2.cern.ch:8443/voms/cms'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -216,7 +219,7 @@
 			name='geant4'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://voms.cern.ch:8443/voms/geant4'
+			baseUrl='https://voms2.cern.ch:8443/voms/geant4'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -396,7 +399,7 @@
 			name='ops'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://voms.cern.ch:8443/voms/ops'
+			baseUrl='https://voms2.cern.ch:8443/voms/ops'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -506,7 +509,7 @@
 			name='vo.cta.in2p3.fr'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https:///cclcgvomsli01.in2p3.fr:8443/voms/vo.cta.in2p3.fr'
+			baseUrl='https://cclcgvomsli01.in2p3.fr:8443/voms/vo.cta.in2p3.fr'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -1110,6 +1113,16 @@
 			role='pilot'/>
 
 		<vomsUserGroup
+			name='fnal-ana'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab'
+			role='Analysis'/>
+
+		<vomsUserGroup
 			name='gcedu'
 			access='read self'
 			description=''
@@ -1268,6 +1281,14 @@
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/GridUNESP'/>
+
+		<manualUserGroup
+			name='gums-banned'
+			access='read self'
+			description='Default group for banned users'
+			persistenceFactory='mysql'
+			membersUri=''
+			nonMembersUri=''/>
 
 		<vomsUserGroup
 			name='hcc'
@@ -2226,6 +2247,11 @@
 			name='enmr.eu'
 			description=''
 			accountName='enmr.eu'/>
+
+		<groupAccountMapper
+			name='fermiana'
+			description=''
+			accountName='fermiana'/>
 
 		<groupAccountMapper
 			name='fermipro'
@@ -3207,6 +3233,14 @@
 			accountMappers='fggli'/>
 
 		<groupToAccountMapping
+			name='fnal-ana'
+			description=''
+			accountingVoSubgroup='fermilab'
+			accountingVo='FERMILAB'
+			userGroups='fnal-ana'
+			accountMappers='fermiana'/>
+
+		<groupToAccountMapping
 			name='gcedu'
 			description=''
 			accountingVoSubgroup='gcedu'
@@ -4035,7 +4069,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, lariat, gendetrd, lar1, okra, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, lariat-production, gendetrd-production, lar1-production, okra-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, lariatana, gendetrdana, lar1ana, okraana, minervaana, minosana, novaana, mapana, gm2ana, fggli, argoneutgli, lariatgli, gendetrdgli, lar1gli, okragli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, seaquest, seaquestpro, seaquestana, seaquestgli, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, lariat, gendetrd, lar1, okra, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, lariat-production, gendetrd-production, lar1-production, okra-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, lariatana, gendetrdana, lar1ana, okraana, minervaana, minosana, novaana, mapana, gm2ana, fnal-ana, fggli, argoneutgli, lariatgli, gendetrdgli, lar1gli, okragli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, seaquest, seaquestpro, seaquestana, seaquestgli, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
