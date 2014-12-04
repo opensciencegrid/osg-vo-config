@@ -2169,7 +2169,7 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 <!-- 61 CTA -->
 <groupMapping name="vo.cta.in2p3.fr" accountingVo="vo.cta.in2p3.fr" accountingDesc="CTA">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url="https:///cclcgvomsli01.in2p3.fr:8443/voms/vo.cta.in2p3.fr/services/VOMSAdmin" 
+    url="https://cclcgvomsli01.in2p3.fr:8443/voms/vo.cta.in2p3.fr/services/VOMSAdmin"
     persistenceFactory="mysql" name="vo.cta.in2p3.fr" 
     voGroup="/vo.cta.in2p3.fr" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
