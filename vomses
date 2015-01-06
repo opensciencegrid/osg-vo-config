@@ -13,7 +13,6 @@
 "geant4" "lcg-voms2.cern.ch" "15007" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch" "geant4"
 "ops" "voms2.cern.ch" "15009" "/DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch" "ops"
 "ops" "lcg-voms2.cern.ch" "15009" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch" "ops"
-"gpn" "cluster.greatplains.net" "15001" "/DC=org/DC=doegrids/OU=Services/CN=http/cluster.greatplains.net" "gpn"
 "CompBioGrid" "voms.cam.uchc.edu" "15001" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms/voms.cam.uchc.edu" "CompBioGrid"
 "osg" "voms.grid.iu.edu" "15027" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu" "osg"
 "NYSGRID" "dylan.ccr.buffalo.edu" "15001" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=dylan.ccr.buffalo.edu" "NYSGRID"
