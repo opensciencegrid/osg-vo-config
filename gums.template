@@ -1704,20 +1704,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
      groupName='ops' />
 </groupMapping>
 					
-<!-- 28 GPN -->
-<groupMapping name='gpn' accountingVo='gpn' accountingDesc='gpn'>
-      <userGroup className='gov.bnl.gums.VOMSGroup'     
-      url='https://cluster.greatplains.net:8443/voms/gpn/services/VOMSAdmin'     
-      persistenceFactory='mysql'      
-      name='gpn'            
-      voGroup="/gpn"           
-      sslCertfile='/etc/grid-security/http/httpcert.pem'           
-      sslKey='/etc/grid-security/http/httpkey.pem'      
-      matchFQAN="vo" acceptProxyWithoutFQAN='true' />      
-      <accountMapping className='gov.bnl.gums.GroupAccountMapper'            
-      groupName='gpn' />
-</groupMapping>
-
 <!-- 29 CompBioGrid -->
 <groupMapping name='compbiogrid' accountingVo='compbiogrid' accountingDesc='CompBioGrid'>
      <userGroup className='gov.bnl.gums.VOMSGroup'     
