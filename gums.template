@@ -1942,48 +1942,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
       groupName='gcedu' />
 </groupMapping>
 
-<!-- 50 SuperB -->
-<groupMapping name='superbvo.org' accountingVo='superbvo.org' accountingDesc='SuperB'>
-     <userGroup className='gov.bnl.gums.VOMSGroup'
-     url='https://voms2.cnaf.infn.it:8443/voms/superbvo.org/services/VOMSAdmin'
-     persistenceFactory='mysql'
-     name='superbvo.org'
-     voGroup="/superbvo.org"
-     sslCertfile='/etc/grid-security/http/httpcert.pem'
-     sslKey='/etc/grid-security/http/httpkey.pem'
-      matchFQAN="exact" acceptProxyWithoutFQAN='true' />
-     <accountMapping className='gov.bnl.gums.GroupAccountMapper'
-      groupName='superbvo.org' />
-</groupMapping>
-
-<groupMapping name="superbvo.orgprod" accountingVo="superbvo.org" accountingDesc="SuperB">
-    <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url='https://voms2.cnaf.infn.it:8443/voms/superbvo.org/services/VOMSAdmin'
-    persistenceFactory="mysql" 
-    name="superbvo.orgprod" 
-    voGroup="/superbvo.org" 
-    voRole="ProductionManager" 
-    sslCertfile="/etc/grid-security/http/httpcert.pem" 
-    sslKey="/etc/grid-security/http/httpkey.pem"
-    matchFQAN="exact" acceptProxyWithoutFQAN='true'/>
-    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="superbvo.orgprod"/>
-</groupMapping>
-
-<groupMapping name="superbvo.orgsoft" accountingVo="superbvo.org" accountingDesc="SuperB">
-    <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url='https://voms2.cnaf.infn.it:8443/voms/superbvo.org/services/VOMSAdmin'
-    persistenceFactory="mysql" 
-    name="superbvo.orgsoft" 
-    voGroup="/superbvo.org" 
-    voRole="SoftwareManager" 
-    sslCertfile="/etc/grid-security/http/httpcert.pem" 
-    sslKey="/etc/grid-security/http/httpkey.pem"
-    matchFQAN="exact" acceptProxyWithoutFQAN='true'/>
-    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="superbvo.orgsoft"/>
-</groupMapping>
-
 <!-- 51 DREAM -->
 <groupMapping name='dream' accountingVo='dream' accountingDesc='DREAM'>
      <userGroup className='gov.bnl.gums.VOMSGroup'
