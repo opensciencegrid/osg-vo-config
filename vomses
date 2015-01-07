@@ -30,7 +30,6 @@
 "suragrid" "voms.hpcc.ttu.edu" "15003" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms/voms.hpcc.ttu.edu" "suragrid"
 "gcvo" "gc-voms.javeriana.edu.co" "15002" "/DC=org/DC=doegrids/OU=Services/CN=gc-voms.javeriana.edu.co" "gcvo"
 "gcedu" "gc-voms.javeriana.edu.co" "15001" "/DC=org/DC=doegrids/OU=Services/CN=gc-voms.javeriana.edu.co" "gcedu"
-"superbvo.org" "voms2.cnaf.infn.it" "15009" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms2.cnaf.infn.it" "superbvo.org"
 "dream" "voms.hpcc.ttu.edu" "15004" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms/voms.hpcc.ttu.edu" "dream"
 "UC3" "voms.grid.iu.edu" "15009" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu" "UC3"
 "auger" "voms1.egee.cesnet.cz" "15004" "/DC=org/DC=terena/DC=tcs/OU=Domain Control Validated/CN=voms1.egee.cesnet.cz" "auger"
