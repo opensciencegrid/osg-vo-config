@@ -1735,7 +1735,7 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 <!-- 32 NYSGRID -->
 <groupMapping name='nysgrid' accountingVo='nysgrid' accountingDesc='NYSGRID'>
      <userGroup className='gov.bnl.gums.VOMSGroup'
-     url='https://dylan.ccr.buffalo.edu:8443/voms/nysgrid/services/VOMSAdmin'
+     url='https://dylan.ccr.buffalo.edu:8443/voms/NYSGRID'
      persistenceFactory='mysql' 
      name='nysgrid' 
      voGroup="/nysgrid"
