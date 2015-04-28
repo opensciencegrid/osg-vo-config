@@ -30,72 +30,52 @@
 
 <!-- CDF VOMS at Fermi -->
 
-<groupMapping name="cdf-fnal" accountingVo="cdf" accountingDesc="CDF">
+<groupMapping name="cdf-fnal" accountingVo="cdf-fnal" accountingDesc="CDF">
     <userGroup className="gov.bnl.gums.VOMSGroup"
     url="https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin"
     persistenceFactory="mysql" 
     name="cdf-fnal" 
-    voGroup="/cdf"
+    voGroup="/cdf-fnal"
     sslCertfile="/etc/grid-security/http/httpcert.pem"
     sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper"
-    groupName="cdf"/>
+    groupName="cdf-fnal"/>
 </groupMapping>
 
-<groupMapping name='cdfdev-fnal' accountingVo='cdf' accountingDesc='CDF'>
-    <userGroup className='gov.bnl.gums.VOMSGroup'
-    url='https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin'
-    persistenceFactory='mysql'
-    name='cdfdev-fnal'
-    voGroup="/cdf/glidecaf"
-    voRole="development"
-    sslCertfile='/etc/grid-security/http/httpcert.pem'
-    sslKey='/etc/grid-security/http/httpkey.pem'
-    matchFQAN="exact" />
-    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
-    groupName='cdfdev' />
+<groupMapping name="cdf-fnalana" accountingVo="cdf-fnalana" accountingDesc="CDF">
+    <userGroup className="gov.bnl.gums.VOMSGroup"
+    url="https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin"
+    persistenceFactory="mysql" 
+    name="cdf-fnalana" 
+    voGroup="/cdf-fnalana"
+    sslCertfile="/etc/grid-security/http/httpcert.pem"
+    sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper"
+    groupName="cdf-fnalana"/>
 </groupMapping>
 
-<groupMapping name='cdffgrid-fnal' accountingVo='cdf' accountingDesc='CDF'>
-    <userGroup className='gov.bnl.gums.VOMSGroup'
-    url='https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin'
-    persistenceFactory='mysql'
-    name='cdffgrid-fnal'
-    voGroup="/cdf/glidecaf"
-    voRole="fermigrid"
-    sslCertfile='/etc/grid-security/http/httpcert.pem'
-    sslKey='/etc/grid-security/http/httpkey.pem'
-    matchFQAN="exact" />
-    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
-    groupName='cdffgrid' />
+<groupMapping name="cdf-fnalgil" accountingVo="cdf-fnalgil" accountingDesc="CDF">
+    <userGroup className="gov.bnl.gums.VOMSGroup"
+    url="https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin"
+    persistenceFactory="mysql" 
+    name="cdf-fnalgli" 
+    voGroup="/cdf-fnalgli"
+    sslCertfile="/etc/grid-security/http/httpcert.pem"
+    sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper"
+    groupName="cdf-fnalgli"/>
 </groupMapping>
 
-<groupMapping name='cdfnam-fnal' accountingVo='cdf' accountingDesc='CDF'>
-    <userGroup className='gov.bnl.gums.VOMSGroup'
-    url='https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin'
-    persistenceFactory='mysql'
-    name='cdfnam-fnal'
-    voGroup="/cdf/glidecaf"
-    voRole="namcaf"
-    sslCertfile='/etc/grid-security/http/httpcert.pem'
-    sslKey='/etc/grid-security/http/httpkey.pem'
-    matchFQAN="exact" />
-    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
-    groupName='cdfnam' />
-</groupMapping>
-
-<groupMapping name='cdftestcaf-fnal' accountingVo='cdf' accountingDesc='CDF'>
-    <userGroup className='gov.bnl.gums.VOMSGroup'
-    url='https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin'
-    persistenceFactory='mysql'
-    name='cdftestcaf-fnal'
-    voGroup="/cdf/glidecaf"
-    voRole="testcaf"
-    sslCertfile='/etc/grid-security/http/httpcert.pem'
-    sslKey='/etc/grid-security/http/httpkey.pem'
-    matchFQAN="exact" />
-    <accountMapping className='gov.bnl.gums.GroupAccountMapper'
-    groupName='cdf' />
+<groupMapping name="cdf-fnalpro" accountingVo="cdf-fnalpro" accountingDesc="CDF">
+    <userGroup className="gov.bnl.gums.VOMSGroup"
+    url="https://voms.fnal.gov:8443/voms/cdf/services/VOMSAdmin"
+    persistenceFactory="mysql" 
+    name="cdf-fnalpro" 
+    voGroup="/cdf-fnalpro"
+    sslCertfile="/etc/grid-security/http/httpcert.pem"
+    sslKey="/etc/grid-security/http/httpkey.pem" matchFQAN="exact"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper"
+    groupName="cdf-fnalpro"/>
 </groupMapping>
 
 <!-- CDF VOMS at CNAF -->
@@ -281,30 +261,30 @@
     groupName="gendetrd"/>
 </groupMapping>
 
-<groupMapping name="lar1" accountingVo="lar1" accountingDesc="FERMILAB">
+<groupMapping name="lar1nd" accountingVo="lar1nd" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
-    name="lar1" 
-    voGroup="/fermilab/lar1" 
+    name="lar1nd" 
+    voGroup="/fermilab/lar1nd" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
     sslKey="/etc/grid-security/http/httpkey.pem" 
     matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="lar1"/>
+    groupName="lar1nd"/>
 </groupMapping>
 
-<groupMapping name="okra" accountingVo="okra" accountingDesc="FERMILAB">
+<groupMapping name="orka" accountingVo="orka" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
-    name="okra" 
-    voGroup="/fermilab/okra" 
+    name="orka" 
+    voGroup="/fermilab/orka" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
     sslKey="/etc/grid-security/http/httpkey.pem" 
     matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="okra"/>
+    groupName="orka"/>
 </groupMapping>
 
 <groupMapping name="accelerator" accountingVo="accelerator" accountingDesc="FERMILAB">
@@ -601,32 +581,32 @@
     groupName="gendetrdpro"/>
 </groupMapping>
 
-<groupMapping name="lar1-production" accountingVo="lar1" accountingDesc="FERMILAB">
+<groupMapping name="lar1nd-production" accountingVo="lar1nd" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
-    name="lar1-production" 
-    voGroup="/fermilab/lar1" 
+    name="lar1nd-production" 
+    voGroup="/fermilab/lar1nd" 
     voRole="Production" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
     sslKey="/etc/grid-security/http/httpkey.pem" 
     matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="lar1pro"/>
+    groupName="lar1ndpro"/>
 </groupMapping>
 
-<groupMapping name="okra-production" accountingVo="okra" accountingDesc="FERMILAB">
+<groupMapping name="orka-production" accountingVo="orka" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
-    name="okra-production" 
-    voGroup="/fermilab/okra" 
+    name="orka-production" 
+    voGroup="/fermilab/orka" 
     voRole="Production" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
     sslKey="/etc/grid-security/http/httpkey.pem" 
     matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="okrapro"/>
+    groupName="orkapro"/>
 </groupMapping>
 
 <groupMapping name="accelerator-production" accountingVo="accelerator" accountingDesc="FERMILAB">
@@ -849,32 +829,32 @@
     groupName="gendetrdana"/>
 </groupMapping>
 
-<groupMapping name="lar1ana" accountingVo="lar1" accountingDesc="FERMILAB">
+<groupMapping name="lar1ndana" accountingVo="lar1nd" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
-    name="lar1ana" 
-    voGroup="/fermilab/lar1" 
+    name="lar1ndana" 
+    voGroup="/fermilab/lar1nd" 
     voRole="Analysis" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
     sslKey="/etc/grid-security/http/httpkey.pem" 
     matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="lar1ana"/>
+    groupName="lar1ndana"/>
 </groupMapping>
 
-<groupMapping name="okraana" accountingVo="okra" accountingDesc="FERMILAB">
+<groupMapping name="orkaana" accountingVo="orka" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
-    name="okraana" 
-    voGroup="/fermilab/okra" 
+    name="orkaana" 
+    voGroup="/fermilab/orka" 
     voRole="Analysis" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
     sslKey="/etc/grid-security/http/httpkey.pem" 
     matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="okraana"/>
+    groupName="orkaana"/>
 </groupMapping>
 
 <groupMapping name="minervaana" accountingVo="minerva" accountingDesc="FERMILAB">
@@ -1014,32 +994,32 @@
     groupName="gendetrdgli"/>
 </groupMapping>
 
-<groupMapping name="lar1gli" accountingVo="lar1" accountingDesc="FERMILAB">
+<groupMapping name="lar1ndgli" accountingVo="lar1nd" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
-    name="lar1gli" 
-    voGroup="/fermilab/lar1" 
+    name="lar1ndgli" 
+    voGroup="/fermilab/lar1nd" 
     voRole="pilot" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
     sslKey="/etc/grid-security/http/httpkey.pem" 
     matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="lar1gli"/>
+    groupName="lar1ndgli"/>
 </groupMapping>
 
-<groupMapping name="okragli" accountingVo="okra" accountingDesc="FERMILAB">
+<groupMapping name="orkagli" accountingVo="orka" accountingDesc="FERMILAB">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
     url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin" 
     persistenceFactory="mysql" 
-    name="okragli" 
-    voGroup="/fermilab/okra" 
+    name="orkagli" 
+    voGroup="/fermilab/orka" 
     voRole="pilot" 
     sslCertfile="/etc/grid-security/http/httpcert.pem" 
     sslKey="/etc/grid-security/http/httpkey.pem" 
     matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="okragli"/>
+    groupName="orkagli"/>
 </groupMapping>
 
 <groupMapping name="minervagli" accountingVo="minerva" accountingDesc="FERMILAB">
@@ -1262,6 +1242,64 @@
     matchFQAN="exact"/>
     <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
     groupName="seaquestgli"/>
+</groupMapping>
+
+<!-- Fermilab annie roles -->
+<groupMapping name='annie' accountingVo='fermilab' accountingDesc='FERMILAB'>
+<userGroup className='gov.bnl.gums.VOMSGroup'
+url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin";;
+persistenceFactory='mysql'
+name='annie'
+voGroup="/fermilab/annie"
+sslCertfile='/etc/grid-security/http/httpcert.pem'
+sslKey='/etc/grid-security/http/httpkey.pem'
+matchFQAN="exact" />
+<accountMapping className='gov.bnl.gums.GroupAccountMapper'
+groupName='annie' />
+</groupMapping>
+
+<groupMapping name='annieana' accountingVo='fermilab' accountingDesc='FERMILAB'>
+<userGroup className='gov.bnl.gums.VOMSGroup'
+url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin";;
+persistenceFactory='mysql'
+name='annieana'
+voGroup="/fermilab/annie"
+voRole="Analysis"
+sslCertfile='/etc/grid-security/http/httpcert.pem'
+sslKey='/etc/grid-security/http/httpkey.pem'
+matchFQAN="exact" />
+<accountMapping className='gov.bnl.gums.GroupAccountMapper'
+groupName='annieana' />
+</groupMapping>
+
+<groupMapping name='anniegli' accountingVo='fermilab' accountingDesc='FERMILAB'>
+<userGroup className='gov.bnl.gums.VOMSGroup'
+url="
+https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin";
+;
+persistenceFactory='mysql'
+name='anniegli'
+voGroup="/fermilab/annie"
+voRole="pilot"
+sslCertfile='/etc/grid-security/http/httpcert.pem'
+sslKey='/etc/grid-security/http/httpkey.pem'
+matchFQAN="exact" />
+<accountMapping className='gov.bnl.gums.GroupAccountMapper'
+groupName='anniegli' />
+</groupMapping>
+
+<groupMapping name='anniepro' accountingVo='fermilab' accountingDesc='FERMILAB'>
+<userGroup className='gov.bnl.gums.VOMSGroup'
+url="https://voms.fnal.gov:8443/voms/fermilab/services/VOMSAdmin";;
+persistenceFactory='mysql'
+name='anniepro'
+voGroup="/fermilab/annie"
+voRole="Production"
+sslCertfile='/etc/grid-security/http/httpcert.pem'
+sslKey='/etc/grid-security/http/httpkey.pem'
+matchFQAN="exact" />
+<accountMapping className='gov.bnl.gums.GroupAccountMapper'
+groupName='anniepro' />
 </groupMapping>
 
 <!-- 6 GOC MIS -->
@@ -2149,6 +2187,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 </groupMappings>
 
 <hostGroups>
-<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdfdev-fnal,cdffgrid-fnal,cdfnam-fnal,cdftestcaf-fnal,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,lariat,gendetrd,lar1,okra,accelerator,argoneut,cdms,minerva,miniboone,minos,mipp,mu2e,nova,numi,patriot,theory,fermilab-test,uboone,uboonepro,uboonegli,ubooneana,map,gm2,coupp,fermilab-production,lariat-production,gendetrd-production,lar1-production,okra-production,accelerator-production,argoneut-production,cdms-production,minerva-production,miniboone-production,minos-production,mipp-production,nova-production,numi-production,patriot-production,theory-production,map-production,gm2-production,argoneutana,lariatana,gendetrdana,lar1ana,okraana,minervaana,minosana,novaana,mapana,gm2ana,fnal-ana,fggli,argoneutgli,lariatgli,gendetrdgli,lar1gli,okragli,minervagli,minosgli,novagli,mapgli,gm2gli,fgadmin,darkside,darksideana,darksidecal,darksidedat,darksidegli,darksidepro,seaquest,seaquestpro,seaquestana,seaquestgli,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,osg,osg-goc,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,compbiogrid,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,hcc,belle,bellepro,csiu,suragrid,nees,gcvo,gcedu,dream,lbne,lbne-production,lbneana,lbnegli,lsst,uc3,mcdrd,lqcd,auger,glast.org,enmr.eu,osgcrossce,vo.cta.in2p3.fr,xenon.biggrid.nl,snoplus.snolab.ca"/>
+<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdf-fnalana,cdf-fnalgli,cdf-fnalpro,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,lariat,gendetrd,lar1nd,orka,accelerator,argoneut,cdms,minerva,miniboone,minos,mipp,mu2e,nova,numi,patriot,theory,fermilab-test,uboone,uboonepro,uboonegli,ubooneana,map,gm2,coupp,fermilab-production,lariat-production,gendetrd-production,lar1nd-production,orka-production,accelerator-production,argoneut-production,cdms-production,minerva-production,miniboone-production,minos-production,mipp-production,nova-production,numi-production,patriot-production,theory-production,map-production,gm2-production,argoneutana,lariatana,gendetrdana,lar1ndana,orkaana,minervaana,minosana,novaana,mapana,gm2ana,fnal-ana,fggli,argoneutgli,lariatgli,gendetrdgli,lar1ndgli,orkagli,minervagli,minosgli,novagli,mapgli,gm2gli,fgadmin,darkside,darksideana,darksidecal,darksidedat,darksidegli,darksidepro,seaquest,seaquestpro,seaquestana,seaquestgli,annie,annieana,anniegli,anniepro,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,osg,osg-goc,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,compbiogrid,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,hcc,belle,bellepro,csiu,suragrid,nees,gcvo,gcedu,dream,lbne,lbne-production,lbneana,lbnegli,lsst,uc3,mcdrd,lqcd,auger,glast.org,enmr.eu,osgcrossce,vo.cta.in2p3.fr,xenon.biggrid.nl,snoplus.snolab.ca"/>
 </hostGroups>
 </gums>
