@@ -256,16 +256,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='gpn'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://cluster.greatplains.net:8443/voms/gpn'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='gridunesp'
 			description=''
 			persistenceFactory='mysql'
@@ -389,7 +379,7 @@
 			name='nysgrid'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://dylan.ccr.buffalo.edu:8443/voms/nysgrid'
+			baseUrl='https://dylan.ccr.buffalo.edu:8443/voms/NYSGRID'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -476,16 +466,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='superbvo.org'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms2.cnaf.infn.it:8443/voms/superbvo.org'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='suragrid'
 			description=''
 			persistenceFactory='mysql'
@@ -538,25 +518,6 @@
 			acceptProxyWithoutFQAN='true'
 			voGroup='/LIGO'/>
 
-		<vomsUserGroup
-			name='accelerator'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/accelerator'/>
-
-		<vomsUserGroup
-			name='accelerator-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/accelerator'
-			role='Production'/>
-
 		<manualUserGroup
 			name='admins'
 			access='write'
@@ -573,45 +534,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/alice'/>
-
-		<vomsUserGroup
-			name='argoneut'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/argoneut'/>
-
-		<vomsUserGroup
-			name='argoneut-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/argoneut'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='argoneutana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/argoneut'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='argoneutgli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/argoneut'
-			role='pilot'/>
 
 		<vomsUserGroup
 			name='auger'
@@ -789,25 +711,6 @@
 			role='testcaf'/>
 
 		<vomsUserGroup
-			name='cdms'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/cdms'/>
-
-		<vomsUserGroup
-			name='cdms-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/cdms'
-			role='Production'/>
-
-		<vomsUserGroup
 			name='cigi'
 			access='read self'
 			description=''
@@ -915,15 +818,6 @@
 			voGroup='/CompBioGrid'/>
 
 		<vomsUserGroup
-			name='coupp'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/coupp'/>
-
-		<vomsUserGroup
 			name='csiu'
 			access='read self'
 			description=''
@@ -931,65 +825,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/CSIU'/>
-
-		<vomsUserGroup
-			name='darkside'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/darkside'/>
-
-		<vomsUserGroup
-			name='darksideana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/darkside'
-			role='analysis'/>
-
-		<vomsUserGroup
-			name='darksidecal'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/darkside'
-			role='calibration'/>
-
-		<vomsUserGroup
-			name='darksidedat'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/darkside'
-			role='data'/>
-
-		<vomsUserGroup
-			name='darksidegli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/grid'
-			role='pilot'/>
-
-		<vomsUserGroup
-			name='darksidepro'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/darkside'
-			role='production'/>
 
 		<vomsUserGroup
 			name='des'
@@ -1069,58 +904,9 @@
 			access='read self'
 			description=''
 			vomsServer='fermilab'
-			matchFQAN='exact'
+			matchFQAN='vo'
 			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/grid'/>
-
-		<vomsUserGroup
-			name='fermilab-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='fermilab-test'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/test'/>
-
-		<vomsUserGroup
-			name='fgadmin'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/grid'
-			role='admin'/>
-
-		<vomsUserGroup
-			name='fggli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/grid'
-			role='pilot'/>
-
-		<vomsUserGroup
-			name='fnal-ana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab'
-			role='Analysis'/>
+			voGroup='/fermilab'/>
 
 		<vomsUserGroup
 			name='gcedu'
@@ -1160,45 +946,6 @@
 			role='lcgadmin'/>
 
 		<vomsUserGroup
-			name='gendetrd'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/gendetrd'/>
-
-		<vomsUserGroup
-			name='gendetrd-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/gendetrd'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='gendetrdana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/gendetrd'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='gendetrdgli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/gendetrd'
-			role='pilot'/>
-
-		<vomsUserGroup
 			name='glast.org'
 			access='read self'
 			description=''
@@ -1224,54 +971,6 @@
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/Gluex'/>
-
-		<vomsUserGroup
-			name='gm2'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/gm2'/>
-
-		<vomsUserGroup
-			name='gm2-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/gm2'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='gm2ana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/gm2'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='gm2gli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/gm2'
-			role='pilot'/>
-
-		<vomsUserGroup
-			name='gpn'
-			access='read self'
-			description=''
-			vomsServer='gpn'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/gpn'/>
 
 		<vomsUserGroup
 			name='gridunesp'
@@ -1316,84 +1015,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/ilc'/>
-
-		<vomsUserGroup
-			name='lar1'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lar1'/>
-
-		<vomsUserGroup
-			name='lar1-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lar1'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='lar1ana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lar1'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='lar1gli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lar1'
-			role='pilot'/>
-
-		<vomsUserGroup
-			name='lariat'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lariat'/>
-
-		<vomsUserGroup
-			name='lariat-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lariat'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='lariatana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lariat'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='lariatgli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/lariat'
-			role='pilot'/>
 
 		<vomsUserGroup
 			name='lbne'
@@ -1453,45 +1074,6 @@
 			voGroup='/lsst'/>
 
 		<vomsUserGroup
-			name='map'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/map'/>
-
-		<vomsUserGroup
-			name='map-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/map'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='mapana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/map'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='mapgli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/map'
-			role='pilot'/>
-
-		<vomsUserGroup
 			name='mcdrd'
 			access='read self'
 			description=''
@@ -1501,131 +1083,6 @@
 			voGroup='/mcdrd'/>
 
 		<vomsUserGroup
-			name='microboone'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/uboone'/>
-
-		<vomsUserGroup
-			name='minerva'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/minerva'/>
-
-		<vomsUserGroup
-			name='minerva-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/minerva'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='minervaana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/minerva'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='minervagli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/minerva'
-			role='pilot'/>
-
-		<vomsUserGroup
-			name='miniboone'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/miniboone'/>
-
-		<vomsUserGroup
-			name='miniboone-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/miniboone'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='minos'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/minos'/>
-
-		<vomsUserGroup
-			name='minos-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/minos'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='minosana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/minos'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='minosgli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/minos'
-			role='pilot'/>
-
-		<vomsUserGroup
-			name='mipp'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/mipp'/>
-
-		<vomsUserGroup
-			name='mipp-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/mipp'
-			role='Production'/>
-
-		<vomsUserGroup
 			name='mis'
 			access='read self'
 			description=''
@@ -1633,15 +1090,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/mis'/>
-
-		<vomsUserGroup
-			name='mu2e'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/mu2e'/>
 
 		<vomsUserGroup
 			name='nanohub'
@@ -1700,64 +1148,6 @@
 			voGroup='/atlas/usatlas'/>
 
 		<vomsUserGroup
-			name='nova'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/nova'/>
-
-		<vomsUserGroup
-			name='nova-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/nova'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='novaana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/nova'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='novagli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/nova'
-			role='pilot'/>
-
-		<vomsUserGroup
-			name='numi'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/numi'/>
-
-		<vomsUserGroup
-			name='numi-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/numi'
-			role='Production'/>
-
-		<vomsUserGroup
 			name='nysgrid'
 			access='read self'
 			description=''
@@ -1765,45 +1155,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/nysgrid'/>
-
-		<vomsUserGroup
-			name='okra'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/okra'/>
-
-		<vomsUserGroup
-			name='okra-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/okra'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='okraana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/okra'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='okragli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/okra'
-			role='pilot'/>
 
 		<vomsUserGroup
 			name='ops'
@@ -1851,25 +1202,6 @@
 			voGroup='/osgedu'/>
 
 		<vomsUserGroup
-			name='patriot'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/patriot'/>
-
-		<vomsUserGroup
-			name='patriot-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/patriot'
-			role='Production'/>
-
-		<vomsUserGroup
 			name='sbgrid'
 			access='read self'
 			description=''
@@ -1877,45 +1209,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/SBGrid'/>
-
-		<vomsUserGroup
-			name='seaquest'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/seaquest'/>
-
-		<vomsUserGroup
-			name='seaquestana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/seaquest'
-			role='analysis'/>
-
-		<vomsUserGroup
-			name='seaquestgli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/seaquest'
-			role='pilot'/>
-
-		<vomsUserGroup
-			name='seaquestpro'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/seaquest'
-			role='production'/>
 
 		<vomsUserGroup
 			name='snoplus.snolab.ca'
@@ -1936,35 +1229,6 @@
 			voGroup='/star'/>
 
 		<vomsUserGroup
-			name='superbvo.org'
-			access='read self'
-			description=''
-			vomsServer='superbvo.org'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/superbvo.org'/>
-
-		<vomsUserGroup
-			name='superbvo.orgprod'
-			access='read self'
-			description=''
-			vomsServer='superbvo.org'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/superbvo.org'
-			role='ProductionManager'/>
-
-		<vomsUserGroup
-			name='superbvo.orgsoft'
-			access='read self'
-			description=''
-			vomsServer='superbvo.org'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/superbvo.org'
-			role='SoftwareManager'/>
-
-		<vomsUserGroup
 			name='suragrid'
 			access='read self'
 			description=''
@@ -1972,55 +1236,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/suragrid'/>
-
-		<vomsUserGroup
-			name='theory'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/theory'/>
-
-		<vomsUserGroup
-			name='theory-production'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/theory'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='ubooneana'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/uboone'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='uboonegli'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/uboone'
-			role='pilot'/>
-
-		<vomsUserGroup
-			name='uboonepro'
-			access='read self'
-			description=''
-			vomsServer='fermilab'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/fermilab/uboone'
-			role='Production'/>
 
 		<vomsUserGroup
 			name='uc3'
@@ -2074,34 +1289,9 @@
 	<accountMappers>
 
 		<groupAccountMapper
-			name='accelpro'
-			description=''
-			accountName='accelpro'/>
-
-		<groupAccountMapper
 			name='alice'
 			description=''
 			accountName='alice'/>
-
-		<groupAccountMapper
-			name='argoneut'
-			description=''
-			accountName='argoneut'/>
-
-		<groupAccountMapper
-			name='argoneutana'
-			description=''
-			accountName='argoneutana'/>
-
-		<groupAccountMapper
-			name='argoneutgli'
-			description=''
-			accountName='argoneutgli'/>
-
-		<groupAccountMapper
-			name='argoneutpro'
-			description=''
-			accountName='argoneutpro'/>
 
 		<groupAccountMapper
 			name='auger'
@@ -2139,16 +1329,6 @@
 			accountName='cdfnam'/>
 
 		<groupAccountMapper
-			name='cdms'
-			description=''
-			accountName='cdms'/>
-
-		<groupAccountMapper
-			name='cdmspro'
-			description=''
-			accountName='cdmspro'/>
-
-		<groupAccountMapper
 			name='cigi'
 			description=''
 			accountName='cigi'/>
@@ -2184,44 +1364,9 @@
 			accountName='compbiogrid'/>
 
 		<groupAccountMapper
-			name='coupp'
-			description=''
-			accountName='coupp'/>
-
-		<groupAccountMapper
 			name='csiu'
 			description=''
 			accountName='csiu'/>
-
-		<groupAccountMapper
-			name='darkside'
-			description=''
-			accountName='darkside'/>
-
-		<groupAccountMapper
-			name='darksideana'
-			description=''
-			accountName='darksideana'/>
-
-		<groupAccountMapper
-			name='darksidecal'
-			description=''
-			accountName='darksidecal'/>
-
-		<groupAccountMapper
-			name='darksidedat'
-			description=''
-			accountName='darksidedat'/>
-
-		<groupAccountMapper
-			name='darksidegli'
-			description=''
-			accountName='darksidegli'/>
-
-		<groupAccountMapper
-			name='darksidepro'
-			description=''
-			accountName='darksidepro'/>
 
 		<groupAccountMapper
 			name='des'
@@ -2249,41 +1394,6 @@
 			accountName='enmr.eu'/>
 
 		<groupAccountMapper
-			name='fermiana'
-			description=''
-			accountName='fermiana'/>
-
-		<groupAccountMapper
-			name='fermipro'
-			description=''
-			accountName='fermipro'/>
-
-		<groupAccountMapper
-			name='fgadmin'
-			description=''
-			accountName='fgadmin'/>
-
-		<groupAccountMapper
-			name='fggli'
-			description=''
-			accountName='fggli'/>
-
-		<groupAccountMapper
-			name='fgtest'
-			description=''
-			accountName='fgtest'/>
-
-		<groupAccountMapper
-			name='fnal_acc'
-			description=''
-			accountName='fnal_acc'/>
-
-		<groupAccountMapper
-			name='fnal_thy'
-			description=''
-			accountName='fnal_thy'/>
-
-		<groupAccountMapper
 			name='fnalgrid'
 			description=''
 			accountName='fnalgrid'/>
@@ -2304,26 +1414,6 @@
 			accountName='geant4'/>
 
 		<groupAccountMapper
-			name='gendetrd'
-			description=''
-			accountName='gendetrd'/>
-
-		<groupAccountMapper
-			name='gendetrdana'
-			description=''
-			accountName='gendetrdana'/>
-
-		<groupAccountMapper
-			name='gendetrdgli'
-			description=''
-			accountName='gendetrdgli'/>
-
-		<groupAccountMapper
-			name='gendetrdpro'
-			description=''
-			accountName='gendetrdpro'/>
-
-		<groupAccountMapper
 			name='glast.org'
 			description=''
 			accountName='glast.org'/>
@@ -2337,31 +1427,6 @@
 			name='gluex'
 			description=''
 			accountName='gluex'/>
-
-		<groupAccountMapper
-			name='gm2'
-			description=''
-			accountName='gm2'/>
-
-		<groupAccountMapper
-			name='gm2ana'
-			description=''
-			accountName='gm2ana'/>
-
-		<groupAccountMapper
-			name='gm2gli'
-			description=''
-			accountName='gm2gli'/>
-
-		<groupAccountMapper
-			name='gm2pro'
-			description=''
-			accountName='gm2pro'/>
-
-		<groupAccountMapper
-			name='gpn'
-			description=''
-			accountName='gpn'/>
 
 		<groupAccountMapper
 			name='gridunesp'
@@ -2382,46 +1447,6 @@
 			name='ilc'
 			description=''
 			accountName='ilc'/>
-
-		<groupAccountMapper
-			name='lar1'
-			description=''
-			accountName='lar1'/>
-
-		<groupAccountMapper
-			name='lar1ana'
-			description=''
-			accountName='lar1ana'/>
-
-		<groupAccountMapper
-			name='lar1gli'
-			description=''
-			accountName='lar1gli'/>
-
-		<groupAccountMapper
-			name='lar1pro'
-			description=''
-			accountName='lar1pro'/>
-
-		<groupAccountMapper
-			name='lariat'
-			description=''
-			accountName='lariat'/>
-
-		<groupAccountMapper
-			name='lariatana'
-			description=''
-			accountName='lariatana'/>
-
-		<groupAccountMapper
-			name='lariatgli'
-			description=''
-			accountName='lariatgli'/>
-
-		<groupAccountMapper
-			name='lariatpro'
-			description=''
-			accountName='lariatpro'/>
 
 		<groupAccountMapper
 			name='lbne'
@@ -2459,99 +1484,14 @@
 			accountName='lsst'/>
 
 		<groupAccountMapper
-			name='map'
-			description=''
-			accountName='map'/>
-
-		<groupAccountMapper
-			name='mapana'
-			description=''
-			accountName='mapana'/>
-
-		<groupAccountMapper
-			name='mapgli'
-			description=''
-			accountName='mapgli'/>
-
-		<groupAccountMapper
-			name='mappro'
-			description=''
-			accountName='mappro'/>
-
-		<groupAccountMapper
 			name='mcdrd'
 			description=''
 			accountName='mcdrd'/>
 
 		<groupAccountMapper
-			name='minbnpro'
-			description=''
-			accountName='minbnpro'/>
-
-		<groupAccountMapper
-			name='minboone'
-			description=''
-			accountName='minboone'/>
-
-		<groupAccountMapper
-			name='minerva'
-			description=''
-			accountName='minerva'/>
-
-		<groupAccountMapper
-			name='minervaana'
-			description=''
-			accountName='minervaana'/>
-
-		<groupAccountMapper
-			name='minervagli'
-			description=''
-			accountName='minervagli'/>
-
-		<groupAccountMapper
-			name='minervapro'
-			description=''
-			accountName='minervapro'/>
-
-		<groupAccountMapper
-			name='minos'
-			description=''
-			accountName='minos'/>
-
-		<groupAccountMapper
-			name='minosana'
-			description=''
-			accountName='minosana'/>
-
-		<groupAccountMapper
-			name='minosgli'
-			description=''
-			accountName='minosgli'/>
-
-		<groupAccountMapper
-			name='minospro'
-			description=''
-			accountName='minospro'/>
-
-		<groupAccountMapper
-			name='mipp'
-			description=''
-			accountName='mipp'/>
-
-		<groupAccountMapper
-			name='mipppro'
-			description=''
-			accountName='mipppro'/>
-
-		<groupAccountMapper
 			name='mis'
 			description=''
 			accountName='mis'/>
-
-		<groupAccountMapper
-			name='mu2e'
-			description=''
-			accountName='mu2e'/>
 
 		<groupAccountMapper
 			name='nanohub'
@@ -2564,59 +1504,9 @@
 			accountName='nees'/>
 
 		<groupAccountMapper
-			name='nova'
-			description=''
-			accountName='nova'/>
-
-		<groupAccountMapper
-			name='novaana'
-			description=''
-			accountName='novaana'/>
-
-		<groupAccountMapper
-			name='novagli'
-			description=''
-			accountName='novagli'/>
-
-		<groupAccountMapper
-			name='novapro'
-			description=''
-			accountName='novapro'/>
-
-		<groupAccountMapper
-			name='numi'
-			description=''
-			accountName='numi'/>
-
-		<groupAccountMapper
-			name='numipro'
-			description=''
-			accountName='numipro'/>
-
-		<groupAccountMapper
 			name='nysgrid'
 			description=''
 			accountName='nysgrid'/>
-
-		<groupAccountMapper
-			name='okra'
-			description=''
-			accountName='okra'/>
-
-		<groupAccountMapper
-			name='okraana'
-			description=''
-			accountName='okraana'/>
-
-		<groupAccountMapper
-			name='okragli'
-			description=''
-			accountName='okragli'/>
-
-		<groupAccountMapper
-			name='okrapro'
-			description=''
-			accountName='okrapro'/>
 
 		<groupAccountMapper
 			name='ops'
@@ -2640,16 +1530,6 @@
 			accountName='osgedu'/>
 
 		<groupAccountMapper
-			name='patriot'
-			description=''
-			accountName='patriot'/>
-
-		<groupAccountMapper
-			name='patripro'
-			description=''
-			accountName='patripro'/>
-
-		<groupAccountMapper
 			name='sam'
 			description=''
 			accountName='sam'/>
@@ -2665,26 +1545,6 @@
 			accountName='sbgrid'/>
 
 		<groupAccountMapper
-			name='seaquest'
-			description=''
-			accountName='seaquest'/>
-
-		<groupAccountMapper
-			name='seaquestana'
-			description=''
-			accountName='seaquestana'/>
-
-		<groupAccountMapper
-			name='seaquestgli'
-			description=''
-			accountName='seaquestgli'/>
-
-		<groupAccountMapper
-			name='seaquestpro'
-			description=''
-			accountName='seaquestpro'/>
-
-		<groupAccountMapper
 			name='snoplus.snolab.ca'
 			description=''
 			accountName='snoplus.snolab.ca'/>
@@ -2695,49 +1555,9 @@
 			accountName='star'/>
 
 		<groupAccountMapper
-			name='superbvo.org'
-			description=''
-			accountName='superbvo.org'/>
-
-		<groupAccountMapper
-			name='superbvo.orgprod'
-			description=''
-			accountName='superbvo.orgprod'/>
-
-		<groupAccountMapper
-			name='superbvo.orgsoft'
-			description=''
-			accountName='superbvo.orgsoft'/>
-
-		<groupAccountMapper
 			name='suragrid'
 			description=''
 			accountName='suragrid'/>
-
-		<groupAccountMapper
-			name='theopro'
-			description=''
-			accountName='theopro'/>
-
-		<groupAccountMapper
-			name='uboone'
-			description=''
-			accountName='uboone'/>
-
-		<groupAccountMapper
-			name='ubooneana'
-			description=''
-			accountName='ubooneana'/>
-
-		<groupAccountMapper
-			name='uboonegli'
-			description=''
-			accountName='uboonegli'/>
-
-		<groupAccountMapper
-			name='uboonepro'
-			description=''
-			accountName='uboonepro'/>
 
 		<groupAccountMapper
 			name='uc3'
@@ -2793,60 +1613,12 @@
 			accountMappers='ligo'/>
 
 		<groupToAccountMapping
-			name='accelerator'
-			description=''
-			accountingVoSubgroup='accelerator'
-			accountingVo='FERMILAB'
-			userGroups='accelerator'
-			accountMappers='fnal_acc'/>
-
-		<groupToAccountMapping
-			name='accelerator-production'
-			description=''
-			accountingVoSubgroup='accelerator'
-			accountingVo='FERMILAB'
-			userGroups='accelerator-production'
-			accountMappers='accelpro'/>
-
-		<groupToAccountMapping
 			name='alice'
 			description=''
 			accountingVoSubgroup='alice'
 			accountingVo='ALICE'
 			userGroups='alice'
 			accountMappers='alice'/>
-
-		<groupToAccountMapping
-			name='argoneut'
-			description=''
-			accountingVoSubgroup='argoneut'
-			accountingVo='FERMILAB'
-			userGroups='argoneut'
-			accountMappers='argoneut'/>
-
-		<groupToAccountMapping
-			name='argoneut-production'
-			description=''
-			accountingVoSubgroup='argoneut'
-			accountingVo='FERMILAB'
-			userGroups='argoneut-production'
-			accountMappers='argoneutpro'/>
-
-		<groupToAccountMapping
-			name='argoneutana'
-			description=''
-			accountingVoSubgroup='argoneut'
-			accountingVo='FERMILAB'
-			userGroups='argoneutana'
-			accountMappers='argoneutana'/>
-
-		<groupToAccountMapping
-			name='argoneutgli'
-			description=''
-			accountingVoSubgroup='argoneut'
-			accountingVo='FERMILAB'
-			userGroups='argoneutgli'
-			accountMappers='argoneutgli'/>
 
 		<groupToAccountMapping
 			name='auger'
@@ -2993,22 +1765,6 @@
 			accountMappers='cdf'/>
 
 		<groupToAccountMapping
-			name='cdms'
-			description=''
-			accountingVoSubgroup='cdms'
-			accountingVo='FERMILAB'
-			userGroups='cdms'
-			accountMappers='cdms'/>
-
-		<groupToAccountMapping
-			name='cdms-production'
-			description=''
-			accountingVoSubgroup='cdms'
-			accountingVo='FERMILAB'
-			userGroups='cdms-production'
-			accountMappers='cdmspro'/>
-
-		<groupToAccountMapping
 			name='cigi'
 			description=''
 			accountingVoSubgroup='cigi'
@@ -3065,68 +1821,12 @@
 			accountMappers='compbiogrid'/>
 
 		<groupToAccountMapping
-			name='coupp'
-			description=''
-			accountingVoSubgroup='coupp'
-			accountingVo='FERMILAB'
-			userGroups='coupp'
-			accountMappers='coupp'/>
-
-		<groupToAccountMapping
 			name='csiu'
 			description=''
 			accountingVoSubgroup='csiu'
 			accountingVo='CSIU'
 			userGroups='csiu'
 			accountMappers='csiu'/>
-
-		<groupToAccountMapping
-			name='darkside'
-			description=''
-			accountingVoSubgroup='darkside'
-			accountingVo='FERMILAB'
-			userGroups='darkside'
-			accountMappers='darkside'/>
-
-		<groupToAccountMapping
-			name='darksideana'
-			description=''
-			accountingVoSubgroup='darkside'
-			accountingVo='FERMILAB'
-			userGroups='darksideana'
-			accountMappers='darksideana'/>
-
-		<groupToAccountMapping
-			name='darksidecal'
-			description=''
-			accountingVoSubgroup='darkside'
-			accountingVo='FERMILAB'
-			userGroups='darksidecal'
-			accountMappers='darksidecal'/>
-
-		<groupToAccountMapping
-			name='darksidedat'
-			description=''
-			accountingVoSubgroup='darkside'
-			accountingVo='FERMILAB'
-			userGroups='darksidedat'
-			accountMappers='darksidedat'/>
-
-		<groupToAccountMapping
-			name='darksidegli'
-			description=''
-			accountingVoSubgroup='darkside'
-			accountingVo='FERMILAB'
-			userGroups='darksidegli'
-			accountMappers='darksidegli'/>
-
-		<groupToAccountMapping
-			name='darksidepro'
-			description=''
-			accountingVoSubgroup='darkside'
-			accountingVo='FERMILAB'
-			userGroups='darksidepro'
-			accountMappers='darksidepro'/>
 
 		<groupToAccountMapping
 			name='des'
@@ -3201,46 +1901,6 @@
 			accountMappers='fnalgrid'/>
 
 		<groupToAccountMapping
-			name='fermilab-production'
-			description=''
-			accountingVoSubgroup='fermilab'
-			accountingVo='FERMILAB'
-			userGroups='fermilab-production'
-			accountMappers='fermipro'/>
-
-		<groupToAccountMapping
-			name='fermilab-test'
-			description=''
-			accountingVoSubgroup='fermilab-test'
-			accountingVo='FERMILAB'
-			userGroups='fermilab-test'
-			accountMappers='fgtest'/>
-
-		<groupToAccountMapping
-			name='fgadmin'
-			description=''
-			accountingVoSubgroup='fermilab'
-			accountingVo='FERMILAB'
-			userGroups='fgadmin'
-			accountMappers='fgadmin'/>
-
-		<groupToAccountMapping
-			name='fggli'
-			description=''
-			accountingVoSubgroup='fermilab'
-			accountingVo='FERMILAB'
-			userGroups='fggli'
-			accountMappers='fggli'/>
-
-		<groupToAccountMapping
-			name='fnal-ana'
-			description=''
-			accountingVoSubgroup='fermilab'
-			accountingVo='FERMILAB'
-			userGroups='fnal-ana'
-			accountMappers='fermiana'/>
-
-		<groupToAccountMapping
 			name='gcedu'
 			description=''
 			accountingVoSubgroup='gcedu'
@@ -3273,38 +1933,6 @@
 			accountMappers='geant4'/>
 
 		<groupToAccountMapping
-			name='gendetrd'
-			description=''
-			accountingVoSubgroup='gendetrd'
-			accountingVo='FERMILAB'
-			userGroups='gendetrd'
-			accountMappers='gendetrd'/>
-
-		<groupToAccountMapping
-			name='gendetrd-production'
-			description=''
-			accountingVoSubgroup='gendetrd'
-			accountingVo='FERMILAB'
-			userGroups='gendetrd-production'
-			accountMappers='gendetrdpro'/>
-
-		<groupToAccountMapping
-			name='gendetrdana'
-			description=''
-			accountingVoSubgroup='gendetrd'
-			accountingVo='FERMILAB'
-			userGroups='gendetrdana'
-			accountMappers='gendetrdana'/>
-
-		<groupToAccountMapping
-			name='gendetrdgli'
-			description=''
-			accountingVoSubgroup='gendetrd'
-			accountingVo='FERMILAB'
-			userGroups='gendetrdgli'
-			accountMappers='gendetrdgli'/>
-
-		<groupToAccountMapping
 			name='glast.org'
 			description=''
 			accountingVoSubgroup='glast.org'
@@ -3327,46 +1955,6 @@
 			accountingVo='Gluex'
 			userGroups='gluex'
 			accountMappers='gluex'/>
-
-		<groupToAccountMapping
-			name='gm2'
-			description=''
-			accountingVoSubgroup='gm2'
-			accountingVo='FERMILAB'
-			userGroups='gm2'
-			accountMappers='gm2'/>
-
-		<groupToAccountMapping
-			name='gm2-production'
-			description=''
-			accountingVoSubgroup='gm2'
-			accountingVo='FERMILAB'
-			userGroups='gm2-production'
-			accountMappers='gm2pro'/>
-
-		<groupToAccountMapping
-			name='gm2ana'
-			description=''
-			accountingVoSubgroup='gm2'
-			accountingVo='FERMILAB'
-			userGroups='gm2ana'
-			accountMappers='gm2ana'/>
-
-		<groupToAccountMapping
-			name='gm2gli'
-			description=''
-			accountingVoSubgroup='gm2'
-			accountingVo='FERMILAB'
-			userGroups='gm2gli'
-			accountMappers='gm2gli'/>
-
-		<groupToAccountMapping
-			name='gpn'
-			description=''
-			accountingVoSubgroup='gpn'
-			accountingVo='gpn'
-			userGroups='gpn'
-			accountMappers='gpn'/>
 
 		<groupToAccountMapping
 			name='gridunesp'
@@ -3399,70 +1987,6 @@
 			accountingVo='ILC'
 			userGroups='ilc'
 			accountMappers='ilc'/>
-
-		<groupToAccountMapping
-			name='lar1'
-			description=''
-			accountingVoSubgroup='lar1'
-			accountingVo='FERMILAB'
-			userGroups='lar1'
-			accountMappers='lar1'/>
-
-		<groupToAccountMapping
-			name='lar1-production'
-			description=''
-			accountingVoSubgroup='lar1'
-			accountingVo='FERMILAB'
-			userGroups='lar1-production'
-			accountMappers='lar1pro'/>
-
-		<groupToAccountMapping
-			name='lar1ana'
-			description=''
-			accountingVoSubgroup='lar1'
-			accountingVo='FERMILAB'
-			userGroups='lar1ana'
-			accountMappers='lar1ana'/>
-
-		<groupToAccountMapping
-			name='lar1gli'
-			description=''
-			accountingVoSubgroup='lar1'
-			accountingVo='FERMILAB'
-			userGroups='lar1gli'
-			accountMappers='lar1gli'/>
-
-		<groupToAccountMapping
-			name='lariat'
-			description=''
-			accountingVoSubgroup='latiat'
-			accountingVo='FERMILAB'
-			userGroups='lariat'
-			accountMappers='lariat'/>
-
-		<groupToAccountMapping
-			name='lariat-production'
-			description=''
-			accountingVoSubgroup='lariat'
-			accountingVo='FERMILAB'
-			userGroups='lariat-production'
-			accountMappers='lariatpro'/>
-
-		<groupToAccountMapping
-			name='lariatana'
-			description=''
-			accountingVoSubgroup='lariat'
-			accountingVo='FERMILAB'
-			userGroups='lariatana'
-			accountMappers='lariatana'/>
-
-		<groupToAccountMapping
-			name='lariatgli'
-			description=''
-			accountingVoSubgroup='lariat'
-			accountingVo='FERMILAB'
-			userGroups='lariatgli'
-			accountMappers='lariatgli'/>
 
 		<groupToAccountMapping
 			name='lbne'
@@ -3513,38 +2037,6 @@
 			accountMappers='lsst'/>
 
 		<groupToAccountMapping
-			name='map'
-			description=''
-			accountingVoSubgroup='map'
-			accountingVo='FERMILAB'
-			userGroups='map'
-			accountMappers='map'/>
-
-		<groupToAccountMapping
-			name='map-production'
-			description=''
-			accountingVoSubgroup='map'
-			accountingVo='FERMILAB'
-			userGroups='map-production'
-			accountMappers='mappro'/>
-
-		<groupToAccountMapping
-			name='mapana'
-			description=''
-			accountingVoSubgroup='map'
-			accountingVo='FERMILAB'
-			userGroups='mapana'
-			accountMappers='mapana'/>
-
-		<groupToAccountMapping
-			name='mapgli'
-			description=''
-			accountingVoSubgroup='map'
-			accountingVo='FERMILAB'
-			userGroups='mapgli'
-			accountMappers='mapgli'/>
-
-		<groupToAccountMapping
 			name='mcdrd'
 			description=''
 			accountingVoSubgroup='mcdrd'
@@ -3553,116 +2045,12 @@
 			accountMappers='mcdrd'/>
 
 		<groupToAccountMapping
-			name='minerva'
-			description=''
-			accountingVoSubgroup='minerva'
-			accountingVo='FERMILAB'
-			userGroups='minerva'
-			accountMappers='minerva'/>
-
-		<groupToAccountMapping
-			name='minerva-production'
-			description=''
-			accountingVoSubgroup='minerva'
-			accountingVo='FERMILAB'
-			userGroups='minerva-production'
-			accountMappers='minervapro'/>
-
-		<groupToAccountMapping
-			name='minervaana'
-			description=''
-			accountingVoSubgroup='minerva'
-			accountingVo='FERMILAB'
-			userGroups='minervaana'
-			accountMappers='minervaana'/>
-
-		<groupToAccountMapping
-			name='minervagli'
-			description=''
-			accountingVoSubgroup='minerva'
-			accountingVo='FERMILAB'
-			userGroups='minervagli'
-			accountMappers='minervagli'/>
-
-		<groupToAccountMapping
-			name='miniboone'
-			description=''
-			accountingVoSubgroup='miniboone'
-			accountingVo='FERMILAB'
-			userGroups='miniboone'
-			accountMappers='minboone'/>
-
-		<groupToAccountMapping
-			name='miniboone-production'
-			description=''
-			accountingVoSubgroup='miniboone'
-			accountingVo='FERMILAB'
-			userGroups='miniboone-production'
-			accountMappers='minbnpro'/>
-
-		<groupToAccountMapping
-			name='minos'
-			description=''
-			accountingVoSubgroup='minos'
-			accountingVo='FERMILAB'
-			userGroups='minos'
-			accountMappers='minos'/>
-
-		<groupToAccountMapping
-			name='minos-production'
-			description=''
-			accountingVoSubgroup='minos'
-			accountingVo='FERMILAB'
-			userGroups='minos-production'
-			accountMappers='minospro'/>
-
-		<groupToAccountMapping
-			name='minosana'
-			description=''
-			accountingVoSubgroup='minos'
-			accountingVo='FERMILAB'
-			userGroups='minosana'
-			accountMappers='minosana'/>
-
-		<groupToAccountMapping
-			name='minosgli'
-			description=''
-			accountingVoSubgroup='minos'
-			accountingVo='FERMILAB'
-			userGroups='minosgli'
-			accountMappers='minosgli'/>
-
-		<groupToAccountMapping
-			name='mipp'
-			description=''
-			accountingVoSubgroup='mipp'
-			accountingVo='FERMILAB'
-			userGroups='mipp'
-			accountMappers='mipp'/>
-
-		<groupToAccountMapping
-			name='mipp-production'
-			description=''
-			accountingVoSubgroup='mipp'
-			accountingVo='FERMILAB'
-			userGroups='mipp-production'
-			accountMappers='mipppro'/>
-
-		<groupToAccountMapping
 			name='mis'
 			description=''
 			accountingVoSubgroup='mis'
 			accountingVo='MIS'
 			userGroups='mis'
 			accountMappers='mis'/>
-
-		<groupToAccountMapping
-			name='mu2e'
-			description=''
-			accountingVoSubgroup='mu2e'
-			accountingVo='FERMILAB'
-			userGroups='mu2e'
-			accountMappers='mu2e'/>
 
 		<groupToAccountMapping
 			name='nanohub'
@@ -3713,92 +2101,12 @@
 			accountMappers='usatlas2'/>
 
 		<groupToAccountMapping
-			name='nova'
-			description=''
-			accountingVoSubgroup='nova'
-			accountingVo='FERMILAB'
-			userGroups='nova'
-			accountMappers='nova'/>
-
-		<groupToAccountMapping
-			name='nova-production'
-			description=''
-			accountingVoSubgroup='nova'
-			accountingVo='FERMILAB'
-			userGroups='nova-production'
-			accountMappers='novapro'/>
-
-		<groupToAccountMapping
-			name='novaana'
-			description=''
-			accountingVoSubgroup='nova'
-			accountingVo='FERMILAB'
-			userGroups='novaana'
-			accountMappers='novaana'/>
-
-		<groupToAccountMapping
-			name='novagli'
-			description=''
-			accountingVoSubgroup='nova'
-			accountingVo='FERMILAB'
-			userGroups='novagli'
-			accountMappers='novagli'/>
-
-		<groupToAccountMapping
-			name='numi'
-			description=''
-			accountingVoSubgroup='numi'
-			accountingVo='FERMILAB'
-			userGroups='numi'
-			accountMappers='numi'/>
-
-		<groupToAccountMapping
-			name='numi-production'
-			description=''
-			accountingVoSubgroup='numi'
-			accountingVo='FERMILAB'
-			userGroups='numi-production'
-			accountMappers='numipro'/>
-
-		<groupToAccountMapping
 			name='nysgrid'
 			description=''
 			accountingVoSubgroup='nysgrid'
 			accountingVo='NYSGRID'
 			userGroups='nysgrid'
 			accountMappers='nysgrid'/>
-
-		<groupToAccountMapping
-			name='okra'
-			description=''
-			accountingVoSubgroup='okra'
-			accountingVo='FERMILAB'
-			userGroups='okra'
-			accountMappers='okra'/>
-
-		<groupToAccountMapping
-			name='okra-production'
-			description=''
-			accountingVoSubgroup='okra'
-			accountingVo='FERMILAB'
-			userGroups='okra-production'
-			accountMappers='okrapro'/>
-
-		<groupToAccountMapping
-			name='okraana'
-			description=''
-			accountingVoSubgroup='okra'
-			accountingVo='FERMILAB'
-			userGroups='okraana'
-			accountMappers='okraana'/>
-
-		<groupToAccountMapping
-			name='okragli'
-			description=''
-			accountingVoSubgroup='okra'
-			accountingVo='FERMILAB'
-			userGroups='okragli'
-			accountMappers='okragli'/>
 
 		<groupToAccountMapping
 			name='ops'
@@ -3841,60 +2149,12 @@
 			accountMappers='osgedu'/>
 
 		<groupToAccountMapping
-			name='patriot'
-			description=''
-			accountingVoSubgroup='patriot'
-			accountingVo='FERMILAB'
-			userGroups='patriot'
-			accountMappers='patriot'/>
-
-		<groupToAccountMapping
-			name='patriot-production'
-			description=''
-			accountingVoSubgroup='patriot'
-			accountingVo='FERMILAB'
-			userGroups='patriot-production'
-			accountMappers='patripro'/>
-
-		<groupToAccountMapping
 			name='sbgrid'
 			description=''
 			accountingVoSubgroup='sbgrid'
 			accountingVo='SBGrid'
 			userGroups='sbgrid'
 			accountMappers='sbgrid'/>
-
-		<groupToAccountMapping
-			name='seaquest'
-			description=''
-			accountingVoSubgroup='seaquest'
-			accountingVo='FERMILAB'
-			userGroups='seaquest'
-			accountMappers='seaquest'/>
-
-		<groupToAccountMapping
-			name='seaquestana'
-			description=''
-			accountingVoSubgroup='seaquest'
-			accountingVo='FERMILAB'
-			userGroups='seaquestana'
-			accountMappers='seaquestana'/>
-
-		<groupToAccountMapping
-			name='seaquestgli'
-			description=''
-			accountingVoSubgroup='seaquest'
-			accountingVo='FERMILAB'
-			userGroups='seaquestgli'
-			accountMappers='seaquestgli'/>
-
-		<groupToAccountMapping
-			name='seaquestpro'
-			description=''
-			accountingVoSubgroup='seaquest'
-			accountingVo='FERMILAB'
-			userGroups='seaquestpro'
-			accountMappers='seaquestpro'/>
 
 		<groupToAccountMapping
 			name='snoplus.snolab.ca'
@@ -3913,84 +2173,12 @@
 			accountMappers='star'/>
 
 		<groupToAccountMapping
-			name='superbvo.org'
-			description=''
-			accountingVoSubgroup='superbvo.org'
-			accountingVo='SuperB'
-			userGroups='superbvo.org'
-			accountMappers='superbvo.org'/>
-
-		<groupToAccountMapping
-			name='superbvo.orgprod'
-			description=''
-			accountingVoSubgroup='superbvo.org'
-			accountingVo='SuperB'
-			userGroups='superbvo.orgprod'
-			accountMappers='superbvo.orgprod'/>
-
-		<groupToAccountMapping
-			name='superbvo.orgsoft'
-			description=''
-			accountingVoSubgroup='superbvo.org'
-			accountingVo='SuperB'
-			userGroups='superbvo.orgsoft'
-			accountMappers='superbvo.orgsoft'/>
-
-		<groupToAccountMapping
 			name='suragrid'
 			description=''
 			accountingVoSubgroup='suragrid'
 			accountingVo='SURAGrid'
 			userGroups='suragrid'
 			accountMappers='suragrid'/>
-
-		<groupToAccountMapping
-			name='theory'
-			description=''
-			accountingVoSubgroup='theory'
-			accountingVo='FERMILAB'
-			userGroups='theory'
-			accountMappers='fnal_thy'/>
-
-		<groupToAccountMapping
-			name='theory-production'
-			description=''
-			accountingVoSubgroup='theory'
-			accountingVo='FERMILAB'
-			userGroups='theory-production'
-			accountMappers='theopro'/>
-
-		<groupToAccountMapping
-			name='uboone'
-			description=''
-			accountingVoSubgroup='microboone'
-			accountingVo='FERMILAB'
-			userGroups='microboone'
-			accountMappers='uboone'/>
-
-		<groupToAccountMapping
-			name='ubooneana'
-			description=''
-			accountingVoSubgroup='microboone'
-			accountingVo='FERMILAB'
-			userGroups='ubooneana'
-			accountMappers='ubooneana'/>
-
-		<groupToAccountMapping
-			name='uboonegli'
-			description=''
-			accountingVoSubgroup='microboone'
-			accountingVo='FERMILAB'
-			userGroups='uboonegli'
-			accountMappers='uboonegli'/>
-
-		<groupToAccountMapping
-			name='uboonepro'
-			description=''
-			accountingVoSubgroup='microboone'
-			accountingVo='FERMILAB'
-			userGroups='uboonepro'
-			accountMappers='uboonepro'/>
 
 		<groupToAccountMapping
 			name='uc3'
@@ -4069,7 +2257,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, lariat, gendetrd, lar1, okra, accelerator, argoneut, cdms, minerva, miniboone, minos, mipp, mu2e, nova, numi, patriot, theory, fermilab-test, uboone, uboonepro, uboonegli, ubooneana, map, gm2, coupp, fermilab-production, lariat-production, gendetrd-production, lar1-production, okra-production, accelerator-production, argoneut-production, cdms-production, minerva-production, miniboone-production, minos-production, mipp-production, nova-production, numi-production, patriot-production, theory-production, map-production, gm2-production, argoneutana, lariatana, gendetrdana, lar1ana, okraana, minervaana, minosana, novaana, mapana, gm2ana, fnal-ana, fggli, argoneutgli, lariatgli, gendetrdgli, lar1gli, okragli, minervagli, minosgli, novagli, mapgli, gm2gli, fgadmin, darkside, darksideana, darksidecal, darksidedat, darksidegli, darksidepro, seaquest, seaquestpro, seaquestana, seaquestgli, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, gpn, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, superbvo.org, superbvo.orgprod, superbvo.orgsoft, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
