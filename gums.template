@@ -1137,9 +1137,21 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
     groupName="snoplus.snolab.ca"/>
 </groupMapping>
 
+<!-- 64 LZ -->
+<groupMapping name="LZ" accountingVo="LZ" accountingDesc="LZ">
+    <userGroup className="gov.bnl.gums.VOMSGroup" 
+    url="https://voms.hep.wisc.edu:8443/voms/lz" 
+    persistenceFactory="mysql" 
+    name="voms.hep.wisc.edu" 
+    voGroup="/LZ" sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
+    matchFQAN="vo" acceptProxyWithoutFQAN="true"/>
+    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
+    groupName="LZ"/>
+</groupMapping>
+
 </groupMappings>
 
 <hostGroups>
-<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdfdev-fnal,cdffgrid-fnal,cdfnam-fnal,cdftestcaf-fnal,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,osg,osg-goc,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,compbiogrid,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,hcc,belle,bellepro,csiu,suragrid,nees,gcvo,gcedu,dream,lbne,lbne-production,lbneana,lbnegli,lsst,uc3,mcdrd,lqcd,auger,glast.org,enmr.eu,osgcrossce,vo.cta.in2p3.fr,xenon.biggrid.nl,snoplus.snolab.ca"/>
+<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdfdev-fnal,cdffgrid-fnal,cdfnam-fnal,cdftestcaf-fnal,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,osg,osg-goc,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,compbiogrid,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,hcc,belle,bellepro,csiu,suragrid,nees,gcvo,gcedu,dream,lbne,lbne-production,lbneana,lbnegli,lsst,uc3,mcdrd,lqcd,auger,glast.org,enmr.eu,osgcrossce,vo.cta.in2p3.fr,xenon.biggrid.nl,snoplus.snolab.ca,LZ"/>
 </hostGroups>
 </gums>
