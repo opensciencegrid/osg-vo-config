@@ -336,6 +336,16 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
+			name='lz'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.hep.wisc.edu:8443/voms/lz'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
 			name='mcdrd'
 			description=''
 			persistenceFactory='mysql'
@@ -1276,6 +1286,15 @@
 			voGroup='/vo.cta.in2p3.fr'/>
 
 		<vomsUserGroup
+			name='voms.hep.wisc.edu'
+			access='read self'
+			description=''
+			vomsServer='lz'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/LZ'/>
+
+		<vomsUserGroup
 			name='xenon.biggrid.nl'
 			access='read self'
 			description=''
@@ -1287,6 +1306,11 @@
 	</userGroups>
 
 	<accountMappers>
+
+		<groupAccountMapper
+			name='LZ'
+			description=''
+			accountName='LZ'/>
 
 		<groupAccountMapper
 			name='alice'
@@ -1611,6 +1635,14 @@
 			accountingVo='LIGO'
 			userGroups='LIGO'
 			accountMappers='ligo'/>
+
+		<groupToAccountMapping
+			name='LZ'
+			description=''
+			accountingVoSubgroup='LZ'
+			accountingVo='LZ'
+			userGroups='voms.hep.wisc.edu'
+			accountMappers='LZ'/>
 
 		<groupToAccountMapping
 			name='alice'
@@ -2257,7 +2289,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
