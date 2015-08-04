@@ -62,3 +62,6 @@
 "osg" "voms2.opensciencegrid.org" "15027" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms2.opensciencegrid.org" "osg"
 "snoplus.snolab.ca" "voms.gridpp.ac.uk" "15503" "/C=UK/O=eScience/OU=Manchester/L=HEP/CN=voms.gridpp.ac.uk" "snoplus.snolab.ca"
 "lz" "voms.hep.wisc.edu" "15001" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms.hep.wisc.edu" "lz"
+"dune" "voms1.fnal.gov" "15042" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "dune"
+"dune" "voms2.fnal.gov" "15042" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "dune"
+
