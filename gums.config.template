@@ -166,6 +166,16 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
+			name='dune'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.fnal.gov:8443/voms/dune'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
 			name='dzero'
 			description=''
 			persistenceFactory='mysql'
@@ -873,6 +883,45 @@
 			voGroup='/dream'/>
 
 		<vomsUserGroup
+			name='dune'
+			access='read self'
+			description=''
+			vomsServer='dune'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/dune'/>
+
+		<vomsUserGroup
+			name='dune-production'
+			access='read self'
+			description=''
+			vomsServer='dune'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/dune'
+			role='Production'/>
+
+		<vomsUserGroup
+			name='duneana'
+			access='read self'
+			description=''
+			vomsServer='dune'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/dune'
+			role='Analysis'/>
+
+		<vomsUserGroup
+			name='dunegli'
+			access='read self'
+			description=''
+			vomsServer='dune'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/dune'
+			role='pilot'/>
+
+		<vomsUserGroup
 			name='dzeroana'
 			access='read self'
 			description=''
@@ -1408,6 +1457,26 @@
 			accountName='dream'/>
 
 		<groupAccountMapper
+			name='dune'
+			description=''
+			accountName='dune'/>
+
+		<groupAccountMapper
+			name='duneana'
+			description=''
+			accountName='duneana'/>
+
+		<groupAccountMapper
+			name='dunegli'
+			description=''
+			accountName='dunegli'/>
+
+		<groupAccountMapper
+			name='dunepro'
+			description=''
+			accountName='dunepro'/>
+
+		<groupAccountMapper
 			name='dzeroana'
 			description=''
 			accountName='dzeroana'/>
@@ -1893,6 +1962,38 @@
 			accountMappers='dream'/>
 
 		<groupToAccountMapping
+			name='dune'
+			description=''
+			accountingVoSubgroup='dune'
+			accountingVo='DUNE'
+			userGroups='dune'
+			accountMappers='dune'/>
+
+		<groupToAccountMapping
+			name='dune-production'
+			description=''
+			accountingVoSubgroup='dune'
+			accountingVo='DUNE'
+			userGroups='dune-production'
+			accountMappers='dunepro'/>
+
+		<groupToAccountMapping
+			name='duneana'
+			description=''
+			accountingVoSubgroup='dune'
+			accountingVo='DUNE'
+			userGroups='duneana'
+			accountMappers='duneana'/>
+
+		<groupToAccountMapping
+			name='dunegli'
+			description=''
+			accountingVoSubgroup='dune'
+			accountingVo='DUNE'
+			userGroups='dunegli'
+			accountMappers='dunegli'/>
+
+		<groupToAccountMapping
 			name='dzeroana'
 			description=''
 			accountingVoSubgroup='dzero'
@@ -2289,7 +2390,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
