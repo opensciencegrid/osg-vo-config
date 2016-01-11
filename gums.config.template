@@ -1615,6 +1615,8 @@
 			name='osgcrossce'
 			description=''
 			persistenceFactory='mysql'
+			recyclable='false'
+			expiration='60'
 			accountPool='osgcrossce'/>
 
 		<groupAccountMapper
@@ -1681,6 +1683,8 @@
 			name='uscmsPool'
 			description=''
 			persistenceFactory='mysql'
+			recyclable='false'
+			expiration='60'
 			accountPool='uscmsPool'/>
 
 		<groupAccountMapper
