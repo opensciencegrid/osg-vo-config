@@ -32,7 +32,6 @@
 "auger" "voms1.egee.cesnet.cz" "15004" "/DC=org/DC=terena/DC=tcs/OU=Domain Control Validated/CN=voms1.egee.cesnet.cz" "auger"
 "glast.org" "voms2.cnaf.infn.it" "15018" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms2.cnaf.infn.it" "glast.org"
 "enmr.eu" "voms2.cnaf.infn.it" "15014" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms2.cnaf.infn.it" "enmr.eu"
-"osgcrossce" "voms.grid.iu.edu" "15011" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu" "osgcrossce"
 "vo.cta.in2p3.fr" "cclcgvomsli01.in2p3.fr" "15008" "/O=GRID-FR/C=FR/O=CNRS/OU=CC-IN2P3/CN=cclcgvomsli01.in2p3.fr" "vo.cta.in2p3.fr"
 "xenon.biggrid.nl" "voms.grid.sara.nl" "30008" "/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl" "xenon.biggrid.nl"
 "cdf" "voms1.fnal.gov" "15020" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "cdf"
