@@ -1,2 +1,2 @@
-/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=http/voms.grid.iu.edu
-/DC=com/DC=DigiCert-Grid/O=DigiCert Grid/CN=DigiCert Grid CA-1
+/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.grid.iu.edu
+/DC=org/DC=cilogon/C=US/O=CILogon/CN=CILogon OSG CA 1
