@@ -891,20 +891,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
      groupName='suragrid' />
 </groupMapping>
 
-<!-- 47 NEES -->
-<groupMapping name='nees' accountingVo='nees' accountingDesc='NEES'>
-     <userGroup className='gov.bnl.gums.VOMSGroup'
-     url='https://voms.fnal.gov:8443/voms/nees/services/VOMSAdmin'
-     persistenceFactory='mysql'
-     name='nees'
-     voGroup="/nees"
-     sslCertfile='/etc/grid-security/http/httpcert.pem'
-     sslKey='/etc/grid-security/http/httpkey.pem'
-      matchFQAN="vo" acceptProxyWithoutFQAN='true' />
-     <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
-     groupName='nees' />
-</groupMapping>
-
 <!-- 48 GCVO -->
 <groupMapping name='gcvo' accountingVo='gcvo' accountingDesc='GCVO'>
      <userGroup className='gov.bnl.gums.VOMSGroup'
@@ -1205,6 +1191,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 </groupMappings>
 
 <hostGroups>
-<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdfdev-fnal,cdffgrid-fnal,cdfnam-fnal,cdftestcaf-fnal,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,osg,osg-goc,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,compbiogrid,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,hcc,belle,bellepro,csiu,suragrid,nees,gcvo,gcedu,dream,lbne,lbne-production,lbneana,lbnegli,lsst,uc3,mcdrd,lqcd,auger,glast.org,enmr.eu,osgcrossce,vo.cta.in2p3.fr,xenon.biggrid.nl,snoplus.snolab.ca,LZ,dune,dune-production,duneana,dunegli"/>
+<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdfdev-fnal,cdffgrid-fnal,cdfnam-fnal,cdftestcaf-fnal,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,osg,osg-goc,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,compbiogrid,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,hcc,belle,bellepro,csiu,suragrid,gcvo,gcedu,dream,lbne,lbne-production,lbneana,lbnegli,lsst,uc3,mcdrd,lqcd,auger,glast.org,enmr.eu,osgcrossce,vo.cta.in2p3.fr,xenon.biggrid.nl,snoplus.snolab.ca,LZ,dune,dune-production,duneana,dunegli"/>
 </hostGroups>
 </gums>
