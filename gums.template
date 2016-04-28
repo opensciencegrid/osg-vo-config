@@ -694,20 +694,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
      <accountMapping className='gov.bnl.gums.GroupAccountMapper'
      groupName='ops' />
 </groupMapping>
-					
-<!-- 29 CompBioGrid -->
-<groupMapping name='compbiogrid' accountingVo='compbiogrid' accountingDesc='CompBioGrid'>
-     <userGroup className='gov.bnl.gums.VOMSGroup'     
-     url='https://vdvoms.vcell.uchc.edu:8443/voms/CompBioGrid/services/VOMSAdmin'     
-     persistenceFactory='mysql'      
-     name='compbiogrid'            
-     voGroup="/CompBioGrid"           
-     sslCertfile='/etc/grid-security/http/httpcert.pem'           
-     sslKey='/etc/grid-security/http/httpkey.pem'      
-     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
-     <accountMapping className='gov.bnl.gums.GroupAccountMapper'            
-     groupName='compbiogrid' />
-</groupMapping>
 
 <!-- 31 ILC -->
 <groupMapping name='ilc' accountingVo='ilc' accountingDesc='ILC'>
