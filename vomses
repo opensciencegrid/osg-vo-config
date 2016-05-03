@@ -11,7 +11,6 @@
 "geant4" "lcg-voms2.cern.ch" "15007" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch" "geant4"
 "ops" "voms2.cern.ch" "15009" "/DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch" "ops"
 "ops" "lcg-voms2.cern.ch" "15009" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch" "ops"
-"osg" "voms.grid.iu.edu" "15027" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.grid.iu.edu" "osg"
 "NYSGRID" "dylan.ccr.buffalo.edu" "15001" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=dylan.ccr.buffalo.edu" "NYSGRID"
 "SBGrid" "hpc.sbgrid.org" "15002" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=hpc.sbgrid.org" "SBGrid"
 "CIGI" "voms.cigi.uiuc.edu" "15001" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms.cigi.uiuc.edu" "cigi"
