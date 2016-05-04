@@ -653,19 +653,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
      <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
      groupName='osg' />
 </groupMapping>
- 
-<groupMapping name='osg-goc' accountingVo='osg' accountingDesc='OSG'>
-     <userGroup className='gov.bnl.gums.VOMSGroup'
-     url='https://voms.grid.iu.edu.org:8443/voms/osg/services/VOMSAdmin'
-     persistenceFactory='mysql' 
-     name='osg-goc' 
-     voGroup="/osg"
-     sslCertfile='/etc/grid-security/http/httpcert.pem'
-     sslKey='/etc/grid-security/http/httpkey.pem' 
-     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
-     <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
-     groupName='osg' />
-</groupMapping>
 
 <!-- 24 GOC OSGEDU -->
 <groupMapping name='osgedu' accountingVo='osgedu' accountingDesc='OSGEDU'>
@@ -849,20 +836,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="bellepro"/>
 </groupMapping>
 
-<!-- 45 CSIU -->
-<groupMapping name='csiu' accountingVo='csiu' accountingDesc='CSIU'>
-     <userGroup className='gov.bnl.gums.VOMSGroup'
-     url='https://voms.grid.iu.edu:8443/voms/CSIU/services/VOMSAdmin'
-     persistenceFactory='mysql' 
-     name='csiu' 
-     voGroup="/CSIU"
-     sslCertfile='/etc/grid-security/http/httpcert.pem'
-     sslKey='/etc/grid-security/http/httpkey.pem' 
-     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
-     <accountMapping className='gov.bnl.gums.GroupAccountMapper' 
-     groupName='csiu' />
-</groupMapping>
-
 <!-- 46 SURAGrid -->
 <groupMapping name='suragrid' accountingVo='suragrid' accountingDesc='SURAGrid'>
      <userGroup className='gov.bnl.gums.VOMSGroup'
@@ -985,18 +958,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
     groupName="lsst"/>
 </groupMapping>
 
-<!-- 54 UC3 -->
-<groupMapping name="uc3" accountingVo="uc3" accountingDesc="UC3">
-    <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url="https://voms.grid.iu.edu:8443/voms/UC3/services/VOMSAdmin" 
-    persistenceFactory="mysql" 
-    name="uc3" voGroup="/UC3" 
-    sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
-    matchFQAN="vo" acceptProxyWithoutFQAN="true"/>
-    <accountMapping className="gov.bnl.gums.GroupAccountMapper" 
-    groupName="uc3"/>
-</groupMapping>
-
 <!-- 55 MCDRD -->
 <groupMapping name="mcdrd" accountingVo="mcdrd" accountingDesc="MCDRD">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
@@ -1057,20 +1018,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
     matchFQAN="vo" acceptProxyWithoutFQAN='true' />
     <accountMapping className='gov.bnl.gums.GroupAccountMapper'
     groupName='enmr.eu' />
-</groupMapping>
-
-<!-- 60 OSG Cross CE -->
-<groupMapping name="osgcrossce" accountingVo="osgcrossce" accountingDesc="OSGCrossCE">
-    <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url="https://voms.grid.iu.edu:8443/voms/osgcrossce/services/VOMSAdmin" 
-    persistenceFactory="mysql" 
-    name="osgcrossce" 
-    voGroup="/osgcrossce" 
-    sslCertfile="/etc/grid-security/http/httpcert.pem" sslKey="/etc/grid-security/http/httpkey.pem" 
-    matchFQAN="vo" acceptProxyWithoutFQAN="true"/>
-    <accountMapping className="gov.bnl.gums.AccountPoolMapper" 
-    persistenceFactory="mysql"
-    name="osgcrossce"/>
 </groupMapping>
 
 <!-- 61 CTA -->
