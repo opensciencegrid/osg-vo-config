@@ -116,26 +116,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='compbiogrid'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://vdvoms.vcell.uchc.edu:8443/voms/CompBioGrid'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
-			name='csiu'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.grid.iu.edu:8443/voms/CSIU'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='des'
 			description=''
 			persistenceFactory='mysql'
@@ -386,16 +366,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='nees'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.fnal.gov:8443/voms/nees'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='nysgrid'
 			description=''
 			persistenceFactory='mysql'
@@ -419,27 +389,7 @@
 			name='osg'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://voms.grid.iu.edu.org:8443/voms/osg'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
-			name='osg1'
-			description=''
-			persistenceFactory='mysql'
 			baseUrl='https://voms.opensciencegrid.org:8443/voms/osg'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
-			name='osgcrossce'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.grid.iu.edu:8443/voms/osgcrossce'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -490,16 +440,6 @@
 			description=''
 			persistenceFactory='mysql'
 			baseUrl='https://voms.hpcc.ttu.edu:8443/voms/suragrid'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
-			name='uc3'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.grid.iu.edu:8443/voms/UC3'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -829,24 +769,6 @@
 			voGroup='/cms'/>
 
 		<vomsUserGroup
-			name='compbiogrid'
-			access='read self'
-			description=''
-			vomsServer='compbiogrid'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/CompBioGrid'/>
-
-		<vomsUserGroup
-			name='csiu'
-			access='read self'
-			description=''
-			vomsServer='csiu'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/CSIU'/>
-
-		<vomsUserGroup
 			name='des'
 			access='read self'
 			description=''
@@ -1160,15 +1082,6 @@
 			voGroup='/nanohub'/>
 
 		<vomsUserGroup
-			name='nees'
-			access='read self'
-			description=''
-			vomsServer='nees'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/nees'/>
-
-		<vomsUserGroup
 			name='newUsatlasProd'
 			access='read self'
 			description=''
@@ -1228,28 +1141,10 @@
 			name='osg'
 			access='read self'
 			description=''
-			vomsServer='osg1'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/osg'/>
-
-		<vomsUserGroup
-			name='osg-goc'
-			access='read self'
-			description=''
 			vomsServer='osg'
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/osg'/>
-
-		<vomsUserGroup
-			name='osgcrossce'
-			access='read self'
-			description=''
-			vomsServer='osgcrossce'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/osgcrossce'/>
 
 		<vomsUserGroup
 			name='osgedu'
@@ -1295,15 +1190,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/suragrid'/>
-
-		<vomsUserGroup
-			name='uc3'
-			access='read self'
-			description=''
-			vomsServer='uc3'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/UC3'/>
 
 		<vomsUserGroup
 			name='uscmst2admin'
@@ -1430,16 +1316,6 @@
 			name='cmst2admin'
 			description=''
 			accountName='cmst2admin'/>
-
-		<groupAccountMapper
-			name='compbiogrid'
-			description=''
-			accountName='compbiogrid'/>
-
-		<groupAccountMapper
-			name='csiu'
-			description=''
-			accountName='csiu'/>
 
 		<groupAccountMapper
 			name='des'
@@ -1592,11 +1468,6 @@
 			accountName='nanohub'/>
 
 		<groupAccountMapper
-			name='nees'
-			description=''
-			accountName='nees'/>
-
-		<groupAccountMapper
 			name='nysgrid'
 			description=''
 			accountName='nysgrid'/>
@@ -1610,14 +1481,6 @@
 			name='osg'
 			description=''
 			accountName='osg'/>
-
-		<accountPoolMapper
-			name='osgcrossce'
-			description=''
-			persistenceFactory='mysql'
-			recyclable='false'
-			expiration='60'
-			accountPool='osgcrossce'/>
 
 		<groupAccountMapper
 			name='osgedu'
@@ -1653,11 +1516,6 @@
 			name='suragrid'
 			description=''
 			accountName='suragrid'/>
-
-		<groupAccountMapper
-			name='uc3'
-			description=''
-			accountName='uc3'/>
 
 		<groupAccountMapper
 			name='usatlas1'
@@ -1916,22 +1774,6 @@
 			accountingVo='CMS'
 			userGroups='cmsuser-null'
 			accountMappers='uscmsPool'/>
-
-		<groupToAccountMapping
-			name='compbiogrid'
-			description=''
-			accountingVoSubgroup='compbiogrid'
-			accountingVo='CompBioGrid'
-			userGroups='compbiogrid'
-			accountMappers='compbiogrid'/>
-
-		<groupToAccountMapping
-			name='csiu'
-			description=''
-			accountingVoSubgroup='csiu'
-			accountingVo='CSIU'
-			userGroups='csiu'
-			accountMappers='csiu'/>
 
 		<groupToAccountMapping
 			name='des'
@@ -2198,14 +2040,6 @@
 			accountMappers='nanohub'/>
 
 		<groupToAccountMapping
-			name='nees'
-			description=''
-			accountingVoSubgroup='nees'
-			accountingVo='NEES'
-			userGroups='nees'
-			accountMappers='nees'/>
-
-		<groupToAccountMapping
 			name='newAtlas'
 			description=''
 			accountingVoSubgroup='atlas'
@@ -2262,22 +2096,6 @@
 			accountMappers='osg'/>
 
 		<groupToAccountMapping
-			name='osg-goc'
-			description=''
-			accountingVoSubgroup='osg'
-			accountingVo='OSG'
-			userGroups='osg-goc'
-			accountMappers='osg'/>
-
-		<groupToAccountMapping
-			name='osgcrossce'
-			description=''
-			accountingVoSubgroup='osgcrossce'
-			accountingVo='OSGCrossCE'
-			userGroups='osgcrossce'
-			accountMappers='osgcrossce'/>
-
-		<groupToAccountMapping
 			name='osgedu'
 			description=''
 			accountingVoSubgroup='osgedu'
@@ -2316,14 +2134,6 @@
 			accountingVo='SURAGrid'
 			userGroups='suragrid'
 			accountMappers='suragrid'/>
-
-		<groupToAccountMapping
-			name='uc3'
-			description=''
-			accountingVoSubgroup='uc3'
-			accountingVo='UC3'
-			userGroups='uc3'
-			accountMappers='uc3'/>
 
 		<groupToAccountMapping
 			name='uscmsfrontier'
@@ -2394,7 +2204,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, osg-goc, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, compbiogrid, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, csiu, suragrid, nees, gcvo, gcedu, dream, lbne, lbne-production, lbneana, lbnegli, lsst, uc3, mcdrd, lqcd, auger, glast.org, enmr.eu, osgcrossce, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lbne, lbne-production, lbneana, lbnegli, lsst, mcdrd, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
