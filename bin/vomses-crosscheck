@@ -52,7 +52,14 @@ def get_vomses():
 def get_lsc(entry):
     path = os.path.join(vomsdir, entry.lsc)
     if os.path.exists(path):
-        return lsc_entry(line.rstrip() for line in open(path))
+        lsc_entries = []
+        fh = open(path)
+        for line in fh:
+            # Read lines two at a time
+            dn_line = line.rstrip()
+            ca_line = fh.next().rstrip()
+            lsc_entries.append(lsc_entry((dn_line, ca_line)))
+        return lsc_entries
     else:
         return None
 
@@ -63,15 +70,18 @@ missing_vomses_entries = []
 dn_mismatches          = []
 
 for entry in vomses_entries:
-    lsc = get_lsc(entry)
-    if lsc is None:
+    lsc_entries = get_lsc(entry)
+    if lsc_entries is None:
         missing_lsc_files += ["Missing lsc file: %s" % entry.lsc]
-    elif entry.dn != lsc.dn:
-        dn_mismatches += [
-            "DNs don't match for %s:" % entry.lsc,
-            "  vomses: %s" % entry.dn,
-            "     lsc: %s" % lsc.dn
-        ]
+    else:
+        lsc_dns = [lsc.dn for lsc in lsc_entries]
+        if entry.dn not in lsc_dns:
+            dn_mismatches += [
+                "DNs don't match for %s:" % entry.lsc,
+                "  vomses: %s" % entry.dn,
+                "     lsc: %s" % "\n" \
+                "          ".join(lsc_dns)
+            ]
 
 vomses_lsc_files = set(entry.lsc for entry in vomses_entries)
 
