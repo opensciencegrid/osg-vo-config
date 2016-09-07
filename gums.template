@@ -1123,24 +1123,24 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
 
 <!-- 66 PROJECT8 -->
 
-<groupMapping name=“project8” accountingVo=“project8” accountingDesc=“project8”>
+<groupMapping name="project8" accountingVo="project8" accountingDesc="project8">
 <userGroup className="gov.bnl.gums.VOMSGroup"
 url="https://voms.hep.pnnl.gov:8443/voms/project8/services/VOMSAdmin"
 persistenceFactory="mysql"
-name=“project8” voGroup=“/project8”
-voRole=“project8”
+name="project8" voGroup="/project8"
+voRole="project8"
 matchFQAN="exact"
 sslCertfile="/etc/grid-security/http/httpcert.pem"
 sslKey="/etc/grid-security/http/httpkey.pem"/>
 <accountMapping className="gov.bnl.gums.GroupAccountMapper"
-groupName=“project8”/>
+groupName="project8"/>
 </groupMapping>
 
-<groupMapping name="project8_prod" accountingVo=“project8” accountingDesc=“project8”>
+<groupMapping name="project8_prod" accountingVo="project8" accountingDesc="project8">
 <userGroup className="gov.bnl.gums.VOMSGroup"
 url="https://voms.hep.pnnl.gov:8443/voms/project8/services/VOMSAdmin"
 persistenceFactory="mysql"
-name="project8_prod" voGroup=“/project8/prod”
+name="project8_prod" voGroup="/project8/prod"
 voRole="project8_prod"
 matchFQAN="exact"
 sslCertfile="/etc/grid-security/http/httpcert.pem"
