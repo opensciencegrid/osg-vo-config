@@ -406,6 +406,16 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
+			name='project8'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.hep.pnnl.gov:8443/voms/project8'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
 			name='sbgrid'
 			description=''
 			persistenceFactory='mysql'
@@ -1156,6 +1166,26 @@
 			voGroup='/osgedu'/>
 
 		<vomsUserGroup
+			name='project8'
+			access='read self'
+			description=''
+			vomsServer='project8'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/project8'
+			role='project8'/>
+
+		<vomsUserGroup
+			name='project8_prod'
+			access='read self'
+			description=''
+			vomsServer='project8'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/project8/prod'
+			role='project8_prod'/>
+
+		<vomsUserGroup
 			name='sbgrid'
 			access='read self'
 			description=''
@@ -1486,6 +1516,16 @@
 			name='osgedu'
 			description=''
 			accountName='osgedu'/>
+
+		<groupAccountMapper
+			name='project8'
+			description=''
+			accountName='project8'/>
+
+		<groupAccountMapper
+			name='project8_prod'
+			description=''
+			accountName='project8_prod'/>
 
 		<groupAccountMapper
 			name='sam'
@@ -2104,6 +2144,22 @@
 			accountMappers='osgedu'/>
 
 		<groupToAccountMapping
+			name='project8'
+			description=''
+			accountingVoSubgroup='project8'
+			accountingVo='project8'
+			userGroups='project8'
+			accountMappers='project8'/>
+
+		<groupToAccountMapping
+			name='project8_prod'
+			description=''
+			accountingVoSubgroup='project8'
+			accountingVo='project8'
+			userGroups='project8_prod'
+			accountMappers='project8_prod'/>
+
+		<groupToAccountMapping
 			name='sbgrid'
 			description=''
 			accountingVoSubgroup='sbgrid'
@@ -2204,7 +2260,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lbne, lbne-production, lbneana, lbnegli, lsst, mcdrd, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lbne, lbne-production, lbneana, lbnegli, lsst, mcdrd, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
