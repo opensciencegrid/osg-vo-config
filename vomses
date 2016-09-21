@@ -43,8 +43,6 @@
 "nanohub" "voms1.fnal.gov" "15022" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "nanohub"
 "nanohub" "voms2.fnal.gov" "15022" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "nanohub"
 "ilc" "grid-voms.desy.de" "15110" "/C=DE/O=GermanGrid/OU=DESY/CN=host/grid-voms.desy.de" "ilc"
-"lbne" "voms1.fnal.gov" "15029" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "lbne"
-"lbne" "voms2.fnal.gov" "15029" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "lbne"
 "lsst" "voms1.fnal.gov" "15003" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "lsst"
 "lsst" "voms2.fnal.gov" "15003" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "lsst"
 "mcdrd" "voms1.fnal.gov" "15004" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "mcdrd"
