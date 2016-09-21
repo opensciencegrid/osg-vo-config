@@ -892,58 +892,6 @@ url='https://glow-voms.cs.wisc.edu:8443/voms/GLOW/services/VOMSAdmin'
       groupName='dream' />
 </groupMapping>
 
-<!-- 52 LBNE -->
-<groupMapping name="lbne" accountingVo="lbne" accountingDesc="LBNE">
-    <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url="https://voms.fnal.gov:8443/voms/lbne/services/VOMSAdmin" 
-    persistenceFactory="mysql" 
-    name="lbne" 
-    voGroup="/lbne" 
-    sslCertfile="/etc/grid-security/http/httpcert.pem" 
-    sslKey="/etc/grid-security/http/httpkey.pem" 
-    matchFQAN="exact"/>
-    <accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="lbne"/>
-</groupMapping>
-
-<groupMapping name="lbne-production" accountingVo="lbne" accountingDesc="LBNE">
-    <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url="https://voms.fnal.gov:8443/voms/lbne/services/VOMSAdmin" 
-    persistenceFactory="mysql" 
-    name="lbne-production" 
-    voGroup="/lbne" 
-    voRole="Production" 
-    sslCertfile="/etc/grid-security/http/httpcert.pem" 
-    sslKey="/etc/grid-security/http/httpkey.pem" 
-    matchFQAN="exact"/>
-<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="lbnepro"/>
-</groupMapping>
-
-<groupMapping name="lbneana" accountingVo="lbne" accountingDesc="LBNE">
-    <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url="https://voms.fnal.gov:8443/voms/lbne/services/VOMSAdmin" 
-    persistenceFactory="mysql" 
-    name="lbneana" 
-    voGroup="/lbne" 
-    voRole="Analysis" 
-    sslCertfile="/etc/grid-security/http/httpcert.pem" 
-    sslKey="/etc/grid-security/http/httpkey.pem" 
-    matchFQAN="exact"/>
-<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="lbneana"/>
-</groupMapping>
-
-<groupMapping name="lbnegli" accountingVo="lbne" accountingDesc="LBNE">
-    <userGroup className="gov.bnl.gums.VOMSGroup" 
-    url="https://voms.fnal.gov:8443/voms/lbne/services/VOMSAdmin" 
-    persistenceFactory="mysql" 
-    name="lbnegli" 
-    voGroup="/lbne" 
-    voRole="pilot" 
-    sslCertfile="/etc/grid-security/http/httpcert.pem" 
-    sslKey="/etc/grid-security/http/httpkey.pem" 
-    matchFQAN="exact"/>
-<accountMapping className="gov.bnl.gums.GroupAccountMapper" groupName="lbnegli"/>
-</groupMapping>
-
 <!-- 53 LSST -->
 <groupMapping name="lsst" accountingVo="lsst" accountingDesc="LSST">
     <userGroup className="gov.bnl.gums.VOMSGroup" 
