@@ -1097,9 +1097,37 @@ sslKey="/etc/grid-security/http/httpkey.pem"/>
 groupName="project8_prod"/>
 </groupMapping>
 
+<!-- 67 MINICLEAN -->
+
+<groupMapping name="miniclean" accountingVo="miniclean" accountingDesc="miniclean">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.hep.pnnl.gov:8443/voms/miniclean/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="miniclean" voGroup="/miniclean"
+voRole="miniclean"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper"
+groupName="miniclean"/>
+</groupMapping>
+
+<groupMapping name="miniclean_prod" accountingVo="miniclean" accountingDesc="miniclean">
+<userGroup className="gov.bnl.gums.VOMSGroup"
+url="https://voms.hep.pnnl.gov:8443/voms/miniclean/services/VOMSAdmin"
+persistenceFactory="mysql"
+name="miniclean_prod" voGroup="/miniclean/prod"
+voRole="miniclean_prod"
+matchFQAN="exact"
+sslCertfile="/etc/grid-security/http/httpcert.pem"
+sslKey="/etc/grid-security/http/httpkey.pem"/>
+<accountMapping className="gov.bnl.gums.GroupAccountMapper"
+groupName="miniclean_prod"/>
+</groupMapping>
+
 </groupMappings>
 
 <hostGroups>
-<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdfdev-fnal,cdffgrid-fnal,cdfnam-fnal,cdftestcaf-fnal,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,osg,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,hcc,belle,bellepro,suragrid,gcvo,gcedu,dream,lsst,mcdrd,lqcd,auger,glast.org,enmr.eu,vo.cta.in2p3.fr,xenon.biggrid.nl,snoplus.snolab.ca,LZ,dune,dune-production,duneana,dunegli,project8,project8_prod"/>
+<hostGroup className="gov.bnl.gums.CertificateHostGroup" cn="*/?*.@DOMAINNAME@" groups="cdf-fnal,cdfdev-fnal,cdffgrid-fnal,cdfnam-fnal,cdftestcaf-fnal,cdf-cnaf,cdfdev-cnaf,cdffgrid-cnaf,cdfnam-cnaf,cdftestcaf-cnaf,cdf-pd,cdfdev-pd,cdffgrid-pd,cdfnam-pd,cdftestcaf-pd,fermilab,mis,star,uscmsuser,cmsuser,uscmst2admin,uscmssoft,cmssoft,uscmsprod,uscmsphedex,cmsphedex2,uscmsfrontier,cmsuser-null,cmsproduction,LIGO,dzerouser,dzeroana,dzeroservice,dosar,des,glow,nanohub,geant4,geant4-lcgadmin,osg,newUsatlasProd,newUsatlasSoft,newUsatlas,newAtlas,osgedu,ops,des-production,ilc,nysgrid,sbgrid,cigi,icecube,alice,gluex,gridunesp,hcc,belle,bellepro,suragrid,gcvo,gcedu,dream,lsst,mcdrd,lqcd,auger,glast.org,enmr.eu,vo.cta.in2p3.fr,xenon.biggrid.nl,snoplus.snolab.ca,LZ,dune,dune-production,duneana,dunegli,project8,project8_prod,miniclean,miniclean_prod"/>
 </hostGroups>
 </gums>
