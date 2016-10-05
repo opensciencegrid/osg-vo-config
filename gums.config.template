@@ -286,16 +286,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='lbne'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.fnal.gov:8443/voms/lbne'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='ligo'
 			description=''
 			persistenceFactory='mysql'
@@ -340,6 +330,16 @@
 			description=''
 			persistenceFactory='mysql'
 			baseUrl='https://voms.fnal.gov:8443/voms/mcdrd'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='miniclean'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.hep.pnnl.gov:8443/voms/miniclean'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -1008,45 +1008,6 @@
 			voGroup='/ilc'/>
 
 		<vomsUserGroup
-			name='lbne'
-			access='read self'
-			description=''
-			vomsServer='lbne'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/lbne'/>
-
-		<vomsUserGroup
-			name='lbne-production'
-			access='read self'
-			description=''
-			vomsServer='lbne'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/lbne'
-			role='Production'/>
-
-		<vomsUserGroup
-			name='lbneana'
-			access='read self'
-			description=''
-			vomsServer='lbne'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/lbne'
-			role='Analysis'/>
-
-		<vomsUserGroup
-			name='lbnegli'
-			access='read self'
-			description=''
-			vomsServer='lbne'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/lbne'
-			role='pilot'/>
-
-		<vomsUserGroup
 			name='lqcd'
 			access='read self'
 			description=''
@@ -1072,6 +1033,26 @@
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/mcdrd'/>
+
+		<vomsUserGroup
+			name='miniclean'
+			access='read self'
+			description=''
+			vomsServer='miniclean'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/miniclean'
+			role='miniclean'/>
+
+		<vomsUserGroup
+			name='miniclean_prod'
+			access='read self'
+			description=''
+			vomsServer='miniclean'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/miniclean/prod'
+			role='miniclean_prod'/>
 
 		<vomsUserGroup
 			name='mis'
@@ -1448,26 +1429,6 @@
 			accountName='ilc'/>
 
 		<groupAccountMapper
-			name='lbne'
-			description=''
-			accountName='lbne'/>
-
-		<groupAccountMapper
-			name='lbneana'
-			description=''
-			accountName='lbneana'/>
-
-		<groupAccountMapper
-			name='lbnegli'
-			description=''
-			accountName='lbnegli'/>
-
-		<groupAccountMapper
-			name='lbnepro'
-			description=''
-			accountName='lbnepro'/>
-
-		<groupAccountMapper
 			name='ligo'
 			description=''
 			accountName='ligo'/>
@@ -1486,6 +1447,16 @@
 			name='mcdrd'
 			description=''
 			accountName='mcdrd'/>
+
+		<groupAccountMapper
+			name='miniclean'
+			description=''
+			accountName='miniclean'/>
+
+		<groupAccountMapper
+			name='miniclean_prod'
+			description=''
+			accountName='miniclean_prod'/>
 
 		<groupAccountMapper
 			name='mis'
@@ -2008,38 +1979,6 @@
 			accountMappers='ilc'/>
 
 		<groupToAccountMapping
-			name='lbne'
-			description=''
-			accountingVoSubgroup='lbne'
-			accountingVo='LBNE'
-			userGroups='lbne'
-			accountMappers='lbne'/>
-
-		<groupToAccountMapping
-			name='lbne-production'
-			description=''
-			accountingVoSubgroup='lbne'
-			accountingVo='LBNE'
-			userGroups='lbne-production'
-			accountMappers='lbnepro'/>
-
-		<groupToAccountMapping
-			name='lbneana'
-			description=''
-			accountingVoSubgroup='lbne'
-			accountingVo='LBNE'
-			userGroups='lbneana'
-			accountMappers='lbneana'/>
-
-		<groupToAccountMapping
-			name='lbnegli'
-			description=''
-			accountingVoSubgroup='lbne'
-			accountingVo='LBNE'
-			userGroups='lbnegli'
-			accountMappers='lbnegli'/>
-
-		<groupToAccountMapping
 			name='lqcd'
 			description=''
 			accountingVoSubgroup='lqcd'
@@ -2062,6 +2001,22 @@
 			accountingVo='MCDRD'
 			userGroups='mcdrd'
 			accountMappers='mcdrd'/>
+
+		<groupToAccountMapping
+			name='miniclean'
+			description=''
+			accountingVoSubgroup='miniclean'
+			accountingVo='miniclean'
+			userGroups='miniclean'
+			accountMappers='miniclean'/>
+
+		<groupToAccountMapping
+			name='miniclean_prod'
+			description=''
+			accountingVoSubgroup='miniclean'
+			accountingVo='miniclean'
+			userGroups='miniclean_prod'
+			accountMappers='miniclean_prod'/>
 
 		<groupToAccountMapping
 			name='mis'
@@ -2260,7 +2215,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lbne, lbne-production, lbneana, lbnegli, lsst, mcdrd, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, mcdrd, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
