@@ -5,8 +5,6 @@ import os
 import glob
 import sys
 
-MALFORMED = "malformed"
-
 vomses_path = "vomses"
 vomsdir     = "vomsdir"
 
@@ -56,16 +54,12 @@ def get_lsc(entry):
     if os.path.exists(path):
         lsc_entries = []
         fh = open(path)
-        try:
-            for line in fh:
-                # Read lines two at a time
-                dn_line = line.rstrip()
-                ca_line = fh.next().rstrip()
-                lsc_entries.append(lsc_entry((dn_line, ca_line)))
-            return lsc_entries
-        except StopIteration:
-            # odd number of lines
-            return MALFORMED
+        for line in fh:
+            # Read lines two at a time
+            dn_line = line.rstrip()
+            ca_line = fh.next().rstrip()
+            lsc_entries.append(lsc_entry((dn_line, ca_line)))
+        return lsc_entries
     else:
         return None
 
@@ -74,15 +68,11 @@ vomses_entries = get_vomses()
 missing_lsc_files      = []
 missing_vomses_entries = []
 dn_mismatches          = []
-# We can get duplicates of malformed .lsc files
-malformed_lsc_files    = set()
 
 for entry in vomses_entries:
     lsc_entries = get_lsc(entry)
     if lsc_entries is None:
         missing_lsc_files += ["Missing lsc file: %s" % entry.lsc]
-    elif lsc_entries is MALFORMED:
-        malformed_lsc_files.add("Malformed lsc file (incomplete DN/CA pair): %s" % entry.lsc)
     else:
         lsc_dns = [lsc.dn for lsc in lsc_entries]
         if entry.dn not in lsc_dns:
@@ -100,7 +90,7 @@ for lsc_path in sorted(glob.glob("*/*.lsc")):
     if lsc_path not in vomses_lsc_files:
         missing_vomses_entries += ["No vomses entry for %s" % lsc_path]
 
-for x in (missing_lsc_files, malformed_lsc_files, missing_vomses_entries, dn_mismatches):
+for x in (missing_lsc_files, missing_vomses_entries, dn_mismatches):
     if x:
         for line in x:
             print line
