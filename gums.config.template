@@ -1,0 +1,2192 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<gums version='1.3' allowGridmapFiles='true' bannedUserGroups='gums-banned'>
+
+	<persistenceFactories>
+
+		<hibernatePersistenceFactory
+			name='mysql'
+			description=''
+			storeConfig='false'
+			hibernate.c3p0.timeout='180'
+			hibernate.connection.driver_class='com.mysql.jdbc.Driver'
+			hibernate.connection.autoReconnect='true'
+			hibernate.cache.use_query_cache='true'
+			hibernate.c3p0.max_size='20'
+			hibernate.dialect='org.hibernate.dialect.MySQLDialect'
+			hibernate.cache.use_second_level_cache='true'
+			hibernate.c3p0.min_size='3'
+			hibernate.cache.region.factory_class='org.hibernate.cache.EhCacheRegionFactory'
+			hibernate.connection.username='@USER@'
+			hibernate.connection.url='jdbc:mysql://@SERVER@/GUMS_1_3'
+			hibernate.connection.password='@PASSWORD@'/>
+
+	</persistenceFactories>
+
+	<vomsServers>
+
+		<vomsServer
+			name='alice'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms2.cern.ch:8443/voms/alice'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='atlas'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms2.cern.ch:8443/voms/atlas'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='auger'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms1.egee.cesnet.cz:8443/voms/auger'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='belle'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.cc.kek.jp:8443/voms/belle'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='cdf'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms-01.pd.infn.it:8443/voms/cdf'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='cdf1'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.cnaf.infn.it:8443/voms/cdf'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='cdf2'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.fnal.gov:8443/voms/cdf'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='cigi'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.cigi.uiuc.edu:8443/voms/cigi'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='cms'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms2.cern.ch:8443/voms/cms'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='des'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.fnal.gov:8443/voms/des'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='dosar'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.dosar.org:8443/voms/dosar'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='dream'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.hpcc.ttu.edu:8443/voms/dream'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='dune'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.fnal.gov:8443/voms/dune'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='dzero'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.fnal.gov:8443/voms/dzero'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='enmr.eu'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms2.cnaf.infn.it:8443/voms/enmr.eu'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='fermilab'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.fnal.gov:8443/voms/fermilab'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='gcedu'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://gc-voms.javeriana.edu.co:8443/voms/gcedu'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='gcvo'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://gc-voms.javeriana.edu.co:8443/voms/gcvo'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='geant4'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms2.cern.ch:8443/voms/geant4'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='glast.org'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms2.cnaf.infn.it:8443/voms/glast.org'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='glow'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://glow-voms.cs.wisc.edu:8443/voms/GLOW'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='gluex'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://gryphn.phys.uconn.edu:8443/voms/Gluex'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='gridunesp'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.grid.unesp.br:8443/voms/GridUNESP'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='hcc'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://hcc-voms.unl.edu:8443/voms/hcc'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='icecube'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://grid-voms.desy.de:8443/voms/icecube'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='ilc'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://grid-voms.desy.de:8443/voms/ilc'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='ligo'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.ligo.org:8443/voms/LIGO'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='lqcd'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.fnal.gov:8443/voms/lqcd'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='lsst'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.fnal.gov:8443/voms/lsst'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='lz'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.hep.wisc.edu:8443/voms/lz'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='miniclean'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.hep.pnnl.gov:8443/voms/miniclean'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='mis'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.grid.iu.edu:8443/voms/mis'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='nanohub'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.fnal.gov:8443/voms/nanohub'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='nysgrid'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://dylan.ccr.buffalo.edu:8443/voms/NYSGRID'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='ops'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms2.cern.ch:8443/voms/ops'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='osg'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.opensciencegrid.org:8443/voms/osg'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='osgedu'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.grid.iu.edu:8443/voms/osgedu'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='project8'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.hep.pnnl.gov:8443/voms/project8'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='sbgrid'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://hpc.sbgrid.org:8443/voms/SBGrid'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='snoplus.snolab.ca'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.gridpp.ac.uk:8443/voms/snoplus.snolab.ca'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='star'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://vo.racf.bnl.gov:8443/voms/star'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='suragrid'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.hpcc.ttu.edu:8443/voms/suragrid'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='vo.cta.in2p3.fr'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://cclcgvomsli01.in2p3.fr:8443/voms/vo.cta.in2p3.fr'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+		<vomsServer
+			name='xenon.biggrid.nl'
+			description=''
+			persistenceFactory='mysql'
+			baseUrl='https://voms.grid.sara.nl:8443/voms/xenon.biggrid.nl'
+			sslKey='/etc/grid-security/http/httpkey.pem'
+			sslCertfile='/etc/grid-security/http/httpcert.pem'
+			sslKeyPasswd=''
+			sslCAFiles='/etc/grid-security/certificates/*.0'/>
+
+	</vomsServers>
+
+	<userGroups>
+
+		<vomsUserGroup
+			name='LIGO'
+			access='read self'
+			description=''
+			vomsServer='ligo'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/LIGO'/>
+
+		<manualUserGroup
+			name='admins'
+			access='write'
+			description=''
+			persistenceFactory='mysql'
+			membersUri=''
+			nonMembersUri=''/>
+
+		<vomsUserGroup
+			name='alice'
+			access='read self'
+			description=''
+			vomsServer='alice'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/alice'/>
+
+		<vomsUserGroup
+			name='auger'
+			access='read self'
+			description=''
+			vomsServer='auger'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/auger'/>
+
+		<vomsUserGroup
+			name='belle'
+			access='read self'
+			description=''
+			vomsServer='belle'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/belle'/>
+
+		<vomsUserGroup
+			name='bellepro'
+			access='read self'
+			description=''
+			vomsServer='belle'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/belle'
+			role='production'/>
+
+		<vomsUserGroup
+			name='cdf-cnaf'
+			access='read self'
+			description=''
+			vomsServer='cdf1'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf'/>
+
+		<vomsUserGroup
+			name='cdf-fnal'
+			access='read self'
+			description=''
+			vomsServer='cdf2'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf'/>
+
+		<vomsUserGroup
+			name='cdf-pd'
+			access='read self'
+			description=''
+			vomsServer='cdf'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf'/>
+
+		<vomsUserGroup
+			name='cdfdev-cnaf'
+			access='read self'
+			description=''
+			vomsServer='cdf1'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='development'/>
+
+		<vomsUserGroup
+			name='cdfdev-fnal'
+			access='read self'
+			description=''
+			vomsServer='cdf2'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='development'/>
+
+		<vomsUserGroup
+			name='cdfdev-pd'
+			access='read self'
+			description=''
+			vomsServer='cdf'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='development'/>
+
+		<vomsUserGroup
+			name='cdffgrid-cnaf'
+			access='read self'
+			description=''
+			vomsServer='cdf1'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='fermigrid'/>
+
+		<vomsUserGroup
+			name='cdffgrid-fnal'
+			access='read self'
+			description=''
+			vomsServer='cdf2'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='fermigrid'/>
+
+		<vomsUserGroup
+			name='cdffgrid-pd'
+			access='read self'
+			description=''
+			vomsServer='cdf'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='fermigrid'/>
+
+		<vomsUserGroup
+			name='cdfnam-cnaf'
+			access='read self'
+			description=''
+			vomsServer='cdf1'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='namcaf'/>
+
+		<vomsUserGroup
+			name='cdfnam-fnal'
+			access='read self'
+			description=''
+			vomsServer='cdf2'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='namcaf'/>
+
+		<vomsUserGroup
+			name='cdfnam-pd'
+			access='read self'
+			description=''
+			vomsServer='cdf'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='namcaf'/>
+
+		<vomsUserGroup
+			name='cdftestcaf-cnaf'
+			access='read self'
+			description=''
+			vomsServer='cdf1'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='testcaf'/>
+
+		<vomsUserGroup
+			name='cdftestcaf-fnal'
+			access='read self'
+			description=''
+			vomsServer='cdf2'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='testcaf'/>
+
+		<vomsUserGroup
+			name='cdftestcaf-pd'
+			access='read self'
+			description=''
+			vomsServer='cdf'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf/glidecaf'
+			role='testcaf'/>
+
+		<vomsUserGroup
+			name='cigi'
+			access='read self'
+			description=''
+			vomsServer='cigi'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/cigi'/>
+
+		<vomsUserGroup
+			name='cmsfrontier'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms/uscms'
+			role='cmsfrontier'/>
+
+		<vomsUserGroup
+			name='cmsphedex'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms/uscms'
+			role='cmsphedex'/>
+
+		<vomsUserGroup
+			name='cmsphedex2'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms'
+			role='cmsphedex'/>
+
+		<vomsUserGroup
+			name='cmsprod'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms/uscms'
+			role='cmsprod'/>
+
+		<vomsUserGroup
+			name='cmsproduction'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms'
+			role='production'/>
+
+		<vomsUserGroup
+			name='cmssoft'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms/uscms'
+			role='cmssoft'/>
+
+		<vomsUserGroup
+			name='cmssoft2'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms'
+			role='cmssoft'/>
+
+		<vomsUserGroup
+			name='cmsuser'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms'
+			role='cmsuser'/>
+
+		<vomsUserGroup
+			name='cmsuser-null'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/cms'/>
+
+		<vomsUserGroup
+			name='des'
+			access='read self'
+			description=''
+			vomsServer='des'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/des/production'/>
+
+		<vomsUserGroup
+			name='des-production'
+			access='read self'
+			description=''
+			vomsServer='des'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/des/production'/>
+
+		<vomsUserGroup
+			name='dosar'
+			access='read self'
+			description=''
+			vomsServer='dosar'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/dosar'/>
+
+		<vomsUserGroup
+			name='dream'
+			access='read self'
+			description=''
+			vomsServer='dream'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/dream'/>
+
+		<vomsUserGroup
+			name='dune'
+			access='read self'
+			description=''
+			vomsServer='dune'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/dune'/>
+
+		<vomsUserGroup
+			name='dune-production'
+			access='read self'
+			description=''
+			vomsServer='dune'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/dune'
+			role='Production'/>
+
+		<vomsUserGroup
+			name='duneana'
+			access='read self'
+			description=''
+			vomsServer='dune'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/dune'
+			role='Analysis'/>
+
+		<vomsUserGroup
+			name='dunegli'
+			access='read self'
+			description=''
+			vomsServer='dune'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/dune'
+			role='pilot'/>
+
+		<vomsUserGroup
+			name='dzeroana'
+			access='read self'
+			description=''
+			vomsServer='dzero'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/dzero/users'
+			role='analysis'/>
+
+		<vomsUserGroup
+			name='dzeroservice'
+			access='read self'
+			description=''
+			vomsServer='dzero'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/dzero/services'/>
+
+		<vomsUserGroup
+			name='dzerouser'
+			access='read self'
+			description=''
+			vomsServer='dzero'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/dzero/users'/>
+
+		<vomsUserGroup
+			name='enmr.eu'
+			access='read self'
+			description=''
+			vomsServer='enmr.eu'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/enmr.eu'/>
+
+		<vomsUserGroup
+			name='fermilab'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab'/>
+
+		<vomsUserGroup
+			name='gcedu'
+			access='read self'
+			description=''
+			vomsServer='gcedu'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/gcedu'/>
+
+		<vomsUserGroup
+			name='gcvo'
+			access='read self'
+			description=''
+			vomsServer='gcvo'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/gcvo'/>
+
+		<vomsUserGroup
+			name='geant4'
+			access='read self'
+			description=''
+			vomsServer='geant4'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/geant4'/>
+
+		<vomsUserGroup
+			name='geant4-lcgadmin'
+			access='read self'
+			description=''
+			vomsServer='geant4'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/geant4'
+			role='lcgadmin'/>
+
+		<vomsUserGroup
+			name='glast.org'
+			access='read self'
+			description=''
+			vomsServer='glast.org'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/glast.org'/>
+
+		<vomsUserGroup
+			name='glow'
+			access='read self'
+			description=''
+			vomsServer='glow'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/GLOW'/>
+
+		<vomsUserGroup
+			name='gluex'
+			access='read self'
+			description=''
+			vomsServer='gluex'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/Gluex'/>
+
+		<vomsUserGroup
+			name='gridunesp'
+			access='read self'
+			description=''
+			vomsServer='gridunesp'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/GridUNESP'/>
+
+		<manualUserGroup
+			name='gums-banned'
+			access='read self'
+			description='Default group for banned users'
+			persistenceFactory='mysql'
+			membersUri=''
+			nonMembersUri=''/>
+
+		<vomsUserGroup
+			name='hcc'
+			access='read self'
+			description=''
+			vomsServer='hcc'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/hcc'/>
+
+		<vomsUserGroup
+			name='icecube'
+			access='read self'
+			description=''
+			vomsServer='icecube'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/icecube'/>
+
+		<vomsUserGroup
+			name='ilc'
+			access='read self'
+			description=''
+			vomsServer='ilc'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/ilc'/>
+
+		<vomsUserGroup
+			name='lqcd'
+			access='read self'
+			description=''
+			vomsServer='lqcd'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/lqcd'/>
+
+		<vomsUserGroup
+			name='lsst'
+			access='read self'
+			description=''
+			vomsServer='lsst'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/lsst'/>
+
+		<vomsUserGroup
+			name='miniclean'
+			access='read self'
+			description=''
+			vomsServer='miniclean'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/miniclean'
+			role='miniclean'/>
+
+		<vomsUserGroup
+			name='miniclean_prod'
+			access='read self'
+			description=''
+			vomsServer='miniclean'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/miniclean/prod'
+			role='miniclean_prod'/>
+
+		<vomsUserGroup
+			name='mis'
+			access='read self'
+			description=''
+			vomsServer='mis'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/mis'/>
+
+		<vomsUserGroup
+			name='nanohub'
+			access='read self'
+			description=''
+			vomsServer='nanohub'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/nanohub'/>
+
+		<vomsUserGroup
+			name='newUsatlasProd'
+			access='read self'
+			description=''
+			vomsServer='atlas'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/atlas/usatlas'
+			role='production'/>
+
+		<vomsUserGroup
+			name='newUsatlasSoft'
+			access='read self'
+			description=''
+			vomsServer='atlas'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/atlas/usatlas'
+			role='software'/>
+
+		<vomsUserGroup
+			name='newatlas'
+			access='read self'
+			description=''
+			vomsServer='atlas'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/atlas'/>
+
+		<vomsUserGroup
+			name='newusatlas'
+			access='read self'
+			description=''
+			vomsServer='atlas'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/atlas/usatlas'/>
+
+		<vomsUserGroup
+			name='nysgrid'
+			access='read self'
+			description=''
+			vomsServer='nysgrid'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/nysgrid'/>
+
+		<vomsUserGroup
+			name='ops'
+			access='read self'
+			description=''
+			vomsServer='ops'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/ops'/>
+
+		<vomsUserGroup
+			name='osg'
+			access='read self'
+			description=''
+			vomsServer='osg'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/osg'/>
+
+		<vomsUserGroup
+			name='osgedu'
+			access='read self'
+			description=''
+			vomsServer='osgedu'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/osgedu'/>
+
+		<vomsUserGroup
+			name='project8'
+			access='read self'
+			description=''
+			vomsServer='project8'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/project8'
+			role='project8'/>
+
+		<vomsUserGroup
+			name='project8_prod'
+			access='read self'
+			description=''
+			vomsServer='project8'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/project8/prod'
+			role='project8_prod'/>
+
+		<vomsUserGroup
+			name='sbgrid'
+			access='read self'
+			description=''
+			vomsServer='sbgrid'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/SBGrid'/>
+
+		<vomsUserGroup
+			name='snoplus.snolab.ca'
+			access='read self'
+			description=''
+			vomsServer='snoplus.snolab.ca'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/snoplus.snolab.ca'/>
+
+		<vomsUserGroup
+			name='star'
+			access='read self'
+			description=''
+			vomsServer='star'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/star'/>
+
+		<vomsUserGroup
+			name='suragrid'
+			access='read self'
+			description=''
+			vomsServer='suragrid'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/suragrid'/>
+
+		<vomsUserGroup
+			name='uscmst2admin'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms/uscms'
+			role='cmst2admin'/>
+
+		<vomsUserGroup
+			name='uscmsuser'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms/uscms'
+			role='cmsuser'/>
+
+		<vomsUserGroup
+			name='vo.cta.in2p3.fr'
+			access='read self'
+			description=''
+			vomsServer='vo.cta.in2p3.fr'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/vo.cta.in2p3.fr'/>
+
+		<vomsUserGroup
+			name='voms.hep.wisc.edu'
+			access='read self'
+			description=''
+			vomsServer='lz'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/LZ'/>
+
+		<vomsUserGroup
+			name='xenon.biggrid.nl'
+			access='read self'
+			description=''
+			vomsServer='xenon.biggrid.nl'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/xenon.biggrid.nl'/>
+
+	</userGroups>
+
+	<accountMappers>
+
+		<groupAccountMapper
+			name='LZ'
+			description=''
+			accountName='LZ'/>
+
+		<groupAccountMapper
+			name='alice'
+			description=''
+			accountName='alice'/>
+
+		<groupAccountMapper
+			name='auger'
+			description=''
+			accountName='auger'/>
+
+		<groupAccountMapper
+			name='belle'
+			description=''
+			accountName='belle'/>
+
+		<groupAccountMapper
+			name='bellepro'
+			description=''
+			accountName='bellepro'/>
+
+		<groupAccountMapper
+			name='cdf'
+			description=''
+			accountName='cdf'/>
+
+		<groupAccountMapper
+			name='cdfdev'
+			description=''
+			accountName='cdfdev'/>
+
+		<groupAccountMapper
+			name='cdffgrid'
+			description=''
+			accountName='cdffgrid'/>
+
+		<groupAccountMapper
+			name='cdfnam'
+			description=''
+			accountName='cdfnam'/>
+
+		<groupAccountMapper
+			name='cigi'
+			description=''
+			accountName='cigi'/>
+
+		<groupAccountMapper
+			name='cmsfrontier'
+			description=''
+			accountName='cmsfrontier'/>
+
+		<groupAccountMapper
+			name='cmsphedex'
+			description=''
+			accountName='cmsphedex'/>
+
+		<groupAccountMapper
+			name='cmsprod'
+			description=''
+			accountName='cmsprod'/>
+
+		<groupAccountMapper
+			name='cmssoft'
+			description=''
+			accountName='cmssoft'/>
+
+		<groupAccountMapper
+			name='cmst2admin'
+			description=''
+			accountName='cmst2admin'/>
+
+		<groupAccountMapper
+			name='des'
+			description=''
+			accountName='des'/>
+
+		<groupAccountMapper
+			name='dosar'
+			description=''
+			accountName='dosar'/>
+
+		<groupAccountMapper
+			name='dream'
+			description=''
+			accountName='dream'/>
+
+		<groupAccountMapper
+			name='dune'
+			description=''
+			accountName='dune'/>
+
+		<groupAccountMapper
+			name='duneana'
+			description=''
+			accountName='duneana'/>
+
+		<groupAccountMapper
+			name='dunegli'
+			description=''
+			accountName='dunegli'/>
+
+		<groupAccountMapper
+			name='dunepro'
+			description=''
+			accountName='dunepro'/>
+
+		<groupAccountMapper
+			name='dzeroana'
+			description=''
+			accountName='dzeroana'/>
+
+		<groupAccountMapper
+			name='enmr.eu'
+			description=''
+			accountName='enmr.eu'/>
+
+		<groupAccountMapper
+			name='fnalgrid'
+			description=''
+			accountName='fnalgrid'/>
+
+		<groupAccountMapper
+			name='gcedu'
+			description=''
+			accountName='gcedu'/>
+
+		<groupAccountMapper
+			name='gcvo'
+			description=''
+			accountName='gcvo'/>
+
+		<groupAccountMapper
+			name='geant4'
+			description=''
+			accountName='geant4'/>
+
+		<groupAccountMapper
+			name='glast.org'
+			description=''
+			accountName='glast.org'/>
+
+		<groupAccountMapper
+			name='glow'
+			description=''
+			accountName='glow'/>
+
+		<groupAccountMapper
+			name='gluex'
+			description=''
+			accountName='gluex'/>
+
+		<groupAccountMapper
+			name='gridunesp'
+			description=''
+			accountName='gridunesp'/>
+
+		<groupAccountMapper
+			name='hcc'
+			description=''
+			accountName='hcc'/>
+
+		<groupAccountMapper
+			name='icecube'
+			description=''
+			accountName='icecube'/>
+
+		<groupAccountMapper
+			name='ilc'
+			description=''
+			accountName='ilc'/>
+
+		<groupAccountMapper
+			name='ligo'
+			description=''
+			accountName='ligo'/>
+
+		<groupAccountMapper
+			name='lqcd'
+			description=''
+			accountName='lqcd'/>
+
+		<groupAccountMapper
+			name='lsst'
+			description=''
+			accountName='lsst'/>
+
+		<groupAccountMapper
+			name='miniclean'
+			description=''
+			accountName='miniclean'/>
+
+		<groupAccountMapper
+			name='miniclean_prod'
+			description=''
+			accountName='miniclean_prod'/>
+
+		<groupAccountMapper
+			name='mis'
+			description=''
+			accountName='mis'/>
+
+		<groupAccountMapper
+			name='nanohub'
+			description=''
+			accountName='nanohub'/>
+
+		<groupAccountMapper
+			name='nysgrid'
+			description=''
+			accountName='nysgrid'/>
+
+		<groupAccountMapper
+			name='ops'
+			description=''
+			accountName='ops'/>
+
+		<groupAccountMapper
+			name='osg'
+			description=''
+			accountName='osg'/>
+
+		<groupAccountMapper
+			name='osgedu'
+			description=''
+			accountName='osgedu'/>
+
+		<groupAccountMapper
+			name='project8'
+			description=''
+			accountName='project8'/>
+
+		<groupAccountMapper
+			name='project8_prod'
+			description=''
+			accountName='project8_prod'/>
+
+		<groupAccountMapper
+			name='sam'
+			description=''
+			accountName='sam'/>
+
+		<groupAccountMapper
+			name='samgrid'
+			description=''
+			accountName='samgrid'/>
+
+		<groupAccountMapper
+			name='sbgrid'
+			description=''
+			accountName='sbgrid'/>
+
+		<groupAccountMapper
+			name='snoplus.snolab.ca'
+			description=''
+			accountName='snoplus.snolab.ca'/>
+
+		<groupAccountMapper
+			name='star'
+			description=''
+			accountName='star'/>
+
+		<groupAccountMapper
+			name='suragrid'
+			description=''
+			accountName='suragrid'/>
+
+		<groupAccountMapper
+			name='usatlas1'
+			description=''
+			accountName='usatlas1'/>
+
+		<groupAccountMapper
+			name='usatlas2'
+			description=''
+			accountName='usatlas2'/>
+
+		<groupAccountMapper
+			name='usatlas3'
+			description=''
+			accountName='usatlas3'/>
+
+		<groupAccountMapper
+			name='usatlas4'
+			description=''
+			accountName='usatlas4'/>
+
+		<accountPoolMapper
+			name='uscmsPool'
+			description=''
+			persistenceFactory='mysql'
+			recyclable='false'
+			expiration='60'
+			accountPool='uscmsPool'/>
+
+		<groupAccountMapper
+			name='vo.cta.in2p3.fr'
+			description=''
+			accountName='vo.cta.in2p3.fr'/>
+
+		<groupAccountMapper
+			name='xenon.biggrid.nl'
+			description=''
+			accountName='xenon.biggrid.nl'/>
+
+	</accountMappers>
+
+	<groupToAccountMappings>
+
+		<groupToAccountMapping
+			name='LIGO'
+			description=''
+			accountingVoSubgroup='ligo'
+			accountingVo='LIGO'
+			userGroups='LIGO'
+			accountMappers='ligo'/>
+
+		<groupToAccountMapping
+			name='LZ'
+			description=''
+			accountingVoSubgroup='LZ'
+			accountingVo='LZ'
+			userGroups='voms.hep.wisc.edu'
+			accountMappers='LZ'/>
+
+		<groupToAccountMapping
+			name='alice'
+			description=''
+			accountingVoSubgroup='alice'
+			accountingVo='ALICE'
+			userGroups='alice'
+			accountMappers='alice'/>
+
+		<groupToAccountMapping
+			name='auger'
+			description=''
+			accountingVoSubgroup='auger'
+			accountingVo='Auger'
+			userGroups='auger'
+			accountMappers='auger'/>
+
+		<groupToAccountMapping
+			name='belle'
+			description=''
+			accountingVoSubgroup='belle'
+			accountingVo='belle'
+			userGroups='belle'
+			accountMappers='belle'/>
+
+		<groupToAccountMapping
+			name='bellepro'
+			description=''
+			accountingVoSubgroup='belle'
+			accountingVo='belle'
+			userGroups='bellepro'
+			accountMappers='bellepro'/>
+
+		<groupToAccountMapping
+			name='cdf-cnaf'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdf-cnaf'
+			accountMappers='cdf'/>
+
+		<groupToAccountMapping
+			name='cdf-fnal'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdf-fnal'
+			accountMappers='cdf'/>
+
+		<groupToAccountMapping
+			name='cdf-pd'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdf-pd'
+			accountMappers='cdf'/>
+
+		<groupToAccountMapping
+			name='cdfdev-cnaf'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdfdev-cnaf'
+			accountMappers='cdfdev'/>
+
+		<groupToAccountMapping
+			name='cdfdev-fnal'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdfdev-fnal'
+			accountMappers='cdfdev'/>
+
+		<groupToAccountMapping
+			name='cdfdev-pd'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdfdev-pd'
+			accountMappers='cdfdev'/>
+
+		<groupToAccountMapping
+			name='cdffgrid-cnaf'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdffgrid-cnaf'
+			accountMappers='cdffgrid'/>
+
+		<groupToAccountMapping
+			name='cdffgrid-fnal'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdffgrid-fnal'
+			accountMappers='cdffgrid'/>
+
+		<groupToAccountMapping
+			name='cdffgrid-pd'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdffgrid-pd'
+			accountMappers='cdffgrid'/>
+
+		<groupToAccountMapping
+			name='cdfnam-cnaf'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdfnam-cnaf'
+			accountMappers='cdfnam'/>
+
+		<groupToAccountMapping
+			name='cdfnam-fnal'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdfnam-fnal'
+			accountMappers='cdfnam'/>
+
+		<groupToAccountMapping
+			name='cdfnam-pd'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdfnam-pd'
+			accountMappers='cdfnam'/>
+
+		<groupToAccountMapping
+			name='cdftestcaf-cnaf'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdftestcaf-cnaf'
+			accountMappers='cdf'/>
+
+		<groupToAccountMapping
+			name='cdftestcaf-fnal'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdftestcaf-fnal'
+			accountMappers='cdf'/>
+
+		<groupToAccountMapping
+			name='cdftestcaf-pd'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdftestcaf-pd'
+			accountMappers='cdf'/>
+
+		<groupToAccountMapping
+			name='cigi'
+			description=''
+			accountingVoSubgroup='cigi'
+			accountingVo='CIGI'
+			userGroups='cigi'
+			accountMappers='cigi'/>
+
+		<groupToAccountMapping
+			name='cmsphedex2'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmsphedex2'
+			accountMappers='cmsphedex'/>
+
+		<groupToAccountMapping
+			name='cmsproduction'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmsproduction'
+			accountMappers='cmsprod'/>
+
+		<groupToAccountMapping
+			name='cmssoft'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmssoft2'
+			accountMappers='cmssoft'/>
+
+		<groupToAccountMapping
+			name='cmsuser'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmsuser'
+			accountMappers='uscmsPool'/>
+
+		<groupToAccountMapping
+			name='cmsuser-null'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmsuser-null'
+			accountMappers='uscmsPool'/>
+
+		<groupToAccountMapping
+			name='des'
+			description=''
+			accountingVoSubgroup='des'
+			accountingVo='DES'
+			userGroups='des'
+			accountMappers='des'/>
+
+		<groupToAccountMapping
+			name='des-production'
+			description=''
+			accountingVoSubgroup='des'
+			accountingVo='DES'
+			userGroups='des-production'
+			accountMappers='des'/>
+
+		<groupToAccountMapping
+			name='dosar'
+			description=''
+			accountingVoSubgroup='dosar'
+			accountingVo='DOSAR'
+			userGroups='dosar'
+			accountMappers='dosar'/>
+
+		<groupToAccountMapping
+			name='dream'
+			description=''
+			accountingVoSubgroup='dream'
+			accountingVo='DREAM'
+			userGroups='dream'
+			accountMappers='dream'/>
+
+		<groupToAccountMapping
+			name='dune'
+			description=''
+			accountingVoSubgroup='dune'
+			accountingVo='DUNE'
+			userGroups='dune'
+			accountMappers='dune'/>
+
+		<groupToAccountMapping
+			name='dune-production'
+			description=''
+			accountingVoSubgroup='dune'
+			accountingVo='DUNE'
+			userGroups='dune-production'
+			accountMappers='dunepro'/>
+
+		<groupToAccountMapping
+			name='duneana'
+			description=''
+			accountingVoSubgroup='dune'
+			accountingVo='DUNE'
+			userGroups='duneana'
+			accountMappers='duneana'/>
+
+		<groupToAccountMapping
+			name='dunegli'
+			description=''
+			accountingVoSubgroup='dune'
+			accountingVo='DUNE'
+			userGroups='dunegli'
+			accountMappers='dunegli'/>
+
+		<groupToAccountMapping
+			name='dzeroana'
+			description=''
+			accountingVoSubgroup='dzero'
+			accountingVo='DZERO'
+			userGroups='dzeroana'
+			accountMappers='dzeroana'/>
+
+		<groupToAccountMapping
+			name='dzeroservice'
+			description=''
+			accountingVoSubgroup='dzero'
+			accountingVo='DZERO'
+			userGroups='dzeroservice'
+			accountMappers='sam'/>
+
+		<groupToAccountMapping
+			name='dzerouser'
+			description=''
+			accountingVoSubgroup='dzero'
+			accountingVo='DZERO'
+			userGroups='dzerouser'
+			accountMappers='samgrid'/>
+
+		<groupToAccountMapping
+			name='enmr.eu'
+			description=''
+			accountingVoSubgroup='enmr.eu'
+			accountingVo='ENMR'
+			userGroups='enmr.eu'
+			accountMappers='enmr.eu'/>
+
+		<groupToAccountMapping
+			name='fermilab'
+			description=''
+			accountingVoSubgroup='fermilab'
+			accountingVo='FERMILAB'
+			userGroups='fermilab'
+			accountMappers='fnalgrid'/>
+
+		<groupToAccountMapping
+			name='gcedu'
+			description=''
+			accountingVoSubgroup='gcedu'
+			accountingVo='GCEDU'
+			userGroups='gcedu'
+			accountMappers='gcedu'/>
+
+		<groupToAccountMapping
+			name='gcvo'
+			description=''
+			accountingVoSubgroup='gcvo'
+			accountingVo='GCVO'
+			userGroups='gcvo'
+			accountMappers='gcvo'/>
+
+		<groupToAccountMapping
+			name='geant4'
+			description=''
+			accountingVoSubgroup='geant4'
+			accountingVo='GEANT4'
+			userGroups='geant4'
+			accountMappers='geant4'/>
+
+		<groupToAccountMapping
+			name='geant4-lcgadmin'
+			description=''
+			accountingVoSubgroup='geant4'
+			accountingVo='GEANT4'
+			userGroups='geant4-lcgadmin'
+			accountMappers='geant4'/>
+
+		<groupToAccountMapping
+			name='glast.org'
+			description=''
+			accountingVoSubgroup='glast.org'
+			accountingVo='glast.org'
+			userGroups='glast.org'
+			accountMappers='glast.org'/>
+
+		<groupToAccountMapping
+			name='glow'
+			description=''
+			accountingVoSubgroup='glow'
+			accountingVo='GLOW'
+			userGroups='glow'
+			accountMappers='glow'/>
+
+		<groupToAccountMapping
+			name='gluex'
+			description=''
+			accountingVoSubgroup='gluex'
+			accountingVo='Gluex'
+			userGroups='gluex'
+			accountMappers='gluex'/>
+
+		<groupToAccountMapping
+			name='gridunesp'
+			description=''
+			accountingVoSubgroup='gridunesp'
+			accountingVo='GridUNESP'
+			userGroups='gridunesp'
+			accountMappers='gridunesp'/>
+
+		<groupToAccountMapping
+			name='hcc'
+			description=''
+			accountingVoSubgroup='hcc'
+			accountingVo='HCC'
+			userGroups='hcc'
+			accountMappers='hcc'/>
+
+		<groupToAccountMapping
+			name='icecube'
+			description=''
+			accountingVoSubgroup='icecube'
+			accountingVo='IceCube'
+			userGroups='icecube'
+			accountMappers='icecube'/>
+
+		<groupToAccountMapping
+			name='ilc'
+			description=''
+			accountingVoSubgroup='ilc'
+			accountingVo='ILC'
+			userGroups='ilc'
+			accountMappers='ilc'/>
+
+		<groupToAccountMapping
+			name='lqcd'
+			description=''
+			accountingVoSubgroup='lqcd'
+			accountingVo='LQCD'
+			userGroups='lqcd'
+			accountMappers='lqcd'/>
+
+		<groupToAccountMapping
+			name='lsst'
+			description=''
+			accountingVoSubgroup='lsst'
+			accountingVo='LSST'
+			userGroups='lsst'
+			accountMappers='lsst'/>
+
+		<groupToAccountMapping
+			name='miniclean'
+			description=''
+			accountingVoSubgroup='miniclean'
+			accountingVo='miniclean'
+			userGroups='miniclean'
+			accountMappers='miniclean'/>
+
+		<groupToAccountMapping
+			name='miniclean_prod'
+			description=''
+			accountingVoSubgroup='miniclean'
+			accountingVo='miniclean'
+			userGroups='miniclean_prod'
+			accountMappers='miniclean_prod'/>
+
+		<groupToAccountMapping
+			name='mis'
+			description=''
+			accountingVoSubgroup='mis'
+			accountingVo='MIS'
+			userGroups='mis'
+			accountMappers='mis'/>
+
+		<groupToAccountMapping
+			name='nanohub'
+			description=''
+			accountingVoSubgroup='nanohub'
+			accountingVo='NANOHUB'
+			userGroups='nanohub'
+			accountMappers='nanohub'/>
+
+		<groupToAccountMapping
+			name='newAtlas'
+			description=''
+			accountingVoSubgroup='atlas'
+			accountingVo='ATLAS'
+			userGroups='newatlas'
+			accountMappers='usatlas4'/>
+
+		<groupToAccountMapping
+			name='newUsatlas'
+			description=''
+			accountingVoSubgroup='atlas'
+			accountingVo='ATLAS'
+			userGroups='newusatlas'
+			accountMappers='usatlas3'/>
+
+		<groupToAccountMapping
+			name='newUsatlasProd'
+			description=''
+			accountingVoSubgroup='atlas'
+			accountingVo='ATLAS'
+			userGroups='newUsatlasProd'
+			accountMappers='usatlas1'/>
+
+		<groupToAccountMapping
+			name='newUsatlasSoft'
+			description=''
+			accountingVoSubgroup='atlas'
+			accountingVo='ATLAS'
+			userGroups='newUsatlasSoft'
+			accountMappers='usatlas2'/>
+
+		<groupToAccountMapping
+			name='nysgrid'
+			description=''
+			accountingVoSubgroup='nysgrid'
+			accountingVo='NYSGRID'
+			userGroups='nysgrid'
+			accountMappers='nysgrid'/>
+
+		<groupToAccountMapping
+			name='ops'
+			description=''
+			accountingVoSubgroup='ops'
+			accountingVo='OPS'
+			userGroups='ops'
+			accountMappers='ops'/>
+
+		<groupToAccountMapping
+			name='osg'
+			description=''
+			accountingVoSubgroup='osg'
+			accountingVo='OSG'
+			userGroups='osg'
+			accountMappers='osg'/>
+
+		<groupToAccountMapping
+			name='osgedu'
+			description=''
+			accountingVoSubgroup='osgedu'
+			accountingVo='OSGEDU'
+			userGroups='osgedu'
+			accountMappers='osgedu'/>
+
+		<groupToAccountMapping
+			name='project8'
+			description=''
+			accountingVoSubgroup='project8'
+			accountingVo='project8'
+			userGroups='project8'
+			accountMappers='project8'/>
+
+		<groupToAccountMapping
+			name='project8_prod'
+			description=''
+			accountingVoSubgroup='project8'
+			accountingVo='project8'
+			userGroups='project8_prod'
+			accountMappers='project8_prod'/>
+
+		<groupToAccountMapping
+			name='sbgrid'
+			description=''
+			accountingVoSubgroup='sbgrid'
+			accountingVo='SBGrid'
+			userGroups='sbgrid'
+			accountMappers='sbgrid'/>
+
+		<groupToAccountMapping
+			name='snoplus.snolab.ca'
+			description=''
+			accountingVoSubgroup='snoplus.snolab.ca'
+			accountingVo='snoplus.snolab.ca'
+			userGroups='snoplus.snolab.ca'
+			accountMappers='snoplus.snolab.ca'/>
+
+		<groupToAccountMapping
+			name='star'
+			description=''
+			accountingVoSubgroup='star'
+			accountingVo='STAR'
+			userGroups='star'
+			accountMappers='star'/>
+
+		<groupToAccountMapping
+			name='suragrid'
+			description=''
+			accountingVoSubgroup='suragrid'
+			accountingVo='SURAGrid'
+			userGroups='suragrid'
+			accountMappers='suragrid'/>
+
+		<groupToAccountMapping
+			name='uscmsfrontier'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmsfrontier'
+			accountMappers='cmsfrontier'/>
+
+		<groupToAccountMapping
+			name='uscmsphedex'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmsphedex'
+			accountMappers='cmsphedex'/>
+
+		<groupToAccountMapping
+			name='uscmsprod'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmsprod'
+			accountMappers='cmsprod'/>
+
+		<groupToAccountMapping
+			name='uscmssoft'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmssoft'
+			accountMappers='cmssoft'/>
+
+		<groupToAccountMapping
+			name='uscmst2admin'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='uscmst2admin'
+			accountMappers='cmst2admin'/>
+
+		<groupToAccountMapping
+			name='uscmsuser'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='uscmsuser'
+			accountMappers='uscmsPool'/>
+
+		<groupToAccountMapping
+			name='vo.cta.in2p3.fr'
+			description=''
+			accountingVoSubgroup='vo.cta.in2p3.fr'
+			accountingVo='CTA'
+			userGroups='vo.cta.in2p3.fr'
+			accountMappers='vo.cta.in2p3.fr'/>
+
+		<groupToAccountMapping
+			name='xenon.biggrid.nl'
+			description=''
+			accountingVoSubgroup='xenon.biggrid.nl'
+			accountingVo='XENON'
+			userGroups='xenon.biggrid.nl'
+			accountMappers='xenon.biggrid.nl'/>
+
+	</groupToAccountMappings>
+
+	<hostToGroupMappings>
+
+		<hostToGroupMapping
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, cdf-cnaf, cdfdev-cnaf, cdffgrid-cnaf, cdfnam-cnaf, cdftestcaf-cnaf, cdf-pd, cdfdev-pd, cdffgrid-pd, cdfnam-pd, cdftestcaf-pd, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			description=''
+			cn='*/?*.@DOMAINNAME@'/>
+
+	</hostToGroupMappings>
+
+</gums>
