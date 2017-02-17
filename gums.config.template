@@ -66,26 +66,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='cdf'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms-01.pd.infn.it:8443/voms/cdf'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
-			name='cdf1'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.cnaf.infn.it:8443/voms/cdf'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='cdf2'
 			description=''
 			persistenceFactory='mysql'
