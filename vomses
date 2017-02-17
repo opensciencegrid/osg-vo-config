@@ -51,6 +51,4 @@
 "dune" "voms2.fnal.gov" "15042" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "dune"
 "supercdms" "voms.slac.stanford.edu" "15001" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.slac.stanford.edu" "supercdms"
 "project8" "voms.hep.pnnl.gov" "15001" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms.hep.pnnl.gov" "project8"
-"project8" "voms.hep.pnnl.gov" "15001" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.hep.pnnl.gov" "project8"
 "miniclean" "voms.hep.pnnl.gov" "15001" "/DC=com/DC=DigiCert-Grid/O=Open Science Grid/OU=Services/CN=voms.hep.pnnl.gov" "miniclean"
-"miniclean" "voms.hep.pnnl.gov" "15001" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.hep.pnnl.gov" "miniclean"
