@@ -34,9 +34,15 @@ def get_vug_pattern(vug):
     voGroup   = vug.get('voGroup')
     role      = vug.get('role')
     matchFQAN = vug.get('matchFQAN')
+    vo        = voGroup.split('/')[1]
+    voSubGrps = voGroup.split('/', 2)[2:]
 
     if matchFQAN == 'vo':
-        pattern = "%s/*" % voGroup
+        pattern = "/%s/*" % vo
+        if voSubGrps:
+            print >>sys.stderr, "Warning: voms user group '%s' with " \
+                "matchFQAN='%s' will ignore subgroups of voGroup='%s'" % \
+                (name, matchFQAN, voGroup)
         if role is not None:
             print >>sys.stderr, "Warning: voms user group '%s' has " \
                 "matchFQAN='%s' but specified role='%s' will be ignored." % \
@@ -46,9 +52,9 @@ def get_vug_pattern(vug):
             print >>sys.stderr, "Warning: voms user group '%s' has " \
                 "matchFQAN='%s' but does not specify a role." % \
                 (name, matchFQAN)
-            pattern = "%s/*/Role=NULL/Capability=NULL" % voGroup
+            pattern = "%s/Role=NULL/Capability=NULL" % voGroup
         else:
-            pattern = "%s/*/Role=%s/Capability=NULL" % (voGroup, role)
+            pattern = "%s/Role=%s/Capability=NULL" % (voGroup, role)
 
     # currently unused defaults for other matchFQAN values
     elif role is None:
