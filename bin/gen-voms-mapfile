@@ -1,0 +1,64 @@
+#!/usr/bin/python
+
+# generate voms-mapfile from a gums.config
+
+# see: https://jira.opensciencegrid.org/browse/SOFTWARE-2609
+
+import xml.etree.ElementTree as et
+import sys
+import re
+
+gumsconfig = 'gums.config.template'
+if sys.argv[1:]:
+    gumsconfig = sys.argv[1]
+
+xmltree = et.parse(gumsconfig)
+
+def dictify_elist(elist):
+    return dict( (e.get('name'), e) for e in elist )
+
+ugs = xmltree.find('userGroups')
+vug_list = ugs.findall('vomsUserGroup')
+vug_dict = dictify_elist(vug_list)
+
+gtams = xmltree.find('groupToAccountMappings')
+gtam_list = gtams.findall('groupToAccountMapping')
+gtam_dict = dictify_elist(gtam_list)
+
+ams = xmltree.find('accountMappers')
+gam_list = ams.findall('groupAccountMapper')
+gam_dict = dictify_elist(gam_list)
+
+def get_vug_pattern(vug):
+    voGroup   = vug.get('voGroup')
+    role      = vug.get('role')
+    matchFQAN = vug.get('matchFQAN')
+
+    if matchFQAN == 'vo':
+        pattern = voGroup
+    elif role is None:
+        pattern = "%s/*" % voGroup
+    else:
+        pattern = "%s/Role=%s/*" % (voGroup, role)
+
+    return pattern
+
+for gtam in gtam_list:
+    ug_names = re.split(r', *', gtam.get('userGroups'))
+    am_names = re.split(r', *', gtam.get('accountMappers'))
+
+    # just vomsUserGroup userGroups
+    ug_names = filter(vug_dict.__contains__, ug_names)
+
+    # just groupAccountMapper accountMappers for now (no poolAccountMappers)
+    am_names = filter(gam_dict.__contains__, am_names)
+
+    for ug_name in ug_names:
+        vug = vug_dict[ug_name]
+        pattern = get_vug_pattern(vug)
+
+        for am_name in am_names:
+            gam = gam_dict[am_name]
+            accountName = gam.get('accountName')
+            print '"%s" %s' % (pattern, accountName)
+
