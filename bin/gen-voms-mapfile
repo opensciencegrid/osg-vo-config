@@ -30,12 +30,27 @@ gam_list = ams.findall('groupAccountMapper')
 gam_dict = dictify_elist(gam_list)
 
 def get_vug_pattern(vug):
+    name      = vug.get('name')
     voGroup   = vug.get('voGroup')
     role      = vug.get('role')
     matchFQAN = vug.get('matchFQAN')
 
     if matchFQAN == 'vo':
-        pattern = voGroup
+        pattern = "%s/*" % voGroup
+        if role is not None:
+            print >>sys.stderr, "Warning: voms user group '%s' has " \
+                "matchFQAN='%s' but specified role='%s' will be ignored." % \
+                (name, matchFQAN, role)
+    elif matchFQAN == 'exact':
+        if role is None:
+            print >>sys.stderr, "Warning: voms user group '%s' has " \
+                "matchFQAN='%s' but does not specify a role." % \
+                (name, matchFQAN)
+            pattern = "%s/*/Role=NULL/Capability=NULL" % voGroup
+        else:
+            pattern = "%s/*/Role=%s/Capability=NULL" % (voGroup, role)
+
+    # currently unused defaults for other matchFQAN values
     elif role is None:
         pattern = "%s/*" % voGroup
     else:
