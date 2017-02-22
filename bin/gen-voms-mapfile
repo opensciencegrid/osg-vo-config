@@ -64,6 +64,8 @@ def get_vug_pattern(vug):
 
     return pattern
 
+patAcctNames = []
+
 for gtam in gtam_list:
     ug_names = re.split(r', *', gtam.get('userGroups'))
     am_names = re.split(r', *', gtam.get('accountMappers'))
@@ -81,5 +83,15 @@ for gtam in gtam_list:
         for am_name in am_names:
             gam = gam_dict[am_name]
             accountName = gam.get('accountName')
-            print '"%s" %s' % (pattern, accountName)
+            patAcctNames.append( (pattern, accountName) )
+
+def patkey(pat_nm):
+    pattern, accountName = pat_nm
+    vo = pattern.split('/')[1]
+    return (vo, -len(pattern), pattern, accountName)
+
+patAcctNames.sort(key=patkey)
+
+for pattern, accountName in patAcctNames:
+    print '"%s" %s' % (pattern, accountName)
 
