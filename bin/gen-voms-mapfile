@@ -33,6 +33,8 @@ htgms = xmltree.find('hostToGroupMappings')
 htgm  = htgms.find('hostToGroupMapping')
 gtam_names = re.split(r', *', htgm.get('groupToAccountMappings'))
 
+warnings = []
+
 def get_vug_pattern(vug):
     name      = vug.get('name')
     voGroup   = vug.get('voGroup')
@@ -44,18 +46,15 @@ def get_vug_pattern(vug):
     if matchFQAN == 'vo':
         pattern = "/%s/*" % vo
         if voSubGrps:
-            print >>sys.stderr, "Warning: voms user group '%s' with " \
-                "matchFQAN='%s' will ignore subgroups of voGroup='%s'" % \
-                (name, matchFQAN, voGroup)
+            warnings.append("'%s' with matchFQAN=%s will ignore "
+                "subgroups of voGroup='%s'" % (name, matchFQAN, voGroup))
         if role is not None:
-            print >>sys.stderr, "Warning: voms user group '%s' has " \
-                "matchFQAN='%s' but specified role='%s' will be ignored." % \
-                (name, matchFQAN, role)
+            warnings.append("'%s' has matchFQAN=%s but specified "
+                "role='%s' will be ignored." % (name, matchFQAN, role))
     elif matchFQAN == 'exact':
         if role is None:
-            print >>sys.stderr, "Warning: voms user group '%s' has " \
-                "matchFQAN='%s' but does not specify a role." % \
-                (name, matchFQAN)
+            warnings.append("'%s' has matchFQAN=%s but does not "
+                "specify a role." % (name, matchFQAN))
             pattern = "%s/Role=NULL/Capability=NULL" % voGroup
         else:
             pattern = "%s/Role=%s/Capability=NULL" % (voGroup, role)
@@ -87,4 +86,11 @@ for gtam_name in gtam_names:
             gam = gam_dict[am_name]
             accountName = gam.get('accountName')
             print '"%s" %s' % (pattern, accountName)
+
+if warnings:
+    print >>sys.stderr
+    print >>sys.stderr, "Warnings converting vomsUserGroup to voms mapfile:"
+    for w in warnings:
+        print >>sys.stderr, w
+    print >>sys.stderr
 
