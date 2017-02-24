@@ -1,0 +1,96 @@
+#!/usr/bin/python
+
+# generate voms-mapfile from a gums.config
+
+# see: https://jira.opensciencegrid.org/browse/SOFTWARE-2609
+
+import xml.etree.ElementTree as et
+import sys
+import re
+
+gumsconfig = 'gums.config.template'
+if sys.argv[1:]:
+    gumsconfig = sys.argv[1]
+
+xmltree = et.parse(gumsconfig)
+
+def dictify_elist(elist):
+    return dict( (e.get('name'), e) for e in elist )
+
+ugs = xmltree.find('userGroups')
+vug_list = ugs.findall('vomsUserGroup')
+vug_dict = dictify_elist(vug_list)
+
+gtams = xmltree.find('groupToAccountMappings')
+gtam_list = gtams.findall('groupToAccountMapping')
+gtam_dict = dictify_elist(gtam_list)
+
+ams = xmltree.find('accountMappers')
+gam_list = ams.findall('groupAccountMapper')
+gam_dict = dictify_elist(gam_list)
+
+htgms = xmltree.find('hostToGroupMappings')
+htgm  = htgms.find('hostToGroupMapping')
+gtam_names = re.split(r', *', htgm.get('groupToAccountMappings'))
+
+warnings = []
+
+def get_vug_pattern(vug):
+    name      = vug.get('name')
+    voGroup   = vug.get('voGroup')
+    role      = vug.get('role')
+    matchFQAN = vug.get('matchFQAN')
+    vo        = voGroup.split('/')[1]
+    voSubGrps = voGroup.split('/', 2)[2:]
+
+    if matchFQAN == 'vo':
+        pattern = "/%s/*" % vo
+        if voSubGrps:
+            warnings.append("'%s' with matchFQAN=%s will ignore "
+                "subgroups of voGroup='%s'" % (name, matchFQAN, voGroup))
+        if role is not None:
+            warnings.append("'%s' has matchFQAN=%s but specified "
+                "role='%s' will be ignored." % (name, matchFQAN, role))
+    elif matchFQAN == 'exact':
+        if role is None:
+            warnings.append("'%s' has matchFQAN=%s but does not "
+                "specify a role." % (name, matchFQAN))
+            pattern = "%s/Role=NULL/Capability=NULL" % voGroup
+        else:
+            pattern = "%s/Role=%s/Capability=NULL" % (voGroup, role)
+
+    # currently unused defaults for other matchFQAN values
+    elif role is None:
+        pattern = "%s/*" % voGroup
+    else:
+        pattern = "%s/Role=%s/*" % (voGroup, role)
+
+    return pattern
+
+for gtam_name in gtam_names:
+    gtam = gtam_dict[gtam_name]
+    ug_names = re.split(r', *', gtam.get('userGroups'))
+    am_names = re.split(r', *', gtam.get('accountMappers'))
+
+    # just vomsUserGroup userGroups
+    ug_names = filter(vug_dict.__contains__, ug_names)
+
+    # just groupAccountMapper accountMappers for now (no poolAccountMappers)
+    am_names = filter(gam_dict.__contains__, am_names)
+
+    for ug_name in ug_names:
+        vug = vug_dict[ug_name]
+        pattern = get_vug_pattern(vug)
+
+        for am_name in am_names:
+            gam = gam_dict[am_name]
+            accountName = gam.get('accountName')
+            print '"%s" %s' % (pattern, accountName)
+
+if warnings:
+    print >>sys.stderr
+    print >>sys.stderr, "Warnings converting vomsUserGroup to voms mapfile:"
+    for w in warnings:
+        print >>sys.stderr, w
+    print >>sys.stderr
+
