@@ -18,7 +18,6 @@
 "GridUNESP" "voms.grid.unesp.br" "15000" "/C=BR/O=ANSP/OU=ANSPGrid CA/OU=Services/CN=voms.grid.unesp.br" "GridUNESP"
 "hcc" "hcc-voms.unl.edu" "15000" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=hcc-voms.unl.edu" "hcc"
 "belle" "voms.cc.kek.jp" "15020" "/C=JP/O=KEK/OU=CRC/CN=host/voms.cc.kek.jp" "belle"
-"CSIU" "voms.grid.iu.edu" "15008" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.grid.iu.edu" "CSIU"
 "suragrid" "voms.hpcc.ttu.edu" "15003" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.hpcc.ttu.edu" "suragrid"
 "gcvo" "gc-voms.javeriana.edu.co" "15002" "/DC=org/DC=doegrids/OU=Services/CN=gc-voms.javeriana.edu.co" "gcvo"
 "gcedu" "gc-voms.javeriana.edu.co" "15001" "/DC=org/DC=doegrids/OU=Services/CN=gc-voms.javeriana.edu.co" "gcedu"
