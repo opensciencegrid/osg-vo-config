@@ -336,16 +336,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='nysgrid'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://dylan.ccr.buffalo.edu:8443/voms/NYSGRID'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='ops'
 			description=''
 			persistenceFactory='mysql'
@@ -360,16 +350,6 @@
 			description=''
 			persistenceFactory='mysql'
 			baseUrl='https://voms.opensciencegrid.org:8443/voms/osg'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
-			name='osgedu'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.grid.iu.edu:8443/voms/osgedu'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -974,15 +954,6 @@
 			voGroup='/atlas/usatlas'/>
 
 		<vomsUserGroup
-			name='nysgrid'
-			access='read self'
-			description=''
-			vomsServer='nysgrid'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/nysgrid'/>
-
-		<vomsUserGroup
 			name='ops'
 			access='read self'
 			description=''
@@ -999,15 +970,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/osg'/>
-
-		<vomsUserGroup
-			name='osgedu'
-			access='read self'
-			description=''
-			vomsServer='osgedu'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/osgedu'/>
 
 		<vomsUserGroup
 			name='project8'
@@ -1327,11 +1289,6 @@
 			accountName='nanohub'/>
 
 		<groupAccountMapper
-			name='nysgrid'
-			description=''
-			accountName='nysgrid'/>
-
-		<groupAccountMapper
 			name='ops'
 			description=''
 			accountName='ops'/>
@@ -1340,11 +1297,6 @@
 			name='osg'
 			description=''
 			accountName='osg'/>
-
-		<groupAccountMapper
-			name='osgedu'
-			description=''
-			accountName='osgedu'/>
 
 		<groupAccountMapper
 			name='project8'
@@ -1837,14 +1789,6 @@
 			accountMappers='usatlas2'/>
 
 		<groupToAccountMapping
-			name='nysgrid'
-			description=''
-			accountingVoSubgroup='nysgrid'
-			accountingVo='NYSGRID'
-			userGroups='nysgrid'
-			accountMappers='nysgrid'/>
-
-		<groupToAccountMapping
 			name='ops'
 			description=''
 			accountingVoSubgroup='ops'
@@ -1859,14 +1803,6 @@
 			accountingVo='OSG'
 			userGroups='osg'
 			accountMappers='osg'/>
-
-		<groupToAccountMapping
-			name='osgedu'
-			description=''
-			accountingVoSubgroup='osgedu'
-			accountingVo='OSGEDU'
-			userGroups='osgedu'
-			accountMappers='osgedu'/>
 
 		<groupToAccountMapping
 			name='project8'
@@ -1985,7 +1921,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, osgedu, ops, des-production, ilc, nysgrid, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 

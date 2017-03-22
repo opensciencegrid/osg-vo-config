@@ -29,11 +29,9 @@
 "/atlas/usatlas/Role=software/Capability=NULL" usatlas2
 "/atlas/*" usatlas3
 "/atlas/*" usatlas4
-"/osgedu/*" osgedu
 "/ops/*" ops
 "/des/production/Role=NULL/Capability=NULL" des
 "/ilc/*" ilc
-"/nysgrid/*" nysgrid
 "/SBGrid/*" sbgrid
 "/cigi/*" cigi
 "/icecube/*" icecube
