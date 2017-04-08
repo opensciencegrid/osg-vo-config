@@ -266,16 +266,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='ligo'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.ligo.org:8443/voms/LIGO'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='lqcd'
 			description=''
 			persistenceFactory='mysql'
@@ -428,15 +418,6 @@
 	</vomsServers>
 
 	<userGroups>
-
-		<vomsUserGroup
-			name='LIGO'
-			access='read self'
-			description=''
-			vomsServer='ligo'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/LIGO'/>
 
 		<manualUserGroup
 			name='admins'
@@ -1254,11 +1235,6 @@
 			accountName='ilc'/>
 
 		<groupAccountMapper
-			name='ligo'
-			description=''
-			accountName='ligo'/>
-
-		<groupAccountMapper
 			name='lqcd'
 			description=''
 			accountName='lqcd'/>
@@ -1379,14 +1355,6 @@
 	</accountMappers>
 
 	<groupToAccountMappings>
-
-		<groupToAccountMapping
-			name='LIGO'
-			description=''
-			accountingVoSubgroup='ligo'
-			accountingVo='LIGO'
-			userGroups='LIGO'
-			accountMappers='ligo'/>
 
 		<groupToAccountMapping
 			name='LZ'
@@ -1921,7 +1889,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, LIGO, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
