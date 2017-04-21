@@ -474,46 +474,6 @@
 			voGroup='/cdf'/>
 
 		<vomsUserGroup
-			name='cdfdev-fnal'
-			access='read self'
-			description=''
-			vomsServer='cdf2'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/cdf/glidecaf'
-			role='development'/>
-
-		<vomsUserGroup
-			name='cdffgrid-fnal'
-			access='read self'
-			description=''
-			vomsServer='cdf2'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/cdf/glidecaf'
-			role='fermigrid'/>
-
-		<vomsUserGroup
-			name='cdfnam-fnal'
-			access='read self'
-			description=''
-			vomsServer='cdf2'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/cdf/glidecaf'
-			role='namcaf'/>
-
-		<vomsUserGroup
-			name='cdftestcaf-fnal'
-			access='read self'
-			description=''
-			vomsServer='cdf2'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/cdf/glidecaf'
-			role='testcaf'/>
-
-		<vomsUserGroup
 			name='cigi'
 			access='read self'
 			description=''
@@ -1090,21 +1050,6 @@
 			accountName='cdf'/>
 
 		<groupAccountMapper
-			name='cdfdev'
-			description=''
-			accountName='cdfdev'/>
-
-		<groupAccountMapper
-			name='cdffgrid'
-			description=''
-			accountName='cdffgrid'/>
-
-		<groupAccountMapper
-			name='cdfnam'
-			description=''
-			accountName='cdfnam'/>
-
-		<groupAccountMapper
 			name='cigi'
 			description=''
 			accountName='cigi'/>
@@ -1402,38 +1347,6 @@
 			accountingVoSubgroup='cdf'
 			accountingVo='CDF'
 			userGroups='cdf-fnal'
-			accountMappers='cdf'/>
-
-		<groupToAccountMapping
-			name='cdfdev-fnal'
-			description=''
-			accountingVoSubgroup='cdf'
-			accountingVo='CDF'
-			userGroups='cdfdev-fnal'
-			accountMappers='cdfdev'/>
-
-		<groupToAccountMapping
-			name='cdffgrid-fnal'
-			description=''
-			accountingVoSubgroup='cdf'
-			accountingVo='CDF'
-			userGroups='cdffgrid-fnal'
-			accountMappers='cdffgrid'/>
-
-		<groupToAccountMapping
-			name='cdfnam-fnal'
-			description=''
-			accountingVoSubgroup='cdf'
-			accountingVo='CDF'
-			userGroups='cdfnam-fnal'
-			accountMappers='cdfnam'/>
-
-		<groupToAccountMapping
-			name='cdftestcaf-fnal'
-			description=''
-			accountingVoSubgroup='cdf'
-			accountingVo='CDF'
-			userGroups='cdftestcaf-fnal'
 			accountMappers='cdf'/>
 
 		<groupToAccountMapping
@@ -1889,7 +1802,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfdev-fnal, cdffgrid-fnal, cdfnam-fnal, cdftestcaf-fnal, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
