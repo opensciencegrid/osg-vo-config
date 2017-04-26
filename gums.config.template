@@ -1021,7 +1021,7 @@
 			accountName='cmsphedex'/>
 
 		<groupAccountMapper
-			name='cmsproduction'
+			name='cmsprod'
 			description=''
 			accountName='cmsprod'/>
 
