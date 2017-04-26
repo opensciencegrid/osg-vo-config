@@ -624,26 +624,8 @@
 			vomsServer='dzero'
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='true'
-			voGroup='/dzero/users'
-			role='analysis'/>
-
-		<vomsUserGroup
-			name='dzeroservice'
-			access='read self'
-			description=''
-			vomsServer='dzero'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/dzero/services'/>
-
-		<vomsUserGroup
-			name='dzerouser'
-			access='read self'
-			description=''
-			vomsServer='dzero'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/dzero/users'/>
+			voGroup='/dzero'
+			role='Analysis'/>
 
 		<vomsUserGroup
 			name='enmr.eu'
@@ -1444,22 +1426,6 @@
 			accountMappers='dzeroana'/>
 
 		<groupToAccountMapping
-			name='dzeroservice'
-			description=''
-			accountingVoSubgroup='dzero'
-			accountingVo='DZERO'
-			userGroups='dzeroservice'
-			accountMappers='sam'/>
-
-		<groupToAccountMapping
-			name='dzerouser'
-			description=''
-			accountingVoSubgroup='dzero'
-			accountingVo='DZERO'
-			userGroups='dzerouser'
-			accountMappers='samgrid'/>
-
-		<groupToAccountMapping
 			name='enmr.eu'
 			description=''
 			accountingVoSubgroup='enmr.eu'
@@ -1736,7 +1702,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzeroana, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
