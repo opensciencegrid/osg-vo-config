@@ -578,7 +578,7 @@
 			vomsServer='des'
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
-			voGroup='/des/production'/>
+			voGroup='/des'/>
 
 		<vomsUserGroup
 			name='des-production'
