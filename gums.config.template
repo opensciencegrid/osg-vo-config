@@ -474,6 +474,16 @@
 			voGroup='/cdf'/>
 
 		<vomsUserGroup
+			name='cdfana'
+			access='read self'
+			description=''
+			vomsServer='cdf2'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cdf'
+			role='Analysis'/>
+
+		<vomsUserGroup
 			name='cigi'
 			access='read self'
 			description=''
@@ -547,9 +557,10 @@
 			access='read self'
 			description=''
 			vomsServer='des'
-			matchFQAN='vo'
+			matchFQAN='exact'
 			acceptProxyWithoutFQAN='true'
-			voGroup='/des'/>
+			voGroup='/des'
+			role='Analysis'/>
 
 		<vomsUserGroup
 			name='des-production'
@@ -624,26 +635,8 @@
 			vomsServer='dzero'
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='true'
-			voGroup='/dzero/users'
-			role='analysis'/>
-
-		<vomsUserGroup
-			name='dzeroservice'
-			access='read self'
-			description=''
-			vomsServer='dzero'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/dzero/services'/>
-
-		<vomsUserGroup
-			name='dzerouser'
-			access='read self'
-			description=''
-			vomsServer='dzero'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/dzero/users'/>
+			voGroup='/dzero'
+			role='Analysis'/>
 
 		<vomsUserGroup
 			name='enmr.eu'
@@ -653,6 +646,16 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/enmr.eu'/>
+
+		<vomsUserGroup
+			name='fermigli'
+			access='read self'
+			description=''
+			vomsServer='fermilab'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/fermilab'
+			role='pilot'/>
 
 		<vomsUserGroup
 			name='fermilab'
@@ -1011,6 +1014,11 @@
 			accountName='cdf'/>
 
 		<groupAccountMapper
+			name='cdfana'
+			description=''
+			accountName='cdfana'/>
+
+		<groupAccountMapper
 			name='cigi'
 			description=''
 			accountName='cigi'/>
@@ -1092,6 +1100,11 @@
 			name='enmr.eu'
 			description=''
 			accountName='enmr.eu'/>
+
+		<groupAccountMapper
+			name='fermigli'
+			description=''
+			accountName='fermigli'/>
 
 		<groupAccountMapper
 			name='fnalgrid'
@@ -1316,6 +1329,14 @@
 			accountMappers='cdf'/>
 
 		<groupToAccountMapping
+			name='cdfana'
+			description=''
+			accountingVoSubgroup='cdf'
+			accountingVo='CDF'
+			userGroups='cdfana'
+			accountMappers='cdfana'/>
+
+		<groupToAccountMapping
 			name='cigi'
 			description=''
 			accountingVoSubgroup='cigi'
@@ -1444,28 +1465,20 @@
 			accountMappers='dzeroana'/>
 
 		<groupToAccountMapping
-			name='dzeroservice'
-			description=''
-			accountingVoSubgroup='dzero'
-			accountingVo='DZERO'
-			userGroups='dzeroservice'
-			accountMappers='sam'/>
-
-		<groupToAccountMapping
-			name='dzerouser'
-			description=''
-			accountingVoSubgroup='dzero'
-			accountingVo='DZERO'
-			userGroups='dzerouser'
-			accountMappers='samgrid'/>
-
-		<groupToAccountMapping
 			name='enmr.eu'
 			description=''
 			accountingVoSubgroup='enmr.eu'
 			accountingVo='ENMR'
 			userGroups='enmr.eu'
 			accountMappers='enmr.eu'/>
+
+		<groupToAccountMapping
+			name='fermigli'
+			description=''
+			accountingVoSubgroup='fermilab'
+			accountingVo='FERMILAB'
+			userGroups='fermigli'
+			accountMappers='fermigli'/>
 
 		<groupToAccountMapping
 			name='fermilab'
@@ -1736,7 +1749,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzeroana, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
