@@ -483,27 +483,27 @@
 			voGroup='/cigi'/>
 
 		<vomsUserGroup
-			name='cmsfrontier'
+			name='cmslcgadmin'
 			access='read self'
 			description=''
 			vomsServer='cms'
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
-			voGroup='/cms/uscms'
-			role='cmsfrontier'/>
+			voGroup='/cms'
+			role='lcgadmin'/>
+
+		<vomsUserGroup
+			name='cmslocal'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/cms/local'
+			role='pilot'/>
 
 		<vomsUserGroup
 			name='cmsphedex'
-			access='read self'
-			description=''
-			vomsServer='cms'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/cms/uscms'
-			role='cmsphedex'/>
-
-		<vomsUserGroup
-			name='cmsphedex2'
 			access='read self'
 			description=''
 			vomsServer='cms'
@@ -513,14 +513,14 @@
 			role='cmsphedex'/>
 
 		<vomsUserGroup
-			name='cmsprod'
+			name='cmspilot'
 			access='read self'
 			description=''
 			vomsServer='cms'
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
-			voGroup='/cms/uscms'
-			role='cmsprod'/>
+			voGroup='/cms'
+			role='pilot'/>
 
 		<vomsUserGroup
 			name='cmsproduction'
@@ -533,43 +533,14 @@
 			role='production'/>
 
 		<vomsUserGroup
-			name='cmssoft'
-			access='read self'
-			description=''
-			vomsServer='cms'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/cms/uscms'
-			role='cmssoft'/>
-
-		<vomsUserGroup
-			name='cmssoft2'
-			access='read self'
-			description=''
-			vomsServer='cms'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/cms'
-			role='cmssoft'/>
-
-		<vomsUserGroup
 			name='cmsuser'
 			access='read self'
 			description=''
 			vomsServer='cms'
-			matchFQAN='exact'
+			matchFQAN='vo'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/cms'
 			role='cmsuser'/>
-
-		<vomsUserGroup
-			name='cmsuser-null'
-			access='read self'
-			description=''
-			vomsServer='cms'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/cms'/>
 
 		<vomsUserGroup
 			name='des'
@@ -969,24 +940,14 @@
 			voGroup='/suragrid'/>
 
 		<vomsUserGroup
-			name='uscmst2admin'
+			name='uscmspilot'
 			access='read self'
 			description=''
 			vomsServer='cms'
 			matchFQAN='exact'
 			acceptProxyWithoutFQAN='false'
 			voGroup='/cms/uscms'
-			role='cmst2admin'/>
-
-		<vomsUserGroup
-			name='uscmsuser'
-			access='read self'
-			description=''
-			vomsServer='cms'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/cms/uscms'
-			role='cmsuser'/>
+			role='pilot'/>
 
 		<vomsUserGroup
 			name='vo.cta.in2p3.fr'
@@ -1055,9 +1016,14 @@
 			accountName='cigi'/>
 
 		<groupAccountMapper
-			name='cmsfrontier'
+			name='cmslcgadmin'
 			description=''
-			accountName='cmsfrontier'/>
+			accountName='lcgadmin'/>
+
+		<groupAccountMapper
+			name='cmslocal'
+			description=''
+			accountName='cmslocal'/>
 
 		<groupAccountMapper
 			name='cmsphedex'
@@ -1065,19 +1031,22 @@
 			accountName='cmsphedex'/>
 
 		<groupAccountMapper
+			name='cmspilot'
+			description=''
+			accountName='cmspilot'/>
+
+		<accountPoolMapper
+			name='cmspool'
+			description=''
+			persistenceFactory='mysql'
+			recyclable='false'
+			expiration='60'
+			accountPool='cmspool'/>
+
+		<groupAccountMapper
 			name='cmsprod'
 			description=''
 			accountName='cmsprod'/>
-
-		<groupAccountMapper
-			name='cmssoft'
-			description=''
-			accountName='cmssoft'/>
-
-		<groupAccountMapper
-			name='cmst2admin'
-			description=''
-			accountName='cmst2admin'/>
 
 		<groupAccountMapper
 			name='des'
@@ -1279,13 +1248,10 @@
 			description=''
 			accountName='usatlas4'/>
 
-		<accountPoolMapper
-			name='uscmsPool'
+		<groupAccountMapper
+			name='uscmspilot'
 			description=''
-			persistenceFactory='mysql'
-			recyclable='false'
-			expiration='60'
-			accountPool='uscmsPool'/>
+			accountName='uscmslocal'/>
 
 		<groupAccountMapper
 			name='vo.cta.in2p3.fr'
@@ -1358,12 +1324,36 @@
 			accountMappers='cigi'/>
 
 		<groupToAccountMapping
-			name='cmsphedex2'
+			name='cmslcgadmin'
 			description=''
 			accountingVoSubgroup='cms'
 			accountingVo='CMS'
-			userGroups='cmsphedex2'
+			userGroups='cmslcgadmin'
+			accountMappers='cmslcgadmin'/>
+
+		<groupToAccountMapping
+			name='cmslocal'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmslocal'
+			accountMappers='cmslocal'/>
+
+		<groupToAccountMapping
+			name='cmsphedex'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmsphedex'
 			accountMappers='cmsphedex'/>
+
+		<groupToAccountMapping
+			name='cmspilot'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmspilot'
+			accountMappers='cmspilot'/>
 
 		<groupToAccountMapping
 			name='cmsproduction'
@@ -1374,28 +1364,12 @@
 			accountMappers='cmsprod'/>
 
 		<groupToAccountMapping
-			name='cmssoft'
-			description=''
-			accountingVoSubgroup='cms'
-			accountingVo='CMS'
-			userGroups='cmssoft2'
-			accountMappers='cmssoft'/>
-
-		<groupToAccountMapping
 			name='cmsuser'
 			description=''
 			accountingVoSubgroup='cms'
 			accountingVo='CMS'
 			userGroups='cmsuser'
-			accountMappers='uscmsPool'/>
-
-		<groupToAccountMapping
-			name='cmsuser-null'
-			description=''
-			accountingVoSubgroup='cms'
-			accountingVo='CMS'
-			userGroups='cmsuser-null'
-			accountMappers='uscmsPool'/>
+			accountMappers='cmspool'/>
 
 		<groupToAccountMapping
 			name='des'
@@ -1734,52 +1708,12 @@
 			accountMappers='suragrid'/>
 
 		<groupToAccountMapping
-			name='uscmsfrontier'
+			name='uscmspilot'
 			description=''
 			accountingVoSubgroup='cms'
 			accountingVo='CMS'
-			userGroups='cmsfrontier'
-			accountMappers='cmsfrontier'/>
-
-		<groupToAccountMapping
-			name='uscmsphedex'
-			description=''
-			accountingVoSubgroup='cms'
-			accountingVo='CMS'
-			userGroups='cmsphedex'
-			accountMappers='cmsphedex'/>
-
-		<groupToAccountMapping
-			name='uscmsprod'
-			description=''
-			accountingVoSubgroup='cms'
-			accountingVo='CMS'
-			userGroups='cmsprod'
-			accountMappers='cmsprod'/>
-
-		<groupToAccountMapping
-			name='uscmssoft'
-			description=''
-			accountingVoSubgroup='cms'
-			accountingVo='CMS'
-			userGroups='cmssoft'
-			accountMappers='cmssoft'/>
-
-		<groupToAccountMapping
-			name='uscmst2admin'
-			description=''
-			accountingVoSubgroup='cms'
-			accountingVo='CMS'
-			userGroups='uscmst2admin'
-			accountMappers='cmst2admin'/>
-
-		<groupToAccountMapping
-			name='uscmsuser'
-			description=''
-			accountingVoSubgroup='cms'
-			accountingVo='CMS'
-			userGroups='uscmsuser'
-			accountMappers='uscmsPool'/>
+			userGroups='uscmspilot'
+			accountMappers='uscmspilot'/>
 
 		<groupToAccountMapping
 			name='vo.cta.in2p3.fr'
@@ -1802,7 +1736,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, fermilab, mis, star, uscmsuser, cmsuser, uscmst2admin, uscmssoft, cmssoft, uscmsprod, uscmsphedex, cmsphedex2, uscmsfrontier, cmsuser-null, cmsproduction, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzerouser, dzeroana, dzeroservice, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
