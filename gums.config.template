@@ -557,9 +557,10 @@
 			access='read self'
 			description=''
 			vomsServer='des'
-			matchFQAN='vo'
+			matchFQAN='exact'
 			acceptProxyWithoutFQAN='true'
-			voGroup='/des'/>
+			voGroup='/des'
+			role='Analysis'/>
 
 		<vomsUserGroup
 			name='des-production'
