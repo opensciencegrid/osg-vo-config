@@ -813,6 +813,15 @@
 			voGroup='/ilc'/>
 
 		<vomsUserGroup
+			name='ligo'
+			access='read self'
+			description=''
+			vomsServer='osg'
+			matchFQAN='vogroup'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/osg/ligo'/>
+
+		<vomsUserGroup
 			name='lqcd'
 			access='read self'
 			description=''
@@ -1160,6 +1169,11 @@
 			name='ilc'
 			description=''
 			accountName='ilc'/>
+
+		<groupAccountMapper
+			name='ligo'
+			description=''
+			accountName='ligo'/>
 
 		<groupAccountMapper
 			name='lqcd'
@@ -1609,6 +1623,14 @@
 			accountMappers='ilc'/>
 
 		<groupToAccountMapping
+			name='ligo'
+			description=''
+			accountingVoSubgroup='ligo'
+			accountingVo='LIGO'
+			userGroups='ligo'
+			accountMappers='ligo'/>
+
+		<groupToAccountMapping
 			name='lqcd'
 			description=''
 			accountingVoSubgroup='lqcd'
@@ -1749,7 +1771,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzeroana, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, UsatlasProd, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzeroana, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, ligo, osg, UsatlasProd, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
