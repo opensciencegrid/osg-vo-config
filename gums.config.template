@@ -79,7 +79,7 @@
 			name='cigi'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://voms.cigi.uiuc.edu:8443/voms/cigi'
+			baseUrl='https://vm246.roger.ncsa.illinois.edu:8443/voms/CIGI'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -528,7 +528,7 @@
 			vomsServer='cigi'
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
-			voGroup='/cigi'/>
+			voGroup='/CIGI'/>
 
 		<vomsUserGroup
 			name='cmslcgadmin'
