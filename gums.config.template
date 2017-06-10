@@ -438,6 +438,16 @@
 			voGroup='/atlas/usatlas'/>
 
 		<vomsUserGroup
+			name='UsatlasLcgAdmin'
+			access='read self'
+			description=''
+			vomsServer='atlas'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/atlas/usatlas'
+			role='lcgadmin'/>
+
+		<vomsUserGroup
 			name='UsatlasProd'
 			access='read self'
 			description=''
@@ -1319,6 +1329,14 @@
 			accountMappers='usatlas3'/>
 
 		<groupToAccountMapping
+			name='UsatlasLcgAdmin'
+			description=''
+			accountingVoSubgroup='atlas'
+			accountingVo='ATLAS'
+			userGroups='UsatlasLcgAdmin'
+			accountMappers='usatlas2'/>
+
+		<groupToAccountMapping
 			name='UsatlasProd'
 			description=''
 			accountingVoSubgroup='atlas'
@@ -1771,7 +1789,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzeroana, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, ligo, osg, UsatlasProd, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzeroana, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, ligo, osg, UsatlasProd, UsatlasLcgAdmin, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
