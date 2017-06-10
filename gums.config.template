@@ -79,7 +79,7 @@
 			name='cigi'
 			description=''
 			persistenceFactory='mysql'
-			baseUrl='https://voms.cigi.uiuc.edu:8443/voms/cigi'
+			baseUrl='https://vm246.roger.ncsa.illinois.edu:8443/voms/CIGI'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -419,6 +419,54 @@
 
 	<userGroups>
 
+		<vomsUserGroup
+			name='Atlas'
+			access='read self'
+			description=''
+			vomsServer='atlas'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/atlas'/>
+
+		<vomsUserGroup
+			name='Usatlas'
+			access='read self'
+			description=''
+			vomsServer='atlas'
+			matchFQAN='vogroup'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/atlas/usatlas'/>
+
+		<vomsUserGroup
+			name='UsatlasLcgAdmin'
+			access='read self'
+			description=''
+			vomsServer='atlas'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/atlas/usatlas'
+			role='lcgadmin'/>
+
+		<vomsUserGroup
+			name='UsatlasProd'
+			access='read self'
+			description=''
+			vomsServer='atlas'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/atlas/usatlas'
+			role='production'/>
+
+		<vomsUserGroup
+			name='UsatlasSoft'
+			access='read self'
+			description=''
+			vomsServer='atlas'
+			matchFQAN='exact'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/atlas/usatlas'
+			role='software'/>
+
 		<manualUserGroup
 			name='admins'
 			access='write'
@@ -490,7 +538,7 @@
 			vomsServer='cigi'
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
-			voGroup='/cigi'/>
+			voGroup='/CIGI'/>
 
 		<vomsUserGroup
 			name='cmslcgadmin'
@@ -775,6 +823,15 @@
 			voGroup='/ilc'/>
 
 		<vomsUserGroup
+			name='ligo'
+			access='read self'
+			description=''
+			vomsServer='osg'
+			matchFQAN='vogroup'
+			acceptProxyWithoutFQAN='false'
+			voGroup='/osg/ligo'/>
+
+		<vomsUserGroup
 			name='lqcd'
 			access='read self'
 			description=''
@@ -829,44 +886,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/nanohub'/>
-
-		<vomsUserGroup
-			name='newUsatlasProd'
-			access='read self'
-			description=''
-			vomsServer='atlas'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/atlas/usatlas'
-			role='production'/>
-
-		<vomsUserGroup
-			name='newUsatlasSoft'
-			access='read self'
-			description=''
-			vomsServer='atlas'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/atlas/usatlas'
-			role='software'/>
-
-		<vomsUserGroup
-			name='newatlas'
-			access='read self'
-			description=''
-			vomsServer='atlas'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/atlas'/>
-
-		<vomsUserGroup
-			name='newusatlas'
-			access='read self'
-			description=''
-			vomsServer='atlas'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/atlas/usatlas'/>
 
 		<vomsUserGroup
 			name='ops'
@@ -1162,6 +1181,11 @@
 			accountName='ilc'/>
 
 		<groupAccountMapper
+			name='ligo'
+			description=''
+			accountName='ligo'/>
+
+		<groupAccountMapper
 			name='lqcd'
 			description=''
 			accountName='lqcd'/>
@@ -1281,12 +1305,52 @@
 	<groupToAccountMappings>
 
 		<groupToAccountMapping
+			name='Atlas'
+			description=''
+			accountingVoSubgroup='atlas'
+			accountingVo='ATLAS'
+			userGroups='Atlas'
+			accountMappers='usatlas4'/>
+
+		<groupToAccountMapping
 			name='LZ'
 			description=''
 			accountingVoSubgroup='LZ'
 			accountingVo='LZ'
 			userGroups='voms.hep.wisc.edu'
 			accountMappers='LZ'/>
+
+		<groupToAccountMapping
+			name='Usatlas'
+			description=''
+			accountingVoSubgroup='atlas'
+			accountingVo='ATLAS'
+			userGroups='Usatlas'
+			accountMappers='usatlas3'/>
+
+		<groupToAccountMapping
+			name='UsatlasLcgAdmin'
+			description=''
+			accountingVoSubgroup='atlas'
+			accountingVo='ATLAS'
+			userGroups='UsatlasLcgAdmin'
+			accountMappers='usatlas2'/>
+
+		<groupToAccountMapping
+			name='UsatlasProd'
+			description=''
+			accountingVoSubgroup='atlas'
+			accountingVo='ATLAS'
+			userGroups='UsatlasProd'
+			accountMappers='usatlas1'/>
+
+		<groupToAccountMapping
+			name='UsatlasSoft'
+			description=''
+			accountingVoSubgroup='atlas'
+			accountingVo='ATLAS'
+			userGroups='UsatlasSoft'
+			accountMappers='usatlas2'/>
 
 		<groupToAccountMapping
 			name='alice'
@@ -1577,6 +1641,14 @@
 			accountMappers='ilc'/>
 
 		<groupToAccountMapping
+			name='ligo'
+			description=''
+			accountingVoSubgroup='ligo'
+			accountingVo='LIGO'
+			userGroups='ligo'
+			accountMappers='ligo'/>
+
+		<groupToAccountMapping
 			name='lqcd'
 			description=''
 			accountingVoSubgroup='lqcd'
@@ -1623,38 +1695,6 @@
 			accountingVo='NANOHUB'
 			userGroups='nanohub'
 			accountMappers='nanohub'/>
-
-		<groupToAccountMapping
-			name='newAtlas'
-			description=''
-			accountingVoSubgroup='atlas'
-			accountingVo='ATLAS'
-			userGroups='newatlas'
-			accountMappers='usatlas4'/>
-
-		<groupToAccountMapping
-			name='newUsatlas'
-			description=''
-			accountingVoSubgroup='atlas'
-			accountingVo='ATLAS'
-			userGroups='newusatlas'
-			accountMappers='usatlas3'/>
-
-		<groupToAccountMapping
-			name='newUsatlasProd'
-			description=''
-			accountingVoSubgroup='atlas'
-			accountingVo='ATLAS'
-			userGroups='newUsatlasProd'
-			accountMappers='usatlas1'/>
-
-		<groupToAccountMapping
-			name='newUsatlasSoft'
-			description=''
-			accountingVoSubgroup='atlas'
-			accountingVo='ATLAS'
-			userGroups='newUsatlasSoft'
-			accountMappers='usatlas2'/>
 
 		<groupToAccountMapping
 			name='ops'
@@ -1749,7 +1789,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzeroana, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, osg, newUsatlasProd, newUsatlasSoft, newUsatlas, newAtlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzeroana, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, ligo, osg, UsatlasProd, UsatlasLcgAdmin, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
