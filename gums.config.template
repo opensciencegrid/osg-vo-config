@@ -541,6 +541,15 @@
 			voGroup='/CIGI'/>
 
 		<vomsUserGroup
+			name='cmsdefault'
+			access='read self'
+			description=''
+			vomsServer='cms'
+			matchFQAN='vo'
+			acceptProxyWithoutFQAN='true'
+			voGroup='/cms'/>
+
+		<vomsUserGroup
 			name='cmslcgadmin'
 			access='read self'
 			description=''
@@ -1043,6 +1052,11 @@
 			accountName='cigi'/>
 
 		<groupAccountMapper
+			name='cmsdefault'
+			description=''
+			accountName='cmsuser'/>
+
+		<groupAccountMapper
 			name='cmslcgadmin'
 			description=''
 			accountName='lcgadmin'/>
@@ -1407,6 +1421,14 @@
 			accountingVo='CIGI'
 			userGroups='cigi'
 			accountMappers='cigi'/>
+
+		<groupToAccountMapping
+			name='cmsdefault'
+			description=''
+			accountingVoSubgroup='cms'
+			accountingVo='CMS'
+			userGroups='cmsdefault'
+			accountMappers='cmsdefault'/>
 
 		<groupToAccountMapping
 			name='cmslcgadmin'
@@ -1789,7 +1811,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, dzeroana, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, ligo, osg, UsatlasProd, UsatlasLcgAdmin, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, cmsdefault, dzeroana, dosar, des, glow, nanohub, geant4, geant4-lcgadmin, ligo, osg, UsatlasProd, UsatlasLcgAdmin, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 

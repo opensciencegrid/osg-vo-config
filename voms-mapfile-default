@@ -9,6 +9,7 @@
 "/cms/local/Role=pilot/Capability=NULL" cmslocal
 "/cms/Role=production/Capability=NULL" cmsprod
 "/cms/Role=lcgadmin/Capability=NULL" lcgadmin
+"/cms/*" cmsuser
 "/dzero/Role=Analysis/Capability=NULL" dzeroana
 "/dosar/*" dosar
 "/des/Role=Analysis/Capability=NULL" des
