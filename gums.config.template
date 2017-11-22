@@ -166,26 +166,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='gcedu'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://gc-voms.javeriana.edu.co:8443/voms/gcedu'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
-			name='gcvo'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://gc-voms.javeriana.edu.co:8443/voms/gcvo'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='geant4'
 			description=''
 			persistenceFactory='mysql'
@@ -296,16 +276,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='miniclean'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.hep.pnnl.gov:8443/voms/miniclean'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='mis'
 			description=''
 			persistenceFactory='mysql'
@@ -340,16 +310,6 @@
 			description=''
 			persistenceFactory='mysql'
 			baseUrl='https://voms.opensciencegrid.org:8443/voms/osg'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
-			name='project8'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms.hep.pnnl.gov:8443/voms/project8'
 			sslKey='/etc/grid-security/http/httpkey.pem'
 			sslCertfile='/etc/grid-security/http/httpcert.pem'
 			sslKeyPasswd=''
@@ -724,24 +684,6 @@
 			voGroup='/fermilab'/>
 
 		<vomsUserGroup
-			name='gcedu'
-			access='read self'
-			description=''
-			vomsServer='gcedu'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/gcedu'/>
-
-		<vomsUserGroup
-			name='gcvo'
-			access='read self'
-			description=''
-			vomsServer='gcvo'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/gcvo'/>
-
-		<vomsUserGroup
 			name='geant4'
 			access='read self'
 			description=''
@@ -849,26 +791,6 @@
 			voGroup='/lsst'/>
 
 		<vomsUserGroup
-			name='miniclean'
-			access='read self'
-			description=''
-			vomsServer='miniclean'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/miniclean'
-			role='miniclean'/>
-
-		<vomsUserGroup
-			name='miniclean_prod'
-			access='read self'
-			description=''
-			vomsServer='miniclean'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/miniclean/prod'
-			role='miniclean_prod'/>
-
-		<vomsUserGroup
 			name='mis'
 			access='read self'
 			description=''
@@ -903,26 +825,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/osg'/>
-
-		<vomsUserGroup
-			name='project8'
-			access='read self'
-			description=''
-			vomsServer='project8'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/project8'
-			role='project8'/>
-
-		<vomsUserGroup
-			name='project8_prod'
-			access='read self'
-			description=''
-			vomsServer='project8'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/project8/prod'
-			role='project8_prod'/>
 
 		<vomsUserGroup
 			name='sbgrid'
@@ -1135,16 +1037,6 @@
 			accountName='fnalgrid'/>
 
 		<groupAccountMapper
-			name='gcedu'
-			description=''
-			accountName='gcedu'/>
-
-		<groupAccountMapper
-			name='gcvo'
-			description=''
-			accountName='gcvo'/>
-
-		<groupAccountMapper
 			name='geant4'
 			description=''
 			accountName='geant4'/>
@@ -1200,16 +1092,6 @@
 			accountName='lsst'/>
 
 		<groupAccountMapper
-			name='miniclean'
-			description=''
-			accountName='miniclean'/>
-
-		<groupAccountMapper
-			name='miniclean_prod'
-			description=''
-			accountName='miniclean_prod'/>
-
-		<groupAccountMapper
 			name='mis'
 			description=''
 			accountName='mis'/>
@@ -1228,16 +1110,6 @@
 			name='osg'
 			description=''
 			accountName='osg'/>
-
-		<groupAccountMapper
-			name='project8'
-			description=''
-			accountName='project8'/>
-
-		<groupAccountMapper
-			name='project8_prod'
-			description=''
-			accountName='project8_prod'/>
 
 		<groupAccountMapper
 			name='sam'
@@ -1565,22 +1437,6 @@
 			accountMappers='fnalgrid'/>
 
 		<groupToAccountMapping
-			name='gcedu'
-			description=''
-			accountingVoSubgroup='gcedu'
-			accountingVo='GCEDU'
-			userGroups='gcedu'
-			accountMappers='gcedu'/>
-
-		<groupToAccountMapping
-			name='gcvo'
-			description=''
-			accountingVoSubgroup='gcvo'
-			accountingVo='GCVO'
-			userGroups='gcvo'
-			accountMappers='gcvo'/>
-
-		<groupToAccountMapping
 			name='geant4'
 			description=''
 			accountingVoSubgroup='geant4'
@@ -1669,22 +1525,6 @@
 			accountMappers='lsst'/>
 
 		<groupToAccountMapping
-			name='miniclean'
-			description=''
-			accountingVoSubgroup='miniclean'
-			accountingVo='miniclean'
-			userGroups='miniclean'
-			accountMappers='miniclean'/>
-
-		<groupToAccountMapping
-			name='miniclean_prod'
-			description=''
-			accountingVoSubgroup='miniclean'
-			accountingVo='miniclean'
-			userGroups='miniclean_prod'
-			accountMappers='miniclean_prod'/>
-
-		<groupToAccountMapping
 			name='mis'
 			description=''
 			accountingVoSubgroup='mis'
@@ -1715,22 +1555,6 @@
 			accountingVo='OSG'
 			userGroups='osg'
 			accountMappers='osg'/>
-
-		<groupToAccountMapping
-			name='project8'
-			description=''
-			accountingVoSubgroup='project8'
-			accountingVo='project8'
-			userGroups='project8'
-			accountMappers='project8'/>
-
-		<groupToAccountMapping
-			name='project8_prod'
-			description=''
-			accountingVoSubgroup='project8'
-			accountingVo='project8'
-			userGroups='project8_prod'
-			accountMappers='project8_prod'/>
 
 		<groupToAccountMapping
 			name='sbgrid'
@@ -1793,7 +1617,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, cmsdefault, dzeroana, dosar, des, glow, nanohub, geant4, ligo, osg, UsatlasProd, UsatlasLcgAdmin, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, gcvo, gcedu, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli, project8, project8_prod, miniclean, miniclean_prod'
+			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, cmsdefault, dzeroana, dosar, des, glow, nanohub, geant4, ligo, osg, UsatlasProd, UsatlasLcgAdmin, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
