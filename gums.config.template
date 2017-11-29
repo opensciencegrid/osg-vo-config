@@ -46,16 +46,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='auger'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://voms1.egee.cesnet.cz:8443/voms/auger'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='belle'
 			description=''
 			persistenceFactory='mysql'
@@ -443,15 +433,6 @@
 			matchFQAN='vo'
 			acceptProxyWithoutFQAN='true'
 			voGroup='/alice'/>
-
-		<vomsUserGroup
-			name='auger'
-			access='read self'
-			description=''
-			vomsServer='auger'
-			matchFQAN='exact'
-			acceptProxyWithoutFQAN='false'
-			voGroup='/auger'/>
 
 		<vomsUserGroup
 			name='belle'
@@ -914,11 +895,6 @@
 			accountName='alice'/>
 
 		<groupAccountMapper
-			name='auger'
-			description=''
-			accountName='auger'/>
-
-		<groupAccountMapper
 			name='belle'
 			description=''
 			accountName='belle'/>
@@ -1235,14 +1211,6 @@
 			accountingVo='ALICE'
 			userGroups='alice'
 			accountMappers='alice'/>
-
-		<groupToAccountMapping
-			name='auger'
-			description=''
-			accountingVoSubgroup='auger'
-			accountingVo='Auger'
-			userGroups='auger'
-			accountMappers='auger'/>
 
 		<groupToAccountMapping
 			name='belle'
@@ -1617,7 +1585,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, cmsdefault, dzeroana, dosar, des, glow, nanohub, geant4, ligo, osg, UsatlasProd, UsatlasLcgAdmin, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, dream, lsst, lqcd, auger, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli'
+			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, cmsdefault, dzeroana, dosar, des, glow, nanohub, geant4, ligo, osg, UsatlasProd, UsatlasLcgAdmin, UsatlasSoft, Usatlas, Atlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, dream, lsst, lqcd, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 
