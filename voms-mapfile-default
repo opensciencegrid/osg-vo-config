@@ -41,12 +41,9 @@
 "/belle/Role=NULL/Capability=NULL" belle
 "/belle/Role=production/Capability=NULL" bellepro
 "/suragrid/*" suragrid
-"/gcvo/*" gcvo
-"/gcedu/*" gcedu
 "/dream/*" dream
 "/lsst/*" lsst
 "/lqcd/Role=NULL/Capability=NULL" lqcd
-"/auger/Role=NULL/Capability=NULL" auger
 "/glast.org/Role=NULL/Capability=NULL" glast.org
 "/enmr.eu/*" enmr.eu
 "/vo.cta.in2p3.fr/*" vo.cta.in2p3.fr
@@ -57,7 +54,3 @@
 "/dune/Role=Production/Capability=NULL" dunepro
 "/dune/Role=Analysis/Capability=NULL" duneana
 "/dune/Role=pilot/Capability=NULL" dunegli
-"/project8/Role=project8/Capability=NULL" project8
-"/project8/prod/Role=project8_prod/Capability=NULL" project8_prod
-"/miniclean/Role=miniclean/Capability=NULL" miniclean
-"/miniclean/prod/Role=miniclean_prod/Capability=NULL" miniclean_prod
