@@ -60,7 +60,7 @@ host, port, dbname = m.groups()
 
 
 print "# BANNED"
-run_mysql_query("select concat('\"', trim(DN), '\" ', 'banned') from USERS"
+run_mysql_query("select concat('\"', trim(DN), '\" ') from USERS"
                 " where GROUP_NAME in (%s)" % sql_list(banned_names))
 print
 
