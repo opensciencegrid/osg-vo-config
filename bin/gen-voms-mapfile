@@ -30,8 +30,11 @@ gam_list = ams.findall('groupAccountMapper')
 gam_dict = dictify_elist(gam_list)
 
 htgms = xmltree.find('hostToGroupMappings')
-htgm  = htgms.find('hostToGroupMapping')
-gtam_names = re.split(r', *', htgm.get('groupToAccountMappings'))
+htgm_list = htgms.findall('hostToGroupMapping')
+gtam_names = []
+for htgm in htgm_list:
+    gtam_names += re.split(r', *', htgm.get('groupToAccountMappings'))
+
 
 warnings = []
 
