@@ -90,6 +90,7 @@ print "# http://opensciencegrid.github.io/docs/security/lcmaps-voms-authenticati
 print
 run_mysql_query("select concat('\"', trim(DN), '\" ') from USERS"
                 " where GROUP_NAME in (%s)" % sql_list(banned_names))
+print
 print "# ---"
 print
 
@@ -127,6 +128,7 @@ for gtam_name in gtam_names:
             vug = vug_dict[vug_name]
             pattern = get_vug_pattern(vug)
             current_voms_maps.append((pattern, accountName))
+print
 print "# ---"
 print
 
@@ -320,6 +322,7 @@ if custom_voms_maps:
     for pat_acct in current_voms_maps:
         if pat_acct in custom_voms_maps:
             print '"%s" %s' % pat_acct
+    print
     print "# ---"
     print
 
