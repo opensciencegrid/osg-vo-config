@@ -85,16 +85,19 @@ dburl = hpf.get('hibernate.connection.url')
 host, port, dbname = re.search(r'mysql://(.*):(\d+)/(\w+)$', dburl).groups()
 
 
-print "# BANNED"
+print "# Add the following contents to /etc/grid-security/ban-mapfile"
+print "# http://opensciencegrid.github.io/docs/security/lcmaps-voms-authentication/#banning-users"
+print
 run_mysql_query("select concat('\"', trim(DN), '\" ') from USERS"
                 " where GROUP_NAME in (%s)" % sql_list(banned_names))
+print "# ---"
 print
 
-print "# manual mapping table"
+print "# Add the following contents to /etc/grid-security/grid-mapfile"
+print "# http://opensciencegrid.github.io/docs/security/lcmaps-voms-authentication/#mapping-users"
+print
 run_mysql_query("select concat('\"', trim(DN), '\" ', ACCOUNT) from MAPPING;")
-print
 
-print "# mappings from manual user groups"
 current_voms_maps = []
 for gtam_name in gtam_names:
     gtam = gtam_dict[gtam_name]
@@ -124,6 +127,7 @@ for gtam_name in gtam_names:
             vug = vug_dict[vug_name]
             pattern = get_vug_pattern(vug)
             current_voms_maps.append((pattern, accountName))
+print "# ---"
 print
 
 
@@ -309,9 +313,13 @@ released_voms_maps = [
 custom_voms_maps = set(current_voms_maps) - set(released_voms_maps)
 
 if custom_voms_maps:
-    print "# custom VOMS mappings"
+    print "# Add the following contents to /etc/grid-security/voms-mapfile"
+    print "# http://opensciencegrid.github.io/docs/security/lcmaps-voms-authentication/#mapping-vos"
+    print
+    # just output never-shipped voms mappings, preserving order found in gums
     for pat_acct in current_voms_maps:
         if pat_acct in custom_voms_maps:
             print '"%s" %s' % pat_acct
+    print "# ---"
     print
 
