@@ -15,6 +15,12 @@ else:
 
 xt = et.fromstring(open(gumsconfig).read())
 
+BAN_MAPFILE  = 'ban-mapfile'
+GRID_MAPFILE = 'grid-mapfile'
+VOMS_MAPFILE = 'voms-mapfile'
+
+DOC_URL = "http://opensciencegrid.github.io/" \
+          "docs/security/lcmaps-voms-authentication"
 
 def dictify_elist(elist):
     return dict( (e.get('name'), e) for e in elist )
@@ -25,10 +31,10 @@ def sql_escape(s):
 def sql_list(seq):
     return ', '.join(map(sql_escape, seq))
 
-def run_mysql_query(query):
+def run_mysql_query(outf, query):
     #print >>sys.stderr, "running mysql query: %s" % query
     subprocess.call(['mysql', '-u', user, '-p%s' % dbpw, '-h', host,
-                     '-P', port, '-BN', dbname, '-e', query])
+                     '-P', port, '-BN', dbname, '-e', query], stdout=outf)
 
 def get_vug_pattern(vug):
     name      = vug.get('name')
@@ -84,54 +90,53 @@ dburl = hpf.get('hibernate.connection.url')
 # 'jdbc:mysql://fermicloud083.fnal.gov:3306/GUMS_1_3'
 host, port, dbname = re.search(r'mysql://(.*):(\d+)/(\w+)$', dburl).groups()
 
+print "Writing %s ..." % BAN_MAPFILE
+with open(BAN_MAPFILE, 'w') as f:
+    print >>f, "# /etc/grid-security/%s" % BAN_MAPFILE
+    print >>f, "# %s/#banning-users" % DOC_URL
+    print >>f
+    f.flush()
+    run_mysql_query(f, "select concat('\"', trim(DN), '\" ') from USERS"
+                       " where GROUP_NAME in (%s)" % sql_list(banned_names))
 
-print "# Add the following contents to /etc/grid-security/ban-mapfile"
-print "# http://opensciencegrid.github.io/docs/security/lcmaps-voms-authentication/#banning-users"
-print
-run_mysql_query("select concat('\"', trim(DN), '\" ') from USERS"
-                " where GROUP_NAME in (%s)" % sql_list(banned_names))
-print
-print "# ---"
-print
+print "Writing %s ..." % GRID_MAPFILE
+with open(GRID_MAPFILE, 'w') as f:
+    print >>f, "# /etc/grid-security/%s" % GRID_MAPFILE
+    print >>f, "# %s/#mapping-users" % DOC_URL
+    print >>f
+    f.flush()
+    run_mysql_query(f, "select concat('\"', trim(DN), '\" ', ACCOUNT)"
+                       " from MAPPING;")
 
-print "# Add the following contents to /etc/grid-security/grid-mapfile"
-print "# http://opensciencegrid.github.io/docs/security/lcmaps-voms-authentication/#mapping-users"
-print
-run_mysql_query("select concat('\"', trim(DN), '\" ', ACCOUNT) from MAPPING;")
+    current_voms_maps = []
+    for gtam_name in gtam_names:
+        gtam = gtam_dict[gtam_name]
+        ug_names = re.split(r', *', gtam.get('userGroups'))
+        am_names = re.split(r', *', gtam.get('accountMappers'))
 
-current_voms_maps = []
-for gtam_name in gtam_names:
-    gtam = gtam_dict[gtam_name]
-    ug_names = re.split(r', *', gtam.get('userGroups'))
-    am_names = re.split(r', *', gtam.get('accountMappers'))
+        # just manualUserGroup userGroups
+        mug_names = filter(mug_dict.__contains__, ug_names)
 
-    # just manualUserGroup userGroups
-    mug_names = filter(mug_dict.__contains__, ug_names)
+        # just vomsUserGroup userGroups
+        vug_names = filter(vug_dict.__contains__, ug_names)
 
-    # just vomsUserGroup userGroups
-    vug_names = filter(vug_dict.__contains__, ug_names)
+        # just groupAccountMapper accountMappers for now (no poolAccountMappers)
+        gam_names = filter(gam_dict.__contains__, am_names)
 
-    # just groupAccountMapper accountMappers for now (no poolAccountMappers)
-    gam_names = filter(gam_dict.__contains__, am_names)
+        for gam_name in gam_names:
+            gam = gam_dict[gam_name]
+            accountName = gam.get('accountName')
 
-    for gam_name in gam_names:
-        gam = gam_dict[gam_name]
-        accountName = gam.get('accountName')
+            for mug_name in mug_names:
+                run_mysql_query(f,
+                    "select concat('\"', trim(DN), '\" ', %s) from USERS"
+                    " where GROUP_NAME = %s" % (sql_escape(accountName),
+                                                sql_escape(mug_name)))
 
-        for mug_name in mug_names:
-            run_mysql_query(
-                "select concat('\"', trim(DN), '\" ', %s) from USERS"
-                " where GROUP_NAME = %s" % (sql_escape(accountName),
-                                            sql_escape(mug_name)))
-
-        for vug_name in vug_names:
-            vug = vug_dict[vug_name]
-            pattern = get_vug_pattern(vug)
-            current_voms_maps.append((pattern, accountName))
-print
-print "# ---"
-print
-
+            for vug_name in vug_names:
+                vug = vug_dict[vug_name]
+                pattern = get_vug_pattern(vug)
+                current_voms_maps.append((pattern, accountName))
 
 released_voms_maps = [
   ("/cdf/Role=NULL/Capability=NULL", "cdf"),
@@ -315,14 +320,16 @@ released_voms_maps = [
 custom_voms_maps = set(current_voms_maps) - set(released_voms_maps)
 
 if custom_voms_maps:
-    print "# Add the following contents to /etc/grid-security/voms-mapfile"
-    print "# http://opensciencegrid.github.io/docs/security/lcmaps-voms-authentication/#mapping-vos"
-    print
-    # just output never-shipped voms mappings, preserving order found in gums
-    for pat_acct in current_voms_maps:
-        if pat_acct in custom_voms_maps:
-            print '"%s" %s' % pat_acct
-    print
-    print "# ---"
-    print
+    print "Writing %s ..." % VOMS_MAPFILE
+    with open(VOMS_MAPFILE, 'w') as f:
+        print >>f, "# /etc/grid-security/%s" % VOMS_MAPFILE
+        print >>f, "# %s/#mapping-vos" % DOC_URL
+        print >>f
+        # just output never-shipped voms mappings, preserving order found in gums
+        for pat_acct in current_voms_maps:
+            if pat_acct in custom_voms_maps:
+                print >>f, '"%s" %s' % pat_acct
+else:
+    print "No custom VOMS user group mappings found," \
+          " not writing %s" % VOMS_MAPFILE
 
