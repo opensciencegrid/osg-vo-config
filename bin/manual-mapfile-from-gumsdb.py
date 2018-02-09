@@ -15,9 +15,9 @@ else:
 
 xt = et.fromstring(open(gumsconfig).read())
 
-BAN_MAPFILE  = 'ban-mapfile'
-GRID_MAPFILE = 'grid-mapfile'
-VOMS_MAPFILE = 'voms-mapfile'
+BAN_MAPFILE  = 'ban-mapfile.additions'
+GRID_MAPFILE = 'grid-mapfile.additions'
+VOMS_MAPFILE = 'voms-mapfile.additions'
 
 DOC_URL = "http://opensciencegrid.github.io/" \
           "docs/security/lcmaps-voms-authentication"
@@ -92,7 +92,7 @@ host, port, dbname = re.search(r'mysql://(.*):(\d+)/(\w+)$', dburl).groups()
 
 print "Writing %s ..." % BAN_MAPFILE
 with open(BAN_MAPFILE, 'w') as f:
-    print >>f, "# /etc/grid-security/%s" % BAN_MAPFILE
+    print >>f, "# Add to /etc/grid-security/ban-mapfile"
     print >>f, "# %s/#banning-users" % DOC_URL
     print >>f
     f.flush()
@@ -101,7 +101,7 @@ with open(BAN_MAPFILE, 'w') as f:
 
 print "Writing %s ..." % GRID_MAPFILE
 with open(GRID_MAPFILE, 'w') as f:
-    print >>f, "# /etc/grid-security/%s" % GRID_MAPFILE
+    print >>f, "# Add to /etc/grid-security/grid-mapfile"
     print >>f, "# %s/#mapping-users" % DOC_URL
     print >>f
     f.flush()
@@ -322,7 +322,7 @@ custom_voms_maps = set(current_voms_maps) - set(released_voms_maps)
 if custom_voms_maps:
     print "Writing %s ..." % VOMS_MAPFILE
     with open(VOMS_MAPFILE, 'w') as f:
-        print >>f, "# /etc/grid-security/%s" % VOMS_MAPFILE
+        print >>f, "# Add to /etc/grid-security/voms-mapfile"
         print >>f, "# %s/#mapping-vos" % DOC_URL
         print >>f
         # just output never-shipped voms mappings, preserving order found in gums
