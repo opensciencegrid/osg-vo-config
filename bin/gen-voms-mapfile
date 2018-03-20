@@ -62,6 +62,14 @@ def get_vug_pattern(vug):
         else:
             pattern = "%s/Role=%s/Capability=NULL" % (voGroup, role)
 
+    elif matchFQAN == 'vorole':
+        if role is None:
+            warnings.append("'%s' has matchFQAN=%s but does not "
+                "specify a role." % (name, matchFQAN))
+            pattern = "/%s/*Role=NULL/Capability=NULL" % vo
+        else:
+            pattern = "/%s/*Role=%s/Capability=NULL" % (vo, role)
+
     # currently unused defaults for other matchFQAN values
     elif role is None:
         pattern = "%s/*" % voGroup
