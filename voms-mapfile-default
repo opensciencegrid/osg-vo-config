@@ -23,11 +23,10 @@
 "/geant4/*" geant4
 "/osg/ligo/*" ligo
 "/osg/*" osg
-"/atlas/usatlas/Role=production/Capability=NULL" usatlas1
-"/atlas/usatlas/Role=lcgadmin/Capability=NULL" usatlas2
-"/atlas/usatlas/Role=software/Capability=NULL" usatlas2
-"/atlas/usatlas/*" usatlas3
-"/atlas/*" usatlas4
+"/atlas/*Role=production/Capability=*" usatlas1
+"/atlas/*Role=lcgadmin/Capability=*" usatlas2
+"/atlas/*Role=software/Capability=*" usatlas2
+"/atlas/*" usatlas3
 "/ops/*" ops
 "/des/production/Role=NULL/Capability=NULL" des
 "/ilc/*" ilc
