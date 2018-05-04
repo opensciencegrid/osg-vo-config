@@ -39,6 +39,7 @@
 "lsst" "voms2.fnal.gov" "15003" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "lsst"
 "lqcd" "voms1.fnal.gov" "15024" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "lqcd"
 "lqcd" "voms2.fnal.gov" "15024" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "lqcd"
+"osg" "voms.opensciencegrid.org" "15027" "/DC=org/DC=incommon/C=US/postalCode=53706/ST=WI/L=Madison/street=1210 West Dayton Street/O=University of Wisconsin-Madison/OU=OCIS/CN=voms.opensciencegrid.org" "osg"
 "osg" "voms1.opensciencegrid.org" "15027" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.opensciencegrid.org" "osg"
 "osg" "voms2.opensciencegrid.org" "15027" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.opensciencegrid.org" "osg"
 "osg" "voms.grid.iu.edu" "15027" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.grid.iu.edu" "osg"
