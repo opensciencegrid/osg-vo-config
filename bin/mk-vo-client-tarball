@@ -21,6 +21,8 @@ cp edg-mkgridmap.config vo-client-$NN/edg-mkgridmap.conf
 cp gums.config.template vomses vo-client-$NN/
 cp -r vomsdir/ vo-client-$NN/
 ./bin/gen-voms-mapfile > vo-client-$NN/voms-mapfile-default
+./bin/gen-grid-vorolemap vo-client-$NN/voms-mapfile-default \
+                       > vo-client-$NN/grid-vorolemap
 
 tar czf vo-client-$NN-osg.tar.gz vo-client-$NN/
 
