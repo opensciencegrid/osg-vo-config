@@ -2,5 +2,6 @@
 
 # transform existing 'voms-mapfile-default' into 'grid-vorolemap'
 
-awk 'NR==1; /^$/ {MAIN=1; print}; MAIN && NF>1 {print "\"*\"", $0}' "$@"
+awk 'NR==1; /^$/ {MAIN=1; print}; MAIN && NF>1 {print "\"*\"", $0}' "$@" |
+perl -pe 's{/\*}{/}; s{/Capability=(NULL|\*)}{}'
 
