@@ -2,6 +2,11 @@
 
 # transform existing 'voms-mapfile-default' into 'grid-vorolemap'
 
-awk 'NR==1; /^$/ {MAIN=1; print}; MAIN && NF>1 {print "\"*\"", $0}' "$@" |
+echo "# This is a grid-vomapfile intended for dCache.  For more info see:"
+echo -n "# https://www.dcache.org/manuals/Book-3.2/config/"
+echo "cf-gplazma-plug-inconfig-fhs.shtml#cf-gplazma-plug-inconfig-voauth"
+echo
+
+awk '/^$/ {MAIN=1}; MAIN && NF>1 {print "\"*\"", $0}' "$@" |
 perl -pe 's{/\*}{/}; s{/Capability=(NULL|\*)}{}'
 
