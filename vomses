@@ -35,6 +35,7 @@
 "nanohub" "voms1.fnal.gov" "15022" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "nanohub"
 "nanohub" "voms2.fnal.gov" "15022" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "nanohub"
 "ilc" "grid-voms.desy.de" "15110" "/C=DE/O=GermanGrid/OU=DESY/CN=host/grid-voms.desy.de" "ilc"
+"lsst" "voms.slac.stanford.edu" "15003" "/DC=org/DC=incommon/C=US/postalCode=94305/ST=CA/L=Stanford/street=450 Serra Mall/O=Stanford University/OU=SLAC/CN=voms.slac.stanford.edu" "lsst"
 "lsst" "voms1.fnal.gov" "15003" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "lsst"
 "lsst" "voms2.fnal.gov" "15003" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "lsst"
 "lqcd" "voms1.fnal.gov" "15024" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "lqcd"
@@ -49,4 +50,4 @@
 "lz" "voms.hep.wisc.edu" "15001" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.hep.wisc.edu" "lz"
 "dune" "voms1.fnal.gov" "15042" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "dune"
 "dune" "voms2.fnal.gov" "15042" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "dune"
-"supercdms" "voms.slac.stanford.edu" "15001" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.slac.stanford.edu" "supercdms"
+"supercdms" "voms.slac.stanford.edu" "15001" "/DC=org/DC=incommon/C=US/postalCode=94305/ST=CA/L=Stanford/street=450 Serra Mall/O=Stanford University/OU=SLAC/CN=voms.slac.stanford.edu" "supercdms"
