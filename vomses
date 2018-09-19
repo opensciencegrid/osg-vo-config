@@ -49,3 +49,4 @@
 "dune" "voms1.fnal.gov" "15042" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms1.fnal.gov" "dune"
 "dune" "voms2.fnal.gov" "15042" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms2.fnal.gov" "dune"
 "supercdms" "voms.slac.stanford.edu" "15001" "/DC=org/DC=incommon/C=US/postalCode=94305/ST=CA/L=Stanford/street=450 Serra Mall/O=Stanford University/OU=SLAC/CN=voms.slac.stanford.edu" "supercdms"
+"dteam" "voms2.hellasgrid.gr" "15004" "/C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr" "dteam"
