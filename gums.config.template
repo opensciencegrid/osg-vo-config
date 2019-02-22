@@ -66,16 +66,6 @@
 			sslCAFiles='/etc/grid-security/certificates/*.0'/>
 
 		<vomsServer
-			name='cigi'
-			description=''
-			persistenceFactory='mysql'
-			baseUrl='https://vm246.roger.ncsa.illinois.edu:8443/voms/CIGI'
-			sslKey='/etc/grid-security/http/httpkey.pem'
-			sslCertfile='/etc/grid-security/http/httpcert.pem'
-			sslKeyPasswd=''
-			sslCAFiles='/etc/grid-security/certificates/*.0'/>
-
-		<vomsServer
 			name='cms'
 			description=''
 			persistenceFactory='mysql'
@@ -462,15 +452,6 @@
 			acceptProxyWithoutFQAN='false'
 			voGroup='/cdf'
 			role='Analysis'/>
-
-		<vomsUserGroup
-			name='cigi'
-			access='read self'
-			description=''
-			vomsServer='cigi'
-			matchFQAN='vo'
-			acceptProxyWithoutFQAN='true'
-			voGroup='/CIGI'/>
 
 		<vomsUserGroup
 			name='cmsdefault'
@@ -906,11 +887,6 @@
 			accountName='cdfana'/>
 
 		<groupAccountMapper
-			name='cigi'
-			description=''
-			accountName='cigi'/>
-
-		<groupAccountMapper
 			name='cmsdefault'
 			description=''
 			accountName='cmsuser'/>
@@ -1221,14 +1197,6 @@
 			accountingVo='CDF'
 			userGroups='cdfana'
 			accountMappers='cdfana'/>
-
-		<groupToAccountMapping
-			name='cigi'
-			description=''
-			accountingVoSubgroup='cigi'
-			accountingVo='CIGI'
-			userGroups='cigi'
-			accountMappers='cigi'/>
 
 		<groupToAccountMapping
 			name='cmsdefault'
@@ -1563,7 +1531,7 @@
 	<hostToGroupMappings>
 
 		<hostToGroupMapping
-			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, cmsdefault, dzeroana, dosar, des, glow, nanohub, geant4, ligo, osg, UsatlasProd, UsatlasLcgAdmin, UsatlasSoft, Usatlas, ops, des-production, ilc, sbgrid, cigi, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, dream, lsst, lqcd, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli'
+			groupToAccountMappings='cdf-fnal, cdfana, fermigli, fermilab, mis, star, cmspilot, uscmspilot, cmslocal, cmsproduction, cmslcgadmin, cmsdefault, dzeroana, dosar, des, glow, nanohub, geant4, ligo, osg, UsatlasProd, UsatlasLcgAdmin, UsatlasSoft, Usatlas, ops, des-production, ilc, sbgrid, icecube, alice, gluex, gridunesp, hcc, belle, bellepro, suragrid, dream, lsst, lqcd, glast.org, enmr.eu, vo.cta.in2p3.fr, xenon.biggrid.nl, snoplus.snolab.ca, LZ, dune, dune-production, duneana, dunegli'
 			description=''
 			cn='*/?*.@DOMAINNAME@'/>
 

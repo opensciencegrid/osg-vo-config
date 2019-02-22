@@ -10,7 +10,6 @@
 "ops" "voms2.cern.ch" "15009" "/DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch" "ops"
 "ops" "lcg-voms2.cern.ch" "15009" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch" "ops"
 "SBGrid" "hpc.sbgrid.org" "15002" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=hpc.sbgrid.org" "SBGrid"
-"CIGI" "vm246.roger.ncsa.illinois.edu" "15001" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=vm246.roger.ncsa.illinois.edu" "CIGI"
 "mis" "voms.grid.iu.edu" "15001" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.grid.iu.edu" "mis"
 "icecube" "grid-voms.desy.de" "15109" "/C=DE/O=GermanGrid/OU=DESY/CN=host/grid-voms.desy.de" "icecube"
 "alice" "voms2.cern.ch" "15000" "/DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch" "alice"
