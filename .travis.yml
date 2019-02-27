@@ -1,0 +1,6 @@
+git:
+  depth: false
+  quiet: true
+
+script:
+  - bin/vomses-crosscheck vomses vomsdir
