@@ -16,6 +16,7 @@
 "Gluex" "gryphn.phys.uconn.edu" "15014" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms/gryphn.phys.uconn.edu" "Gluex"
 "GridUNESP" "voms.grid.unesp.br" "15000" "/C=BR/O=ANSP/OU=ANSPGrid CA/OU=Services/CN=voms.grid.unesp.br" "GridUNESP"
 "hcc" "hcc-voms.unl.edu" "15000" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=hcc-voms.unl.edu" "hcc"
+"hcc" "hcc-voms2.unl.edu" "15000" "/DC=org/DC=incommon/C=US/ST=NE/L=Lincoln/O=University of Nebraska-Lincoln/OU=Holland Computing Center/CN=hcc-voms2.unl.edu" "hcc"
 "belle" "voms.cc.kek.jp" "15020" "/C=JP/O=KEK/OU=CRC/CN=host/voms.cc.kek.jp" "belle"
 "suragrid" "voms.hpcc.ttu.edu" "15003" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.hpcc.ttu.edu" "suragrid"
 "dream" "voms.hpcc.ttu.edu" "15004" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.hpcc.ttu.edu" "dream"
