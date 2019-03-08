@@ -4,7 +4,6 @@
 
 -   `vomses`
     This file contains information about VOMS servers, one per line.
-
     Each line contains 5 fields:
     1.  VO name alias
     2.  Hostname for VOMS server
