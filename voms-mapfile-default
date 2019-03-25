@@ -18,7 +18,6 @@
 "/dosar/*" dosar
 "/des/Role=Analysis/Capability=NULL" des
 "/GLOW/*" glow
-"/nanohub/*" nanohub
 "/geant4/*" geant4
 "/osg/ligo/*" ligo
 "/osg/*" osg
@@ -37,7 +36,6 @@
 "/belle/Role=NULL/Capability=NULL" belle
 "/belle/Role=production/Capability=NULL" bellepro
 "/lsst/*" lsst
-"/lqcd/Role=NULL/Capability=NULL" lqcd
 "/glast.org/Role=NULL/Capability=NULL" glast.org
 "/enmr.eu/*" enmr.eu
 "/vo.cta.in2p3.fr/*" vo.cta.in2p3.fr
