@@ -15,11 +15,9 @@
 "/cms/Role=production/Capability=NULL" cmsprod
 "/cms/Role=lcgadmin/Capability=NULL" lcgadmin
 "/cms/*" cmsuser
-"/dzero/Role=Analysis/Capability=NULL" dzeroana
 "/dosar/*" dosar
 "/des/Role=Analysis/Capability=NULL" des
 "/GLOW/*" glow
-"/nanohub/*" nanohub
 "/geant4/*" geant4
 "/osg/ligo/*" ligo
 "/osg/*" osg
@@ -38,10 +36,7 @@
 "/hcc/Role=NULL/Capability=NULL" hcc
 "/belle/Role=NULL/Capability=NULL" belle
 "/belle/Role=production/Capability=NULL" bellepro
-"/suragrid/*" suragrid
-"/dream/*" dream
 "/lsst/*" lsst
-"/lqcd/Role=NULL/Capability=NULL" lqcd
 "/glast.org/Role=NULL/Capability=NULL" glast.org
 "/enmr.eu/*" enmr.eu
 "/vo.cta.in2p3.fr/*" vo.cta.in2p3.fr
