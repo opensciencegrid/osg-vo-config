@@ -28,7 +28,6 @@
 "/ops/*" ops
 "/des/production/Role=NULL/Capability=NULL" des
 "/ilc/*" ilc
-"/SBGrid/*" sbgrid
 "/icecube/*" icecube
 "/alice/*" alice
 "/Gluex/Role=NULL/Capability=NULL" gluex
