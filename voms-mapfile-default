@@ -20,6 +20,7 @@
 "/GLOW/*" glow
 "/geant4/*" geant4
 "/osg/ligo/*" ligo
+"/virgo/ligo/*" ligo
 "/osg/*" osg
 "/atlas/*Role=production/Capability=*" usatlas1
 "/atlas/*Role=lcgadmin/Capability=*" usatlas2
