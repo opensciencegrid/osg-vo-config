@@ -47,3 +47,4 @@
 "/dune/Role=Production/Capability=NULL" dunepro
 "/dune/Role=Analysis/Capability=NULL" duneana
 "/dune/Role=pilot/Capability=NULL" dunegli
+"/nanohub/*" nanohub
