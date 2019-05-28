@@ -45,3 +45,4 @@
 "supercdms" "voms.slac.stanford.edu" "15001" "/DC=org/DC=incommon/C=US/postalCode=94305/ST=CA/L=Stanford/street=450 Serra Mall/O=Stanford University/OU=SLAC/CN=voms.slac.stanford.edu" "supercdms"
 "dteam" "voms2.hellasgrid.gr" "15004" "/C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr" "dteam"
 "virgo" "voms.cnaf.infn.it" "15009" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms.cnaf.infn.it" "virgo"
+"nanohub" "voms.nanohub.org" "15022" "/DC=org/DC=incommon/C=US/ST=IN/L=West Lafayette/O=Purdue University/OU=HUBzero/CN=voms.nanohub.org" "nanohub"
