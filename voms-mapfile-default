@@ -48,3 +48,4 @@
 "/dune/Role=Analysis/Capability=NULL" duneana
 "/dune/Role=pilot/Capability=NULL" dunegli
 "/nanohub/*" nanohub
+"/sphenix/*" sphenix
