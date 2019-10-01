@@ -49,3 +49,8 @@
 "/dune/Role=pilot/Capability=NULL" dunegli
 "/nanohub/*" nanohub
 "/sphenix/*" sphenix
+"/lhcb/Role=user/Capability=NULL" lhcbuser
+"/lhcb/Role=pilot/Capability=NULL" lhcbpilot
+"/lhcb/Role=lcgadmin/Capability=NULL" lhcbadmin
+"/lhcb/Role=production/Capability=NULL" lhcbprod
+"/lhcb/*" lhcb
