@@ -49,3 +49,4 @@
 "virgo" "voms.cnaf.infn.it" "15009" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms.cnaf.infn.it" "virgo"
 "nanohub" "voms.nanohub.org" "15022" "/DC=org/DC=incommon/C=US/ST=IN/L=West Lafayette/O=Purdue University/OU=HUBzero/CN=voms.nanohub.org" "nanohub"
 "sphenix" "hcvoms.sdcc.bnl.gov" "15001" "/DC=org/DC=incommon/C=US/ST=New York/L=Upton/O=Brookhaven National Laboratory/OU=SDCC/CN=hcvoms.sdcc.bnl.gov" "sphenix"
+"clas12" "jlabvoms.t2.ucsd.edu" "15001" "/DC=org/DC=incommon/C=US/ST=California/L=La Jolla/O=University of California, San Diego/OU=UCSD/CN=jlabvoms.t2.ucsd.edu" "clas12"
