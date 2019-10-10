@@ -69,7 +69,7 @@ To publish the new release on GitHub:
 -   Click the "Publish release" button
 
 
-### Miscelaneous
+### Miscellaneous
 
 #### To rebuild vomsdir from vomses, run
 
