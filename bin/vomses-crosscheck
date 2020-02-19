@@ -86,3 +86,6 @@ for x in (missing_lsc_files, missing_vomses_entries, dn_mismatches):
             print line
         print
 
+e = bool(missing_lsc_files or missing_vomses_entries or dn_mismatches)
+sys.exit(e)
+
