@@ -6,6 +6,7 @@
 "/cdf/Role=NULL/Capability=NULL" cdf
 "/cdf/Role=Analysis/Capability=NULL" cdfana
 "/fermilab/Role=pilot/Capability=NULL" fermigli
+"/fermilab/*/Role=pilot/Capability=NULL" fermigli
 "/fermilab/*" fnalgrid
 "/star/*" star
 "/cms/Role=pilot/Capability=NULL" cmspilot
