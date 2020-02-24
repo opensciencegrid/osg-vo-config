@@ -35,7 +35,7 @@
 "lhcb" "lcg-voms2.cern.ch" "15003" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch" "lhcb"
 "lhcb" "voms2.cern.ch" "15003" "/DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch" "lhcb"
 "lsst" "voms.slac.stanford.edu" "15003" "/DC=org/DC=incommon/C=US/ST=CA/L=Stanford/O=Stanford University/OU=SLAC/CN=voms.slac.stanford.edu" "lsst"
-"osg" "voms.opensciencegrid.org" "15027" "/DC=org/DC=incommon/C=US/postalCode=53706/ST=WI/L=Madison/street=1210 West Dayton Street/O=University of Wisconsin-Madison/OU=OCIS/CN=voms.opensciencegrid.org" "osg"
+"osg" "voms.opensciencegrid.org" "15027" "/DC=org/DC=incommon/C=US/ST=Wisconsin/L=Madison/O=University of Wisconsin-Madison/OU=OCIS/CN=voms.opensciencegrid.org" "osg"
 "osg" "voms1.opensciencegrid.org" "15027" "/DC=org/DC=incommon/C=US/ST=WI/L=Madison/O=University of Wisconsin-Madison/OU=OCIS/CN=voms1.opensciencegrid.org" "osg"
 "snoplus.snolab.ca" "voms.gridpp.ac.uk" "15503" "/C=UK/O=eScience/OU=Manchester/L=HEP/CN=voms.gridpp.ac.uk" "snoplus.snolab.ca"
 "snoplus.snolab.ca" "voms02.gridpp.ac.uk" "15503" "/C=UK/O=eScience/OU=Oxford/L=OeSC/CN=voms02.gridpp.ac.uk" "snoplus.snolab.ca"
