@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from __future__ import print_function
 
 import re
 import os
@@ -9,10 +10,10 @@ vomses_path = "vomses"
 vomsdir     = "vomsdir"
 
 def usage():
-    print "usage: %s [vomses vomsdir]" % os.path.basename(__file__)
-    print "   or: %s --system" % os.path.basename(__file__)
-    print
-    print "Use --system for /etc/vomses and /etc/grid-security/vomsdir"
+    print("usage: %s [vomses vomsdir]" % os.path.basename(__file__))
+    print("   or: %s --system" % os.path.basename(__file__))
+    print()
+    print("Use --system for /etc/vomses and /etc/grid-security/vomsdir")
     sys.exit()
 
 if len(sys.argv) == 3:
@@ -26,7 +27,7 @@ elif len(sys.argv) != 1:
 
 for path in (vomses_path, vomsdir):
     if not os.path.exists(path):
-        print "%s does not exist..." % path
+        print("%s does not exist..." % path)
         usage()
 
 class vomses_entry:
@@ -83,8 +84,8 @@ for lsc_path in sorted(glob.glob("*/*.lsc")):
 for x in (missing_lsc_files, missing_vomses_entries, dn_mismatches):
     if x:
         for line in x:
-            print line
-        print
+            print(line)
+        print()
 
 e = bool(missing_lsc_files or missing_vomses_entries or dn_mismatches)
 sys.exit(e)
