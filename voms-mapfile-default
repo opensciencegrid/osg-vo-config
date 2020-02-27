@@ -3,8 +3,6 @@
 # For more information, see:
 # https://opensciencegrid.github.io/docs/security/lcmaps-voms-authentication/
 
-"/cdf/Role=NULL/Capability=NULL" cdf
-"/cdf/Role=Analysis/Capability=NULL" cdfana
 "/fermilab/Role=pilot/Capability=NULL" fermigli
 "/fermilab/*/Role=pilot/Capability=NULL" fermigli
 "/fermilab/*" fnalgrid
