@@ -4,7 +4,6 @@
 "cms" "voms2.cern.ch" "15002" "/DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch" "cms"
 "cms" "lcg-voms2.cern.ch" "15002" "/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch" "cms"
 "dosar" "voms.dosar.org" "15000" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.dosar.org" "dosar"
-"GLOW" "glow-voms.cs.wisc.edu" "15001" "/DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=glow-voms.cs.wisc.edu" "GLOW"
 "GLOW" "voms.chtc.wisc.edu" "15001" "/DC=org/DC=incommon/C=US/ST=WI/L=Madison/O=University of Wisconsin-Madison/OU=OCIS/CN=voms.chtc.wisc.edu" "GLOW"
 "GLOW" "voms1.chtc.wisc.edu" "15001" "/DC=org/DC=incommon/C=US/ST=Wisconsin/L=Madison/O=University of Wisconsin-Madison/OU=OCIS/CN=voms1.chtc.wisc.edu" "GLOW"
 "geant4" "voms2.cern.ch" "15007" "/DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch" "geant4"
