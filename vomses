@@ -13,7 +13,7 @@
 "icecube" "grid-voms.desy.de" "15109" "/C=DE/O=GermanGrid/OU=DESY/CN=host/grid-voms.desy.de" "icecube"
 "alice" "voms2.cern.ch" "15000" "/DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch" "alice"
 "Gluex" "gluex.phys.uconn.edu" "15014" "/DC=org/DC=incommon/C=US/ST=CT/L=Storrs/O=University of Connecticut/OU=Academic IT/CN=gluex.phys.uconn.edu" "Gluex"
-"Gluex" "gryphn.phys.uconn.edu" "15014" "/DC=org/DC=incommon/C=US/ST=CT/L=Storrs/O=University of Connecticut/OU=Academic IT/CN=gryphn.phys.uconn.edu" "Gluex"
+"Gluex" "gryphn.phys.uconn.edu" "15014" "/DC=org/DC=incommon/C=US/ST=Connecticut/L=Storrs/O=University of Connecticut/OU=Academic IT/CN=gryphn.phys.uconn.edu" "Gluex"
 "GridUNESP" "voms.grid.unesp.br" "15000" "/C=BR/O=ANSP/OU=ANSPGrid CA/OU=Services/CN=voms.grid.unesp.br" "GridUNESP"
 "hcc" "hcc-voms.unl.edu" "15000" "/DC=org/DC=incommon/C=US/ST=Nebraska/L=Lincoln/O=University of Nebraska-Lincoln/OU=Holland Computing Center/CN=hcc-voms.unl.edu" "hcc"
 "hcc" "hcc-voms2.unl.edu" "15000" "/DC=org/DC=incommon/C=US/ST=NE/L=Lincoln/O=University of Nebraska-Lincoln/OU=Holland Computing Center/CN=hcc-voms2.unl.edu" "hcc"
