@@ -13,7 +13,6 @@
 "/cms/Role=production/Capability=NULL" cmsprod
 "/cms/Role=lcgadmin/Capability=NULL" lcgadmin
 "/cms/*" cmsuser
-"/dosar/*" dosar
 "/des/Role=Analysis/Capability=NULL" des
 "/GLOW/*" glow
 "/geant4/*" geant4
