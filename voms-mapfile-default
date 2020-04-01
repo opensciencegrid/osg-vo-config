@@ -52,3 +52,4 @@
 "/lhcb/Role=production/Capability=NULL" lhcbprod
 "/lhcb/*" lhcb
 "/clas12/*" clas12
+"/wlcg/*" wlcg
