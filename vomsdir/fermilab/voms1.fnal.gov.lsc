@@ -1,2 +1,2 @@
-/DC=org/DC=incommon/C=US/ST=IL/L=Batavia/O=Fermi Research Alliance/OU=Fermilab/CN=voms1.fnal.gov
-/C=US/O=Internet2/OU=InCommon/CN=InCommon IGTF Server CA
+subject=/DC=org/DC=incommon/C=US/ST=Illinois/L=Batavia/O=Fermi Research Alliance/OU=Fermilab/CN=voms1.fnal.gov
+issuer=/C=US/O=Internet2/OU=InCommon/CN=InCommon IGTF Server CA
