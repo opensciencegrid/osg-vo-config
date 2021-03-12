@@ -19,7 +19,7 @@
 "belle" "voms.cc.kek.jp" "15020" "/C=JP/O=KEK/OU=CRC/CN=host/voms.cc.kek.jp" "belle"
 "glast.org" "voms2.cnaf.infn.it" "15018" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms2.cnaf.infn.it" "glast.org"
 "glast.org" "voms-02.pd.infn.it" "15018" "/DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-02.pd.infn.it" "glast.org"
-"enmr.eu" "voms2.cnaf.infn.it" "15014" "/C=IT/O=INFN/OU=Host/L=CNAF/CN=voms2.cnaf.infn.it" "enmr.eu"
+"enmr.eu" "voms2.cnaf.infn.it" "15014" "/DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/OU=Istituto Nazionale di Fisica Nucleare/CN=voms2.cnaf.infn.it" "enmr.eu"
 "enmr.eu" "voms-02.pd.infn.it" "15014" "/DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-02.pd.infn.it" "enmr.eu"
 "vo.cta.in2p3.fr" "cclcgvomsli01.in2p3.fr" "15008" "/O=GRID-FR/C=FR/O=CNRS/OU=CC-IN2P3/CN=cclcgvomsli01.in2p3.fr" "vo.cta.in2p3.fr"
 "xenon.biggrid.nl" "voms.grid.sara.nl" "30008" "/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl" "xenon.biggrid.nl"
