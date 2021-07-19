@@ -1,4 +1,4 @@
-name: Validate vomses/vomsdir in Travis
+name: Validate vomses
 
 on:
   pull_request:
