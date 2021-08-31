@@ -66,8 +66,6 @@ class TestValidate(unittest.TestCase):
     @patch('validateDNFormat.os.walk')
     @patch('builtins.open', mock_open(read_data=
         '/DC/=org/ST=Wisconsin/CN=test.org\n' +
-        '/DC=/org/ST=Wisconsin/CN=Test Company\n' +
-        'DC=org/ST=Wisconsin/CN=test.org\n' +
         '/DC=orgST=Wisconsin/CN=Test Company\n'
     ))
     def testBadDelimiter(self, mock_walk):
