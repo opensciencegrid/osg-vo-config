@@ -1,0 +1,14 @@
+name: Validate DN Format Test
+
+on:
+  pull_request:
+  push:
+  
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: validate dn format test
+      run: bin/validate_dn_format_test.py
