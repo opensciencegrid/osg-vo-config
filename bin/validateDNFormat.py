@@ -17,7 +17,7 @@ def validate(dir):
                 with open(filePath, 'r') as f:  # reads .lsc files line by line
                     lines = f.read().splitlines()
                     if len(lines) != 2:
-                        errorLog.append("Error in \"" + filePath + "\" lsc file should contain exactly 2 DNs")
+                        errorLog.append("Error in \"" + filePath + "\" .lsc file should contain exactly 2 DNs")
                     subjectCN = regexCN.search(lines[0]).group()  # reads subject DN and gets the CN
                     for line in lines:
                         match = regex.search(line)
