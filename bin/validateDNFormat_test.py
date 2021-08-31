@@ -74,5 +74,22 @@ class TestValidate(unittest.TestCase):
         validateDNFormat.validate('.')
         self.assertEqual(validateDNFormat.errorLog, expectedError)
 
+    @patch('validate_dn_format.os.walk')
+    @patch('builtins.open', mock_open(read_data=
+        '/DC=org/ST=Wisconsin/CN=test.org\n' +
+        '/DC=org/ST=Wisconsin/CN=Test Company\n' +
+        '/DC=org/ST=Wisconsin/CN=Third DN\n'
+    ))
+    def testNumberOfDN(self, mock_walk):
+        mock_walk.return_value = [
+            ('root', ('folders',), ()),
+            ('root/folders', (), ('test.org.lsc',)),
+        ]
+        expectedError = [
+            'Error in \"root/folders/test.org.lsc\" .lsc file should contain exactly 2 DNs'
+        ]
+        validateDNFormat.validate('.')
+        self.assertEqual(validateDNFormat.errorLog, expectedError)
+
 if __name__ == '__main__':
     unittest.main()
