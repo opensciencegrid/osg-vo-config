@@ -1,4 +1,4 @@
-name: Validate DN Format Test
+name: Unit tests for data validation scripts
 
 on:
   pull_request:
@@ -10,5 +10,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: validate dn format test
-      run: bin/validate_dn_format_test.py
+    - name: test validate dn format
+      run: bin/test_validate_dn_format.py
