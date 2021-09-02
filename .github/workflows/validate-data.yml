@@ -1,4 +1,4 @@
-name: Validate vomses
+name: Validate data
 
 on:
   pull_request:
@@ -12,3 +12,6 @@ jobs:
     
     - name: validate vomses
       run: bin/vomses-crosscheck vomses vomsdir
+    
+    - name: validate LSC file DN format
+      run: bin/validate_dn_format.py
