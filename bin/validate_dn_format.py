@@ -24,9 +24,7 @@ def validate(dir):
             if check_number_of_dn(lines):
                 error_log.append(f'Error in "{file_path}" .lsc file should contain exactly 2 DNs')
             
-            subject_cn_value = regex_dn.match(lines[0]).groups()[-1]  # reads subject DN and gets the CN value
-            filename_without_ext = os.path.splitext(os.path.basename(file_path))[0]  # extract the file name without extension
-            if check_matching_cn(filename_without_ext, subject_cn_value):
+            if check_matching_cn(lines[0], file_path):
                 error_log.append(f'Error in "{file_path}" at "{lines[0]}" subject CN value does not match the file name')
 
             for line in lines:
@@ -36,11 +34,13 @@ def validate(dir):
 def check_number_of_dn(lines):
     return len(lines) != 2
 
-def check_matching_cn(filename_without_ext, cn_value):
+def check_matching_cn(subject_dn, file_path):
+    subject_cn_value = regex_dn.search(subject_dn).groups()[-1]  # reads subject DN and gets the CN value
+    filename_without_ext = os.path.splitext(os.path.basename(file_path))[0]  # extract the file name without extension
     if filename_without_ext in whitelist:
         return False
     else:
-        return filename_without_ext not in cn_value
+        return filename_without_ext not in subject_cn_value
 
 def check_format(dn):
     return not regex_dn.search(dn)
