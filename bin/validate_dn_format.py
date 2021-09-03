@@ -4,8 +4,7 @@ import glob
 import os
 import re
 
-regex_dn = re.compile(r"^(/(?:DC|OU|C|ST|L|O)=[^/=]+)*(/CN=[^/=].+)$")
-regex_subject_cn = re.compile(r"(?<=CN=).*")
+regex_dn = re.compile(r"^(/(?:DC|OU|C|ST|L|O)=[^/=]+)*(/CN=([^/=].+))$")
 
 error_log = []
 
@@ -17,7 +16,7 @@ def validate(dir):
             if check_number_of_dn(lines):
                 error_log.append(f'Error in "{file_path}" .lsc file should contain exactly 2 DNs')
             
-            subject_cn_value = regex_subject_cn.search(lines[0]).group()  # reads subject DN and gets the CN value
+            subject_cn_value = regex_dn.match(lines[0]).groups()[-1]  # reads subject DN and gets the CN value
             filename_without_ext = os.path.splitext(os.path.basename(file_path))[0]  # extract the file name without extension
             if check_matching_cn(filename_without_ext, subject_cn_value):
                 error_log.append(f'Error in "{file_path}" at "{lines[0]}" subject CN value does not match the file name')
@@ -40,7 +39,6 @@ def print_error_log():
         for error in error_log:
             print(error)
         error_log.clear()
-
 
 def main():
     dir = 'vomsdir'
