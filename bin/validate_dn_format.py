@@ -8,6 +8,14 @@ regex_dn = re.compile(r"^(/(?:DC|OU|C|ST|L|O)=[^/=]+)*(/CN=([^/=].+))$")
 
 error_log = []
 
+whitelist = [
+    'voms-alice-auth.app.cern.ch',
+    'voms-atlas-auth.app.cern.ch',
+    'voms-cms-auth.app.cern.ch',
+    'voms-lhcb-auth.app.cern.ch',
+    'voms-ops-auth.app.cern.ch',
+]
+
 def validate(dir):
     for file_path in glob.glob(dir + "/*/*.lsc"):
         with open(file_path, 'r') as f:  # reads .lsc files line by line
@@ -29,7 +37,10 @@ def check_number_of_dn(lines):
     return len(lines) != 2
 
 def check_matching_cn(filename_without_ext, cn_value):
-    return filename_without_ext not in cn_value
+    if filename_without_ext in whitelist:
+        return False
+    else:
+        return filename_without_ext not in cn_value
 
 def check_format(dn):
     return not regex_dn.search(dn)
