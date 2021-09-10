@@ -14,7 +14,7 @@ class TestValidate(unittest.TestCase):
             '/DC=org/ST=Wisconsin/CN=Test Company',
             '/DC=org/ST=Wisconsin/CN=Third DN',
         ]
-        self.assertTrue(validate_dn_format.check_number_of_dn(dummy_lines))
+        self.assertFalse(validate_dn_format.check_number_of_dn(dummy_lines))
 
     def test_not_matching_subject_cn(self):
         dummy_lines = [
@@ -22,23 +22,23 @@ class TestValidate(unittest.TestCase):
             '/DC=org/ST=Wisconsin/CN=Test Company',
         ]
         dummy_file_path = 'root/folders/test.org.lsc'
-        self.assertTrue(validate_dn_format.check_matching_cn(dummy_lines[0], dummy_file_path))
+        self.assertFalse(validate_dn_format.check_matching_cn(dummy_lines[0], dummy_file_path))
     
     def test_no_cn(self):
         dummy_line = '/DC=org/ST=Wisconsin'
-        self.assertTrue(validate_dn_format.check_format(dummy_line))
+        self.assertFalse(validate_dn_format.check_format(dummy_line))
 
     def test_bad_key_value_pair(self):
         dummy_line = '/C=/ST=Wisconsin/L=Madison/CN=test.org'
-        self.assertTrue(validate_dn_format.check_format(dummy_line))
+        self.assertFalse(validate_dn_format.check_format(dummy_line))
 
     def test_first_delimiter(self):
         dummy_line = 'C=US/ST=Wisconsin/L=Madison/CN=test.org'
-        self.assertTrue(validate_dn_format.check_format(dummy_line))
+        self.assertFalse(validate_dn_format.check_format(dummy_line))
     
     def test_missing_delimiter(self):
         dummy_line = '/C=US/ST=WisconsinL=Madison/CN=test.org'
-        self.assertTrue(validate_dn_format.check_format(dummy_line))
+        self.assertFalse(validate_dn_format.check_format(dummy_line))
 
 if __name__ == '__main__':
     unittest.main()
