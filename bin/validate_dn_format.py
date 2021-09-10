@@ -21,29 +21,28 @@ def validate(dir):
         with open(file_path, 'r') as f:  # reads .lsc files line by line
             lines = f.read().splitlines()
 
-            if check_number_of_dn(lines):
+            if not check_number_of_dn(lines):
                 error_log.append(f'Error in "{file_path}" .lsc file should contain exactly 2 DNs')
             
-            if check_matching_cn(lines[0], file_path):
+            if not check_matching_cn(lines[0], file_path):
                 error_log.append(f'Error in "{file_path}" at "{lines[0]}" subject CN value does not match the file name')
 
-            for line in lines:
-                if check_format(line):
-                    error_log.append(f'Error in "{file_path}" at "{line}" invalid format')
+            for bad_line in [line for line in lines if not check_format(line)]:
+                error_log.append(f'Error in "{file_path}" at "{bad_line}" invalid format')
 
 def check_number_of_dn(lines):
-    return len(lines) != 2
+    return len(lines) == 2
 
 def check_matching_cn(subject_dn, file_path):
     subject_cn_value = regex_dn.search(subject_dn).groups()[-1]  # reads subject DN and gets the CN value
     filename_without_ext = os.path.splitext(os.path.basename(file_path))[0]  # extract the file name without extension
     if filename_without_ext in whitelist:
-        return False
+        return True
     else:
-        return filename_without_ext not in subject_cn_value
+        return filename_without_ext in subject_cn_value
 
 def check_format(dn):
-    return not regex_dn.search(dn)
+    return True if regex_dn.search(dn) else False
 
 def print_error_log():
     if error_log:
