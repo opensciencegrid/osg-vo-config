@@ -1,0 +1,17 @@
+name: Validate data
+
+on:
+  pull_request:
+  push:
+  
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: validate vomses
+      run: bin/vomses-crosscheck vomses vomsdir
+    
+    - name: validate LSC file DN format
+      run: bin/validate_dn_format.py
