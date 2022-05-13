@@ -52,6 +52,8 @@
 "nanohub" "voms.nanohub.org" "15022" "/DC=org/DC=incommon/C=US/ST=IN/L=West Lafayette/O=Purdue University/OU=HUBzero/CN=voms.nanohub.org" "nanohub"
 "sphenix" "hcvoms.sdcc.bnl.gov" "15001" "/DC=org/DC=incommon/C=US/ST=New York/L=Upton/O=Brookhaven National Laboratory/OU=SDCC/CN=hcvoms.sdcc.bnl.gov" "sphenix"
 "clas12" "clas12.voms.opensciencegrid.org" "15001" "/DC=org/DC=incommon/C=US/ST=Wisconsin/L=Madison/O=University of Wisconsin-Madison/OU=OCIS/CN=clas12.voms.opensciencegrid.org" "clas12"
+"clas12" "clas12.voms2.opensciencegrid.org" "15001" "/DC=org/DC=incommon/C=US/ST=Wisconsin/O=University of Wisconsin-Madison/OU=OCIS/CN=clas12.voms2.opensciencegrid.org" "clas12"
 "wlcg" "wlcg-voms.cloud.cnaf.infn.it" "15001" "/DC=org/DC=terena/DC=tcs/C=IT/ST=Roma/O=Istituto Nazionale di Fisica Nucleare - INFN/CN=wlcg-voms.cloud.cnaf.infn.it" "wlcg"
 "eic" "eic.voms.opensciencegrid.org" "15001" "/DC=org/DC=incommon/C=US/ST=Wisconsin/L=Madison/O=University of Wisconsin-Madison/OU=OCIS/CN=eic.voms.opensciencegrid.org" "eic"
+"eic" "eic.voms2.opensciencegrid.org" "15001" "/DC=org/DC=incommon/C=US/ST=Wisconsin/O=University of Wisconsin-Madison/OU=OCIS/CN=eic.voms2.opensciencegrid.org" "eic"
 "kagra" "voms.cc.kek.jp" "15027" "/C=JP/O=KEK/OU=CRC/CN=host/voms.cc.kek.jp" "kagra"
