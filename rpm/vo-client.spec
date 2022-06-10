@@ -3,7 +3,7 @@
 %define iam 1
 
 Name:           vo-client
-Version:        121
+Version:        122
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -84,6 +84,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Fri Jun 10 2022 Carl Edquist <edquist@cs.wisc.edu> - 122-1
+- Add new sPHENIX and EIC VO certificates (SOFTWARE-5221)
+
 * Fri May 13 2022 Carl Edquist <edquist@cs.wisc.edu> - 121-1
 - Add new hosts for eic/clas12 (SOFTWARE-5176)
 
