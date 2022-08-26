@@ -3,7 +3,7 @@
 %define iam 1
 
 Name:           vo-client
-Version:        122
+Version:        123
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -84,6 +84,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Fri Aug 26 2022 Carl Edquist <edquist@cs.wisc.edu> - 123-1
+- Update Virgo DNs (SOFTWARE-5306)
+
 * Fri Jun 10 2022 Carl Edquist <edquist@cs.wisc.edu> - 122-1
 - Add new sPHENIX and EIC VO certificates (SOFTWARE-5221)
 
