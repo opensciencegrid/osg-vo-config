@@ -3,7 +3,7 @@
 %define iam 1
 
 Name:           vo-client
-Version:        126
+Version:        127
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -84,6 +84,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Mon Dec 19 2022 Carl Edquist <edquist@cs.wisc.edu> - 127-1
+- Update wlcg DN (SOFTWARE-5417)
+
 * Fri Nov 18 2022 Carl Edquist <edquist@cs.wisc.edu> - 126-1
 - Update desy VOs (desy, belle, ilc) (SOFTWARE-5369)
 
