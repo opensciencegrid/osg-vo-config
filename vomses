@@ -18,7 +18,7 @@
 "Gluex" "gluex.phys.uconn.edu" "15014" "/DC=org/DC=incommon/C=US/ST=Connecticut/O=University of Connecticut/CN=gluex.phys.uconn.edu" "Gluex"
 "Gluex" "gryphn.phys.uconn.edu" "15014" "/DC=org/DC=incommon/C=US/ST=Connecticut/O=University of Connecticut/CN=gryphn.phys.uconn.edu" "Gluex"
 "GridUNESP" "voms.grid.unesp.br" "15000" "/C=BR/O=ANSP/OU=ANSPGrid CA/OU=Services/CN=voms.grid.unesp.br" "GridUNESP"
-"hcc" "hcc-voms.unl.edu" "15000" "/DC=org/DC=incommon/C=US/ST=Nebraska/L=Lincoln/O=University of Nebraska-Lincoln/OU=Holland Computing Center/CN=hcc-voms.unl.edu" "hcc"
+"hcc" "hcc-voms.unl.edu" "15000" "/DC=org/DC=incommon/C=US/ST=Nebraska/O=University of Nebraska-Lincoln/CN=hcc-voms.unl.edu" "hcc"
 "hcc" "hcc-voms2.unl.edu" "15000" "/DC=org/DC=incommon/C=US/ST=Nebraska/O=University of Nebraska-Lincoln/OU=Holland Computing Center/CN=hcc-voms2.unl.edu" "hcc"
 "belle" "voms.cc.kek.jp" "15020" "/C=JP/O=KEK/OU=CRC/CN=host/voms.cc.kek.jp" "belle"
 "belle" "grid-voms.desy.de" "15020" "/DC=org/DC=terena/DC=tcs/C=DE/ST=Hamburg/O=Deutsches Elektronen-Synchrotron DESY/CN=grid-voms.desy.de" "belle"
