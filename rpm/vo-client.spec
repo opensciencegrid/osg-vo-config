@@ -3,7 +3,7 @@
 %define iam 1
 
 Name:           vo-client
-Version:        128
+Version:        129
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -84,6 +84,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Mon Jan 30 2023 Mátyás Selmeci <matyas@cs.wisc.edu> - 129-1
+- Update DN for voms1.fnal.gov (SOFTWARE-5449)
+
 * Fri Jan 06 2023 Carl Edquist <edquist@cs.wisc.edu> - 128-1
 - Update DNs for HCC, GLOW, OSG (SOFTWARE-5433)
 
