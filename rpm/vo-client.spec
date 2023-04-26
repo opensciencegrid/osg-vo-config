@@ -3,7 +3,7 @@
 %define iam 1
 
 Name:           vo-client
-Version:        130
+Version:        131
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -84,6 +84,10 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Wed Apr 26 2023 Mátyás Selmeci <matyas@cs.wisc.edu> - 131-1
+- Update DNs for clas12.voms.opensciencegrid.org
+  and eic.voms.opensciencegrid.org (SOFTWARE-5559)
+
 * Mon Feb 13 2023 Mátyás Selmeci <matyas@cs.wisc.edu> - 130-1
 - Update DN for voms2.fnal.gov (SOFTWARE-5449)
 
