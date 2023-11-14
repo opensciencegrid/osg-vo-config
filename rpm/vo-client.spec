@@ -3,7 +3,7 @@
 %define iam 1
 
 Name:           vo-client
-Version:        131
+Version:        132
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -84,6 +84,11 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Tue Nov 14 2023 Brian Lin <blin@cs.wisc.edu> - 132-1
+- Update certificates for FNAL and SLAC VOMS servers
+- Update certificates for CLAS12, EIC, GLOW, and HCC
+- Drop stale certificates for nanohub, STAR, and wisc.edu lz
+
 * Wed Apr 26 2023 Mátyás Selmeci <matyas@cs.wisc.edu> - 131-1
 - Update DNs for clas12.voms.opensciencegrid.org
   and eic.voms.opensciencegrid.org (SOFTWARE-5559)
