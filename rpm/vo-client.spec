@@ -3,7 +3,7 @@
 %define iam 1
 
 Name:           vo-client
-Version:        133
+Version:        134
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -84,6 +84,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Fri Feb 23 2024 Jason Patton <jpatton@cs.wisc.edu> - 134-1
+- Update voms.opensciencegrid.org.lsc issuer (SOFTWARE-5832)
+
 * Wed Nov 29 2023 Matt Westphall <westphall@wisc.edu> - 133-1
 - Update certificates for FNAL and GlueX VOMS servers
 
