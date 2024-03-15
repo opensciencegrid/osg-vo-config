@@ -1,6 +1,8 @@
 # Set to 1 to enable IAM-based VOMS endpoints
-# (SOFTWARE-4666, SOFTWARE-4576, SOFTWARE-4595)
+# (SOFTWARE-4666, SOFTWARE-4576, SOFTWARE-4595, SOFTWARE-5843)
 %define iam 1
+# Set to 1 to include IAM-based VOMS endpoints in the vomses file (SOFTWARE-5843)
+%define iam_vomses 0
 
 Name:           vo-client
 Version:        135
@@ -44,15 +46,23 @@ Requires:       %{name} = %{version}-%{release}
 %build
 make
 
-%if ! 0%{iam}
+%if ! 0%{?iam}
 rm -f vomsdir/atlas/voms-atlas-auth.app.cern.ch.lsc
 rm -f vomsdir/cms/voms-cms-auth.app.cern.ch.lsc
+
+for vo in alice atlas cms dteam lhcb; do
+  rm -f vomsdir/${vo}/voms-${vo}-auth.cern.ch.lsc
+done
 %endif
 
 # FIXME: Remove IAM vomses entries to avoid use by VOMS clients until
 # IAM LSC files are more widely distributed across the world
 # (SOFTWARE-4595)
 sed -Ei '/.*voms-(alice|lhcb|ops)-auth.app.cern.ch.*/d' vomses
+%if ! 0%{?iam_vomses}
+# Additional entries from SOFTWARE-5843:
+sed -Ei '/.*voms-(alice|atlas|cms|dteam|lhcb)-auth.cern.ch.*/d' vomses
+%endif
 
 %install
 install -d $RPM_BUILD_ROOT/%{_sysconfdir}
