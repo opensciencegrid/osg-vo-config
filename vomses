@@ -58,3 +58,8 @@
 "eic" "eic.voms2.opensciencegrid.org" "15001" "/DC=org/DC=incommon/C=US/ST=Wisconsin/O=University of Wisconsin-Madison/CN=eic.voms2.opensciencegrid.org" "eic"
 "eic" "eicvoms.sdcc.bnl.gov" "15001" "/DC=org/DC=incommon/C=US/ST=New York/O=Brookhaven National Laboratory/OU=SDCC/CN=eicvoms.sdcc.bnl.gov" "eic"
 "kagra" "voms.cc.kek.jp" "15027" "/C=JP/O=KEK/OU=CRC/CN=host/voms.cc.kek.jp" "kagra"
+"alice" "voms-alice-auth.cern.ch" "443" "/DC=ch/DC=cern/OU=computers/CN=alice-auth.cern.ch" "alice"
+"atlas" "voms-atlas-auth.cern.ch" "443" "/DC=ch/DC=cern/OU=computers/CN=atlas-auth.cern.ch" "atlas"
+"cms"   "voms-cms-auth.cern.ch"   "443" "/DC=ch/DC=cern/OU=computers/CN=cms-auth.cern.ch"   "cms"
+"dteam" "voms-dteam-auth.cern.ch" "443" "/DC=ch/DC=cern/OU=computers/CN=dteam-auth.cern.ch" "dteam"
+"lhcb"  "voms-lhcb-auth.cern.ch"  "443" "/DC=ch/DC=cern/OU=computers/CN=lhcb-auth.cern.ch"  "lhcb"
