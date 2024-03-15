@@ -7,17 +7,6 @@ import sys
 vomses_path = "vomses"
 vomsdir     = "vomsdir"
 
-
-# A list of .lsc files that are not meant to be in the vomses file (SOFTWARE-5843)
-lsc_ignore_missing_vomses = [
-    "alice/voms-alice-auth.cern.ch.lsc",
-    "atlas/voms-atlas-auth.cern.ch.lsc",
-    "cms/voms-cms-auth.cern.ch.lsc",
-    "dteam/voms-dteam-auth.cern.ch.lsc",
-    "lhcb/voms-lhcb-auth.cern.ch.lsc",
-]
-
-
 def usage():
     print("usage: %s [vomses vomsdir]" % os.path.basename(__file__))
     print("   or: %s --system" % os.path.basename(__file__))
@@ -71,7 +60,6 @@ vomses_entries = get_vomses()
 missing_lsc_files      = []
 missing_vomses_entries = []
 dn_mismatches          = []
-wrongly_ignored_lsc    = []
 
 for entry in vomses_entries:
     lsc = get_lsc(entry)
@@ -88,24 +76,15 @@ vomses_lsc_files = set(entry.lsc for entry in vomses_entries)
 
 os.chdir(vomsdir)
 for lsc_path in sorted(glob.glob("*/*.lsc")):
-    if lsc_path in lsc_ignore_missing_vomses:
-        if lsc_path in vomses_lsc_files:
-            wrongly_ignored_lsc += [
-                "vomses entry found for ignored lsc file %s; please remove from "
-                "lsc_ignore_missing_vomses"
-            ]
-    else:
-        if lsc_path not in vomses_lsc_files:
-            missing_vomses_entries += ["No vomses entry for %s" % lsc_path]
+    if lsc_path not in vomses_lsc_files:
+        missing_vomses_entries += ["No vomses entry for %s" % lsc_path]
 
-for x in (missing_lsc_files, missing_vomses_entries, dn_mismatches,
-          wrongly_ignored_lsc):
+for x in (missing_lsc_files, missing_vomses_entries, dn_mismatches):
     if x:
         for line in x:
             print(line)
         print()
 
-e = bool(missing_lsc_files or missing_vomses_entries or dn_mismatches or
-         wrongly_ignored_lsc)
+e = bool(missing_lsc_files or missing_vomses_entries or dn_mismatches)
 sys.exit(e)
 
