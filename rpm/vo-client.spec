@@ -3,7 +3,7 @@
 %define iam 1
 
 Name:           vo-client
-Version:        134
+Version:        135
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -84,6 +84,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Fri Mar 15 2024 Mátyás Selmeci <matyas@cs.wisc.edu> - 135-1
+- Add LSC files (only) for new CERN IAM endpoints (SOFTWARE-5843)
+
 * Fri Feb 23 2024 Jason Patton <jpatton@cs.wisc.edu> - 134-1
 - Update voms.opensciencegrid.org.lsc issuer (SOFTWARE-5832)
 
