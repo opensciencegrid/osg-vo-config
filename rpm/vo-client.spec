@@ -8,7 +8,7 @@ Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
 License:        Apache 2.0
-URL:            http://www.opensciencegrid.org/osg/
+URL:            https://github.com/opensciencegrid/osg-vo-config
 BuildArch:      noarch
 
 Requires: grid-certificates >= 7
@@ -16,7 +16,7 @@ Requires: grid-certificates >= 7
 Source0:        %{name}-%{version}.tar.gz
 
 # See
-# https://opensciencegrid.github.io/technology/software/create-vo-client/
+# https://github.com/opensciencegrid/osg-vo-config#readme
 # for instructions
 
 
