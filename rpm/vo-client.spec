@@ -5,7 +5,7 @@
 %define iam_vomses 0
 
 Name:           vo-client
-Version:        135
+Version:        137
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -94,6 +94,12 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Wed May 15 2024 Matt Westphall <westphall@wisc.edu> - 137-1
+- Roll back release 136-1 due to incompatibility with new IAM servers
+
+* Mon May 06 2024 Matt Westphall <westphall@wisc.edu> - 136-1
+- Only include *-auth.app.cern.ch in vomses for new CERN IAM endpoints (SOFTWARE-5861)
+
 * Fri Mar 15 2024 Mátyás Selmeci <matyas@cs.wisc.edu> - 135-1
 - Add LSC files (only) for new CERN IAM endpoints (SOFTWARE-5843)
 
