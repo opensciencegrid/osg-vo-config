@@ -5,7 +5,7 @@
 %define iam_vomses 0
 
 Name:           vo-client
-Version:        136
+Version:        135
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -62,8 +62,6 @@ sed -Ei '/.*voms-(alice|lhcb|ops)-auth.app.cern.ch.*/d' vomses
 %if ! 0%{?iam_vomses}
 # Additional entries from SOFTWARE-5843:
 sed -Ei '/.*voms-(alice|atlas|cms|dteam|lhcb)-auth.cern.ch.*/d' vomses
-# Additional entries from SOFTWARE-5861:
-sed -Ei '/"(alice|atlas|cms|lhcb)".*(lcg-)?voms2.cern.ch.*/d' vomses
 %endif
 
 %install
@@ -96,9 +94,6 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
-* Mon May 06 2024 Matt Westphall <westphall@wisc.edu> - 136-1
-- Only include *-auth.app.cern.ch in vomses for new CERN IAM endpoints (SOFTWARE-5861)
-
 * Fri Mar 15 2024 Mátyás Selmeci <matyas@cs.wisc.edu> - 135-1
 - Add LSC files (only) for new CERN IAM endpoints (SOFTWARE-5843)
 
