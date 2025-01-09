@@ -6,13 +6,14 @@
 
 Name:           vo-client
 Version:        137
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
 License:        Apache 2.0
 URL:            https://github.com/opensciencegrid/osg-vo-config
 BuildArch:      noarch
 
+Suggests: osg-ca-certs
 Requires: grid-certificates >= 7
 
 Source0:        %{name}-%{version}.tar.gz
@@ -94,6 +95,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Thu Jan 9 2025 Matt Westphall <westphall@wisc.edu> - 137-2
+- Add suggests: osg-ca-certs to satisfy grid-certificates (SOFTWARE-6051)
+
 * Wed May 15 2024 Matt Westphall <westphall@wisc.edu> - 137-1
 - Roll back release 136-1 due to incompatibility with new IAM servers
 
