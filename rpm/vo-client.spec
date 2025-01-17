@@ -2,11 +2,11 @@
 # (SOFTWARE-4666, SOFTWARE-4576, SOFTWARE-4595, SOFTWARE-5843)
 %define iam 1
 # Set to 1 to include IAM-based VOMS endpoints in the vomses file (SOFTWARE-5843)
-%define iam_vomses 0
+%define iam_vomses 1
 
 Name:           vo-client
 Version:        137
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
 License:        Apache 2.0
@@ -95,6 +95,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Fri Jan 17 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 137-3
+- Include new CERN IAM endpoints again (SOFTWARE-6060)
+
 * Thu Jan 9 2025 Matt Westphall <westphall@wisc.edu> - 137-2
 - Add suggests: osg-ca-certs to satisfy grid-certificates (SOFTWARE-6051)
 
