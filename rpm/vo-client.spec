@@ -1,12 +1,10 @@
-# Set to 1 to enable IAM-based VOMS endpoints
-# (SOFTWARE-4666, SOFTWARE-4576, SOFTWARE-4595, SOFTWARE-5843)
-%define iam 1
-# Set to 1 to include IAM-based VOMS endpoints in the vomses file (SOFTWARE-5843)
-%define iam_vomses 1
+# These macros exclude vomses entries for specific VOs -- see the %build section
+%define delete_iam_legacy_vomses  sed -Ei '/.*voms-'%1'-auth.app.cern.ch.*/d' vomses
+%define delete_iam_prod_vomses    sed -Ei '/.*voms-'%1'-auth.cern.ch.*/d' vomses
 
 Name:           vo-client
 Version:        137
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
 License:        Apache 2.0
@@ -47,23 +45,21 @@ Requires:       %{name} = %{version}-%{release}
 %build
 make
 
-%if ! 0%{?iam}
-rm -f vomsdir/atlas/voms-atlas-auth.app.cern.ch.lsc
-rm -f vomsdir/cms/voms-cms-auth.app.cern.ch.lsc
-
-for vo in alice atlas cms dteam lhcb; do
-  rm -f vomsdir/${vo}/voms-${vo}-auth.cern.ch.lsc
-done
-%endif
 
 # FIXME: Remove IAM vomses entries to avoid use by VOMS clients until
 # IAM LSC files are more widely distributed across the world
 # (SOFTWARE-4595)
-sed -Ei '/.*voms-(alice|lhcb|ops)-auth.app.cern.ch.*/d' vomses
-%if ! 0%{?iam_vomses}
-# Additional entries from SOFTWARE-5843:
-sed -Ei '/.*voms-(alice|atlas|cms|dteam|lhcb)-auth.cern.ch.*/d' vomses
-%endif
+
+%delete_iam_legacy_vomses alice
+%delete_iam_legacy_vomses lhcb
+%delete_iam_legacy_vomses ops
+
+#delete_iam_prod_vomses alice
+#delete_iam_prod_vomses atlas
+%delete_iam_prod_vomses cms
+#delete_iam_prod_vomses dteam
+#delete_iam_prod_vomses lhcb
+
 
 %install
 install -d $RPM_BUILD_ROOT/%{_sysconfdir}
@@ -95,6 +91,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Tue Jan 21 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 137-4
+- Except for CMS (SOFTWARE-6060)
+
 * Fri Jan 17 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 137-3
 - Include new CERN IAM endpoints again (SOFTWARE-6060)
 
