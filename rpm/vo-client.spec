@@ -1,6 +1,6 @@
 # These macros exclude vomses entries for specific VOs -- see the %build section
-%define delete_iam_legacy_vomses  sed -Ei '/.*voms-'%1'-auth.app.cern.ch.*/d' vomses
-%define delete_iam_prod_vomses    sed -Ei '/.*voms-'%1'-auth.cern.ch.*/d' vomses
+%define delete_iam_legacy_vomses()  sed -Ei '/.*voms-'%1'-auth.app.cern.ch.*/d' vomses
+%define delete_iam_prod_vomses()    sed -Ei '/.*voms-'%1'-auth.cern.ch.*/d' vomses
 
 Name:           vo-client
 Version:        137
