@@ -92,7 +92,7 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 
 %changelog
 * Tue Jan 21 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 137-4
-- Except for CMS (SOFTWARE-6060)
+- Except for CMS and DTEAM (SOFTWARE-6060)
 
 * Fri Jan 17 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 137-3
 - Include new CERN IAM endpoints again (SOFTWARE-6060)
