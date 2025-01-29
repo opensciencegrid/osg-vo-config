@@ -56,7 +56,7 @@ make
 
 #delete_iam_prod_vomses alice
 #delete_iam_prod_vomses atlas
-%delete_iam_prod_vomses cms
+#delete_iam_prod_vomses cms
 %delete_iam_prod_vomses dteam
 #delete_iam_prod_vomses lhcb
 
