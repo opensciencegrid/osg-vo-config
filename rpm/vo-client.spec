@@ -4,7 +4,7 @@
 
 Name:           vo-client
 Version:        138
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
 License:        Apache 2.0
@@ -51,6 +51,8 @@ make
 # (SOFTWARE-4595)
 
 %delete_iam_legacy_vomses alice
+%delete_iam_legacy_vomses atlas
+%delete_iam_legacy_vomses cms
 %delete_iam_legacy_vomses lhcb
 %delete_iam_legacy_vomses ops
 
@@ -91,6 +93,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Thu Apr 03 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 138-2
+- Remove legacy CERN IAM endpoints for CMS and ATLAS (SOFTWARE-6117)
+
 * Wed Jan 29 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 138-1
 - Add new CERN IAM endpoint for CMS (SOFTWARE-6072)
 - Remove lcg-voms2.cern.ch and voms2.cern.ch LSC files and vomses entries (SOFTWARE-6072)
