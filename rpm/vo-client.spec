@@ -3,7 +3,7 @@
 %define delete_iam_prod_vomses()    sed -Ei '/.*voms-'%1'-auth.cern.ch.*/d' vomses
 
 Name:           vo-client
-Version:        141
+Version:        142
 Release:        1%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
@@ -93,6 +93,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Wed May 06 2026 Matt Westphall <westphall@wisc.edu> - 142-1
+- Add voms2-*.cern.ch endpoints (SOFTWARE-6344)
+
 * Mon Jan 23 2026 Mátyás Selmeci <mselmeci@wisc.edu> - 141-1
 - Update DN for voms1.fnal.gov (SOFTWARE-6274)
 
@@ -618,5 +621,3 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 
 * Fri Jul 15 2011 Derek Weitzel <dweitzel@cse.unl.edu> - 38-1
 - Initial build of vo-client
-
-
