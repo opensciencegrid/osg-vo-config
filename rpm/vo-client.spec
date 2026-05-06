@@ -1,10 +1,11 @@
 # These macros exclude vomses entries for specific VOs -- see the %build section
 %define delete_iam_legacy_vomses()  sed -Ei '/.*voms-'%1'-auth.app.cern.ch.*/d' vomses
 %define delete_iam_prod_vomses()    sed -Ei '/.*voms-'%1'-auth.cern.ch.*/d' vomses
+%define delete_voms2_prod_vomses()    sed -Ei '/.*voms2-'%1'-auth.cern.ch.*/d' vomses
 
 Name:           vo-client
 Version:        142
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Contains vomses file for use with user authentication
 
 License:        Apache 2.0
@@ -14,7 +15,7 @@ BuildArch:      noarch
 Suggests: osg-ca-certs
 Requires: grid-certificates >= 7
 
-Source0:        %{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}-%{release}.tar.gz
 
 # See
 # https://github.com/opensciencegrid/osg-vo-config#readme
@@ -62,6 +63,14 @@ make
 %delete_iam_prod_vomses dteam
 #delete_iam_prod_vomses lhcb
 
+# FIXME: Remove voms2 vomses entries to avoid use by VOMS clients until
+# voms2 LSC files are more widely distributed across the world
+# (SOFTWARE-6344)
+%delete_voms2_prod_vomses alice
+%delete_voms2_prod_vomses atlas
+%delete_voms2_prod_vomses cms
+%delete_voms2_prod_vomses lhcb
+%delete_voms2_prod_vomses ops
 
 %install
 install -d $RPM_BUILD_ROOT/%{_sysconfdir}
@@ -93,6 +102,9 @@ find $RPM_BUILD_ROOT/%{_sysconfdir}/grid-security/vomsdir -type d -exec chmod 75
 %config(noreplace) %{_datadir}/osg/grid-vorolemap
 
 %changelog
+* Wed May 06 2026 Matt Westphall <westphall@wisc.edu> - 142-2
+- Don't advertise new endpoints in vomses file yet (SOFTWARE-6344)
+
 * Wed May 06 2026 Matt Westphall <westphall@wisc.edu> - 142-1
 - Add voms2-*.cern.ch endpoints (SOFTWARE-6344)
 
