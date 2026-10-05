@@ -24,7 +24,7 @@
 "des" "voms2.fnal.gov" "15017" "/DC=org/DC=incommon/C=US/ST=Illinois/O=Fermi Forward Discovery Group, LLC/CN=voms2.fnal.gov" "des"
 "ilc" "grid-voms.desy.de" "15110" "/DC=org/DC=terena/DC=tcs/C=DE/ST=Hamburg/O=Deutsches Elektronen-Synchrotron DESY/CN=grid-voms.desy.de" "ilc"
 "lhcb" "voms-lhcb-auth.app.cern.ch" "443" "/DC=ch/DC=cern/OU=computers/CN=lhcb-auth.web.cern.ch" "lhcb"
-"lsst" "voms.slac.stanford.edu" "15003" "/DC=org/DC=incommon/C=US/ST=California/O=Stanford University/CN=voms.slac.stanford.edu" "lsst"
+"lsst" "voms.slac.stanford.edu" "15003" "/DC=org/DC=incommon/C=US/ST=California/L=Stanford/O=Stanford University/CN=voms.slac.stanford.edu" "lsst"
 "lsst" "voms.hec.lancs.ac.uk" "15003" "/C=UK/O=eScience/OU=Lancaster/L=Physics/CN=voms.hec.lancs.ac.uk" "lsst"
 "osg" "voms.opensciencegrid.org" "15027" "/DC=org/DC=incommon/C=US/ST=Wisconsin/O=University of Wisconsin-Madison/CN=voms.opensciencegrid.org" "osg"
 "osg" "voms1.opensciencegrid.org" "15027" "/DC=org/DC=incommon/C=US/ST=Wisconsin/O=University of Wisconsin-Madison/OU=OCIS/CN=voms1.opensciencegrid.org" "osg"
